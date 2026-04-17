@@ -1,0 +1,2020 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Germany Digital Product Handbook</title>
+  <link rel="stylesheet" href="germany_handbook_shared.css">
+</head>
+<body>
+  <div class="product-shell page-product" data-book>
+    <header class="product-nav">
+      <div class="product-nav-inner">
+        <button class="product-brand" type="button" data-book-jump="cover">Germany Digital Product Handbook</button>
+        <nav class="product-links" aria-label="Handbook sections">
+          <button class="product-link is-active" type="button" data-book-jump="cover">Cover</button>
+          <button class="product-link" type="button" data-book-jump="red">Red lines</button>
+          <button class="product-link" type="button" data-book-jump="orange">Orange lines</button>
+          <button class="product-link" type="button" data-book-jump="green">Green lines</button>
+          <button class="product-link" type="button" data-book-jump="quiz">Quiz</button>
+        </nav>
+      </div>
+    </header>
+
+    <div class="book-frame">
+      <button class="book-arrow book-arrow-prev" type="button" data-book-prev aria-label="Previous page">
+        <span class="book-arrow-label">Previous</span>
+      </button>
+
+      <main class="book-viewport">
+        <section id="cover" class="product-section book-page is-active" data-book-page="cover" data-book-title="Cover" data-book-index="1">
+          <div class="cover">
+
+  <div class="masthead">
+    <div class="masthead-title">The Germany Digital Product Handbook</div>
+    <div class="masthead-meta">2026 Edition · For Product Builders</div>
+  </div>
+
+  <div class="hero-block">
+    <div class="hero-left">
+      <h1 class="cover-title">A field guide to building software in Germany</h1>
+      <h2 class="hero-headline">
+        What can get<br>
+        you <em>shut down</em>,<br>
+        what's <em class="orange-em">contested</em>,<br>
+        and what makes<br>you <span class="green-em">win.</span>
+      </h2>
+      <div class="hero-deck">
+        Germany is the EU's largest software market — and its most legally complex. This handbook cuts through the noise: not legal theory, but actionable product decisions, real enforcement cases, and the design choices that actually close enterprise deals.
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="flag-strip">
+        <div class="flag-black"></div>
+        <div class="flag-red"></div>
+        <div class="flag-gold"></div>
+      </div>
+
+      <div class="stat-grid">
+        <div class="stat-box">
+          <div class="stat-n red">€45M</div>
+          <div class="stat-desc">Germany's largest GDPR fine in 2025 — Vodafone, for a product architecture decision</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-n amber">Feb '25</div>
+          <div class="stat-desc">EU AI Act prohibitions took effect — including features already in production at many companies</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-n green">3×</div>
+          <div class="stat-desc">Pipeline growth for Nextcloud in H1 2025 — from digital sovereignty positioning alone</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-n dark">67</div>
+          <div class="stat-desc">Court rulings on cancellation buttons since 2022 — the most litigated consumer UX law in Germany</div>
+        </div>
+      </div>
+
+      <div class="quote-block">
+        <div class="quote-text">"Privacy in Germany is not a preference competing with convenience — it is, in the constitutional sense, a precondition for participation."</div>
+        <div class="quote-attr">Bundesverfassungsgericht · 1983 census ruling · still enforced today</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="for-you-section">
+    <div class="section-label">Who this is for</div>
+    <div class="persona-grid compact-single">
+      <div class="persona-card">
+        <div class="persona-role">Product builders entering the German market.</div>
+        <div class="persona-pain">You already have a working product. Now you need to know:</div>
+        <ul class="compact-list">
+          <li>Which decisions require a lawyer</li>
+          <li>Which are just rules you should already know</li>
+          <li>Which can win you enterprise deals</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="contents-section">
+    <div class="section-label">What you get</div>
+    <div class="contents-grid compact-two">
+
+      <div class="contents-item">
+        <div class="contents-line-top line-red"></div>
+        <div class="contents-chapter">Core map</div>
+        <div class="contents-name">What will matter most</div>
+        <div class="contents-desc">
+          <ul class="compact-list">
+            <li>11 red lines with exact fines</li>
+            <li>12 grey zones with safer vs. riskier paths</li>
+            <li>14 green patterns that close German enterprise deals</li>
+            <li>The 3 questions German buyers always ask before signing</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="contents-item">
+        <div class="contents-line-top line-amber"></div>
+        <div class="contents-chapter">Concrete</div>
+        <div class="contents-name">Where this gets practical</div>
+        <div class="contents-desc">
+          <ul class="compact-list">
+            <li>Data residency, cookie consent, sub-processors, export flows</li>
+            <li>GTM / GA4 / Meta Pixel compliance</li>
+            <li>Self-hosting and sovereignty as trust signals</li>
+            <li>AVV, certifications, and procurement shortcuts</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="why-section compact-why">
+    <div class="why-left">
+      <div class="section-label">Why this matters</div>
+      <div class="why-list">
+
+        <div class="why-item">
+          <div class="why-icon icon-warn">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 2L12.5 12H1.5L7 2Z" stroke="#A32D2D" stroke-width="1.2" stroke-linejoin="round" fill="none"/><line x1="7" y1="6" x2="7" y2="9" stroke="#A32D2D" stroke-width="1.2" stroke-linecap="round"/><circle cx="7" cy="10.5" r="0.6" fill="#A32D2D"/></svg>
+          </div>
+          <div class="why-item-text">
+            <div class="why-item-title">Most compliance resources tell you what not to do.</div>
+            <div class="why-item-desc">This shows what to build instead — and how it wins commercially.</div>
+          </div>
+        </div>
+
+        <div class="why-item">
+          <div class="why-icon icon-go">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5" stroke="#1A5C4A" stroke-width="1.2" fill="none"/><path d="M5 7L6.5 8.5L9 5.5" stroke="#1A5C4A" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="why-item-text">
+            <div class="why-item-title">In Germany, compliance is not a feature.</div>
+            <div class="why-item-desc">It is a buying decision.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bar">
+    <div class="footer-left">
+      Based on enforcement data through April 2026<br>
+      GDPR · EU AI Act · KWG · MPDG · BetrVG · BFSG · GWB · TDDDG
+    </div>
+    <div class="footer-disclaimer">
+      For reference only. Not legal advice.<br>Consult qualified counsel for specific decisions.
+    </div>
+  </div>
+
+</div>
+        </section>
+
+        <section id="red" class="product-section book-page" data-book-page="red" data-book-title="Red lines" data-book-index="2">
+          <div class="section-kicker">Chapter 1</div>
+          <div class="handbook chapter-handbook" data-tabs data-chapter="red">
+  <div class="hero">
+    <div class="hero-copy">
+      <div class="hero-label">Germany · Product & Design · Red Lines Handbook 2025</div>
+      <div class="hero-title">What will <em>shut you down</em><br>in the German market</div>
+      <div class="hero-sub">Absolute prohibitions. Cross these lines and you face criminal liability, fines up to 7% of global revenue, product injunctions, or forced market exit. No exceptions, no grey area.</div>
+    </div>
+  </div>
+
+  <div class="nav-pills">
+    <div class="pill active" role="button" tabindex="0" data-tab-button="data">Data & privacy</div>
+    <div class="pill" role="button" tabindex="0" data-tab-button="ai">AI prohibitions</div>
+    <div class="pill" role="button" tabindex="0" data-tab-button="fin">Financial services</div>
+    <div class="pill" role="button" tabindex="0" data-tab-button="med">Medical & health</div>
+    <div class="pill" role="button" tabindex="0" data-tab-button="labor">Labor & HR</div>
+    <div class="pill" role="button" tabindex="0" data-tab-button="consumer">Consumer protection</div>
+  </div>
+
+  <!-- DATA -->
+  <div class="section visible" data-tab-panel="data">
+    <div class="section-intro">
+      Germany has <strong>17 independent data protection authorities</strong> — the most aggressive enforcement landscape in Europe. The combination of GDPR, BDSG, and TDDDG creates overlapping obligations where a single product decision can trigger simultaneous violations. German DPAs issued <strong>€46.9M in fines in 2025 alone</strong>, led by a €45M penalty against Vodafone.
+    </div>
+    <div class="cards">
+
+      <div class="card" onclick="toggleCard(this)">
+        <div class="card-header">
+          <div class="card-left">
+            <div class="card-number">RED LINE 01</div>
+            <div class="card-title">Processing personal data without a valid legal basis</div>
+          </div>
+          <div class="card-tag tag-data">Data & Privacy</div>
+          <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body">
+          <div class="what-block">
+            <div class="what-title">What is prohibited</div>
+            <div class="what-text">Collecting, storing, or using personal data without one of the six GDPR legal bases: consent, contract, legal obligation, vital interests, public task, or legitimate interest. <strong>Advertising profiling cannot rely on "legitimate interest"</strong> — German DPAs consistently reject this. Hannoversche Volksbank was fined €900K for exactly this: using customer data for digital affinity scoring under a "legitimate interest" claim.</div>
+          </div>
+          <div class="law-ref">
+            <span class="law-tag">GDPR Art. 5/6</span>
+            <span class="law-tag">BDSG §42</span>
+            <span class="law-tag">GDPR Art. 9 (sensitive data)</span>
+          </div>
+          <div class="penalty-row">
+            <div class="penalty-box">
+              <div class="penalty-label">Administrative fine</div>
+              <div class="penalty-val">€20M</div>
+              <div class="penalty-sub">or 4% of global annual revenue — whichever is higher</div>
+            </div>
+            <div class="penalty-box">
+              <div class="penalty-label">Criminal liability</div>
+              <div class="penalty-val">3 years</div>
+              <div class="penalty-sub">imprisonment for wilful commercial-scale violations (BDSG §42)</div>
+            </div>
+          </div>
+          <div class="who-block">
+            <div class="who-title">Who must pay attention</div>
+            <div class="who-tags">
+              <span class="who-tag">All product types</span>
+              <span class="who-tag">Analytics teams</span>
+              <span class="who-tag">Growth/marketing</span>
+              <span class="who-tag">AI/ML training pipelines</span>
+            </div>
+          </div>
+          <div class="case-block">
+            <div class="case-co">Vodafone GmbH · 2025 · €45M</div>
+            <div class="case-text">BfDI fined Vodafone Germany's largest-ever GDPR penalty. <strong>€30M</strong> for authentication flaws in the MeinVodafone portal allowing unauthorized eSIM access. <strong>€15M</strong> for failing to supervise data processors (partner stores) who created fraudulent contracts. Lesson: the controller is responsible for the entire chain.</div>
+          </div>
+          <div class="case-block">
+            <div class="case-co">Deutsche Wohnen SE · Berlin DPA · €14.4M</div>
+            <div class="case-text">Housing company fined for storing tenant personal data in an archiving system that couldn't delete outdated records. <strong>Inability to delete = GDPR violation.</strong> ECJ in C-807/21 confirmed fines can be based on group-wide global revenue — dramatically raising the ceiling.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" onclick="toggleCard(this)">
+        <div class="card-header">
+          <div class="card-left">
+            <div class="card-number">RED LINE 02</div>
+            <div class="card-title">Placing non-essential cookies or trackers without prior opt-in consent</div>
+          </div>
+          <div class="card-tag tag-data">Data & Privacy</div>
+          <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body">
+          <div class="what-block">
+            <div class="what-title">What is prohibited</div>
+            <div class="what-text">Loading analytics, advertising, or tracking scripts <strong>before</strong> the user gives explicit opt-in consent. This includes Google Tag Manager itself — the VG Hannover ruled in March 2025 that GTM loading before consent violates TDDDG §25. A "Reject all" button must be <strong>equally prominent</strong> as "Accept all." Pre-ticked boxes and asymmetric button design are illegal.</div>
+          </div>
+          <div class="law-ref">
+            <span class="law-tag">TDDDG §25</span>
+            <span class="law-tag">GDPR Art. 6/7</span>
+            <span class="law-tag">BGH Planet49 (2020)</span>
+            <span class="law-tag">VG Hannover (2025)</span>
+          </div>
+          <div class="penalty-row">
+            <div class="penalty-box">
+              <div class="penalty-label">TDDDG fine</div>
+              <div class="penalty-val">€300K</div>
+              <div class="penalty-sub">per violation, stacked with GDPR fines</div>
+            </div>
+            <div class="penalty-box">
+              <div class="penalty-label">GDPR stacked</div>
+              <div class="penalty-val">€20M+</div>
+              <div class="penalty-sub">or 4% revenue if data transferred without consent</div>
+            </div>
+          </div>
+          <div class="who-block">
+            <div class="who-title">Who must pay attention</div>
+            <div class="who-tags">
+              <span class="who-tag">All consumer-facing products</span>
+              <span class="who-tag">Marketing engineers</span>
+              <span class="who-tag">Product analytics</span>
+              <span class="who-tag">B2B SaaS with public marketing sites</span>
+            </div>
+          </div>
+          <div class="case-block">
+            <div class="case-co">VG Hannover ruling · March 2025</div>
+            <div class="case-text">German administrative court ruled that <strong>Google Tag Manager itself requires explicit user consent</strong> before loading — because loading GTM contacts Google's servers and transmits IP address and device data. Affects any site using GTM without a compliant CMP firing it post-consent only.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" onclick="toggleCard(this)">
+        <div class="card-header">
+          <div class="card-left">
+            <div class="card-number">RED LINE 03</div>
+            <div class="card-title">Transferring data to third countries without adequate safeguards</div>
+          </div>
+          <div class="card-tag tag-data">Data & Privacy</div>
+          <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body">
+          <div class="what-block">
+            <div class="what-title">What is prohibited</div>
+            <div class="what-text">Transferring personal data outside the EEA without a valid transfer mechanism. Since Trump's 2025 executive actions weakened PCLOB oversight, the EU-US Data Privacy Framework faces <strong>active CJEU challenge</strong>. German DPAs have already recommended "exit strategies" from US cloud dependency. Transfers to China, India, and other non-adequacy countries require SCCs plus a Transfer Impact Assessment.</div>
+          </div>
+          <div class="law-ref">
+            <span class="law-tag">GDPR Art. 44–49</span>
+            <span class="law-tag">BDSG §42</span>
+            <span class="law-tag">EU-US DPF (contested)</span>
+          </div>
+          <div class="penalty-row">
+            <div class="penalty-box">
+              <div class="penalty-label">Administrative fine</div>
+              <div class="penalty-val">€20M</div>
+              <div class="penalty-sub">or 4% global revenue</div>
+            </div>
+            <div class="penalty-box">
+              <div class="penalty-label">Criminal exposure</div>
+              <div class="penalty-val">3 years</div>
+              <div class="penalty-sub">imprisonment for wilful illegal transfer (BDSG §42)</div>
+            </div>
+          </div>
+          <div class="who-block">
+            <div class="who-title">Who must pay attention</div>
+            <div class="who-tags">
+              <span class="who-tag">B2B SaaS on US cloud</span>
+              <span class="who-tag">HR tech (employee data to US)</span>
+              <span class="who-tag">Analytics using US vendors</span>
+              <span class="who-tag">AI products with US model providers</span>
+            </div>
+          </div>
+          <div class="case-block">
+            <div class="case-co">Meta / Facebook Ireland · €1.2B (Ireland DPA, 2023)</div>
+            <div class="case-text">Largest GDPR fine ever for <strong>systematic transfer of EU user data to US servers</strong> without adequate safeguards post-Schrems II. German DPAs have been the most aggressive in challenging data transfers and can act independently. The DPF that replaced Privacy Shield now faces CJEU challenge.</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- AI -->
+  <div class="section" data-tab-panel="ai">
+    <div class="section-intro">
+      The EU AI Act's <strong>absolute prohibitions (Art. 5) took effect 2 February 2025</strong>. Maximum fine: €35M or 7% of global annual revenue. These are not compliance requirements — they are criminal-code-level prohibitions where <strong>the practice itself is banned</strong>, not merely subject to conditions.
+    </div>
+    <div class="cards">
+
+      <div class="card" onclick="toggleCard(this)">
+        <div class="card-header">
+          <div class="card-left">
+            <div class="card-number">RED LINE 04</div>
+            <div class="card-title">AI emotion recognition in workplaces or educational institutions</div>
+          </div>
+          <div class="card-tag tag-ai">EU AI Act</div>
+          <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body">
+          <div class="what-block">
+            <div class="what-title">What is prohibited</div>
+            <div class="what-text">Any AI system that infers the emotional states of employees or students via cameras, voice analysis, biometric signals, or physiological data — regardless of stated purpose. Banned applications include: call centre stress-tracking tools, recruitment video interview emotion scoring, student attention inference from webcam feeds, online proctoring emotional flagging, and HR dashboards aggregating "mood signals." <strong>The narrow exception is genuine medical or safety-critical use only.</strong></div>
+          </div>
+          <div class="law-ref">
+            <span class="law-tag">EU AI Act Art. 5(1)(f)</span>
+            <span class="law-tag">In force: 2 Feb 2025</span>
+          </div>
+          <div class="penalty-row">
+            <div class="penalty-box">
+              <div class="penalty-label">Maximum fine</div>
+              <div class="penalty-val">€35M</div>
+              <div class="penalty-sub">or 7% of global annual turnover</div>
+            </div>
+            <div class="penalty-box">
+              <div class="penalty-label">Enforcement body</div>
+              <div class="penalty-val">BNetzA</div>
+              <div class="penalty-sub">Bundesnetzagentur — Germany's designated AI market regulator</div>
+            </div>
+          </div>
+          <div class="who-block">
+            <div class="who-title">Who must pay attention</div>
+            <div class="who-tags">
+              <span class="who-tag">HR tech / recruitment AI</span>
+              <span class="who-tag">EdTech / online proctoring</span>
+              <span class="who-tag">Call centre software</span>
+              <span class="who-tag">Workforce analytics</span>
+              <span class="who-tag">Employee wellbeing apps</span>
+            </div>
+          </div>
+          <div class="case-block">
+            <div class="case-co">HireVue · ongoing regulatory scrutiny</div>
+            <div class="case-text">HireVue's video interview AI analysed facial expressions, tone of voice, and word choice to score candidates. The company removed facial analysis in 2021 under regulatory pressure. <strong>Under EU AI Act Art. 5(1)(f), the facial/voice emotion scoring component would be an absolute prohibition in EU deployments</strong> — not a feature requiring additional safeguards, but a feature that cannot exist.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" onclick="toggleCard(this)">
+        <div class="card-header">
+          <div class="card-left">
+            <div class="card-number">RED LINE 05</div>
+            <div class="card-title">AI social scoring systems — rating people based on behaviour or personal characteristics</div>
+          </div>
+          <div class="card-tag tag-ai">EU AI Act</div>
+          <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body">
+          <div class="what-block">
+            <div class="what-title">What is prohibited</div>
+            <div class="what-text">AI systems that evaluate or classify individuals based on social behaviour or personal characteristics and use that classification to cause detrimental treatment in <strong>unrelated contexts</strong>, or treatment disproportionate to the original behaviour. Prohibited examples: a rental platform assigning a "trust score" from social media activity to deny housing; an employer rating "cultural fit" from online behaviour history; a credit product using personality trait inference. <strong>Applies to both public and private entities.</strong></div>
+          </div>
+          <div class="law-ref">
+            <span class="law-tag">EU AI Act Art. 5(1)(c)</span>
+            <span class="law-tag">GDPR Art. 22</span>
+            <span class="law-tag">In force: 2 Feb 2025</span>
+          </div>
+          <div class="penalty-row">
+            <div class="penalty-box">
+              <div class="penalty-label">Maximum fine</div>
+              <div class="penalty-val">€35M</div>
+              <div class="penalty-sub">or 7% of global annual turnover</div>
+            </div>
+            <div class="penalty-box">
+              <div class="penalty-label">Additional exposure</div>
+              <div class="penalty-val">€20M</div>
+              <div class="penalty-sub">GDPR Art. 22 automated decision-making stacked on top</div>
+            </div>
+          </div>
+          <div class="who-block">
+            <div class="who-title">Who must pay attention</div>
+            <div class="who-tags">
+              <span class="who-tag">Marketplace platforms</span>
+              <span class="who-tag">Credit scoring AI</span>
+              <span class="who-tag">Tenant screening</span>
+              <span class="who-tag">Insurance underwriting AI</span>
+              <span class="who-tag">Platform reputation systems</span>
+            </div>
+          </div>
+          <div class="case-block">
+            <div class="case-co">SCHUFA Holding · CJEU C-634/21 · December 2023</div>
+            <div class="case-text">Landmark ruling: SCHUFA's automated credit scores constitute "automated individual decision-making" under GDPR Art. 22 — even though the bank makes the final lending decision — because the score is "determinative in practice." Combined with AI Act Art. 5(1)(c), <strong>any scoring system that classifies people and influences consequential decisions is now under dual-regulation scrutiny.</strong></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" onclick="toggleCard(this)">
+        <div class="card-header">
+          <div class="card-left">
+            <div class="card-number">RED LINE 06</div>
+            <div class="card-title">Scraping faces from the internet to build biometric databases</div>
+          </div>
+          <div class="card-tag tag-ai">EU AI Act</div>
+          <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body">
+          <div class="what-block">
+            <div class="what-title">What is prohibited</div>
+            <div class="what-text">Creating or expanding facial recognition databases by indiscriminately scraping facial images from the internet or CCTV footage. This is Clearview AI's core business model — and it is an absolute prohibition under EU AI Act Art. 5(1)(e). Also prohibited: real-time remote biometric identification in public spaces for law enforcement (Art. 5(1)(h)), except in narrowly defined emergencies with prior judicial authorisation.</div>
+          </div>
+          <div class="law-ref">
+            <span class="law-tag">EU AI Act Art. 5(1)(e)</span>
+            <span class="law-tag">EU AI Act Art. 5(1)(h)</span>
+            <span class="law-tag">GDPR Art. 9 (biometric data)</span>
+          </div>
+          <div class="penalty-row">
+            <div class="penalty-box">
+              <div class="penalty-label">Maximum fine</div>
+              <div class="penalty-val">€35M</div>
+              <div class="penalty-sub">or 7% global revenue</div>
+            </div>
+            <div class="penalty-box">
+              <div class="penalty-label">Clearview precedent</div>
+              <div class="penalty-val">~€100M</div>
+              <div class="penalty-sub">cumulative EU fines before AI Act — now the floor, not ceiling</div>
+            </div>
+          </div>
+          <div class="who-block">
+            <div class="who-title">Who must pay attention</div>
+            <div class="who-tags">
+              <span class="who-tag">Facial recognition providers</span>
+              <span class="who-tag">Security/surveillance software</span>
+              <span class="who-tag">AI training data companies</span>
+              <span class="who-tag">Computer vision products</span>
+            </div>
+          </div>
+          <div class="case-block">
+            <div class="case-co">Clearview AI · Dutch DPA · €30.5M (2024) + ongoing</div>
+            <div class="case-text">Dutch DPA fined Clearview €30.5M plus €5.1M for continued violations, French CNIL €20M, Italian Garante €20M — all before the AI Act took effect. <strong>Post-February 2025, Clearview's business model is not merely heavily fined but absolutely prohibited under EU law.</strong> Dutch DPA explored holding executives personally liable when the company refused to pay.</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FINANCIAL -->
+  <div class="section" data-tab-panel="fin">
+    <div class="section-intro">
+      BaFin is one of the most aggressive financial regulators in Europe. Operating financial services without a licence is not a civil matter in Germany — <strong>it is a criminal offence carrying up to 5 years imprisonment</strong>. In 2025 alone, BaFin issued its largest-ever AML fine (€45M against J.P. Morgan SE) and banned a crypto product within weeks of launch.
+    </div>
+    <div class="cards">
+
+      <div class="card" onclick="toggleCard(this)">
+        <div class="card-header">
+          <div class="card-left">
+            <div class="card-number">RED LINE 07</div>
+            <div class="card-title">Embedding payment or lending features without a BaFin licence</div>
+          </div>
+          <div class="card-tag tag-fin">Financial Services</div>
+          <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body">
+          <div class="what-block">
+            <div class="what-title">What is prohibited</div>
+            <div class="what-text">Operating payment services, deposit-taking, credit provision, investment advice, or crypto-asset services in Germany without the appropriate BaFin authorisation. <strong>BaFin applies substance-over-form</strong>: even if you call your product a "marketplace tool" or "financial wellness feature," if it moves money, holds deposits, or provides credit decisions, a licence is required. Embedding a licensed partner's product does not automatically exempt you — BaFin assesses who controls the customer relationship.</div>
+          </div>
+          <div class="law-ref">
+            <span class="law-tag">KWG §32 / §54</span>
+            <span class="law-tag">ZAG §10 / §63</span>
+            <span class="law-tag">MiCA (from Dec 2024)</span>
+            <span class="law-tag">KWG §54a (CEO liability)</span>
+          </div>
+          <div class="penalty-row">
+            <div class="penalty-box">
+              <div class="penalty-label">Criminal sentence</div>
+              <div class="penalty-val">5 years</div>
+              <div class="penalty-sub">imprisonment for wilful unlicensed operation (KWG §54)</div>
+            </div>
+            <div class="penalty-box">
+              <div class="penalty-label">CEO personal liability</div>
+              <div class="penalty-val">5 years</div>
+              <div class="penalty-sub">if CEO ignores BaFin remediation order causing systemic risk (KWG §54a)</div>
+            </div>
+          </div>
+          <div class="who-block">
+            <div class="who-title">Who must pay attention</div>
+            <div class="who-tags">
+              <span class="who-tag">Fintech founders</span>
+              <span class="who-tag">Embedded finance products</span>
+              <span class="who-tag">BNPL features</span>
+              <span class="who-tag">Crypto/DeFi interfaces</span>
+              <span class="who-tag">Robo-advisors</span>
+            </div>
+          </div>
+          <div class="case-block">
+            <div class="case-co">N26 Bank · BaFin · 2021–2025 (ongoing)</div>
+            <div class="case-text">Berlin neobank fined €4.25M in 2021, then €9.2M in 2024 for systematic late suspicious transaction reporting. BaFin imposed a <strong>50,000 new customers/month growth cap</strong> for years (vs prior 170,000/month), a special monitor, and in 2025 additional capital requirements. Both co-founders resigned. Total operational cost of AML non-compliance: hundreds of millions in lost growth.</div>
+          </div>
+          <div class="case-block">
+            <div class="case-co">J.P. Morgan SE · BaFin · €45M · November 2025</div>
+            <div class="case-text">BaFin's largest-ever AML penalty. J.P. Morgan's Frankfurt subsidiary systematically failed to file suspicious transaction reports during a 12-month period. BaFin classified it as <strong>"organisational failure, not isolated incidents."</strong> Even the world's largest bank faces the full force of German financial regulation.</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- MEDICAL -->
+  <div class="section" data-tab-panel="med">
+    <div class="section-intro">
+      Germany has the world's most advanced digital health framework — and the world's strictest software-as-medical-device enforcement. <strong>A single word in your marketing copy can reclassify your app as a medical device overnight.</strong> The criminal penalties under MPDG §92 reach 10 years imprisonment for commercial violations endangering public health.
+    </div>
+    <div class="cards">
+
+      <div class="card" onclick="toggleCard(this)">
+        <div class="card-header">
+          <div class="card-left">
+            <div class="card-number">RED LINE 08</div>
+            <div class="card-title">Marketing software as "diagnostic" or "therapeutic" without CE certification</div>
+          </div>
+          <div class="card-tag tag-med">Medical & Health</div>
+          <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body">
+          <div class="what-block">
+            <div class="what-title">What is prohibited</div>
+            <div class="what-text">Placing software on the German market that <strong>claims to diagnose, monitor, predict, treat, or alleviate medical conditions</strong> without CE marking as a medical device (minimum Class IIa under MDR Rule 11). The trigger is the <em>intended purpose</em> communicated to users — a single marketing claim like "helps manage your diabetes" or "detects early signs of depression" reclassifies the app. Landing page copy, app store descriptions, and customer support scripts all count as "intended purpose" evidence.</div>
+          </div>
+          <div class="law-ref">
+            <span class="law-tag">MDR Art. 20 / Rule 11</span>
+            <span class="law-tag">MPDG §92</span>
+            <span class="law-tag">MPDG §94</span>
+          </div>
+          <div class="penalty-row">
+            <div class="penalty-box">
+              <div class="penalty-label">Criminal sentence</div>
+              <div class="penalty-val">3–10 years</div>
+              <div class="penalty-sub">3yr standard · up to 10yr if commercial & endangers public health (MPDG §92 Verbrechen)</div>
+            </div>
+            <div class="penalty-box">
+              <div class="penalty-label">Administrative fine</div>
+              <div class="penalty-val">€30K</div>
+              <div class="penalty-sub">per incident under MPDG §94, plus mandatory product recall</div>
+            </div>
+          </div>
+          <div class="who-block">
+            <div class="who-title">Who must pay attention</div>
+            <div class="who-tags">
+              <span class="who-tag">Health app founders</span>
+              <span class="who-tag">Mental health tech</span>
+              <span class="who-tag">Diagnostic AI products</span>
+              <span class="who-tag">Wearable software</span>
+              <span class="who-tag">Telehealth platforms</span>
+            </div>
+          </div>
+          <div class="case-block">
+            <div class="case-co">Ada Health · navigated correctly</div>
+            <div class="case-text">Ada Health obtained CE Class IIa medical device certification for its clinical-facing product while keeping its consumer app explicitly positioned as a "health guide, not a diagnostic tool." <strong>The dual product strategy — regulated clinical tool + non-medical consumer app — is the correct structural response</strong> to Germany's strict intended-purpose doctrine. Companies that blur this line face enforcement action.</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- LABOR -->
+  <div class="section" data-tab-panel="labor">
+    <div class="section-intro">
+      Germany's works council system (Betriebsrat) gives employee representatives <strong>mandatory co-determination rights over any technology that can monitor employee behaviour</strong>. Deploying a tool without Betriebsrat consent doesn't just risk fines — the measure is <strong>automatically legally void</strong>. This applies even if monitoring isn't the tool's primary purpose.
+    </div>
+    <div class="cards">
+
+      <div class="card" onclick="toggleCard(this)">
+        <div class="card-header">
+          <div class="card-left">
+            <div class="card-number">RED LINE 09</div>
+            <div class="card-title">Deploying employee monitoring tools without Betriebsrat written consent</div>
+          </div>
+          <div class="card-tag tag-labor">Labor & HR</div>
+          <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body">
+          <div class="what-block">
+            <div class="what-title">What is prohibited</div>
+            <div class="what-text">Using any technical system that is <strong>objectively capable</strong> of monitoring employee behaviour or performance without prior Betriebsrat agreement (Betriebsvereinbarung). The BAG's 1975 "objective suitability" standard applies: <strong>actual monitoring intent is irrelevant</strong> — if the tool can monitor, consent is required. This covers: productivity tracking software, login/logout logging, email metadata analysis, GPS in company vehicles, Microsoft Viva Insights, AI-assisted performance dashboards, and ERP systems with detailed activity logs. BetrVG §95(2a) explicitly extends this to AI used for personnel selection criteria.</div>
+          </div>
+          <div class="law-ref">
+            <span class="law-tag">BetrVG §87(1) Nr. 6</span>
+            <span class="law-tag">BetrVG §95(2a)</span>
+            <span class="law-tag">BDSG §26</span>
+            <span class="law-tag">GDPR Art. 88</span>
+          </div>
+          <div class="penalty-row">
+            <div class="penalty-box">
+              <div class="penalty-label">Legal consequence</div>
+              <div class="penalty-val">Void</div>
+              <div class="penalty-sub">Deployment automatically legally void — injunction available to Betriebsrat immediately</div>
+            </div>
+            <div class="penalty-box">
+              <div class="penalty-label">Criminal exposure</div>
+              <div class="penalty-val">3 years</div>
+              <div class="penalty-sub">imprisonment for systematic covert employee surveillance (BDSG §42)</div>
+            </div>
+          </div>
+          <div class="who-block">
+            <div class="who-title">Who must pay attention</div>
+            <div class="who-tags">
+              <span class="who-tag">HR tech product teams</span>
+              <span class="who-tag">Enterprise SaaS with activity logging</span>
+              <span class="who-tag">AI recruitment tools</span>
+              <span class="who-tag">Workforce analytics</span>
+              <span class="who-tag">Remote work monitoring</span>
+            </div>
+          </div>
+          <div class="case-block">
+            <div class="case-co">H&M · Hamburg DPA · €35.3M · 2020</div>
+            <div class="case-text">H&M's Nuremberg service centre systematically recorded employees' personal lives — vacation details, illness symptoms, family problems, religious beliefs — in a network drive accessible to 50+ managers, used for personnel decisions. <strong>Germany's largest GDPR fine at the time.</strong> Core violation: secret, systematic recording of employee data beyond any employment purpose. Employee data must be purpose-limited, minimised, and accessible only on a need-to-know basis.</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- CONSUMER -->
+  <div class="section" data-tab-panel="consumer">
+    <div class="section-intro">
+      Germany's consumer protection framework combines EU-level rules with German-specific requirements that regularly surprise international software companies. <strong>Missing a cancellation button makes your subscription terminable at will. Missing an Impressum triggers immediate legal warning letters.</strong> These are active, frequently enforced obligations — not theoretical risks.
+    </div>
+    <div class="cards">
+
+      <div class="card" onclick="toggleCard(this)">
+        <div class="card-header">
+          <div class="card-left">
+            <div class="card-number">RED LINE 10</div>
+            <div class="card-title">No cancellation button for subscription contracts (Kündigungsbutton)</div>
+          </div>
+          <div class="card-tag tag-consumer">Consumer Protection</div>
+          <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body">
+          <div class="what-block">
+            <div class="what-title">What is prohibited</div>
+            <div class="what-text">Any B2C subscription website that does not provide a <strong>permanently visible, two-click-accessible cancellation button</strong> labelled exactly "Jetzt kündigen" or equivalent. OLG Köln ruled in 2025 that a <strong>mandatory login before seeing the cancellation button is illegal</strong>. BGH ruled in May 2025 that even one-time contracts with automatic renewal require the button.</div>
+          </div>
+          <div class="law-ref">
+            <span class="law-tag">BGB §312k</span>
+            <span class="law-tag">OLG Köln (Jan 2025)</span>
+            <span class="law-tag">BGH (May 2025)</span>
+          </div>
+          <div class="penalty-row">
+            <div class="penalty-box">
+              <div class="penalty-label">Legal consequence</div>
+              <div class="penalty-val">Void</div>
+              <div class="penalty-sub">Consumer can cancel at any time without notice period (BGB §312k(6))</div>
+            </div>
+            <div class="penalty-box">
+              <div class="penalty-label">Warning letters</div>
+              <div class="penalty-val">Immediate</div>
+              <div class="penalty-sub">Consumer associations systematically audit — costs €2,000–10,000 per Abmahnung</div>
+            </div>
+          </div>
+          <div class="who-block">
+            <div class="who-title">Who must pay attention</div>
+            <div class="who-tags">
+              <span class="who-tag">All B2C subscription products</span>
+              <span class="who-tag">SaaS with consumer tier</span>
+              <span class="who-tag">Mobile app subscriptions</span>
+              <span class="who-tag">Freemium-to-paid flows</span>
+            </div>
+          </div>
+          <div class="case-block">
+            <div class="case-co">67 court judgments · 2022–2026</div>
+            <div class="case-text">§312k BGB has generated 67 published court rulings in under 4 years. Verbraucherschutz organisations systematically audit subscription websites. <strong>Any consumer-facing subscription product operating in Germany without a compliant Kündigungsbutton is a lawsuit waiting to happen.</strong></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" onclick="toggleCard(this)">
+        <div class="card-header">
+          <div class="card-left">
+            <div class="card-number">RED LINE 11</div>
+            <div class="card-title">Missing or incomplete Impressum (legal notice)</div>
+          </div>
+          <div class="card-tag tag-consumer">Consumer Protection</div>
+          <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body">
+          <div class="what-block">
+            <div class="what-title">What is prohibited</div>
+            <div class="what-text">Operating a commercially active website in Germany without a complete Impressum accessible within two clicks from any page. Required fields: complete legal entity name, registered address (no PO boxes), email, phone number, legal form, registration court and number, VAT ID, named responsible person. TMG was replaced by DDG in May 2024 — many existing Impressums reference the wrong law and are technically non-compliant.</div>
+          </div>
+          <div class="law-ref">
+            <span class="law-tag">DDG §5 (replaces TMG §5)</span>
+            <span class="law-tag">UWG §5a</span>
+            <span class="law-tag">In force: May 2024</span>
+          </div>
+          <div class="penalty-row">
+            <div class="penalty-box">
+              <div class="penalty-label">Abmahnung cost</div>
+              <div class="penalty-val">€2–15K</div>
+              <div class="penalty-sub">per warning letter from consumer protection organisations or competitors</div>
+            </div>
+            <div class="penalty-box">
+              <div class="penalty-label">Repeated violation</div>
+              <div class="penalty-val">€50K</div>
+              <div class="penalty-sub">court-ordered fine for continued non-compliance after injunction</div>
+            </div>
+          </div>
+          <div class="who-block">
+            <div class="who-title">Who must pay attention</div>
+            <div class="who-tags">
+              <span class="who-tag">Every website targeting Germany</span>
+              <span class="who-tag">Mobile apps with German users</span>
+              <span class="who-tag">International companies with .de domains</span>
+            </div>
+          </div>
+          <div class="case-block">
+            <div class="case-co">Industry-wide · Abmahnindustrie</div>
+            <div class="case-text">Germany has a well-established "Abmahnindustrie" — law firms that systematically scan websites for Impressum deficiencies and issue paid warning letters. <strong>Missing or incomplete Impressums are the single most common basis for commercial warning letters in German e-commerce.</strong> International companies launching German market operations routinely receive 2–5 Abmahnungen in their first year for Impressum issues alone.</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="summary-bar">
+    <div class="stat-item">
+      <div class="stat-n">11</div>
+      <div class="stat-label">Hard red lines across 6 regulatory domains</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-n">€35M</div>
+      <div class="stat-label">Maximum fine — EU AI Act prohibited practices</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-n">10yr</div>
+      <div class="stat-label">Maximum imprisonment — medical device fraud (MPDG §92)</div>
+    </div>
+  </div>
+</div>
+        </section>
+
+        <section id="orange" class="product-section book-page" data-book-page="orange" data-book-title="Orange lines" data-book-index="3">
+          <div class="section-kicker">Chapter 2</div>
+          <div class="handbook chapter-handbook" data-tabs data-chapter="orange">
+  <div class="hero">
+    <div class="hero-label">Germany · Product & Design · Orange Lines Handbook 2025</div>
+    <div class="hero-title">Where the law is <em>genuinely unclear</em><br>and the courts are still deciding</div>
+    <div class="hero-sub">These are not red lines — the activity isn't banned. But enforcement is inconsistent, case law is forming, and a wrong product decision made today can become a hard violation overnight when the next ruling drops. Know the safer path. Know the riskier one. Choose deliberately.</div>
+  </div>
+
+  <div class="nav-pills">
+    <div class="pill active" role="button" tabindex="0" data-tab-button="ai">AI & automation</div>
+    <div class="pill" role="button" tabindex="0" data-tab-button="data">Data & tracking</div>
+    <div class="pill" role="button" tabindex="0" data-tab-button="fin">Fintech</div>
+    <div class="pill" role="button" tabindex="0" data-tab-button="labor">HR & workplace</div>
+    <div class="pill" role="button" tabindex="0" data-tab-button="consumer">Consumer UX</div>
+    <div class="pill" role="button" tabindex="0" data-tab-button="platform">Platform & competition</div>
+  </div>
+
+  <!-- AI -->
+  <div class="section visible" data-tab-panel="ai">
+    <div class="section-intro">
+      EU AI Act high-risk obligations land <strong>2 August 2026</strong> — but classification disputes, undefined thresholds, and the Digital Omnibus proposal (which may delay to 2027) mean product teams are navigating genuine legal uncertainty right now. The safe assumption: if your AI touches HR, credit, education, or law enforcement, treat it as high-risk regardless of how you categorise it internally.
+    </div>
+    <div class="cards">
+
+      <div class="card" onclick="toggleCard(this)">
+        <div class="card-header">
+          <div class="card-left">
+            <div class="card-number">ORANGE LINE 01</div>
+            <div class="card-title">High-risk AI classification — "does my system qualify for the exemption?"</div>
+          </div>
+          <div class="card-tag tag-ai">AI Act</div>
+          <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body">
+          <div class="status-pill status-live"><div class="status-dot"></div>Obligations from Aug 2026 · Classification contested now</div>
+          <div class="tension-block">
+            <div class="tension-title">Why it's genuinely ambiguous</div>
+            <div class="tension-text">EU AI Act Art. 6(3) allows providers to self-declare a system <em>not</em> high-risk if it meets four conditions (narrow scope, improving human activity, detecting patterns, preparing tasks). But: <strong>the EC guidance document due February 2026 is still delayed</strong>. No published case list. And the catch — systems involving "profiling of natural persons" under GDPR Art. 4(4) are always high-risk regardless, which captures most HR, credit, and recommendation AI. The self-exemption path is narrower than it looks.</div>
+          </div>
+          <div class="law-ref">
+            <span class="law-tag">EU AI Act Art. 6(3)</span>
+            <span class="law-tag">Annex III</span>
+            <span class="law-tag">Art. 6(4) self-declaration</span>
+          </div>
+          <div class="verdict-row">
+            <div class="verdict-box verdict-safe">
+              <div class="verdict-label label-safe">Safer path</div>
+              <div class="verdict-text text-safe">Default to high-risk classification for any Annex III use case. Begin conformity assessment documentation now. Build human-override mechanisms into the product architecture. Treat Aug 2026 as a real deadline.</div>
+            </div>
+            <div class="verdict-box verdict-risky">
+              <div class="verdict-label label-risky">Riskier path</div>
+              <div class="verdict-text text-risky">Claim Art. 6(3) exemption for HR screening or credit scoring AI without documented legal analysis. Wait for the EC guidance before doing anything. Assume Digital Omnibus delay makes this someone else's problem.</div>
+            </div>
+          </div>
+          <div class="who-block">
+            <div class="who-title">Who must decide now</div>
+            <div class="who-tags">
+              <span class="who-tag">HR tech / recruitment AI</span>
+              <span class="who-tag">Credit scoring systems</span>
+              <span class="who-tag">Educational assessment AI</span>
+              <span class="who-tag">Insurance underwriting</span>
+            </div>
+          </div>
+          <div class="watch-block">
+            <div class="watch-label">Watch for</div>
+            <div class="watch-text">EC classification guidance (overdue, expected H1 2026). Digital Omnibus vote — if it passes, high-risk deadline shifts to Dec 2027. CEN-CENELEC harmonised standards (JTC 21) — without these, conformity assessment has no fixed methodology.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" onclick="toggleCard(this)">
+        <div class="card-header">
+          <div class="card-left">
+            <div class="card-number">ORANGE LINE 02</div>
+            <div class="card-title">AI-generated content labelling — where does "assisted" end and "generated" begin?</div>
+          </div>
+          <div class="card-tag tag-ai">AI Act</div>
+          <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body">
+          <div class="status-pill status-live"><div class="status-dot"></div>Art. 50 applies from Aug 2025 · Code of Practice still in draft</div>
+          <div class="tension-block">
+            <div class="tension-title">Why it's genuinely ambiguous</div>
+            <div class="tension-text">EU AI Act Art. 50(2) requires machine-readable labelling of AI-generated synthetic content. But the <strong>second draft of the Transparency Code of Practice (March 2026) deleted the entire classification framework</strong> from the first draft — there is now no published EU definition of what distinguishes "AI-assisted" from "AI-generated." An AI that rewrites a paragraph: generated? A human who accepts 80% of AI suggestions: assisted? No answer exists yet.</div>
+          </div>
+          <div class="law-ref">
+            <span class="law-tag">EU AI Act Art. 50(1)</span>
+            <span class="law-tag">EU AI Act Art. 50(2)</span>
+            <span class="law-tag">Art. 50(4) deepfakes</span>
+          </div>
+          <div class="verdict-row">
+            <div class="verdict-box verdict-safe">
+              <div class="verdict-label label-safe">Safer path</div>
+              <div class="verdict-text text-safe">Label all AI-generated content proactively. Implement C2PA metadata for images/video. Always disclose chatbot nature. Apply "editorial control" standard: if a human substantively reviewed and could have changed it, it may qualify as assisted. Document the decision.</div>
+            </div>
+            <div class="verdict-box verdict-risky">
+              <div class="verdict-label label-risky">Riskier path</div>
+              <div class="verdict-text text-risky">Claim "editorial assistance" exemption for bulk AI-generated marketing content. Use deepfake or synthetic voice without disclosure because "users should be able to tell." Wait for Code of Practice to finalise before building any labelling infrastructure.</div>
+            </div>
+          </div>
+          <div class="who-block">
+            <div class="who-title">Who must decide now</div>
+            <div class="who-tags">
+              <span class="who-tag">Content generation tools</span>
+              <span class="who-tag">Marketing AI</span>
+              <span class="who-tag">Voice synthesis products</span>
+              <span class="who-tag">Image/video generation</span>
+              <span class="who-tag">Chatbot interfaces</span>
+            </div>
+          </div>
+          <div class="watch-block">
+            <div class="watch-label">Watch for</div>
+            <div class="watch-text">Final Transparency Code of Practice (expected late 2026). German §201b StGB deepfake criminal law — draft passed Bundesrat, awaiting Bundestag. This would add criminal liability for non-consensual intimate deepfakes on top of Art. 50.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" onclick="toggleCard(this)">
+        <div class="card-header">
+          <div class="card-left">
+            <div class="card-number">ORANGE LINE 03</div>
+            <div class="card-title">Automated profiling that doesn't quite trigger GDPR Art. 22 — but is getting closer</div>
+          </div>
+          <div class="card-tag tag-ai">AI & GDPR</div>
+          <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body">
+          <div class="status-pill status-live"><div class="status-dot"></div>SCHUFA ruling (Dec 2023) expanding scope · DSK guidance (2024)</div>
+          <div class="tension-block">
+            <div class="tension-title">Why it's genuinely ambiguous</div>
+            <div class="tension-text">GDPR Art. 22 covers decisions "based solely on automated processing." But CJEU C-634/21 (SCHUFA) ruled that a credit score that is <strong>"determinative in practice"</strong> for the bank's decision counts — even if a human nominally makes the final call. The DSK (German DPA conference) in 2024 extended this logic: if AI output is the primary driver and human review is a "rubber stamp," Art. 22 applies. <strong>The "human in the loop" defence is weakening rapidly.</strong></div>
+          </div>
+          <div class="law-ref">
+            <span class="law-tag">GDPR Art. 22</span>
+            <span class="law-tag">CJEU C-634/21</span>
+            <span class="law-tag">CJEU C-203/22</span>
+            <span class="law-tag">DSK guidance 2024</span>
+          </div>
+          <div class="verdict-row">
+            <div class="verdict-box verdict-safe">
+              <div class="verdict-label label-safe">Safer path</div>
+              <div class="verdict-text text-safe">Build genuine human review with documented override capability. Conduct DPIA for all profiling. Provide Art. 22 rights (explanation, human review, contest) regardless of whether you think it technically applies. Run this past a German data protection lawyer.</div>
+            </div>
+            <div class="verdict-box verdict-risky">
+              <div class="verdict-label label-risky">Riskier path</div>
+              <div class="verdict-text text-risky">Rely on "human in the loop" where the human's actual job is to approve 97% of AI recommendations without investigation. Argue that your system only "assists" decisions when the output is shown in a format that drives immediate action.</div>
+            </div>
+          </div>
+          <div class="who-block">
+            <div class="who-title">Who must decide now</div>
+            <div class="who-tags">
+              <span class="who-tag">Credit / loan decisioning AI</span>
+              <span class="who-tag">Automated recruitment shortlisting</span>
+              <span class="who-tag">Insurance pricing AI</span>
+              <span class="who-tag">Fraud detection with auto-block</span>
+            </div>
+          </div>
+          <div class="watch-block">
+            <div class="watch-label">Watch for</div>
+            <div class="watch-text">CJEU pending referrals on Art. 22 scope. EU AI Act Art. 86 (right to explanation for high-risk AI decisions) applying from Aug 2026 — this is broader than Art. 22 and covers AI-assisted decisions, not just solely automated ones.</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- DATA -->
+  <div class="section" data-tab-panel="data">
+    <div class="section-intro">
+      The data protection gray zone in Germany is where <strong>technically legal choices become commercially catastrophic</strong> when case law moves. Google Analytics 4 was universally used; then Austrian and French DPAs ruled it illegal; German DPAs followed. The pattern repeats. Know which tools are currently contested before you build your stack around them.
+    </div>
+    <div class="cards">
+
+      <div class="card" onclick="toggleCard(this)">
+        <div class="card-header">
+          <div class="card-left">
+            <div class="card-number">ORANGE LINE 04</div>
+            <div class="card-title">Analytics tools in Germany — GA4, Meta Pixel, server-side tagging, fingerprinting</div>
+          </div>
+          <div class="card-tag tag-data">Tracking</div>
+          <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body">
+          <div class="status-pill status-live"><div class="status-dot"></div>VG Hannover (Mar 2025) · OLG Frankfurt (Dec 2025) · Active enforcement</div>
+          <div class="tension-block">
+            <div class="tension-title">Why it's genuinely ambiguous</div>
+            <div class="tension-text">After VG Hannover (2025) ruled GTM itself requires consent, the analytics stack question crystallised: <strong>GA4</strong> requires explicit opt-in (non-essential cookie + US data transfer via DPF, which is contested). <strong>Meta Pixel</strong> requires consent — no German DPA has accepted any alternative. <strong>Server-side tagging</strong> reduces client-side exposure but doesn't eliminate consent requirements — German DPAs haven't published specific guidance yet. <strong>Cookieless analytics</strong> (Matomo self-hosted, Plausible) are the safest but Germany does not recognise the French CNIL audience-measurement exemption.</div>
+          </div>
+          <div class="law-ref">
+            <span class="law-tag">TDDDG §25</span>
+            <span class="law-tag">GDPR Art. 6/44</span>
+            <span class="law-tag">VG Hannover 2025</span>
+            <span class="law-tag">OLG Frankfurt 2025</span>
+          </div>
+          <div class="verdict-row">
+            <div class="verdict-box verdict-safe">
+              <div class="verdict-label label-safe">Safer path</div>
+              <div class="verdict-text text-safe">Self-hosted Matomo with cookies disabled + IP anonymisation. GA4 loaded only post-consent via certified CMP. No Meta Pixel without explicit opt-in. Treat server-side tagging as still requiring consent until DPA guidance emerges.</div>
+            </div>
+            <div class="verdict-box verdict-risky">
+              <div class="verdict-label label-risky">Riskier path</div>
+              <div class="verdict-text text-risky">Loading GTM before consent. Claiming GA4 is fine because DPF is in place. Using cookieless fingerprinting as consent-free tracking. Assuming server-side tagging eliminates consent requirement because data doesn't hit the browser.</div>
+            </div>
+          </div>
+          <div class="who-block">
+            <div class="who-title">Who must decide now</div>
+            <div class="who-tags">
+              <span class="who-tag">All consumer websites in Germany</span>
+              <span class="who-tag">Marketing teams</span>
+              <span class="who-tag">Growth engineers</span>
+              <span class="who-tag">E-commerce</span>
+            </div>
+          </div>
+          <div class="watch-block">
+            <div class="watch-label">Watch for</div>
+            <div class="watch-text">DSK position paper on server-side tagging (no ETA). DPF third Schrems challenge at CJEU — if it invalidates DPF, GA4 loses its US transfer basis entirely. German CMO Ordinance (EinwV) — certified CMPs now standardised, affecting consent signal reliability.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" onclick="toggleCard(this)">
+        <div class="card-header">
+          <div class="card-left">
+            <div class="card-number">ORANGE LINE 05</div>
+            <div class="card-title">EU-US data transfers — DPF is valid today, contested tomorrow</div>
+          </div>
+          <div class="card-tag tag-data">Data transfers</div>
+          <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body">
+          <div class="status-pill status-live"><div class="status-dot"></div>DPF valid · CJEU challenge accepted · German DPAs recommend exit strategies</div>
+          <div class="tension-block">
+            <div class="tension-title">Why it's genuinely ambiguous</div>
+            <div class="tension-text">The EU-US Data Privacy Framework (DPF) is currently valid. But: Trump's January 2025 executive actions dismantled PCLOB oversight (a structural pillar of DPF). European Parliament formally questioned the Commission in February 2025. Schrems/noyb filed a new CJEU challenge. <strong>German BfDI and several Landesbeauftragte have explicitly recommended that organisations build "exit strategies" from US cloud dependency.</strong> This is not a red line yet — but every Schrems ruling has come faster than companies planned for.</div>
+          </div>
+          <div class="law-ref">
+            <span class="law-tag">GDPR Art. 44–49</span>
+            <span class="law-tag">EU-US DPF (2023/1795)</span>
+            <span class="law-tag">SCCs 2021</span>
+          </div>
+          <div class="verdict-row">
+            <div class="verdict-box verdict-safe">
+              <div class="verdict-label label-safe">Safer path</div>
+              <div class="verdict-text text-safe">Maintain DPF reliance but implement SCCs as a parallel fallback. Pseudonymise sensitive data before US transfer. For new contracts: prefer EU-hosted alternatives. Document a "30-day migration plan" for your critical US services.</div>
+            </div>
+            <div class="verdict-box verdict-risky">
+              <div class="verdict-label label-risky">Riskier path</div>
+              <div class="verdict-text text-risky">Relying solely on DPF with no SCCs backup. Transferring special category data (health, HR) to US vendors without additional safeguards. Assuming the third DPF holds when the structural conditions that justified it have weakened.</div>
+            </div>
+          </div>
+          <div class="who-block">
+            <div class="who-title">Who must decide now</div>
+            <div class="who-tags">
+              <span class="who-tag">B2B SaaS on AWS/Azure/GCP</span>
+              <span class="who-tag">HR tech (employee data)</span>
+              <span class="who-tag">Health data processors</span>
+              <span class="who-tag">Any US-parent company with EU operations</span>
+            </div>
+          </div>
+          <div class="watch-block">
+            <div class="watch-label">Watch for</div>
+            <div class="watch-text">CJEU decision on noyb DPF challenge (no fixed timeline, but Schrems II took 4 years from filing to ruling). US DOGE access to government databases — if EU Commission concludes US surveillance has expanded, DPF adequacy decision can be suspended unilaterally.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" onclick="toggleCard(this)">
+        <div class="card-header">
+          <div class="card-left">
+            <div class="card-number">ORANGE LINE 06</div>
+            <div class="card-title">Health-adjacent data — when does "wellness" become "health data" under Art. 9?</div>
+          </div>
+          <div class="card-tag tag-data">Data classification</div>
+          <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body">
+          <div class="status-pill status-forming"><div class="status-dot"></div>Case law forming · No bright-line rule</div>
+          <div class="tension-block">
+            <div class="tension-title">Why it's genuinely ambiguous</div>
+            <div class="tension-text">GDPR defines health data broadly: "data related to the physical or mental health of a natural person, including data that reveals information about their health status." <strong>German DPAs read this very expansively.</strong> Heart rate + sleep data + location: probably Art. 9 health data. Step count without health claims: probably not. Mental health app usage patterns: contested. Stress indicators from voice: almost certainly Art. 9. The DSK's 2023 paper on cloud health apps made clear that analytics and error tracking in health apps need separate legal bases from the core service.</div>
+          </div>
+          <div class="law-ref">
+            <span class="law-tag">GDPR Art. 9</span>
+            <span class="law-tag">GDPR Art. 4(15)</span>
+            <span class="law-tag">DSK paper Nov 2023</span>
+          </div>
+          <div class="verdict-row">
+            <div class="verdict-box verdict-safe">
+              <div class="verdict-label label-safe">Safer path</div>
+              <div class="verdict-text text-safe">Treat all biometric and physiological metrics as Art. 9 data. Obtain explicit consent (Art. 9(2)(a)) for health-adjacent features. Separate analytics consent from core service consent. Run a DPIA before launch.</div>
+            </div>
+            <div class="verdict-box verdict-risky">
+              <div class="verdict-label label-risky">Riskier path</div>
+              <div class="verdict-text text-risky">Classifying heart rate, sleep quality, or stress indicators as "fitness data" to avoid Art. 9's stricter regime. Using legitimate interest as the legal basis for health-adjacent processing. Bundling analytics consent with core service consent in health apps.</div>
+            </div>
+          </div>
+          <div class="who-block">
+            <div class="who-title">Who must decide now</div>
+            <div class="who-tags">
+              <span class="who-tag">Health / wellness apps</span>
+              <span class="who-tag">Wearable software</span>
+              <span class="who-tag">Mental health tech</span>
+              <span class="who-tag">Fitness platforms with health features</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FINTECH -->
+  <div class="section" data-tab-panel="fin">
+    <div class="section-intro">
+      German fintech regulation has three active gray zones in 2025–2026: <strong>embedded finance</strong> (where does "facilitating" end and "providing" begin?), <strong>BNPL</strong> (CCD II transposition overdue, rules unclear), and <strong>DeFi</strong> (MiCA explicitly excludes it, but BaFin is finding ways to reach in anyway). BaFin's Ethena GmbH action in 2025 showed they will move fast with limited warning.
+    </div>
+    <div class="cards">
+
+      <div class="card" onclick="toggleCard(this)">
+        <div class="card-header">
+          <div class="card-left">
+            <div class="card-number">ORANGE LINE 07</div>
+            <div class="card-title">Embedded finance — "facilitating" vs. "providing" payments or credit</div>
+          </div>
+          <div class="card-tag tag-fin">Fintech</div>
+          <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body">
+          <div class="status-pill status-live"><div class="status-dot"></div>BaFin substance-over-form doctrine · Solaris case ongoing</div>
+          <div class="tension-block">
+            <div class="tension-title">Why it's genuinely ambiguous</div>
+            <div class="tension-text">BaFin applies substance over form: <strong>if you control the customer relationship and the economics of a financial product, you may be considered the provider regardless of whether a licensed entity is in the chain.</strong> The Solaris case illustrated this: BaFin fined the BaaS provider — not just the end brands — because Solaris was deemed to operate "its own business" when enabling branded financial products. PSD3/PSR (political agreement Nov 2025, application 2027–28) will further tighten commercial agency exemptions.</div>
+          </div>
+          <div class="law-ref">
+            <span class="law-tag">KWG §32</span>
+            <span class="law-tag">ZAG §10</span>
+            <span class="law-tag">PSD3/PSR (pending)</span>
+          </div>
+          <div class="verdict-row">
+            <div class="verdict-box verdict-safe">
+              <div class="verdict-label label-safe">Safer path</div>
+              <div class="verdict-text text-safe">Pure infrastructure SaaS layer that never touches money flows. Obtain your own ZAG/KWG licence. Clearly document that the licensed partner — not you — controls credit decisions, customer contracts, and fund flows.</div>
+            </div>
+            <div class="verdict-box verdict-risky">
+              <div class="verdict-label label-risky">Riskier path</div>
+              <div class="verdict-text text-risky">White-labelling a licensed partner's banking product under your brand while controlling the customer relationship. Assuming a "technology provider" label exempts you from KWG obligations if you determine underwriting criteria or pricing.</div>
+            </div>
+          </div>
+          <div class="who-block">
+            <div class="who-title">Who must decide now</div>
+            <div class="who-tags">
+              <span class="who-tag">BaaS platforms</span>
+              <span class="who-tag">Marketplace finance features</span>
+              <span class="who-tag">BNPL integrations</span>
+              <span class="who-tag">B2B payment tools</span>
+            </div>
+          </div>
+          <div class="watch-block">
+            <div class="watch-label">Watch for</div>
+            <div class="watch-text">Solaris ongoing BaFin supervision — any additional action will set precedent for BaaS liability. PSD3/PSR transposition (Germany expected 2027) — commercial agent exemption scope will narrow.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" onclick="toggleCard(this)">
+        <div class="card-header">
+          <div class="card-left">
+            <div class="card-number">ORANGE LINE 08</div>
+            <div class="card-title">BNPL — CCD II transposition overdue, rules still unresolved</div>
+          </div>
+          <div class="card-tag tag-fin">Fintech</div>
+          <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body">
+          <div class="status-pill status-live"><div class="status-dot"></div>CCD II transposition deadline Nov 2025 missed · Application Nov 2026</div>
+          <div class="tension-block">
+            <div class="tension-title">Why it's genuinely ambiguous</div>
+            <div class="tension-text">EU Consumer Credit Directive II (CCD II) closes the exemptions that allowed most BNPL to operate unlicensed: the under-200-euro exemption, the 3-month-free exemption, and the interest-free exemption are all being removed. <strong>Germany missed the November 2025 transposition deadline.</strong> The rules must apply from November 2026, but the exact German legislative text is still in parliamentary process. BNPL operators face a law that is definitively changing but whose final German implementation details are unresolved.</div>
+          </div>
+          <div class="law-ref">
+            <span class="law-tag">CCD II (2023/2225)</span>
+            <span class="law-tag">BGB §491ff (current)</span>
+            <span class="law-tag">New BGB §506 (pending)</span>
+          </div>
+          <div class="verdict-row">
+            <div class="verdict-box verdict-safe">
+              <div class="verdict-label label-safe">Safer path</div>
+              <div class="verdict-text text-safe">Build creditworthiness assessment infrastructure now — it will be required regardless of final German text. Treat any deferred payment offering as consumer credit from a product design perspective. Monitor German legislative progress monthly.</div>
+            </div>
+            <div class="verdict-box verdict-risky">
+              <div class="verdict-label label-risky">Riskier path</div>
+              <div class="verdict-text text-risky">Continuing to operate under the old exemptions assuming they'll survive German transposition. Structuring BNPL products to technically stay under former thresholds without building credit assessment capability. Launching new BNPL features in Germany without legal opinion on CCD II impact.</div>
+            </div>
+          </div>
+          <div class="who-block">
+            <div class="who-title">Who must decide now</div>
+            <div class="who-tags">
+              <span class="who-tag">BNPL providers</span>
+              <span class="who-tag">E-commerce with deferred payment</span>
+              <span class="who-tag">B2B trade credit platforms</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- LABOR -->
+  <div class="section" data-tab-panel="labor">
+    <div class="section-intro">
+      The German employee data protection landscape is in its most unstable state in decades. The BAG declared the main BDSG provision on employee data <strong>partially inapplicable</strong> in 2023. A replacement statute (BeschDG) was drafted but never passed due to snap elections. Meanwhile, EU AI Act BetrVG interaction rules, algorithmic management court cases, and the Platform Work Directive transposition are all arriving simultaneously.
+    </div>
+    <div class="cards">
+
+      <div class="card" onclick="toggleCard(this)">
+        <div class="card-header">
+          <div class="card-left">
+            <div class="card-number">ORANGE LINE 09</div>
+            <div class="card-title">Aggregated / "anonymised" productivity monitoring — does anonymisation remove consent?</div>
+          </div>
+          <div class="card-tag tag-labor">HR Tech</div>
+          <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body">
+          <div class="status-pill status-live"><div class="status-dot"></div>BAG 2024 precedent · BetrVG §87 objective test applies regardless</div>
+          <div class="tension-block">
+            <div class="tension-title">Why it's genuinely ambiguous</div>
+            <div class="tension-text">Vendors claim that team-level aggregated productivity metrics don't monitor individuals. German DPAs and the BAG disagree: <strong>BetrVG §87(1) Nr. 6's "objective suitability" test looks at whether the underlying system can monitor individuals</strong> — not whether aggregated outputs do. A team of 5 where "team average" is reported is effectively an individual monitor. BAG May 2025 awarded €200 damages for data processing in Workday beyond Betriebsvereinbarung scope. This signals courts are willing to enforce fine-grained data use limitations.</div>
+          </div>
+          <div class="law-ref">
+            <span class="law-tag">BetrVG §87(1) Nr. 6</span>
+            <span class="law-tag">GDPR Art. 4(5)</span>
+            <span class="law-tag">BAG (May 2025)</span>
+          </div>
+          <div class="verdict-row">
+            <div class="verdict-box verdict-safe">
+              <div class="verdict-label label-safe">Safer path</div>
+              <div class="verdict-text text-safe">Obtain Betriebsvereinbarung before deploying any system with activity logging — even if outputs appear aggregated. Implement technical controls that genuinely prevent individual re-identification in teams under 15 people. Scope data processing precisely to what the Betriebsvereinbarung authorises.</div>
+            </div>
+            <div class="verdict-box verdict-risky">
+              <div class="verdict-label label-risky">Riskier path</div>
+              <div class="verdict-text text-risky">Claiming "team analytics" exempt from BetrVG because outputs are aggregated. Deploying Microsoft Viva Insights or similar tools and telling the Betriebsrat after the fact. Using anonymisation as a substitute for the consent process rather than as an additional safeguard.</div>
+            </div>
+          </div>
+          <div class="who-block">
+            <div class="who-title">Who must decide now</div>
+            <div class="who-tags">
+              <span class="who-tag">HR analytics vendors</span>
+              <span class="who-tag">Project management tools with activity logging</span>
+              <span class="who-tag">Collaboration platform vendors</span>
+              <span class="who-tag">Remote work monitoring tools</span>
+            </div>
+          </div>
+          <div class="watch-block">
+            <div class="watch-label">Watch for</div>
+            <div class="watch-text">BeschDG (Employee Data Protection Act) — new coalition may revive. If passed, it will either clarify or further restrict employee monitoring. EU Platform Work Directive transposition by Dec 2026 — Germany's implementation approach for algorithmic management rules is still undefined.</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- CONSUMER -->
+  <div class="section" data-tab-panel="consumer">
+    <div class="section-intro">
+      German consumer protection has three live gray zones: <strong>dark patterns</strong> (DSA Art. 25 enforcement started but definitions remain vague), <strong>personalised pricing</strong> (disclosure required since Omnibus Directive, but discrimination threshold undefined), and <strong>free trial conversions</strong> (BGH extended §312k scope in 2025 but edge cases remain unsettled).
+    </div>
+    <div class="cards">
+
+      <div class="card" onclick="toggleCard(this)">
+        <div class="card-header">
+          <div class="card-left">
+            <div class="card-number">ORANGE LINE 10</div>
+            <div class="card-title">Dark patterns — DSA Art. 25 enforcement started but the definition is still vague</div>
+          </div>
+          <div class="card-tag tag-consumer">Consumer Protection</div>
+          <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body">
+          <div class="status-pill status-live"><div class="status-dot"></div>X fined €120M · OLG Bamberg Eventim ruling · EC guidelines pending</div>
+          <div class="tension-block">
+            <div class="tension-title">Why it's genuinely ambiguous</div>
+            <div class="tension-text">DSA Art. 25 prohibits "deceptive design" but the EC has not yet published Art. 25(3) guidance on specifically prohibited patterns. OLG Bamberg ruled in February 2025 that Eventim's insurance opt-in push (guilt-inducing button copy, repeated popups, colour differentiation) violated UCPD — <strong>but as a UWG claim, not a DSA claim</strong>. This creates a gap: consumer UX is actionable under UWG/UCPD even when DSA enforcement is unclear. The Digital Fairness Act (DFA), expected as a proposal in Q4 2026, may codify specific banned patterns for non-VLOP platforms.</div>
+          </div>
+          <div class="law-ref">
+            <span class="law-tag">DSA Art. 25</span>
+            <span class="law-tag">UWG §4a</span>
+            <span class="law-tag">UCPD</span>
+            <span class="law-tag">OLG Bamberg (Feb 2025)</span>
+          </div>
+          <div class="verdict-row">
+            <div class="verdict-box verdict-safe">
+              <div class="verdict-label label-safe">Safer path</div>
+              <div class="verdict-text text-safe">Equal visual weight for accept/decline options. No guilt-inducing button copy ("I don't want to save money"). No pre-ticked upsell add-ons. Cancellation path as simple as sign-up. No urgency timers on consent or purchase flows.</div>
+            </div>
+            <div class="verdict-box verdict-risky">
+              <div class="verdict-label label-risky">Riskier path</div>
+              <div class="verdict-text text-risky">Colour-differentiating accept vs. decline buttons. Repeated re-prompting after user declines. "Confirm shaming" copy on the decline option. Making cancellation require a phone call or 7-step process while sign-up is one click.</div>
+            </div>
+          </div>
+          <div class="who-block">
+            <div class="who-title">Who must decide now</div>
+            <div class="who-tags">
+              <span class="who-tag">Consumer SaaS</span>
+              <span class="who-tag">E-commerce checkouts</span>
+              <span class="who-tag">Subscription products</span>
+              <span class="who-tag">Marketplace platforms</span>
+            </div>
+          </div>
+          <div class="watch-block">
+            <div class="watch-label">Watch for</div>
+            <div class="watch-text">EC Art. 25(3) DSA guidance (no ETA). Digital Fairness Act proposal (EC work programme Q4 2026) — likely to enumerate specific prohibited UX patterns for all platforms. BNetzA active enforcement of DSA in Germany — Bundesnetzagentur has taken on the DSA coordination role.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" onclick="toggleCard(this)">
+        <div class="card-header">
+          <div class="card-left">
+            <div class="card-number">ORANGE LINE 11</div>
+            <div class="card-title">Personalised pricing — disclosure required, discrimination threshold undefined</div>
+          </div>
+          <div class="card-tag tag-consumer">Consumer Protection</div>
+          <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body">
+          <div class="status-pill status-forming"><div class="status-dot"></div>Omnibus Directive implemented · Discrimination case law forming</div>
+          <div class="tension-block">
+            <div class="tension-title">Why it's genuinely ambiguous</div>
+            <div class="tension-text">Since the Omnibus Directive implementation (EGBGB §246a), German law requires disclosure when prices are personalised via automated decision-making. Dynamic pricing (same algorithm, all users, different times) is fine — no disclosure needed. Individual personalisation (this user sees €99, that user sees €129 for the same product) requires disclosure. But: <strong>the AGG anti-discrimination threshold — when does personalised pricing become illegal discrimination — has never been tested in German courts for algorithmic pricing.</strong> If your model uses proxy variables that correlate with protected characteristics (gender, ethnicity via location), the exposure is real but untested.</div>
+          </div>
+          <div class="law-ref">
+            <span class="law-tag">EGBGB §246a</span>
+            <span class="law-tag">UWG §5/5a</span>
+            <span class="law-tag">AGG (anti-discrimination)</span>
+          </div>
+          <div class="verdict-row">
+            <div class="verdict-box verdict-safe">
+              <div class="verdict-label label-safe">Safer path</div>
+              <div class="verdict-text text-safe">Disclose when individual personalisation is active ("This price is personalised for you"). Audit your pricing model for proxy discrimination against protected characteristics. Keep individual and time-based pricing architecturally separate and clearly documented.</div>
+            </div>
+            <div class="verdict-box verdict-risky">
+              <div class="verdict-label label-risky">Riskier path</div>
+              <div class="verdict-text text-risky">No disclosure on individually personalised prices. Using location-based signals that correlate strongly with ethnicity or socioeconomic status without bias testing. Treating algorithmic personalisation as equivalent to simple A/B testing for disclosure purposes.</div>
+            </div>
+          </div>
+          <div class="who-block">
+            <div class="who-title">Who must decide now</div>
+            <div class="who-tags">
+              <span class="who-tag">E-commerce with dynamic pricing</span>
+              <span class="who-tag">SaaS with personalised plans</span>
+              <span class="who-tag">Marketplace pricing engines</span>
+              <span class="who-tag">Insurance / lending pricing AI</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- PLATFORM -->
+  <div class="section" data-tab-panel="platform">
+    <div class="section-intro">
+      German competition and platform law is in active evolution on two fronts: <strong>GWB §19a</strong> is being tested beyond GAFAM for the first time, and <strong>algorithmic pricing collusion</strong> has moved from theoretical to empirically documented. Mid-size platform operators should be watching both.
+    </div>
+    <div class="cards">
+
+      <div class="card" onclick="toggleCard(this)">
+        <div class="card-header">
+          <div class="card-left">
+            <div class="card-number">ORANGE LINE 12</div>
+            <div class="card-title">Algorithmic pricing — when does dynamic pricing become illegal coordination?</div>
+          </div>
+          <div class="card-tag tag-platform">Competition Law</div>
+          <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body">
+          <div class="status-pill status-live"><div class="status-dot"></div>Empirical evidence published 2024 · Bundeskartellamt active on Amazon (Feb 2026)</div>
+          <div class="tension-block">
+            <div class="tension-title">Why it's genuinely ambiguous</div>
+            <div class="tension-text">A 2024 Journal of Political Economy study found <strong>28% higher margins in German petrol duopolies after both firms adopted algorithmic pricing software</strong> — the first empirical evidence of algorithmic tacit collusion in a real market. The Bundeskartellamt cited this pattern in its February 2026 Amazon action. Current law under GWB §1 / Art. 101 TFEU requires an "agreement or concerted practice" — but if two firms independently adopt the same pricing algorithm that responds to the same signals, has coordination occurred? No German or EU court has ruled on this yet.</div>
+          </div>
+          <div class="law-ref">
+            <span class="law-tag">GWB §1</span>
+            <span class="law-tag">Art. 101 TFEU</span>
+            <span class="law-tag">GWB §32 (BKartA powers)</span>
+          </div>
+          <div class="verdict-row">
+            <div class="verdict-box verdict-safe">
+              <div class="verdict-label label-safe">Safer path</div>
+              <div class="verdict-text text-safe">Design pricing algorithms independently — do not use shared third-party pricing software used by direct competitors. Maintain human oversight of pricing outputs. Document that your algorithm optimises on your own cost and demand data, not competitor price signals.</div>
+            </div>
+            <div class="verdict-box verdict-risky">
+              <div class="verdict-label label-risky">Riskier path</div>
+              <div class="verdict-text text-risky">Using the same third-party dynamic pricing vendor as your main competitor in a concentrated market. Building a pricing algorithm that explicitly monitors and responds to competitor prices in real-time without a firewall between competitive intelligence and pricing output.</div>
+            </div>
+          </div>
+          <div class="who-block">
+            <div class="who-title">Who must decide now</div>
+            <div class="who-tags">
+              <span class="who-tag">Marketplace platforms</span>
+              <span class="who-tag">E-commerce with algorithmic pricing</span>
+              <span class="who-tag">Travel / hospitality pricing tools</span>
+              <span class="who-tag">Fuel / energy pricing software</span>
+            </div>
+          </div>
+          <div class="watch-block">
+            <div class="watch-label">Watch for</div>
+            <div class="watch-text">Bundeskartellamt guidance on algorithmic pricing (announced as a priority for 2026). EC Digital Markets Act review — DMA interoperability obligations may indirectly affect pricing algorithm transparency requirements. First GWB §1 prosecution of algorithmic coordination (none yet, but BKartA has the investigative powers).</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="summary-bar">
+    <div class="stat-item">
+      <div class="stat-n">12</div>
+      <div class="stat-label">Gray zones across 6 domains — all actively contested</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-n">Aug '26</div>
+      <div class="stat-label">EU AI Act high-risk deadline — the next major reclassification event</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-n">DPF</div>
+      <div class="stat-label">EU-US Data Privacy Framework — valid today, CJEU challenge pending</div>
+    </div>
+  </div>
+</div>
+        </section>
+
+        <section id="green" class="product-section book-page" data-book-page="green" data-book-title="Green lines" data-book-index="4">
+          <div class="section-kicker">Chapter 3</div>
+          <div class="handbook chapter-handbook" data-tabs data-chapter="green">
+  <div class="hero">
+    <div class="hero-label">Germany · Product & Design · Green Lines Handbook 2025</div>
+    <div class="hero-title">What actually <em>scores points</em><br>in the German market</div>
+    <div class="hero-sub">Not compliance. Not "being safe." These are the affirmative choices — in architecture, UX, sales, and positioning — that make German buyers say yes faster, stay longer, and recommend you first.</div>
+  </div>
+
+  <div class="nav-pills">
+    <div class="pill active" role="button" tabindex="0" data-tab-button="arch">Product architecture</div>
+    <div class="pill" role="button" tabindex="0" data-tab-button="ux">UX & copy</div>
+    <div class="pill" role="button" tabindex="0" data-tab-button="sales">B2B sales</div>
+    <div class="pill" role="button" tabindex="0" data-tab-button="pos">Positioning</div>
+    <div class="pill" role="button" tabindex="0" data-tab-button="cert">Certifications</div>
+  </div>
+
+  <div class="section visible" data-tab-panel="arch">
+    <div class="section-intro">
+      German enterprise buyers don't evaluate software on features alone — they evaluate it on <strong>architectural risk</strong>. Where does data live? Who can be compelled to hand it over? Can we run this ourselves if the vendor disappears? These questions come before pricing in most Mittelstand procurement conversations.
+    </div>
+    <div class="cards">
+
+      <div class="card" onclick="toggleCard(this)">
+        <div class="card-header">
+          <div class="card-left">
+            <div class="card-number">01</div>
+            <div class="card-title">Offer on-premise or self-hosted deployment — even if almost nobody uses it</div>
+          </div>
+          <div class="card-tag tag-arch">Architecture</div>
+          <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body">
+          <div class="why-block">
+            <div class="why-label">Why</div>
+            <div class="why-text">The <strong>option to self-host</strong> signals something deeper than the feature itself: it proves you're not architecturally dependent on surveilling your customers. German procurement asks "what happens if the vendor is acquired by a US company?" Self-hosting answers that question before it's asked. Nextcloud's entire enterprise pipeline runs on this logic — customers often stay on managed cloud, but the self-host option closed the deal.</div>
+          </div>
+          <div class="how-steps">
+            <div class="how-title">How to do it</div>
+            <div class="step"><div class="step-n">1</div><div class="step-text">Publish a <em>docker-compose.yml</em> and documented self-host path, even if it's "for advanced users." The page's existence is the signal.</div></div>
+            <div class="step"><div class="step-n">2</div><div class="step-text">Create a dedicated "Deployment options" page in docs. List: Cloud (EU datacenter), Cloud (customer-chosen region), Self-hosted, On-premise enterprise. Four lines. Changes everything.</div></div>
+            <div class="step"><div class="step-n">3</div><div class="step-text">In enterprise sales decks, lead with the deployment diagram. Show data never leaves their infrastructure in the on-premise case. German IT-Leiter will stop you to discuss this slide.</div></div>
+            <div class="step"><div class="step-n">4</div><div class="step-text">Price self-hosted at a <em>premium</em>, not a discount. It signals enterprise seriousness and filters for buyers who genuinely need it.</div></div>
+          </div>
+          <div class="case-block">
+            <div class="case-co">Nextcloud · Stuttgart</div>
+            <div class="case-text">Offers cloud, managed hosting, and fully self-hosted. The German federal administration (ITZBund), Schleswig-Holstein (40,000 civil servants), and Dataport all chose self-hosted or managed variants — not because cloud wasn't available, but because architectural control was the procurement requirement. <strong>Customer interest tripled in H1 2025</strong> when US-EU tensions escalated, entirely driven by this architectural advantage.</div>
+          </div>
+          <div class="dont-block">
+            <div class="dont-title">Don't do this</div>
+            <div class="dont-text">Don't hide self-hosting behind a "contact sales" gate. German technical buyers Google "your-product self-host" before they contact you. If they find nothing, they assume it's impossible and move on.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" onclick="toggleCard(this)">
+        <div class="card-header">
+          <div class="card-left">
+            <div class="card-number">02</div>
+            <div class="card-title">Name the exact datacenter location, not just "EU" or "Europe"</div>
+          </div>
+          <div class="card-tag tag-arch">Architecture</div>
+          <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body">
+          <div class="why-block">
+            <div class="why-label">Why</div>
+            <div class="why-text">"Hosted in the EU" is increasingly hollow after it became clear that AWS Frankfurt, Azure Germany North, and Google Cloud Frankfurt are all structurally within CLOUD Act jurisdiction via US parent companies. German buyers know this. <strong>"Frankfurt, Germany" means something different from "EU region."</strong> Hetzner wins against AWS in SME procurement partly because their answer to "where is my data?" is "Falkenstein, Saxony" or "Nuremberg, Bavaria" — specific, German, not accessible to a US court order via a parent company.</div>
+          </div>
+          <div class="how-steps">
+            <div class="how-title">How to do it</div>
+            <div class="step"><div class="step-n">1</div><div class="step-text">In your footer, pricing page, and security page: <em>"Data stored in Hetzner Falkenstein (Germany)"</em> or <em>"Primary: AWS Frankfurt eu-central-1 · Backup: AWS Frankfurt eu-central-1"</em>. Be specific.</div></div>
+            <div class="step"><div class="step-n">2</div><div class="step-text">Add a dedicated "Data Residency" page. Include: primary storage location, backup location, whether any US-based staff can access data, and CLOUD Act exposure status if relevant.</div></div>
+            <div class="step"><div class="step-n">3</div><div class="step-text">If you use AWS/Azure/GCP, be honest about it and explain your CLOUD Act mitigation (encryption keys held by customer, data minimization, etc.). Evasiveness about this is more damaging than the fact itself.</div></div>
+            <div class="step"><div class="step-n">4</div><div class="step-text">For enterprise deals: offer a German-entity data processing agreement (AVV) with German law as governing law. Not just "EU law" — German procurement prefers <em>deutsches Recht</em>.</div></div>
+          </div>
+          <div class="case-block">
+            <div class="case-co">Hetzner Online · Gunzenhausen</div>
+            <div class="case-text">Hetzner's entire brand proposition is geographic specificity: datacenter locations in Falkenstein, Nuremberg, and Helsinki are named on every product page. A benchmark comparison found Hetzner CPX32 delivers <strong>14x better value-per-compute-unit than AWS</strong>, but in German SME conversations the sovereignty story — 100% German-owned, outside CLOUD Act, specific German addresses — is cited as often as price.</div>
+          </div>
+          <div class="dont-block">
+            <div class="dont-title">Don't do this</div>
+            <div class="dont-text">"We use industry-leading cloud infrastructure with EU data residency" is the template language that German procurement has learned to distrust. It usually means AWS Frankfurt, which means CLOUD Act exposure. Name your provider, name the city, and explain the implications.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" onclick="toggleCard(this)">
+        <div class="card-header">
+          <div class="card-left">
+            <div class="card-number">03</div>
+            <div class="card-title">Make data export a prominent feature, not a legal footnote</div>
+          </div>
+          <div class="card-tag tag-arch">Architecture</div>
+          <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body">
+          <div class="why-block">
+            <div class="why-label">Why</div>
+            <div class="why-text">GDPR Art. 20 gives users the right to data portability. German buyers know this. But <strong>making data export easy and prominent — beyond the legal minimum — signals confidence</strong> that you're not holding data hostage. It also reduces perceived lock-in risk, which is one of the top objections in German enterprise SaaS procurement. The paradox: making it easy to leave makes buyers more willing to commit.</div>
+          </div>
+          <div class="how-steps">
+            <div class="how-title">How to do it</div>
+            <div class="step"><div class="step-n">1</div><div class="step-text">Put "Export all my data" in Settings, not buried 4 levels deep. One click, ZIP file with CSV/JSON, arrives within seconds for reasonable data sizes.</div></div>
+            <div class="step"><div class="step-n">2</div><div class="step-text">Document what's included in the export: field-level detail, what formats, what metadata. A dedicated "Data portability" doc page scores disproportionate trust with procurement teams.</div></div>
+            <div class="step"><div class="step-n">3</div><div class="step-text">In B2B contracts: include a "Data return upon termination" clause that specifies format and timeline (e.g., 30-day access after cancellation). Offer this proactively — don't wait to be asked.</div></div>
+            <div class="step"><div class="step-n">4</div><div class="step-text">For enterprise: offer scheduled automated exports (weekly CSV drop to customer S3/SFTP). German compliance teams love this — it eliminates a manual audit step.</div></div>
+          </div>
+          <div class="case-block">
+            <div class="case-co">Basecamp / 37signals</div>
+            <div class="case-text">Basecamp's "Always bet on yourself" positioning explicitly markets easy data export as a trust signal. Their export includes a complete HTML archive of every conversation, file, and document — readable without any software. <strong>German-market customers cite this feature in reviews more than US customers</strong>, consistent with the sovereignty anxiety that drives German procurement decisions.</div>
+          </div>
+          <div class="dont-block">
+            <div class="dont-title">Don't do this</div>
+            <div class="dont-text">Don't make data export require contacting support, waiting 72 hours, or submitting a formal request form. German users interpret this as vendor lock-in by design, which is both a legal risk (GDPR Art. 20) and a commercial liability.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" onclick="toggleCard(this)">
+        <div class="card-header">
+          <div class="card-left">
+            <div class="card-number">04</div>
+            <div class="card-title">Publish a sub-processor list — and keep it current</div>
+          </div>
+          <div class="card-tag tag-arch">Architecture</div>
+          <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body">
+          <div class="why-block">
+            <div class="why-label">Why</div>
+            <div class="why-text">GDPR Art. 28(2) requires informing data processors about sub-processors. But <strong>German Datenschutzbeauftragte (DPOs) use your sub-processor list as a risk signal in procurement, not just a legal check</strong>. A clean, current, accessible list signals: (1) you know what you're doing, (2) you have nothing to hide, (3) you respect the customer's audit rights. An outdated or hidden list is a procurement blocker.</div>
+          </div>
+          <div class="how-steps">
+            <div class="how-title">How to do it</div>
+            <div class="step"><div class="step-n">1</div><div class="step-text">Publish at <em>yourproduct.com/legal/sub-processors</em> — not buried in the privacy policy. Separate page, indexed, linked from your security/trust page.</div></div>
+            <div class="step"><div class="step-n">2</div><div class="step-text">For each sub-processor: name, purpose, data category processed, country, legal transfer mechanism (e.g. SCCs + DPF). 5 columns. Simple table.</div></div>
+            <div class="step"><div class="step-n">3</div><div class="step-text">Add a changelog: "Last updated: [date]. Change: Added Stripe for payment processing (US, SCCs)." German DPOs will reference this changelog in their audit documentation.</div></div>
+            <div class="step"><div class="step-n">4</div><div class="step-text">Offer email notifications for sub-processor changes — GDPR Art. 28(2) requires prior notice. Make this an opt-in on the page. It's a tiny operational cost with disproportionate trust return.</div></div>
+          </div>
+          <div class="case-block">
+            <div class="case-co">Personio · Munich</div>
+            <div class="case-text">Personio's legal documentation infrastructure — including a fully transparent sub-processor list, a German-law AVV template, and DSGVO-Konformitätserklärung — is cited by German HR and legal teams as a primary reason for choosing Personio over US competitors. The documentation quality <strong>shortens procurement review cycles from 3 months to 3 weeks</strong> in Mittelstand deals, per customer testimonials.</div>
+          </div>
+          <div class="dont-block">
+            <div class="dont-title">Don't do this</div>
+            <div class="dont-text">Don't list sub-processors as "various cloud and service providers" or require an NDA to access the full list. German DPOs will treat this as a red flag and potentially a GDPR violation, not a negotiating position.</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section" data-tab-panel="ux">
+    <div class="section-intro">
+      German UX preferences are shaped by a specific cultural logic: <strong>Gründlichkeit (thoroughness) over speed, clarity over persuasion, and explicit consent over assumed permission</strong>. The growth-hacker playbook — urgency triggers, social proof spam, aggressive upsells — actively damages conversion rates in Germany. The patterns that work are almost the opposite.
+    </div>
+    <div class="cards">
+
+      <div class="card" onclick="toggleCard(this)">
+        <div class="card-header">
+          <div class="card-left">
+            <div class="card-number">05</div>
+            <div class="card-title">State explicitly what you do NOT do with data</div>
+          </div>
+          <div class="card-tag tag-ux">UX & Copy</div>
+          <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body">
+          <div class="why-block">
+            <div class="why-label">Why</div>
+            <div class="why-text">In a market saturated with vague privacy promises, <strong>negative assurances</strong> ("we don't do X") are more credible than positive ones ("we protect your data"). Germans are highly attuned to legal hedging and will parse your copy for loopholes. A direct statement like "Wir verkaufen keine Daten. Niemals." (We don't sell data. Never.) has higher persuasion value than "We take your privacy seriously" precisely because it's falsifiable — and therefore meaningful.</div>
+          </div>
+          <div class="how-steps">
+            <div class="how-title">How to do it</div>
+            <div class="step"><div class="step-n">1</div><div class="step-text">Put 3–4 negative assurances in your product's hero section or pricing page: <em>"Kein Tracking ohne Zustimmung · Keine Werbung · Keine Datenweitergabe an Dritte"</em></div></div>
+            <div class="step"><div class="step-n">2</div><div class="step-text">Be specific. "We don't use your data for AI training" is 5x more credible than "We respect your privacy." Specificity is proof of honesty.</div></div>
+            <div class="step"><div class="step-n">3</div><div class="step-text">In onboarding flows: after each permission request, add one line of what you explicitly won't do with that permission. <em>"This lets us show you your usage — we don't share it with advertisers."</em></div></div>
+            <div class="step"><div class="step-n">4</div><div class="step-text">Use the pattern in email footers: "You're receiving this because you signed up. No tracking pixels in this email." Signal it everywhere, normalize it as your brand voice.</div></div>
+          </div>
+          <div class="case-block">
+            <div class="case-co">Tuta (formerly Tutanota) · Hannover</div>
+            <div class="case-text">Tuta's entire website is structured around negative assurances: "No ads," "No tracking," "No data mining," "Open source." Each claim links to a technical explanation. This pattern — claim + proof — has helped Tuta <strong>grow to 10M+ users without any paid acquisition</strong>, almost entirely through word-of-mouth in privacy-conscious communities, particularly in Germany and DACH.</div>
+          </div>
+          <div class="dont-block">
+            <div class="dont-title">Don't do this</div>
+            <div class="dont-text">Don't write "We may use your data to improve our services" if you don't need to. German users parse this as permission to do anything. If you don't train on customer data, say "We don't train AI models on your data." The vague version costs you trust even if it's legally safe.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" onclick="toggleCard(this)">
+        <div class="card-header">
+          <div class="card-left">
+            <div class="card-number">06</div>
+            <div class="card-title">Design onboarding around information before action</div>
+          </div>
+          <div class="card-tag tag-ux">UX & Copy</div>
+          <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body">
+          <div class="why-block">
+            <div class="why-label">Why</div>
+            <div class="why-text">US growth-hacker onboarding is optimized for speed: get the user to value in 90 seconds, defer all friction. German users resist this. They want to understand what they're getting into <strong>before</strong> they commit data or time. An onboarding that explains the product's data model upfront — and then asks for permission — converts better in Germany than one that rushes past this to reach "the magic moment." The extra 60 seconds is not friction; it's respect.</div>
+          </div>
+          <div class="how-steps">
+            <div class="how-title">How to do it</div>
+            <div class="step"><div class="step-n">1</div><div class="step-text">Add a "What happens to your data" screen before the first permission request in mobile onboarding. 3 bullet points. Under 40 words. Opt-in rate goes up, not down.</div></div>
+            <div class="step"><div class="step-n">2</div><div class="step-text">Replace progress bars with context: "Step 2 of 4: We'll ask for calendar access so you can [specific benefit]. You can revoke this anytime in Settings."</div></div>
+            <div class="step"><div class="step-n">3</div><div class="step-text">Put a genuine "Warum brauchen wir das?" (Why do we need this?) link next to every permission request. Not a tooltip — an actual short explanation page.</div></div>
+            <div class="step"><div class="step-n">4</div><div class="step-text">Never use countdown timers, scarcity overlays, or "last chance" copy in onboarding. These signals are immediately decoded as manipulation by German users and destroy the trust you've built.</div></div>
+          </div>
+          <div class="case-block">
+            <div class="case-co">N26 · Berlin (early era)</div>
+            <div class="case-text">N26's original German-market onboarding was notable for explaining the KYC (Legitimationsprüfung) process before asking users to do it — including why German law required it, how long it would take, and what would happen to the data. <strong>German completion rates for the VideoIdent process were significantly higher</strong> than benchmark for similar fintech products, attributed to the upfront context.</div>
+          </div>
+          <div class="dont-block">
+            <div class="dont-title">Don't do this</div>
+            <div class="dont-text">Don't request location, contacts, or notifications immediately at app launch without explanation. German users deny these by default and never grant them retroactively. The US pattern of "ask first, explain if rejected" inverts in Germany: explain first, ask second.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" onclick="toggleCard(this)">
+        <div class="card-header">
+          <div class="card-left">
+            <div class="card-number">07</div>
+            <div class="card-title">Signal Seriosität through typography and visual restraint</div>
+          </div>
+          <div class="card-tag tag-ux">UX & Copy</div>
+          <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body">
+          <div class="why-block">
+            <div class="why-label">Why</div>
+            <div class="why-text"><em>Seriosität</em> — seriousness, credibility, solidity — is a commercial signal in the German market that has no direct English equivalent. It's what German business buyers assess before anything else. Visually, it reads as: <strong>neutral palettes, clear typography, information density that respects the reader's intelligence, absence of flashy animations and fake urgency.</strong> Overly designed, "startup-y" visual styles trigger a trust discount in German B2B contexts. The visual vocabulary of German industry institutions (KPMG, Deutsche Bank, Bosch) maps better than Silicon Valley aesthetic.</div>
+          </div>
+          <div class="how-steps">
+            <div class="how-title">How to do it</div>
+            <div class="step"><div class="step-n">1</div><div class="step-text">For German B2B: choose dark blue, slate gray, or forest green as primaries over bright coral, electric blue, or neon. Not dull — professional. The difference is saturation and intentionality.</div></div>
+            <div class="step"><div class="step-n">2</div><div class="step-text">Prioritize text-heavy explanations of complex features over abstract icon grids. German buyers read. Provide specification tables, comparison charts with exact numbers, and detailed FAQs — these are engagement drivers, not friction.</div></div>
+            <div class="step"><div class="step-n">3</div><div class="step-text">Remove countdown timers, "X people are looking at this right now," social proof spam, and exit-intent popups from German landing pages. These are fine in US e-commerce; they're read as manipulation in German B2B.</div></div>
+            <div class="step"><div class="step-n">4</div><div class="step-text">Use the Impressum as a trust signal, not a compliance checkbox. Make it prominent, complete, and human — include a named responsible person (Verantwortlicher), a real address, and a working phone number. German buyers check this before signing a contract.</div></div>
+          </div>
+          <div class="case-block">
+            <div class="case-co">SAP · Walldorf</div>
+            <div class="case-text">SAP's marketing material reads as dense and earnest by Silicon Valley standards — long-form technical documentation, specification sheets, reference architecture diagrams. This is a feature, not a flaw. SAP's <strong>€33B+ annual revenue from German enterprise customers</strong> is partly sustained by a visual and communication style that signals institutional seriousness rather than growth-hacker energy.</div>
+          </div>
+          <div class="dont-block">
+            <div class="dont-title">Don't do this</div>
+            <div class="dont-text">Don't translate a US B2B landing page directly into German. The urgency triggers ("Join 50,000 happy customers!"), vague benefit statements ("The all-in-one solution"), and aggressive CTA language ("Start crushing it today") land extremely poorly in German and signal inauthenticity.</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section" data-tab-panel="sales">
+    <div class="section-intro">
+      German B2B procurement is <strong>longer, more document-driven, and involves more stakeholders</strong> than equivalent US deals. The Datenschutzbeauftragter (DPO), the IT-Leiter (IT director), and the Betriebsrat (works council) all have formal roles. Understanding their specific concerns — and addressing them proactively — can cut a 6-month procurement cycle to 6 weeks.
+    </div>
+    <div class="cards">
+
+      <div class="card" onclick="toggleCard(this)">
+        <div class="card-header">
+          <div class="card-left">
+            <div class="card-number">08</div>
+            <div class="card-title">Treat the AVV (data processing agreement) as a sales accelerator, not a legal hurdle</div>
+          </div>
+          <div class="card-tag tag-sales">B2B Sales</div>
+          <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body">
+          <div class="why-block">
+            <div class="why-label">Why</div>
+            <div class="why-text">Every German company that processes personal data via a third-party SaaS tool is legally required to have an <em>Auftragsverarbeitungsvertrag</em> (AVV / DPA). The DPO's signature on the AVV is a procurement gate — no AVV, no contract. <strong>Most international vendors fail here</strong> by providing a generic DPA template that references US law, needs to be negotiated line-by-line, and takes 6-8 weeks of back-and-forth with legal. Offering a pre-negotiated, German-law-governed AVV template as standard ends this game entirely.</div>
+          </div>
+          <div class="how-steps">
+            <div class="how-title">How to do it</div>
+            <div class="step"><div class="step-n">1</div><div class="step-text">Have a German data protection law firm (not just a GDPR-specialist) draft your AVV template in German. €5,000–15,000 once. Saves months per enterprise deal.</div></div>
+            <div class="step"><div class="step-n">2</div><div class="step-text">Publish the AVV as a self-service document at <em>yourproduct.com/legal/avv</em>. The DPO should be able to download it, review it, and request signature without involving your sales team. This alone removes a 3-week delay from most deals.</div></div>
+            <div class="step"><div class="step-n">3</div><div class="step-text">Offer a "sign now" DocuSign flow directly on the AVV page. German DPOs are used to reviewing documents carefully — but they also appreciate when the process is operationally smooth once they've reviewed.</div></div>
+            <div class="step"><div class="step-n">4</div><div class="step-text">In your initial sales outreach to German enterprises: mention the AVV availability in the first email. "We provide a standard AVV ready for your DPO review" is a stronger opener than any feature claim.</div></div>
+          </div>
+          <div class="case-block">
+            <div class="case-co">Personio · Munich</div>
+            <div class="case-text">Personio's legal documentation — German-law AVV, DSGVO compliance documentation, standard contractual clauses, Betriebsrat integration guides — is available self-service before the sales conversation. Multiple German HR teams cite this as shortening their procurement review from "months" to "weeks." The documentation <strong>functions as a sales asset that qualifies the buyer's DPO before the first demo</strong>.</div>
+          </div>
+          <div class="dont-block">
+            <div class="dont-title">Don't do this</div>
+            <div class="dont-text">Don't ask German enterprise customers to sign an English-language DPA governed by Irish or Delaware law. Even if technically valid, this signals you don't understand the German market and adds 4–6 weeks to the procurement review as their legal team translates and validates it.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" onclick="toggleCard(this)">
+        <div class="card-header">
+          <div class="card-left">
+            <div class="card-number">09</div>
+            <div class="card-title">Build a Trust Center page that replaces 80% of security questionnaires</div>
+          </div>
+          <div class="card-tag tag-sales">B2B Sales</div>
+          <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body">
+          <div class="why-block">
+            <div class="why-label">Why</div>
+            <div class="why-text">German enterprise procurement, especially in finance, healthcare, and public sector, involves a <em>Sicherheitsfragebogen</em> (security questionnaire) that can run 50–200 questions. Answering these manually for each deal is both expensive and slow. A comprehensive Trust Center — a publicly accessible page with detailed security and compliance documentation — lets the DPO and IT-Leiter self-service the review. <strong>Companies with good Trust Centers report 60–80% reduction in security questionnaire volume</strong> and faster deal cycles.</div>
+          </div>
+          <div class="how-steps">
+            <div class="how-title">How to do it</div>
+            <div class="step"><div class="step-n">1</div><div class="step-text">Minimum Trust Center content: datacenter locations, encryption at rest/transit, access control policy, pen test cadence and last test date, incident response SLA, certifications (ISO 27001, BSI C5 if applicable), sub-processor list link, AVV link, bug bounty program.</div></div>
+            <div class="step"><div class="step-n">2</div><div class="step-text">Add a "Request full security documentation" button for NDA'd detailed documentation (network diagrams, pen test reports). German enterprise buyers are used to this flow and respect the security practice of not publishing everything publicly.</div></div>
+            <div class="step"><div class="step-n">3</div><div class="step-text">Include a changelog: "Last updated [date]. Added: ISO 27001 certification renewed, scope extended to include new Frankfurt datacenter." German DPOs will track this.</div></div>
+            <div class="step"><div class="step-n">4</div><div class="step-text">Reference the Trust Center in sales outreach: "Before our demo, you might want to forward our Trust Center to your IT team: [link]." This pre-qualifies the technical review and signals you have nothing to hide.</div></div>
+          </div>
+          <div class="case-block">
+            <div class="case-co">Slack / Salesforce (EU strategy)</div>
+            <div class="case-text">Slack's EU Trust Center and Salesforce's Trust.salesforce.com — including real-time status pages, historical incident logs, and downloadable compliance documentation — are frequently cited by German enterprise customers as why they chose these vendors over competitors with superior features but thinner documentation. <strong>Security documentation quality correlates with deal velocity</strong> more than almost any other factor in German enterprise sales.</div>
+          </div>
+          <div class="dont-block">
+            <div class="dont-title">Don't do this</div>
+            <div class="dont-text">Don't require prospects to fill out a form and wait 3 business days to receive security documentation. German procurement is already slow; adding artificial friction at the research stage loses deals before they start.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" onclick="toggleCard(this)">
+        <div class="card-header">
+          <div class="card-left">
+            <div class="card-number">10</div>
+            <div class="card-title">Publish transparent, all-inclusive pricing with German VAT shown</div>
+          </div>
+          <div class="card-tag tag-sales">B2B Sales</div>
+          <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body">
+          <div class="why-block">
+            <div class="why-label">Why</div>
+            <div class="why-text">German buyers have very low tolerance for "pricing surprises." A product that appears to cost €50/month but adds €20 in API fees, €15 for SSO, and €10 for more than 5 users is read as deceptive, not as normal SaaS pricing. <strong>Germans are culturally attuned to "Kleingedrucktes" (fine print)</strong> — and they look for it. Transparent, all-inclusive pricing with German VAT displayed is not just legally sensible; it's a commercial differentiator against US competitors who routinely use add-on pricing that surprises German buyers.</div>
+          </div>
+          <div class="how-steps">
+            <div class="how-title">How to do it</div>
+            <div class="step"><div class="step-n">1</div><div class="step-text">Show prices with and without MwSt. (19% VAT) on German pricing pages. "€99/Monat zzgl. MwSt." is legally required for B2B; "€117,81/Monat inkl. MwSt." is required for B2C. Show both.</div></div>
+            <div class="step"><div class="step-n">2</div><div class="step-text">List every feature included at each tier. Use explicit negatives: "SSO included in all plans" or "SSO not available on Starter." Vagueness about what's included signals a hidden upgrade path.</div></div>
+            <div class="step"><div class="step-n">3</div><div class="step-text">Add a "Frequently asked billing questions" section that directly answers: What happens when I cancel? Is there a minimum contract? Are there overage charges? Are migrations included?</div></div>
+            <div class="step"><div class="step-n">4</div><div class="step-text">Offer monthly billing as a genuine option, not a penalty tier. German SMEs strongly prefer month-to-month despite annual discounts being standard. The flexibility signal is worth more than the lock-in.</div></div>
+          </div>
+          <div class="case-block">
+            <div class="case-co">Notion (EU pricing strategy)</div>
+            <div class="case-text">Notion's switch to transparent, fully-inclusive pricing (removing the SSO paywall in 2024) was cited by German B2B reviewers as removing the primary objection to adoption. Previous pricing where SSO required the most expensive tier was described as "a trust problem, not a feature problem" in German SaaS community discussions. <strong>European customer growth accelerated in the quarter following the change.</strong></div>
+          </div>
+          <div class="dont-block">
+            <div class="dont-title">Don't do this</div>
+            <div class="dont-text">Don't price-gate security features (SSO, 2FA, audit logs, SAML) in German B2B. These are baseline security expectations, not premium features, for German enterprise buyers. Treating them as upsells signals you don't understand the market and generates immediate distrust.</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section" data-tab-panel="pos">
+    <div class="section-intro">
+      The single most powerful positioning move available to European software companies right now is <strong>being explicitly not-American</strong> — not as a political statement, but as a structural product advantage. CLOUD Act exposure, tariff uncertainty, and a widening US-EU values gap have created a moment where sovereignty is a purchase criterion. Companies that position into this clearly win deals they wouldn't have won 18 months ago.
+    </div>
+    <div class="cards">
+
+      <div class="card" onclick="toggleCard(this)">
+        <div class="card-header">
+          <div class="card-left">
+            <div class="card-number">11</div>
+            <div class="card-title">Use "digital sovereignty" as a concrete product feature, not abstract marketing</div>
+          </div>
+          <div class="card-tag tag-pos">Positioning</div>
+          <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body">
+          <div class="why-block">
+            <div class="why-label">Why</div>
+            <div class="why-text">"Digital sovereignty" has become a real procurement criterion in German public sector, healthcare, and critical infrastructure — and is moving into Mittelstand. The 2025 federal coalition agreement includes a €2B commitment to sovereign digital infrastructure. Schleswig-Holstein formalized Microsoft 365 exit for 40,000 civil servants. <strong>This creates direct budget line items for products that can credibly claim sovereignty.</strong> The companies winning these deals — Nextcloud, STACKIT, Aleph Alpha — all translate "sovereignty" into specific, auditable technical claims, not vague marketing language.</div>
+          </div>
+          <div class="how-steps">
+            <div class="how-title">How to do it</div>
+            <div class="step"><div class="step-n">1</div><div class="step-text">Translate sovereignty into 4–5 specific technical claims: "No US parent company," "Data stays in Germany," "No CLOUD Act exposure," "Customer holds encryption keys," "Available as on-premise." Each claim should be verifiable.</div></div>
+            <div class="step"><div class="step-n">2</div><div class="step-text">Create a "Sovereign deployment" landing page with a visual architecture diagram showing data flows — specifically showing what leaves Germany, what stays in Germany, and what can be made fully air-gapped.</div></div>
+            <div class="step"><div class="step-n">3</div><div class="step-text">If applicable: apply for "Gaia-X" membership or EUCS certification. These are embryonic standards but are referenced in German public procurement evaluations.</div></div>
+            <div class="step"><div class="step-n">4</div><div class="step-text">Use "Digitale Souveränität" (in German) when marketing to public sector. English "digital sovereignty" in German government procurement decks signals you copy-pasted rather than understood the concept.</div></div>
+          </div>
+          <div class="case-block">
+            <div class="case-co">Aleph Alpha + Schwarz Group · Heidelberg/Neckarsulm</div>
+            <div class="case-text">Aleph Alpha's pivot from "European OpenAI competitor" to "sovereign AI layer for German enterprises" — operationalized via STACKIT (Lidl's EU-only hyperscaler) — unlocked procurement pathways that OpenAI-via-Azure cannot access. Schwarz Group contributed €500M+, SAP, Bosch, and HPE joined as strategic partners. The entire value proposition is: <strong>GPT-4 capability + EU jurisdiction + German business law + no CLOUD Act exposure.</strong></div>
+          </div>
+          <div class="dont-block">
+            <div class="dont-title">Don't do this</div>
+            <div class="dont-text">Don't claim sovereignty and then list AWS us-east-1 as a backup region, or use Stripe (US company, CLOUD Act exposure) for payment processing without disclosure, or have all your engineering staff on US visas with US data access. German procurement teams will find these inconsistencies in the due diligence phase and it's worse than not claiming sovereignty at all.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" onclick="toggleCard(this)">
+        <div class="card-header">
+          <div class="card-left">
+            <div class="card-number">12</div>
+            <div class="card-title">Build deep Mittelstand vertical integration — not horizontal features</div>
+          </div>
+          <div class="card-tag tag-pos">Positioning</div>
+          <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body">
+          <div class="why-block">
+            <div class="why-label">Why</div>
+            <div class="why-text">The German Mittelstand (mid-market companies, 10–500 employees) represents the largest B2B software opportunity in Germany — and is systematically underserved by US horizontal SaaS tools that don't handle German-specific complexity: Kurzarbeit, Betriebsrat, Sozialversicherung, specific industry regulations (e.g. Handwerk, Gastronomie, Baurecht). <strong>Personio's €8.5B valuation was built almost entirely on Mittelstand-specific German HR complexity</strong> that Workday ignored. The same opportunity exists in accounting, legal, logistics, and construction verticals.</div>
+          </div>
+          <div class="how-steps">
+            <div class="how-title">How to do it</div>
+            <div class="step"><div class="step-n">1</div><div class="step-text">Pick one German-specific workflow that US products handle poorly (or don't handle at all). Build it correctly. Examples: Minijob/Midijob payroll calculations, Handwerkerrechnung formats, GoBD-konforme Buchführung, Betriebsrat notification workflows.</div></div>
+            <div class="step"><div class="step-n">2</div><div class="step-text">Partner with German Steuerberater (tax advisors) and Rechtsanwälte (lawyers) as product advisors. Their endorsement reaches Mittelstand buyers better than any paid channel.</div></div>
+            <div class="step"><div class="step-n">3</div><div class="step-text">Name the compliance specifically in your marketing: "GoBD-konform," "ELSTER-kompatibel," "Betriebsrat-tauglich." These are search terms German buyers use; US competitors rarely rank for them.</div></div>
+            <div class="step"><div class="step-n">4</div><div class="step-text">Target the Industrie- und Handelskammer (IHK) and Handwerkskammer event circuit. These associations are the trust network of the Mittelstand — a speaker slot at an IHK event is worth more than €50K in Google Ads.</div></div>
+          </div>
+          <div class="case-block">
+            <div class="case-co">Lexware · Freiburg</div>
+            <div class="case-text">Lexware has dominated German SME accounting software for 30+ years despite technically inferior features vs. US competitors, because it handles DATEV integration, German tax law changes in real-time, and Elster filing natively. Its <strong>annual revenue exceeds €100M from a customer base that would be "too small" for Salesforce or SAP to pursue directly</strong> — proof that Mittelstand-specific depth beats horizontal capability in Germany.</div>
+          </div>
+          <div class="dont-block">
+            <div class="dont-title">Don't do this</div>
+            <div class="dont-text">Don't enter the German market with a "we support GDPR" message and expect Mittelstand buyers to care. They do care about GDPR, but they care more about whether your product handles the Lohnsteueranmeldung correctly. Regulatory compliance is table stakes; German workflow specificity is the differentiator.</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section" data-tab-panel="cert">
+    <div class="section-intro">
+      German certifications are not just compliance checkboxes — they are <strong>procurement gates</strong>. BSI C5 determines whether you can sell to the federal government. TISAX determines whether automotive OEMs will talk to you. ISO 27001 is the minimum expectation for any enterprise deal. Knowing which certifications matter in which contexts — and pursuing them in the right order — is a direct revenue decision.
+    </div>
+    <div class="cards">
+
+      <div class="card" onclick="toggleCard(this)">
+        <div class="card-header">
+          <div class="card-left">
+            <div class="card-number">13</div>
+            <div class="card-title">ISO 27001 first — it's the table stakes that unlocks everything else</div>
+          </div>
+          <div class="card-tag tag-cert">Certification</div>
+          <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body">
+          <div class="why-block">
+            <div class="why-label">Why</div>
+            <div class="why-text">ISO 27001 is the universal baseline in German B2B enterprise procurement. Without it, a DPO or IT-Leiter cannot approve the vendor — it's a checkbox that ends the conversation if unchecked. <strong>It's also the foundation for BSI C5 and TISAX</strong>, so pursuing ISO 27001 first is the efficient path. A TÜV-certified ISO 27001 (specifically TÜV SÜD or TÜV Rheinland, both German institutions) carries additional weight over other certification bodies in Germany.</div>
+          </div>
+          <div class="how-steps">
+            <div class="how-title">How to do it</div>
+            <div class="step"><div class="step-n">1</div><div class="step-text">Budget €40,000–100,000 and 8–14 months for initial ISO 27001 certification. Use a German-headquartered auditor (TÜV SÜD, TÜV Rheinland, DQS) for maximum credibility with German procurement teams.</div></div>
+            <div class="step"><div class="step-n">2</div><div class="step-text">Scope carefully: include the production systems that process customer data, your development environment, and your key support processes. Scoping too narrowly (e.g., certifying a single datacenter) will be questioned by sophisticated DPOs.</div></div>
+            <div class="step"><div class="step-n">3</div><div class="step-text">Once certified: display the certificate number and certification body prominently on your Trust Center page. Link to the certificate PDF. German buyers will verify it directly with the certification body.</div></div>
+            <div class="step"><div class="step-n">4</div><div class="step-text">Mention the annual surveillance audit in your changelog. "ISO 27001 surveillance audit completed, no non-conformities" signals an active ISMS, not a one-time checkbox.</div></div>
+          </div>
+          <div class="case-block">
+            <div class="case-co">GroupAlarm · Munich</div>
+            <div class="case-text">GroupAlarm, an emergency alerting SaaS for German public authorities, pursued both BSI C5 Type 2 and SOC 2 Type 2 simultaneously. The C5 attestation opened federal and state government contracts that were previously inaccessible. <strong>Government contract revenue grew significantly in the 12 months following C5 attestation</strong>, and the company reports C5 is referenced in 80%+ of public sector RFPs they now receive.</div>
+          </div>
+          <div class="dont-block">
+            <div class="dont-title">Don't do this</div>
+            <div class="dont-text">Don't substitute SOC 2 Type 2 (US standard) for ISO 27001 in German procurement. German DPOs and IT-Leiter are familiar with ISO 27001 and will accept it; many have never evaluated a SOC 2 report and will flag the unfamiliar format as an additional review item.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" onclick="toggleCard(this)">
+        <div class="card-header">
+          <div class="card-left">
+            <div class="card-number">14</div>
+            <div class="card-title">BSI C5 Type 2 — mandatory for public sector, fast-growing in regulated industries</div>
+          </div>
+          <div class="card-tag tag-cert">Certification</div>
+          <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body">
+          <div class="why-block">
+            <div class="why-label">Why</div>
+            <div class="why-text">BSI C5 (Cloud Computing Compliance Criteria Catalogue) is the German federal government's cloud security standard — 121 controls across 17 domains. It is <strong>legally mandatory for federal procurement under §8 BSIG</strong> and, since the DigiG reform of July 2025, mandatory for healthcare SaaS under §393 SGB V. Financial services and insurance are adopting it rapidly. <strong>Type 2 attestation</strong> (testing over 6+ months, not just a point-in-time assessment) is required for federal contracts and strongly preferred in healthcare and finance. AWS, Azure, and Google Cloud all hold C5 Type 2 — but German sovereign cloud alternatives (STACKIT, T-Systems Open Telekom Cloud) use C5 + German ownership as a combined differentiator.</div>
+          </div>
+          <div class="how-steps">
+            <div class="how-title">How to do it</div>
+            <div class="step"><div class="step-n">1</div><div class="step-text">Budget €80,000–200,000+ and 12–18 months for C5 Type 2 (build on ISO 27001 — about 60–70% overlap). Use KPMG, Deloitte, TÜV IT, or another BSI-recognized auditor.</div></div>
+            <div class="step"><div class="step-n">2</div><div class="step-text">C5 requires a "transparency document" published on BSI's website — specific disclosures about your cloud architecture, locations, and processes. Plan for this public disclosure early.</div></div>
+            <div class="step"><div class="step-n">3</div><div class="step-text">Target healthcare SaaS specifically: as of July 2025, §393 SGB V makes C5 mandatory for health insurance companies' cloud providers. This is a direct new market that opened overnight.</div></div>
+            <div class="step"><div class="step-n">4</div><div class="step-text">For US/international SaaS entering Germany: C5 attestation on your EU region (even if you also operate US regions) is a credible signal. Clarify in your documentation which scope the attestation covers.</div></div>
+          </div>
+          <div class="case-block">
+            <div class="case-co">Kiteworks · (US company, German market strategy)</div>
+            <div class="case-text">Kiteworks, a US-headquartered secure content management platform, pursued BSI C5 Type 2 attestation specifically to enter the German enterprise market. Following attestation, they <strong>positioned it as "Germany's gold standard for cloud security"</strong> in press releases and explicitly used it in sales materials against German competitors. C5 became the centerpiece of their German go-to-market strategy, not a compliance afterthought.</div>
+          </div>
+          <div class="dont-block">
+            <div class="dont-title">Don't do this</div>
+            <div class="dont-text">Don't confuse C5 Type 1 (point-in-time) with Type 2 (period testing). German government and most regulated industry procurement explicitly require Type 2. Presenting a Type 1 in response to a Type 2 requirement signals you don't understand the standard.</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="summary-bar">
+    <div class="stat-item">
+      <div class="stat-n">14</div>
+      <div class="stat-label">Actionable green lines across 5 domains</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-n">3×</div>
+      <div class="stat-label">Nextcloud pipeline growth in H1 2025 from sovereignty positioning</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-n">6wks</div>
+      <div class="stat-label">Typical procurement cycle reduction from proactive AVV + Trust Center</div>
+    </div>
+  </div>
+</div>
+        </section>
+
+        <section id="quiz" class="product-section book-page" data-book-page="quiz" data-book-title="Quiz" data-book-index="5">
+          <div class="section-kicker">Chapter 4</div>
+          <div class="quiz">
+  <div class="header">
+    <div class="header-label">Germany · Product Compliance · Knowledge Check</div>
+    <div class="header-title">Can you survive the <em>German market</em>?</div>
+    <div class="header-sub">12 real-world scenarios. Pick the right call. See instantly why you're right — or why you'd be in trouble.</div>
+  </div>
+
+  <div class="progress-row">
+    <div class="progress-bar-track"><div class="progress-bar-fill" id="progress-fill" style="width:0%"></div></div>
+    <div class="progress-text" id="progress-text">0 / 12</div>
+  </div>
+
+  <div id="q-container"></div>
+
+  <div class="result-card" id="result-card">
+    <div class="result-score" id="result-score"></div>
+    <div class="result-label" id="result-label"></div>
+    <div class="result-title" id="result-title"></div>
+    <div class="result-sub" id="result-sub"></div>
+    <div class="result-breakdown" id="result-breakdown"></div>
+    <button class="restart-btn" onclick="restart()">Retake the quiz</button>
+  </div>
+</div>
+        </section>
+      </main>
+
+      <button class="book-arrow book-arrow-next" type="button" data-book-next aria-label="Next page">
+        <span class="book-arrow-label">Next</span>
+      </button>
+    </div>
+
+    <footer class="book-footer" aria-label="Page navigation">
+      <div class="book-footer-meta">
+        <div class="book-page-count"><span data-book-current>1</span> / <span data-book-total>5</span></div>
+        <div class="book-page-title" data-book-current-title>Cover</div>
+      </div>
+      <div class="book-dots">
+        <button class="book-dot is-active" type="button" data-book-jump="cover" aria-label="Go to cover"></button>
+        <button class="book-dot" type="button" data-book-jump="red" aria-label="Go to red lines"></button>
+        <button class="book-dot" type="button" data-book-jump="orange" aria-label="Go to orange lines"></button>
+        <button class="book-dot" type="button" data-book-jump="green" aria-label="Go to green lines"></button>
+        <button class="book-dot" type="button" data-book-jump="quiz" aria-label="Go to quiz"></button>
+      </div>
+    </footer>
+  </div>
+
+  <script src="germany_handbook_app.js"></script>
+</body>
+</html>
