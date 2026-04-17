@@ -10,20 +10,28 @@
   <div class="product-shell page-product" data-book>
     <header class="product-nav">
       <div class="product-nav-inner">
-        <button class="product-brand" type="button" data-book-jump="cover">Germany Digital Product Handbook</button>
-        <nav class="product-links" aria-label="Handbook sections">
-          <button class="product-link is-active" type="button" data-book-jump="cover">Cover</button>
-          <button class="product-link" type="button" data-book-jump="red">Prohibited</button>
-          <button class="product-link" type="button" data-book-jump="orange">Grey area</button>
-          <button class="product-link" type="button" data-book-jump="green">Recommend</button>
-          <button class="product-link" type="button" data-book-jump="quiz">Quiz</button>
-        </nav>
+        <button class="product-brand" type="button" data-book-jump="cover" data-i18n="brand">Germany Digital Product Handbook</button>
+        <div class="product-nav-actions">
+          <nav class="product-links" aria-label="Handbook sections" data-i18n-aria-label="navAria">
+            <button class="product-link is-active" type="button" data-book-jump="cover" data-i18n="nav.cover">Cover</button>
+            <button class="product-link" type="button" data-book-jump="red" data-i18n="nav.red">Prohibited</button>
+            <button class="product-link" type="button" data-book-jump="orange" data-i18n="nav.orange">Grey area</button>
+            <button class="product-link" type="button" data-book-jump="green" data-i18n="nav.green">Recommend</button>
+            <button class="product-link" type="button" data-book-jump="quiz" data-i18n="nav.quiz">Quiz</button>
+          </nav>
+          <label class="language-picker" aria-label="Language" data-i18n-aria-label="languageAria">
+            <select class="language-select" data-language-select aria-label="Language" data-i18n-aria-label="languageAria">
+              <option value="en">🇬🇧</option>
+              <option value="zh">🇨🇳</option>
+            </select>
+          </label>
+        </div>
       </div>
     </header>
 
     <div class="book-frame">
       <main class="book-viewport">
-        <section id="cover" class="product-section book-page is-active" data-book-page="cover" data-book-title="Cover" data-book-index="1">
+        <section id="cover" class="product-section book-page is-active" data-book-page="cover" data-book-title="Cover" data-book-title-key="nav.cover" data-book-index="1">
           <div class="cover">
 
   <div class="masthead">
@@ -170,12 +178,13 @@
 </div>
         </section>
 
-        <section id="red" class="product-section book-page" data-book-page="red" data-book-title="Prohibited" data-book-index="2">
-          <div class="section-kicker">Chapter 1</div>
-          <div class="handbook chapter-handbook" data-tabs data-chapter="red">
+        <section id="red" class="product-section book-page" data-book-page="red" data-book-title="Prohibited" data-book-title-key="nav.red" data-book-index="2">
+          <div class="section-kicker" data-i18n="chapter.1">Chapter 1</div>
+          <div data-localized-content="en">
+            <div class="handbook chapter-handbook" data-tabs data-chapter="red">
   <div class="hero">
     <div class="hero-copy">
-      <div class="hero-label">Germany · Product & Design · Prohibited Handbook 2025</div>
+      <div class="hero-label">Germany · Product & Design · Prohibited Handbook 2026</div>
       <div class="hero-title">What will <em>shut you down</em><br>in the German market</div>
       <div class="hero-sub">Absolute prohibitions. Cross these lines and you face criminal liability, fines up to 7% of global revenue, product injunctions, or forced market exit. No exceptions, no grey area.</div>
     </div>
@@ -796,13 +805,641 @@
     </div>
   </div>
 </div>
+          </div>
+          <div data-localized-content="zh" hidden>
+            <div class="handbook chapter-handbook" data-tabs data-chapter="red">
+  <div class="hero">
+    <div class="hero-copy">
+      <div class="hero-label">德国 · 产品出海 · 红线禁区 2026</div>
+      <div class="hero-title">哪些功能在德国会被<br><em>直接叫停</em></div>
+      <div class="hero-sub">这些不是“上线后再补合规”的问题，而是产品本身不能这样设计。一旦越线，可能面对刑事责任、最高全球营收 7% 的罚款、产品禁令，甚至被迫退出市场。对出海团队来说，先删掉红线功能，比上线后解释更便宜。</div>
+    </div>
+  </div>
+
+  <div class="nav-pills">
+    <div class="pill active" role="button" tabindex="0" data-tab-button="data">数据与隐私</div>
+    <div class="pill" role="button" tabindex="0" data-tab-button="ai">AI 禁区</div>
+    <div class="pill" role="button" tabindex="0" data-tab-button="fin">金融服务</div>
+    <div class="pill" role="button" tabindex="0" data-tab-button="med">医疗与健康</div>
+    <div class="pill" role="button" tabindex="0" data-tab-button="labor">劳动与人事</div>
+    <div class="pill" role="button" tabindex="0" data-tab-button="consumer">消费者保护</div>
+  </div>
+
+  <!-- DATA -->
+  <div class="section visible" data-tab-panel="data">
+    <div class="section-intro">
+      德国有 <strong>17 个独立数据保护监管机构</strong>，执法强度在欧洲数一数二。GDPR、BDSG 和 TDDDG 叠加生效，意味着一个看似普通的产品决策，可能同时触发多项违规。仅在 2025 年，德国各数据保护机构开出的罚款总额就达到 <strong>4690 万欧元</strong>，其中沃达丰一案就占了 4500 万欧元。
+    </div>
+    <div class="cards">
+
+      <div class="card" onclick="toggleCard(this)">
+        <div class="card-header">
+          <div class="card-left">
+            <div class="card-number">红线 01</div>
+            <div class="card-title">没有合法依据就处理个人数据</div>
+          </div>
+          <div class="card-tag tag-data">数据与隐私</div>
+          <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body">
+          <div class="what-block">
+            <div class="what-title">禁止行为</div>
+            <div class="what-text">如果没有 GDPR 规定的六种合法依据之一，你就不能收集、存储或使用个人数据。这六种依据包括：同意、合同履行、法律义务、重大利益、公共任务和合法利益。<strong>但广告画像通常不能依赖“合法利益”</strong>，德国监管机构长期明确反对这种做法。Hannoversche Volksbank 就因为以“合法利益”为由对客户做数字倾向评分，被罚 90 万欧元。</div>
+          </div>
+          <div class="law-ref">
+            <span class="law-tag">GDPR Art. 5/6</span>
+            <span class="law-tag">BDSG §42</span>
+            <span class="law-tag">GDPR Art. 9 (sensitive data)</span>
+          </div>
+          <div class="penalty-row">
+            <div class="penalty-box">
+              <div class="penalty-label">行政罚款</div>
+              <div class="penalty-val">€20M</div>
+              <div class="penalty-sub">或全球年营收的 4%，取较高者</div>
+            </div>
+            <div class="penalty-box">
+              <div class="penalty-label">刑事责任</div>
+              <div class="penalty-val">3 年</div>
+              <div class="penalty-sub">故意、商业规模违规可判监禁 3 年（BDSG §42）</div>
+            </div>
+          </div>
+          <div class="who-block">
+            <div class="who-title">谁必须注意</div>
+            <div class="who-tags">
+              <span class="who-tag">所有产品类型</span>
+              <span class="who-tag">数据分析团队</span>
+              <span class="who-tag">增长与营销</span>
+              <span class="who-tag">AI/ML 训练流程</span>
+            </div>
+          </div>
+          <div class="case-block">
+            <div class="case-co">Vodafone GmbH · 2025 · €45M</div>
+            <div class="case-text">德国联邦数据保护机构对 Vodafone 开出德国史上最高 GDPR 罚单。其一，MeinVodafone 门户认证缺陷导致未授权 eSIM 访问，被罚 <strong>3000 万欧元</strong>；其二，合作门店作为数据处理方监管失控，制造虚假合同，又被罚 <strong>1500 万欧元</strong>。核心教训是：数据控制者要对整条链路负责。</div>
+          </div>
+          <div class="case-block">
+            <div class="case-co">Deutsche Wohnen SE · Berlin DPA · €14.4M</div>
+            <div class="case-text">这家住房公司因为把租户数据存进一个无法删除过期资料的归档系统，被处以重罚。<strong>删不掉数据，本身就是 GDPR 违规。</strong> 欧盟法院在 C-807/21 中进一步确认，罚款可按集团全球营收计算，直接抬高上限。</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" onclick="toggleCard(this)">
+        <div class="card-header">
+          <div class="card-left">
+            <div class="card-number">红线 02</div>
+            <div class="card-title">未获事前明示同意就放置非必要 Cookie 或追踪器</div>
+          </div>
+          <div class="card-tag tag-data">数据与隐私</div>
+          <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body">
+          <div class="what-block">
+            <div class="what-title">禁止行为</div>
+            <div class="what-text">在用户明确选择同意之前，就提前加载分析、广告或追踪脚本，是不允许的。这里甚至包括 Google Tag Manager 本身。汉诺威行政法院在 2025 年 3 月裁定，若在用户同意前加载 GTM，就违反了 TDDDG §25。并且，“全部拒绝”按钮必须和“全部接受”一样显眼。预勾选框或故意做成不对称按钮样式，也都属于违法设计。</div>
+          </div>
+          <div class="law-ref">
+            <span class="law-tag">TDDDG §25</span>
+            <span class="law-tag">GDPR Art. 6/7</span>
+            <span class="law-tag">BGH Planet49 (2020)</span>
+            <span class="law-tag">VG Hannover (2025)</span>
+          </div>
+          <div class="penalty-row">
+            <div class="penalty-box">
+              <div class="penalty-label">TDDDG 罚款</div>
+              <div class="penalty-val">€300K</div>
+              <div class="penalty-sub">按次处罚，且可与 GDPR 罚款叠加</div>
+            </div>
+            <div class="penalty-box">
+              <div class="penalty-label">GDPR 叠加</div>
+              <div class="penalty-val">€20M+</div>
+              <div class="penalty-sub">若数据在无同意情况下被传输，还可能叠加至营收 4%</div>
+            </div>
+          </div>
+          <div class="who-block">
+            <div class="who-title">谁必须注意</div>
+            <div class="who-tags">
+              <span class="who-tag">所有面向消费者的产品</span>
+              <span class="who-tag">营销工程团队</span>
+              <span class="who-tag">产品分析</span>
+              <span class="who-tag">带官网的 B2B SaaS</span>
+            </div>
+          </div>
+          <div class="case-block">
+            <div class="case-co">汉诺威行政法院裁定 · 2025 年 3 月</div>
+            <div class="case-text">德国行政法院裁定：<strong>Google Tag Manager 本身在加载前也需要明确用户同意</strong>，因为它一加载就会联系 Google 服务器并传输 IP 地址和设备数据。任何没有合规 CMP、并且未做到“同意后才触发 GTM”的网站，都会直接受影响。</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" onclick="toggleCard(this)">
+        <div class="card-header">
+          <div class="card-left">
+            <div class="card-number">红线 03</div>
+            <div class="card-title">在没有充分保障措施时向第三国传输数据</div>
+          </div>
+          <div class="card-tag tag-data">数据与隐私</div>
+          <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body">
+          <div class="what-block">
+            <div class="what-title">禁止行为</div>
+            <div class="what-text">如果没有合法的数据跨境传输机制，就不能把个人数据传出欧洲经济区。自 2025 年美国相关行政动作削弱 PCLOB 监督后，欧盟与美国的数据隐私框架正面临 <strong>欧盟法院的现实挑战</strong>。德国数据保护机构已经开始建议企业准备“脱离美国云依赖”的退出方案。向中国、印度及其他未获充分性认定国家传输数据，通常都需要 SCC 加上 Transfer Impact Assessment。</div>
+          </div>
+          <div class="law-ref">
+            <span class="law-tag">GDPR Art. 44–49</span>
+            <span class="law-tag">BDSG §42</span>
+            <span class="law-tag">EU-US DPF (contested)</span>
+          </div>
+          <div class="penalty-row">
+            <div class="penalty-box">
+              <div class="penalty-label">行政罚款</div>
+              <div class="penalty-val">€20M</div>
+              <div class="penalty-sub">或全球营收的 4%</div>
+            </div>
+            <div class="penalty-box">
+              <div class="penalty-label">刑事风险</div>
+              <div class="penalty-val">3 年</div>
+              <div class="penalty-sub">故意违法跨境传输，可判 3 年监禁（BDSG §42）</div>
+            </div>
+          </div>
+          <div class="who-block">
+            <div class="who-title">谁必须注意</div>
+            <div class="who-tags">
+              <span class="who-tag">部署在美国云上的 B2B SaaS</span>
+              <span class="who-tag">HR 科技（员工数据传美）</span>
+              <span class="who-tag">使用美国分析供应商</span>
+              <span class="who-tag">接入美国模型供应商的 AI 产品</span>
+            </div>
+          </div>
+          <div class="case-block">
+            <div class="case-co">Meta / Facebook Ireland · €1.2B (Ireland DPA, 2023)</div>
+            <div class="case-text">这是 GDPR 历史上最大的一张罚单，原因是 <strong>在 Schrems II 之后，Meta 仍系统性地把欧盟用户数据传到美国服务器，而没有足够保障措施</strong>。德国监管机构在挑战此类传输方面尤为强硬，而且可以独立执法。取代 Privacy Shield 的 DPF 现在也面临欧盟法院挑战。</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- AI -->
+  <div class="section" data-tab-panel="ai">
+    <div class="section-intro">
+      《欧盟 AI 法案》中的 <strong>绝对禁止条款（第 5 条）已于 2025 年 2 月 2 日生效</strong>。最高罚款可达 3500 万欧元，或全球年营收的 7%。这不是“满足条件就能做”的合规要求，而是<strong>行为本身就被禁止</strong>的高压线。
+    </div>
+    <div class="cards">
+
+      <div class="card" onclick="toggleCard(this)">
+        <div class="card-header">
+          <div class="card-left">
+            <div class="card-number">红线 04</div>
+            <div class="card-title">在工作场所或教育机构中使用 AI 情绪识别</div>
+          </div>
+          <div class="card-tag tag-ai">欧盟 AI 法案</div>
+          <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body">
+          <div class="what-block">
+            <div class="what-title">禁止行为</div>
+            <div class="what-text">任何通过摄像头、语音分析、生物识别信号或生理数据来推断员工或学生情绪状态的 AI 系统，都属于禁止范围，不管你对外声称它的用途是什么。典型禁例包括：客服压力追踪工具、招聘视频面试情绪打分、通过摄像头判断学生注意力、线上监考情绪标记，以及汇总“情绪信号”的 HR 仪表盘。<strong>唯一极窄的例外，是确属医疗或安全关键用途。</strong></div>
+          </div>
+          <div class="law-ref">
+            <span class="law-tag">EU AI Act Art. 5(1)(f)</span>
+            <span class="law-tag">生效：2025 年 2 月 2 日</span>
+          </div>
+          <div class="penalty-row">
+            <div class="penalty-box">
+              <div class="penalty-label">最高罚款</div>
+              <div class="penalty-val">€35M</div>
+              <div class="penalty-sub">或全球年营业额的 7%</div>
+            </div>
+            <div class="penalty-box">
+              <div class="penalty-label">执法机构</div>
+              <div class="penalty-val">BNetzA</div>
+              <div class="penalty-sub">德国联邦网络局，德国指定的 AI 市场监管者</div>
+            </div>
+          </div>
+          <div class="who-block">
+            <div class="who-title">谁必须注意</div>
+            <div class="who-tags">
+              <span class="who-tag">HR 科技 / 招聘 AI</span>
+              <span class="who-tag">教育科技 / 在线监考</span>
+              <span class="who-tag">呼叫中心软件</span>
+              <span class="who-tag">员工分析</span>
+              <span class="who-tag">员工健康应用</span>
+            </div>
+          </div>
+          <div class="case-block">
+            <div class="case-co">HireVue · 持续监管审视中</div>
+            <div class="case-text">HireVue 曾在视频面试中用 AI 分析面部表情、语音语调和措辞，为候选人打分。公司在监管压力下于 2021 年移除了面部分析功能。<strong>按照欧盟 AI 法案第 5(1)(f) 条，这类基于面部或语音的情绪打分，在欧盟部署时属于绝对禁止</strong>，不是“多加几层保护就能上线”的功能，而是根本不能存在。</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" onclick="toggleCard(this)">
+        <div class="card-header">
+          <div class="card-left">
+            <div class="card-number">红线 05</div>
+            <div class="card-title">AI 社会评分系统：根据行为或个人特征给人打分</div>
+          </div>
+          <div class="card-tag tag-ai">欧盟 AI 法案</div>
+          <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body">
+          <div class="what-block">
+            <div class="what-title">禁止行为</div>
+            <div class="what-text">如果 AI 根据一个人的社会行为或个人特征来评估、分类，并把这个分类结果用于<strong>无关场景中的不利对待</strong>，或者做出与原始行为明显不成比例的处理，这种系统就属于禁止范围。典型例子包括：租房平台根据社交媒体活动给你打“可信分”并拒绝出租；雇主根据线上行为历史评估“文化适配度”；信贷产品根据人格推断做授信判断。<strong>这条禁令同时适用于公共部门和私人企业。</strong></div>
+          </div>
+          <div class="law-ref">
+            <span class="law-tag">EU AI Act Art. 5(1)(c)</span>
+            <span class="law-tag">GDPR Art. 22</span>
+            <span class="law-tag">生效：2025 年 2 月 2 日</span>
+          </div>
+          <div class="penalty-row">
+            <div class="penalty-box">
+              <div class="penalty-label">最高罚款</div>
+              <div class="penalty-val">€35M</div>
+              <div class="penalty-sub">或全球年营业额的 7%</div>
+            </div>
+            <div class="penalty-box">
+              <div class="penalty-label">附加风险</div>
+              <div class="penalty-val">€20M</div>
+              <div class="penalty-sub">还可能叠加 GDPR 第 22 条自动决策处罚</div>
+            </div>
+          </div>
+          <div class="who-block">
+            <div class="who-title">谁必须注意</div>
+            <div class="who-tags">
+              <span class="who-tag">平台型产品</span>
+              <span class="who-tag">信用评分 AI</span>
+              <span class="who-tag">租客筛选</span>
+              <span class="who-tag">保险核保 AI</span>
+              <span class="who-tag">平台信誉系统</span>
+            </div>
+          </div>
+          <div class="case-block">
+            <div class="case-co">SCHUFA Holding · CJEU C-634/21 · December 2023</div>
+            <div class="case-text">这是一个标志性判决：尽管最终贷款决定由银行作出，但 SCHUFA 的自动信用评分因为在实践中具有决定性影响，仍构成 GDPR 第 22 条下的“自动化个体决策”。再叠加 AI 法案第 5(1)(c) 条，<strong>任何对人分类并影响重要决策的评分系统，现在都处于双重监管审视之下。</strong></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" onclick="toggleCard(this)">
+        <div class="card-header">
+          <div class="card-left">
+            <div class="card-number">红线 06</div>
+            <div class="card-title">从互联网抓取人脸，建立生物识别数据库</div>
+          </div>
+          <div class="card-tag tag-ai">欧盟 AI 法案</div>
+          <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body">
+          <div class="what-block">
+            <div class="what-title">禁止行为</div>
+            <div class="what-text">通过大规模抓取互联网图片或监控画面来建立、扩充人脸识别数据库，是被直接禁止的。这正是 Clearview AI 的核心商业模式，而它已被欧盟 AI 法案第 5(1)(e) 条明确列为绝对禁止行为。另一个被禁的做法，是执法机构在公共空间进行实时远程生物识别（第 5(1)(h) 条），除非属于极窄范围内、且已获得司法授权的紧急情形。</div>
+          </div>
+          <div class="law-ref">
+            <span class="law-tag">EU AI Act Art. 5(1)(e)</span>
+            <span class="law-tag">EU AI Act Art. 5(1)(h)</span>
+            <span class="law-tag">GDPR Art. 9 (biometric data)</span>
+          </div>
+          <div class="penalty-row">
+            <div class="penalty-box">
+              <div class="penalty-label">最高罚款</div>
+              <div class="penalty-val">€35M</div>
+              <div class="penalty-sub">或全球营收的 7%</div>
+            </div>
+            <div class="penalty-box">
+              <div class="penalty-label">Clearview 先例</div>
+              <div class="penalty-val">~€100M</div>
+              <div class="penalty-sub">AI 法案前欧盟累计罚款近 1 亿欧元；如今那只是起点，不是上限</div>
+            </div>
+          </div>
+          <div class="who-block">
+            <div class="who-title">谁必须注意</div>
+            <div class="who-tags">
+              <span class="who-tag">人脸识别供应商</span>
+              <span class="who-tag">安防 / 监控软件</span>
+              <span class="who-tag">AI 训练数据公司</span>
+              <span class="who-tag">计算机视觉产品</span>
+            </div>
+          </div>
+          <div class="case-block">
+            <div class="case-co">Clearview AI · Dutch DPA · €30.5M (2024) + ongoing</div>
+            <div class="case-text">在 AI 法案生效前，荷兰数据保护机构已对 Clearview 罚款 3050 万欧元，另加 510 万欧元持续违规处罚；法国和意大利监管机构也分别罚了 2000 万欧元。<strong>到了 2025 年 2 月之后，Clearview 的商业模式在欧盟不再只是“高风险、高罚款”，而是直接违法。</strong> 荷兰监管机构甚至曾研究是否追究高管个人责任。</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FINANCIAL -->
+  <div class="section" data-tab-panel="fin">
+    <div class="section-intro">
+      BaFin 是欧洲最强硬的金融监管机构之一。在德国，无牌经营金融服务不是“民事纠纷”层面的事，而是<strong>最高可判 5 年监禁的刑事犯罪</strong>。仅在 2025 年，BaFin 就开出了史上最大 AML 罚单（J.P. Morgan SE 被罚 4500 万欧元），并在某款加密产品上线数周内就直接出手叫停。
+    </div>
+    <div class="cards">
+
+      <div class="card" onclick="toggleCard(this)">
+        <div class="card-header">
+          <div class="card-left">
+            <div class="card-number">红线 07</div>
+            <div class="card-title">没有 BaFin 牌照就嵌入支付或放贷功能</div>
+          </div>
+          <div class="card-tag tag-fin">金融服务</div>
+          <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body">
+          <div class="what-block">
+            <div class="what-title">禁止行为</div>
+            <div class="what-text">如果没有相应的 BaFin 授权，你就不能在德国经营支付、吸收存款、放贷、投资建议或加密资产相关服务。<strong>BaFin 看重实质，不看包装</strong>：哪怕你把产品叫“平台工具”或“财务健康功能”，只要它涉及资金流转、持有资金，或参与授信决策，就可能需要牌照。即使你嵌入的是持牌合作方产品，也不代表自动免责，BaFin 会看究竟是谁掌控客户关系。</div>
+          </div>
+          <div class="law-ref">
+            <span class="law-tag">KWG §32 / §54</span>
+            <span class="law-tag">ZAG §10 / §63</span>
+            <span class="law-tag">MiCA (from Dec 2024)</span>
+            <span class="law-tag">KWG §54a (CEO liability)</span>
+          </div>
+          <div class="penalty-row">
+            <div class="penalty-box">
+              <div class="penalty-label">刑期</div>
+              <div class="penalty-val">5 年</div>
+              <div class="penalty-sub">故意无牌经营，最高可判 5 年（KWG §54）</div>
+            </div>
+            <div class="penalty-box">
+              <div class="penalty-label">CEO 个人责任</div>
+              <div class="penalty-val">5 年</div>
+              <div class="penalty-sub">若 CEO 无视 BaFin 整改命令并造成系统性风险，也可承担刑责（KWG §54a）</div>
+            </div>
+          </div>
+          <div class="who-block">
+            <div class="who-title">谁必须注意</div>
+            <div class="who-tags">
+              <span class="who-tag">金融科技创业者</span>
+              <span class="who-tag">嵌入式金融产品</span>
+              <span class="who-tag">先买后付</span>
+              <span class="who-tag">Crypto / DeFi 界面</span>
+              <span class="who-tag">智能投顾</span>
+            </div>
+          </div>
+          <div class="case-block">
+            <div class="case-co">N26 Bank · BaFin · 2021–2025 (ongoing)</div>
+            <div class="case-text">这家柏林新银行先在 2021 年被罚 425 万欧元，后在 2024 年因系统性延迟可疑交易报告再次被罚 920 万欧元。BaFin 多年对其施加<strong>每月新增用户 5 万人的增长上限</strong>（此前约 17 万），外加特别监督员和额外资本要求。两位联合创始人最终离职。AML 不合规带来的运营代价，不只是罚款，而是数亿欧元级别的增长损失。</div>
+          </div>
+          <div class="case-block">
+            <div class="case-co">J.P. Morgan SE · BaFin · €45M · November 2025</div>
+            <div class="case-text">这是 BaFin 史上最大 AML 罚单。J.P. Morgan 法兰克福子公司在 12 个月内系统性地未按要求提交可疑交易报告。BaFin 将其定性为<strong>“组织性失效，而非个别事故”</strong>。这说明即使是全球最大银行，也一样会正面承受德国金融监管的全部力度。</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- MEDICAL -->
+  <div class="section" data-tab-panel="med">
+    <div class="section-intro">
+      德国拥有全球最先进的数字健康体系之一，同时也有全球最严格的软件医疗器械执法。<strong>你营销文案里一个词写错，应用就可能一夜之间被重新归类为医疗器械。</strong> 根据 MPDG §92，若商业违规危及公共健康，最高可判 10 年监禁。
+    </div>
+    <div class="cards">
+
+      <div class="card" onclick="toggleCard(this)">
+        <div class="card-header">
+          <div class="card-left">
+            <div class="card-number">红线 08</div>
+            <div class="card-title">没有 CE 认证，却把软件宣传成“诊断型”或“治疗型”产品</div>
+          </div>
+          <div class="card-tag tag-med">医疗与健康</div>
+          <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body">
+          <div class="what-block">
+            <div class="what-title">禁止行为</div>
+            <div class="what-text">如果软件在德国市场上声称自己能<strong>诊断、监测、预测、治疗或缓解医疗状况</strong>，却没有作为医疗器械完成 CE 标记（根据 MDR Rule 11，通常至少是 IIa 类），那就是高风险违规。触发点不是你“内部怎么想”，而是你对用户传达的<em>预期用途</em>。一句“帮助管理糖尿病”或“检测抑郁早期迹象”的营销文案，就足以让产品被重新归类。落地页文案、应用商店描述、客服话术，都会被视为用途证据。</div>
+          </div>
+          <div class="law-ref">
+            <span class="law-tag">MDR Art. 20 / Rule 11</span>
+            <span class="law-tag">MPDG §92</span>
+            <span class="law-tag">MPDG §94</span>
+          </div>
+          <div class="penalty-row">
+            <div class="penalty-box">
+              <div class="penalty-label">刑期</div>
+              <div class="penalty-val">3–10 年</div>
+              <div class="penalty-sub">标准为 3 年；若属商业违规且危及公共健康，最高 10 年（MPDG §92）</div>
+            </div>
+            <div class="penalty-box">
+              <div class="penalty-label">行政罚款</div>
+              <div class="penalty-val">€30K</div>
+              <div class="penalty-sub">按次处罚，并可能附带强制召回（MPDG §94）</div>
+            </div>
+          </div>
+          <div class="who-block">
+            <div class="who-title">谁必须注意</div>
+            <div class="who-tags">
+              <span class="who-tag">健康应用创业者</span>
+              <span class="who-tag">心理健康科技</span>
+              <span class="who-tag">诊断型 AI 产品</span>
+              <span class="who-tag">可穿戴软件</span>
+              <span class="who-tag">远程医疗平台</span>
+            </div>
+          </div>
+          <div class="case-block">
+            <div class="case-co">Ada Health · 路径处理得当</div>
+            <div class="case-text">Ada Health 为面向临床端的产品取得了 CE IIa 类医疗器械认证，同时把面向消费者的应用明确定位为“健康指南，而不是诊断工具”。<strong>这种“双轨产品结构”——受监管的临床工具 + 非医疗消费者应用——才是应对德国严格“预期用途”原则的正确方式。</strong> 模糊这条边界的公司，往往会被执法盯上。</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- LABOR -->
+  <div class="section" data-tab-panel="labor">
+    <div class="section-intro">
+      德国的工会委员会制度（Betriebsrat）赋予员工代表对<strong>任何可能监控员工行为的技术</strong>拥有强制共决权。没有 Betriebsrat 同意就部署工具，不只是可能挨罚，更可能让这项措施<strong>自始无效</strong>。即便“监控”不是工具的主要用途，这条规则仍然适用。
+    </div>
+    <div class="cards">
+
+      <div class="card" onclick="toggleCard(this)">
+        <div class="card-header">
+          <div class="card-left">
+            <div class="card-number">红线 09</div>
+            <div class="card-title">没有 Betriebsrat 书面同意就部署员工监控工具</div>
+          </div>
+          <div class="card-tag tag-labor">劳动与人事</div>
+          <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body">
+          <div class="what-block">
+            <div class="what-title">禁止行为</div>
+            <div class="what-text">只要某个技术系统<strong>客观上具备</strong>监控员工行为或绩效的能力，在没有 Betriebsrat 协议（Betriebsvereinbarung）之前就不能启用。德国联邦劳动法院自 1975 年以来一直坚持“客观适配性”标准：<strong>你主观上是否打算监控，并不重要</strong>，只要工具能监控，就需要同意。这覆盖的范围非常广，包括：生产力追踪软件、上下班日志、邮箱元数据分析、公司车辆 GPS、Microsoft Viva Insights、AI 辅助绩效看板，以及带详细行为日志的 ERP 系统。BetrVG §95(2a) 还明确把这条规则扩展到用于人员筛选标准的 AI。</div>
+          </div>
+          <div class="law-ref">
+            <span class="law-tag">BetrVG §87(1) Nr. 6</span>
+            <span class="law-tag">BetrVG §95(2a)</span>
+            <span class="law-tag">BDSG §26</span>
+            <span class="law-tag">GDPR Art. 88</span>
+          </div>
+          <div class="penalty-row">
+            <div class="penalty-box">
+              <div class="penalty-label">法律后果</div>
+              <div class="penalty-val">无效</div>
+              <div class="penalty-sub">部署行为自动无效，Betriebsrat 可立即申请禁令</div>
+            </div>
+            <div class="penalty-box">
+              <div class="penalty-label">刑事风险</div>
+              <div class="penalty-val">3 年</div>
+              <div class="penalty-sub">系统性秘密监控员工，最高可判 3 年（BDSG §42）</div>
+            </div>
+          </div>
+          <div class="who-block">
+            <div class="who-title">谁必须注意</div>
+            <div class="who-tags">
+              <span class="who-tag">HR 科技产品团队</span>
+              <span class="who-tag">带行为日志的企业 SaaS</span>
+              <span class="who-tag">AI 招聘工具</span>
+              <span class="who-tag">员工分析</span>
+              <span class="who-tag">远程办公监控</span>
+            </div>
+          </div>
+          <div class="case-block">
+            <div class="case-co">H&M · Hamburg DPA · €35.3M · 2020</div>
+            <div class="case-text">H&amp;M 纽伦堡服务中心曾系统性记录员工私生活信息，包括休假细节、疾病症状、家庭问题和宗教信仰，并存入一个可供 50 多位管理者访问的网络盘，用于人事决策。<strong>这在当时是德国最大的 GDPR 罚单。</strong> 核心违规点是：秘密、系统地记录超出雇佣目的所需范围的员工数据。员工数据必须用途受限、最小化，并严格按需访问。</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- CONSUMER -->
+  <div class="section" data-tab-panel="consumer">
+    <div class="section-intro">
+      德国的消费者保护制度把欧盟层面的规则和德国本地要求叠加在一起，常常让国际软件公司措手不及。<strong>少了取消订阅按钮，用户就可能随时解约；少了 Impressum，律师函很快就会来。</strong> 这些都不是“理论风险”，而是现实中高频被执行的义务。
+    </div>
+    <div class="cards">
+
+      <div class="card" onclick="toggleCard(this)">
+        <div class="card-header">
+          <div class="card-left">
+            <div class="card-number">红线 10</div>
+            <div class="card-title">订阅合同没有 Kündigungsbutton（取消订阅按钮）</div>
+          </div>
+          <div class="card-tag tag-consumer">消费者保护</div>
+          <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body">
+          <div class="what-block">
+            <div class="what-title">禁止行为</div>
+            <div class="what-text">任何 B2C 订阅网站，如果没有提供一个<strong>持续可见、两次点击内可到达</strong>的取消按钮，并明确标注为“Jetzt kündigen”或等效含义，就属于违规。科隆高等法院在 2025 年裁定，<strong>在用户看到取消按钮前强制登录，也属于违法设计</strong>。德国联邦法院在 2025 年 5 月进一步裁定，即便是一次性合同，只要会自动续费，也必须配备这类按钮。</div>
+          </div>
+          <div class="law-ref">
+            <span class="law-tag">BGB §312k</span>
+            <span class="law-tag">OLG Köln (Jan 2025)</span>
+            <span class="law-tag">BGH (May 2025)</span>
+          </div>
+          <div class="penalty-row">
+            <div class="penalty-box">
+              <div class="penalty-label">法律后果</div>
+              <div class="penalty-val">无效</div>
+              <div class="penalty-sub">消费者可随时解约，无需遵守原通知期（BGB §312k(6)）</div>
+            </div>
+            <div class="penalty-box">
+              <div class="penalty-label">律师函</div>
+              <div class="penalty-val">立即触发</div>
+              <div class="penalty-sub">消费者组织会系统性巡检，每封 Abmahnung 成本约 2000–10000 欧元</div>
+            </div>
+          </div>
+          <div class="who-block">
+            <div class="who-title">谁必须注意</div>
+            <div class="who-tags">
+              <span class="who-tag">所有 B2C 订阅产品</span>
+              <span class="who-tag">带消费者套餐的 SaaS</span>
+              <span class="who-tag">移动应用订阅</span>
+              <span class="who-tag">免费转付费流程</span>
+            </div>
+          </div>
+          <div class="case-block">
+            <div class="case-co">67 court judgments · 2022–2026</div>
+            <div class="case-text">在不到 4 年里，BGB §312k 已经产生 67 个公开判决。各类消费者保护组织会系统性地审查订阅网站。<strong>任何在德国运营、却没有合规 Kündigungsbutton 的订阅产品，几乎都只是“等着被起诉”。</strong></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" onclick="toggleCard(this)">
+        <div class="card-header">
+          <div class="card-left">
+            <div class="card-number">红线 11</div>
+            <div class="card-title">缺失或不完整的 Impressum（法律声明页）</div>
+          </div>
+          <div class="card-tag tag-consumer">消费者保护</div>
+          <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body">
+          <div class="what-block">
+            <div class="what-title">禁止行为</div>
+            <div class="what-text">如果你的网站在德国从事商业活动，却没有在任意页面两次点击内可达的完整 Impressum，就属于高频违规。必须包含的信息通常有：完整法人名称、注册地址（不能是邮政信箱）、邮箱、电话、法律形式、注册法院与注册号、VAT ID，以及明确的责任人。TMG 已在 2024 年 5 月被 DDG 取代，许多现有 Impressum 仍然引用旧法，因此在技术上已不合规。</div>
+          </div>
+          <div class="law-ref">
+            <span class="law-tag">DDG §5 (replaces TMG §5)</span>
+            <span class="law-tag">UWG §5a</span>
+            <span class="law-tag">生效：2024 年 5 月</span>
+          </div>
+          <div class="penalty-row">
+            <div class="penalty-box">
+              <div class="penalty-label">Abmahnung 成本</div>
+              <div class="penalty-val">€2–15K</div>
+              <div class="penalty-sub">每封来自消费者组织或竞争对手的律师函都可能带来这一级别成本</div>
+            </div>
+            <div class="penalty-box">
+              <div class="penalty-label">重复违规</div>
+              <div class="penalty-val">€50K</div>
+              <div class="penalty-sub">若禁令后仍不整改，法院可追加至 5 万欧元</div>
+            </div>
+          </div>
+          <div class="who-block">
+            <div class="who-title">谁必须注意</div>
+            <div class="who-tags">
+              <span class="who-tag">所有面向德国的网站</span>
+              <span class="who-tag">有德国用户的移动应用</span>
+              <span class="who-tag">拥有 .de 域名的国际公司</span>
+            </div>
+          </div>
+          <div class="case-block">
+            <div class="case-co">行业常态 · Abmahnindustrie</div>
+            <div class="case-text">德国存在成熟的“Abmahnindustrie”——专门扫描网站 Impressum 缺陷并发送收费律师函的律所产业。<strong>在德国电商与网站经营场景里，缺失或不完整的 Impressum 是商业律师函最常见的触发点之一。</strong> 国际公司进入德国市场的第一年，光因为 Impressum 问题就收到 2 到 5 封 Abmahnung，并不罕见。</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="summary-bar">
+    <div class="stat-item">
+      <div class="stat-n">11</div>
+      <div class="stat-label">覆盖 6 个监管领域的 11 条硬红线</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-n">€35M</div>
+      <div class="stat-label">欧盟 AI 法案禁止性行为的最高罚款</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-n">10 年</div>
+      <div class="stat-label">医疗器械违规的最高刑期（MPDG §92）</div>
+    </div>
+  </div>
+</div>
+          </div>
         </section>
 
-        <section id="orange" class="product-section book-page" data-book-page="orange" data-book-title="Grey area" data-book-index="3">
-          <div class="section-kicker">Chapter 2</div>
-          <div class="handbook chapter-handbook" data-tabs data-chapter="orange">
+        <section id="orange" class="product-section book-page" data-book-page="orange" data-book-title="Grey area" data-book-title-key="nav.orange" data-book-index="3">
+          <div class="section-kicker" data-i18n="chapter.2">Chapter 2</div>
+          <div data-localized-content="en">
+            <div class="handbook chapter-handbook" data-tabs data-chapter="orange">
   <div class="hero">
-    <div class="hero-label">Germany · Product & Design · Grey Area Handbook 2025</div>
+    <div class="hero-label">Germany · Product & Design · Grey Area Handbook 2026</div>
     <div class="hero-title">Where the law is <em>genuinely unclear</em><br>and the courts are still deciding</div>
     <div class="hero-sub">These are not red lines — the activity isn't banned. But enforcement is inconsistent, case law is forming, and a wrong product decision made today can become a hard violation overnight when the next ruling drops. Know the safer path. Know the riskier one. Choose deliberately.</div>
   </div>
@@ -819,7 +1456,7 @@
   <!-- AI -->
   <div class="section visible" data-tab-panel="ai">
     <div class="section-intro">
-      EU AI Act high-risk obligations land <strong>2 August 2026</strong> — but classification disputes, undefined thresholds, and the Digital Omnibus proposal (which may delay to 2027) mean product teams are navigating genuine legal uncertainty right now. The safe assumption: if your AI touches HR, credit, education, or law enforcement, treat it as high-risk regardless of how you categorise it internally.
+      EU AI Act high-risk obligations land <strong>2 August 2026</strong> — but classification disputes, undefined thresholds, and the Digital Omnibus proposal (which may delay to 2027) mean product teams are navigating genuine legal uncertainty right now. <strong>The safe assumption: if your AI touches HR, credit, education, or law enforcement, treat it as high-risk regardless of how you categorise it internally.</strong>
     </div>
     <div class="cards">
 
@@ -1434,13 +2071,528 @@
     </div>
   </div>
 </div>
+          </div>
+          <div data-localized-content="zh" hidden>
+            <div class="handbook chapter-handbook" data-tabs data-chapter="orange">
+  <div class="hero">
+    <div class="hero-label">德国 · 产品出海 · 待判断灰区 2026</div>
+    <div class="hero-title">不是不能做，<br>而是不能<em>照原样搬过去</em></div>
+    <div class="hero-sub">灰区最容易误导出海团队：它看起来不像红线，但德国客户、DPO、监管机构和消费者组织会用完全不同的标准看它。这里关注的不是背法条，而是哪些产品决策需要先降风险、留证据、给客户选择权。</div>
+  </div>
+
+  <div class="nav-pills">
+    <div class="pill active" role="button" tabindex="0" data-tab-button="ai">AI 与自动化</div>
+    <div class="pill" role="button" tabindex="0" data-tab-button="data">数据与追踪</div>
+    <div class="pill" role="button" tabindex="0" data-tab-button="fin">金融科技</div>
+    <div class="pill" role="button" tabindex="0" data-tab-button="labor">HR 与职场</div>
+    <div class="pill" role="button" tabindex="0" data-tab-button="consumer">消费者 UX</div>
+    <div class="pill" role="button" tabindex="0" data-tab-button="platform">平台与竞争</div>
+  </div>
+
+  <div class="section visible" data-tab-panel="ai">
+    <div class="section-intro">很多中文团队会把 AI 合规理解成“等法务给结论”。在德国更现实的做法是：只要 AI 碰到招聘、信贷、教育、员工管理这类高影响场景，就先按高风险产品来设计。否则等到客户 DPO 或监管口径明确时，返工的不只是文档，而是流程、日志、人工复核和解释能力。</div>
+    <div class="cards">
+
+      <div class="card" onclick="toggleCard(this)">
+        <div class="card-header">
+          <div class="card-left">
+            <div class="card-number">灰区 01</div>
+            <div class="card-title">高风险 AI 分类：别先问能不能豁免，先问德国客户会不会接受</div>
+          </div>
+          <div class="card-tag tag-ai">AI Act</div>
+          <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body">
+          <div class="status-pill status-live"><div class="status-dot"></div>2026 年起进入硬约束 · 现在已经影响采购</div>
+          <div class="tension-block">
+            <div class="tension-title">为什么中国团队容易误判</div>
+            <div class="tension-text">中文产品语境里，“只是辅助决策”常被当作万能解释。但德国客户会追问：AI 有没有影响候选人、借款人、学生或员工的实际结果？有没有画像？人类复核是不是只是在点确认？只要答案不清楚，采购就会把它当高风险处理。</div>
+          </div>
+          <div class="law-ref"><span class="law-tag">EU AI Act Art. 6(3)</span><span class="law-tag">Annex III</span><span class="law-tag">Art. 6(4) self-declaration</span></div>
+          <div class="verdict-row">
+            <div class="verdict-box verdict-safe">
+              <div class="verdict-label label-safe">更适合德国的做法</div>
+              <div class="verdict-text text-safe">凡是 HR、信贷、教育、保险、公共服务相关 AI，先准备高风险材料：用途边界、人工复核、可解释日志、错误申诉、客户可关闭配置。</div>
+            </div>
+            <div class="verdict-box verdict-risky">
+              <div class="verdict-label label-risky">容易踩坑的做法</div>
+              <div class="verdict-text text-risky">沿用国内“智能推荐/智能评分”的产品话术，却没有说明 AI 对最终结果的影响；把“有人看一眼”当成人工复核。</div>
+            </div>
+          </div>
+          <div class="who-block">
+            <div class="who-title">谁会被卡住</div>
+            <div class="who-tags"><span class="who-tag">HR 科技 / 招聘 AI</span><span class="who-tag">信贷评分系统</span><span class="who-tag">教育评估 AI</span><span class="who-tag">保险核保</span></div>
+          </div>
+          <div class="watch-block">
+            <div class="watch-label">落地提醒</div>
+            <div class="watch-text">销售德国企业前，先准备一页 AI 风险说明。客户不一定马上要完整合规包，但会先看你是否知道自己处在哪类风险里。</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" onclick="toggleCard(this)">
+        <div class="card-header">
+          <div class="card-left">
+            <div class="card-number">灰区 02</div>
+            <div class="card-title">AI 内容标注：不要把“人工改过”当作默认安全</div>
+          </div>
+          <div class="card-tag tag-ai">AI Act</div>
+          <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body">
+          <div class="status-pill status-live"><div class="status-dot"></div>披露义务已经进入产品设计期</div>
+          <div class="tension-block">
+            <div class="tension-title">为什么中国团队容易误判</div>
+            <div class="tension-text">中文内容团队常说“编辑审核过，所以不算 AI 生成”。德国/欧盟语境下，关键不是有没有人碰过，而是 AI 是否实质生成了内容、用户是否可能被误导、内容是否是深度伪造或合成声音。</div>
+          </div>
+          <div class="law-ref"><span class="law-tag">EU AI Act Art. 50(1)</span><span class="law-tag">EU AI Act Art. 50(2)</span><span class="law-tag">Art. 50(4) deepfakes</span></div>
+          <div class="verdict-row">
+            <div class="verdict-box verdict-safe">
+              <div class="verdict-label label-safe">更适合德国的做法</div>
+              <div class="verdict-text text-safe">先建立内部分级：AI 起草、AI 改写、AI 生成图片/视频/语音分别怎么披露。面向用户的聊天机器人、合成头像、合成声音默认说明。</div>
+            </div>
+            <div class="verdict-box verdict-risky">
+              <div class="verdict-label label-risky">容易踩坑的做法</div>
+              <div class="verdict-text text-risky">把批量 AI 生成文章、广告素材或销售邮件统称“提效工具”；等监管完全明确后再改 CMS、素材库和发布流程。</div>
+            </div>
+          </div>
+          <div class="who-block">
+            <div class="who-title">谁会被卡住</div>
+            <div class="who-tags"><span class="who-tag">内容生成工具</span><span class="who-tag">营销 AI</span><span class="who-tag">语音合成</span><span class="who-tag">图片/视频生成</span><span class="who-tag">聊天机器人</span></div>
+          </div>
+          <div class="watch-block">
+            <div class="watch-label">落地提醒</div>
+            <div class="watch-text">如果产品面向德国用户，披露文案要像产品功能一样设计，不要只藏在隐私政策里。</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" onclick="toggleCard(this)">
+        <div class="card-header">
+          <div class="card-left">
+            <div class="card-number">灰区 03</div>
+            <div class="card-title">自动化画像：德国不太吃“AI 只是建议”这套说法</div>
+          </div>
+          <div class="card-tag tag-ai">AI & GDPR</div>
+          <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body">
+          <div class="status-pill status-live"><div class="status-dot"></div>SCHUFA 判决后，名义人工复核不再够用</div>
+          <div class="tension-block">
+            <div class="tension-title">为什么中国团队容易误判</div>
+            <div class="tension-text">很多产品会在流程里加一个人工审核节点，然后说不是自动化决策。德国监管和法院更关心实质：人工有没有足够信息和权限推翻 AI？如果 97% 都照单全收，这个“人在环路里”很可能只是形式。</div>
+          </div>
+          <div class="law-ref"><span class="law-tag">GDPR Art. 22</span><span class="law-tag">CJEU C-634/21</span><span class="law-tag">CJEU C-203/22</span><span class="law-tag">DSK guidance 2024</span></div>
+          <div class="verdict-row">
+            <div class="verdict-box verdict-safe">
+              <div class="verdict-label label-safe">更适合德国的做法</div>
+              <div class="verdict-text text-safe">把人工复核做实：显示依据、允许覆盖、记录为什么覆盖或不覆盖；对用户提供解释、人工复查和申诉入口。</div>
+            </div>
+            <div class="verdict-box verdict-risky">
+              <div class="verdict-label label-risky">容易踩坑的做法</div>
+              <div class="verdict-text text-risky">让审核员只看到一个分数或红黄绿标签；产品文案说“AI 不做决定”，但业务流程实际上由 AI 分数驱动。</div>
+            </div>
+          </div>
+          <div class="who-block">
+            <div class="who-title">谁会被卡住</div>
+            <div class="who-tags"><span class="who-tag">贷款 / 信贷 AI</span><span class="who-tag">招聘筛选</span><span class="who-tag">保险定价</span><span class="who-tag">自动封禁的反欺诈系统</span></div>
+          </div>
+          <div class="watch-block">
+            <div class="watch-label">落地提醒</div>
+            <div class="watch-text">给德国客户演示时，不要只演示模型准确率。要演示人工如何介入、用户如何申诉、错误如何纠正。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" data-tab-panel="data">
+    <div class="section-intro">中文团队最容易低估德国的数据问题：不是“有没有隐私政策”，而是脚本什么时候加载、数据流向哪里、谁能访问、用户有没有真正选择。德国 DPO 会把这些当作采购问题，而不只是法务问题。</div>
+    <div class="cards">
+
+      <div class="card" onclick="toggleCard(this)">
+        <div class="card-header">
+          <div class="card-left">
+            <div class="card-number">灰区 04</div>
+            <div class="card-title">GA4、Meta Pixel、GTM：别把增长标配直接搬到德国</div>
+          </div>
+          <div class="card-tag tag-data">Tracking</div>
+          <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body">
+          <div class="status-pill status-live"><div class="status-dot"></div>不是绝对不能用，但默认接入方式通常不够</div>
+          <div class="tension-block">
+            <div class="tension-title">为什么中国团队容易误判</div>
+            <div class="tension-text">在中文增长语境里，GTM、GA4、热力图、广告像素是官网标配。但德国会先问：同意前有没有加载？IP 和设备数据去了哪里？拒绝按钮是否同等明显？服务端打点有没有绕过用户选择？</div>
+          </div>
+          <div class="law-ref"><span class="law-tag">GDPR Art. 6/7</span><span class="law-tag">TDDDG §25</span><span class="law-tag">DSK guidance</span><span class="law-tag">VG Hannover 2025</span></div>
+          <div class="verdict-row">
+            <div class="verdict-box verdict-safe">
+              <div class="verdict-label label-safe">更适合德国的做法</div>
+              <div class="verdict-text text-safe">先让非必要脚本在同意后加载；优先用 EU-hosted 或自托管分析；准备一张数据流图给客户 DPO；把拒绝和接受做成同等容易。</div>
+            </div>
+            <div class="verdict-box verdict-risky">
+              <div class="verdict-label label-risky">容易踩坑的做法</div>
+              <div class="verdict-text text-risky">上线前先把 GTM 丢进页面头部；用“IP 匿名化”解释所有问题；把服务端打点当成绕过同意的办法。</div>
+            </div>
+          </div>
+          <div class="who-block">
+            <div class="who-title">谁会被卡住</div>
+            <div class="who-tags"><span class="who-tag">营销网站</span><span class="who-tag">增长团队</span><span class="who-tag">B2B SaaS 官网</span><span class="who-tag">广告归因系统</span></div>
+          </div>
+          <div class="watch-block">
+            <div class="watch-label">落地提醒</div>
+            <div class="watch-text">如果销售德国企业，官网追踪栈也会被看。不要等客户安全审查时才发现 GTM 已经先加载。</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" onclick="toggleCard(this)">
+        <div class="card-header">
+          <div class="card-left">
+            <div class="card-number">灰区 05</div>
+            <div class="card-title">跨境数据：德国客户问的是“如果规则变了怎么办”</div>
+          </div>
+          <div class="card-tag tag-data">Transfers</div>
+          <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body">
+          <div class="status-pill status-forming"><div class="status-dot"></div>DPF 目前有效，但采购会要求 B 计划</div>
+          <div class="tension-block">
+            <div class="tension-title">为什么中国团队容易误判</div>
+            <div class="tension-text">中文团队常把跨境传输理解成“签 SCC / 用 DPF 就行”。德国企业会继续追问：美国支持团队能不能访问？密钥谁持有？未来 DPF 被挑战时能否迁到 EU-only？</div>
+          </div>
+          <div class="law-ref"><span class="law-tag">GDPR Art. 44-49</span><span class="law-tag">SCCs</span><span class="law-tag">EU-US DPF</span><span class="law-tag">Schrems II</span></div>
+          <div class="verdict-row">
+            <div class="verdict-box verdict-safe">
+              <div class="verdict-label label-safe">更适合德国的做法</div>
+              <div class="verdict-text text-safe">准备 TIA、SCC/DPF 说明、支持访问边界、密钥控制方案和 EU-only/自托管路线图。</div>
+            </div>
+            <div class="verdict-box verdict-risky">
+              <div class="verdict-label label-risky">容易踩坑的做法</div>
+              <div class="verdict-text text-risky">只回答“我们用 AWS Frankfurt，所以没问题”；不说明远程支持、日志、备份、LLM API 调用是否离开欧盟。</div>
+            </div>
+          </div>
+          <div class="who-block">
+            <div class="who-title">谁会被卡住</div>
+            <div class="who-tags"><span class="who-tag">中国 SaaS 出海</span><span class="who-tag">美国云托管产品</span><span class="who-tag">LLM API 集成</span><span class="who-tag">分析和客服工具</span></div>
+          </div>
+          <div class="watch-block">
+            <div class="watch-label">落地提醒</div>
+            <div class="watch-text">德国客户接受“现在合规”，但更看重“出事时能否退出”。把退出方案说清楚。</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" onclick="toggleCard(this)">
+        <div class="card-header">
+          <div class="card-left">
+            <div class="card-number">灰区 06</div>
+            <div class="card-title">健康/情绪/压力功能：别用 wellness 包装医疗或敏感推断</div>
+          </div>
+          <div class="card-tag tag-data">Health data</div>
+          <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body">
+          <div class="status-pill status-forming"><div class="status-dot"></div>边界取决于用途、表达和推断能力</div>
+          <div class="tension-block">
+            <div class="tension-title">为什么中国团队容易误判</div>
+            <div class="tension-text">国内常见的“压力检测”“情绪识别”“焦虑风险提示”在德国会被更谨慎地看待。监管会看用户如何理解你的功能，而不是你内部是否叫 wellness。</div>
+          </div>
+          <div class="law-ref"><span class="law-tag">GDPR Art. 9</span><span class="law-tag">MDR Rule 11</span><span class="law-tag">MPDG</span><span class="law-tag">DSK guidance</span></div>
+          <div class="verdict-row">
+            <div class="verdict-box verdict-safe">
+              <div class="verdict-label label-safe">更适合德国的做法</div>
+              <div class="verdict-text text-safe">把普通健康记录、心理状态推断、疾病风险提示分开设计；避免诊断性营销；敏感推断单独同意；必要时先做医疗器械分类评估。</div>
+            </div>
+            <div class="verdict-box verdict-risky">
+              <div class="verdict-label label-risky">容易踩坑的做法</div>
+              <div class="verdict-text text-risky">页面写“发现抑郁早期迹象”，底部再加“非医疗建议”；把员工压力、情绪、健康状态用于画像或管理。</div>
+            </div>
+          </div>
+          <div class="who-block">
+            <div class="who-title">谁会被卡住</div>
+            <div class="who-tags"><span class="who-tag">健康应用</span><span class="who-tag">可穿戴设备</span><span class="who-tag">员工健康平台</span><span class="who-tag">AI 语音/情绪分析</span></div>
+          </div>
+          <div class="watch-block">
+            <div class="watch-label">落地提醒</div>
+            <div class="watch-text">MDR Rule 11 执法、德国 BfArM 对数字健康产品的分类口径、DPA 对 wellness 数据的案例。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" data-tab-panel="fin">
+    <div class="section-intro">德国金融监管的灰区核心在于：你以为自己只是“撮合”或“嵌入”，BaFin 可能认为你已经在提供支付、信贷、账户信息或金融服务。产品文案、资金流、谁承担风险，都会影响分类。</div>
+    <div class="cards">
+
+      <div class="card" onclick="toggleCard(this)">
+        <div class="card-header">
+          <div class="card-left">
+            <div class="card-number">灰区 07</div>
+            <div class="card-title">嵌入式金融：你是在“促进”支付/信贷，还是已经在“提供”？</div>
+          </div>
+          <div class="card-tag tag-fin">BaFin</div>
+          <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body">
+          <div class="status-pill status-live"><div class="status-dot"></div>合作模式可行 · 边界由资金流和责任决定</div>
+          <div class="tension-block">
+            <div class="tension-title">为什么中国团队容易误判</div>
+            <div class="tension-text">使用持牌 partner 并不自动让你远离监管。如果你的产品控制用户入口、定价、审批、资金路径或风险呈现，BaFin 可能认为你不只是技术服务商。</div>
+          </div>
+          <div class="law-ref"><span class="law-tag">KWG</span><span class="law-tag">ZAG</span><span class="law-tag">PSD2</span><span class="law-tag">BaFin guidance</span></div>
+          <div class="verdict-row">
+            <div class="verdict-box verdict-safe">
+              <div class="verdict-label label-safe">更适合德国的做法</div>
+              <div class="verdict-text text-safe">让持牌方承担清晰的法律角色；合同、UI 和用户条款一致；不要暗示你自己批准贷款或持有资金；上线前做 BaFin 分类 memo。</div>
+            </div>
+            <div class="verdict-box verdict-risky">
+              <div class="verdict-label label-risky">容易踩坑的做法</div>
+              <div class="verdict-text text-risky">在营销中说“我们提供贷款/账户/支付”，但实际牌照在 partner；让用户完全感知不到持牌机构。</div>
+            </div>
+          </div>
+          <div class="who-block">
+            <div class="who-title">谁会被卡住</div>
+            <div class="who-tags"><span class="who-tag">嵌入支付</span><span class="who-tag">B2B 信贷</span><span class="who-tag">钱包产品</span><span class="who-tag">订阅金融化功能</span></div>
+          </div>
+          <div class="watch-block">
+            <div class="watch-label">落地提醒</div>
+            <div class="watch-text">BaFin 对银行即服务、嵌入式金融和前端责任的执法趋势。</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" onclick="toggleCard(this)">
+        <div class="card-header">
+          <div class="card-left">
+            <div class="card-number">灰区 08</div>
+            <div class="card-title">BNPL：CCD II 转化仍未完全清晰，规则还在落地</div>
+          </div>
+          <div class="card-tag tag-fin">Credit</div>
+          <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body">
+          <div class="status-pill status-forming"><div class="status-dot"></div>欧盟规则已定 · 德国执行细节仍在形成</div>
+          <div class="tension-block">
+            <div class="tension-title">为什么中国团队容易误判</div>
+            <div class="tension-text">新版消费者信贷指令 CCD II 扩大了对短期、小额和 BNPL 的覆盖。德国转化后，很多原本被当作 UX/支付功能的分期体验，可能需要更完整的信息披露、信用评估和消费者保护流程。</div>
+          </div>
+          <div class="law-ref"><span class="law-tag">CCD II</span><span class="law-tag">BGB consumer credit</span><span class="law-tag">BaFin</span><span class="law-tag">UWG</span></div>
+          <div class="verdict-row">
+            <div class="verdict-box verdict-safe">
+              <div class="verdict-label label-safe">更适合德国的做法</div>
+              <div class="verdict-text text-safe">把 BNPL 当成信贷产品设计：清楚展示总成本、期限、违约后果和提供方；保留信用评估和同意记录。</div>
+            </div>
+            <div class="verdict-box verdict-risky">
+              <div class="verdict-label label-risky">容易踩坑的做法</div>
+              <div class="verdict-text text-risky">把分期按钮做成“无痛支付”而弱化债务事实；在结账页默认突出延期付款；没有清晰说明费用和风险。</div>
+            </div>
+          </div>
+          <div class="who-block">
+            <div class="who-title">谁会被卡住</div>
+            <div class="who-tags"><span class="who-tag">电商</span><span class="who-tag">订阅产品</span><span class="who-tag">Fintech</span><span class="who-tag">B2B 采购分期</span></div>
+          </div>
+          <div class="watch-block">
+            <div class="watch-label">落地提醒</div>
+            <div class="watch-text">德国 CCD II 转化法、BaFin 对 BNPL 供应链责任的解释、消费者组织诉讼。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" data-tab-panel="labor">
+    <div class="section-intro">德国职场产品的灰区通常不只属于 GDPR，还属于 BetrVG。只要系统客观上适合监控员工，哪怕你只展示团队平均值，也可能触发 Betriebsrat 共同决定权。</div>
+    <div class="cards">
+
+      <div class="card" onclick="toggleCard(this)">
+        <div class="card-header">
+          <div class="card-left">
+            <div class="card-number">灰区 09</div>
+            <div class="card-title">聚合或“匿名化”的效率监控：匿名化真的能免掉同意吗？</div>
+          </div>
+          <div class="card-tag tag-labor">Workplace</div>
+          <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body">
+          <div class="status-pill status-live"><div class="status-dot"></div>BetrVG 风险高 · 小团队聚合尤其危险</div>
+          <div class="tension-block">
+            <div class="tension-title">为什么中国团队容易误判</div>
+            <div class="tension-text">BetrVG §87(1) Nr. 6 看的是底层系统是否客观上适合监控个人，而不只是最终展示界面。五个人团队的“平均登录时间”几乎可以反推个人；底层收集个人数据也会让共同决定权适用。</div>
+          </div>
+          <div class="law-ref"><span class="law-tag">BetrVG §87(1) Nr. 6</span><span class="law-tag">GDPR Art. 88</span><span class="law-tag">BDSG §26</span><span class="law-tag">BAG case law</span></div>
+          <div class="verdict-row">
+            <div class="verdict-box verdict-safe">
+              <div class="verdict-label label-safe">更适合德国的做法</div>
+              <div class="verdict-text text-safe">默认需要 Betriebsrat 参与；设置最小群组阈值；避免个人级采集；为德国客户提供可关闭监控字段的配置。</div>
+            </div>
+            <div class="verdict-box verdict-risky">
+              <div class="verdict-label label-risky">容易踩坑的做法</div>
+              <div class="verdict-text text-risky">只因为看板展示平均值就宣称不是员工监控；在没有 Betriebsvereinbarung 的情况下部署员工行为分析。</div>
+            </div>
+          </div>
+          <div class="who-block">
+            <div class="who-title">谁会被卡住</div>
+            <div class="who-tags"><span class="who-tag">People analytics</span><span class="who-tag">员工效率工具</span><span class="who-tag">协作软件分析</span><span class="who-tag">HR SaaS</span></div>
+          </div>
+          <div class="watch-block">
+            <div class="watch-label">落地提醒</div>
+            <div class="watch-text">BAG 对 Workday/员工数据案件的后续，以及德国企业客户对 AI 管理工具的 Betriebsrat 审查。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" data-tab-panel="consumer">
+    <div class="section-intro">德国消费者 UX 的灰区正在从“可用但讨厌”变成“可能违法”。DSA、UWG、BGB 和消费者组织诉讼会一起挤压暗黑模式、个性化价格和取消流程。</div>
+    <div class="cards">
+
+      <div class="card" onclick="toggleCard(this)">
+        <div class="card-header">
+          <div class="card-left">
+            <div class="card-number">灰区 10</div>
+            <div class="card-title">暗黑模式：DSA Art. 25 已开始执行，但定义仍有弹性</div>
+          </div>
+          <div class="card-tag tag-consumer">UX</div>
+          <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body">
+          <div class="status-pill status-live"><div class="status-dot"></div>平台先受影响 · 设计模式会外溢到所有产品</div>
+          <div class="tension-block">
+            <div class="tension-title">为什么中国团队容易误判</div>
+            <div class="tension-text">DSA 禁止在线平台用界面操纵用户选择，但“操纵”的边界仍依赖案例。德国消费者组织会把不对称按钮、隐藏拒绝、误导性倒计时和取消摩擦作为重点攻击对象。</div>
+          </div>
+          <div class="law-ref"><span class="law-tag">DSA Art. 25</span><span class="law-tag">UWG §4a</span><span class="law-tag">BGB §312k</span><span class="law-tag">CPC enforcement</span></div>
+          <div class="verdict-row">
+            <div class="verdict-box verdict-safe">
+              <div class="verdict-label label-safe">更适合德国的做法</div>
+              <div class="verdict-text text-safe">让拒绝和接受同等容易；取消和注册同样直接；避免倒计时、羞辱文案、默认勾选和视觉压迫。</div>
+            </div>
+            <div class="verdict-box verdict-risky">
+              <div class="verdict-label label-risky">容易踩坑的做法</div>
+              <div class="verdict-text text-risky">把“全部拒绝”藏在二级页面；用颜色和布局诱导同意；在取消前强制问卷或挽留。</div>
+            </div>
+          </div>
+          <div class="who-block">
+            <div class="who-title">谁会被卡住</div>
+            <div class="who-tags"><span class="who-tag">订阅产品</span><span class="who-tag">Cookie CMP</span><span class="who-tag">电商</span><span class="who-tag">平台产品</span></div>
+          </div>
+          <div class="watch-block">
+            <div class="watch-label">落地提醒</div>
+            <div class="watch-text">欧盟 DSA 执法、德国消费者协会诉讼、取消按钮判例继续扩张。</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" onclick="toggleCard(this)">
+        <div class="card-header">
+          <div class="card-left">
+            <div class="card-number">灰区 11</div>
+            <div class="card-title">个性化定价：需要披露，但歧视阈值仍不清楚</div>
+          </div>
+          <div class="card-tag tag-consumer">Pricing</div>
+          <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body">
+          <div class="status-pill status-forming"><div class="status-dot"></div>披露义务清楚 · 哪些差异违法仍看场景</div>
+          <div class="tension-block">
+            <div class="tension-title">为什么中国团队容易误判</div>
+            <div class="tension-text">如果价格基于自动化决策对个人定制，欧盟消费者法要求披露。但差异化优惠、动态库存价格、地理价格和画像定价之间的边界并不总是清楚。</div>
+          </div>
+          <div class="law-ref"><span class="law-tag">Omnibus Directive</span><span class="law-tag">UWG</span><span class="law-tag">GDPR profiling</span><span class="law-tag">P2B</span></div>
+          <div class="verdict-row">
+            <div class="verdict-box verdict-safe">
+              <div class="verdict-label label-safe">更适合德国的做法</div>
+              <div class="verdict-text text-safe">清楚说明价格是否个性化；避免使用敏感属性或脆弱状态；保留定价逻辑审计；B2C 中给用户可理解解释。</div>
+            </div>
+            <div class="verdict-box verdict-risky">
+              <div class="verdict-label label-risky">容易踩坑的做法</div>
+              <div class="verdict-text text-risky">基于设备、地区、历史行为静默提高价格；对容易冲动购买的用户加价；把个性化价格说成普通折扣。</div>
+            </div>
+          </div>
+          <div class="who-block">
+            <div class="who-title">谁会被卡住</div>
+            <div class="who-tags"><span class="who-tag">电商</span><span class="who-tag">旅游/票务</span><span class="who-tag">订阅定价</span><span class="who-tag">市场平台</span></div>
+          </div>
+          <div class="watch-block">
+            <div class="watch-label">落地提醒</div>
+            <div class="watch-text">消费者组织对个性化价格的测试诉讼，以及 GDPR 对画像定价的解释。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" data-tab-panel="platform">
+    <div class="section-intro">平台和竞争法灰区的危险在于：算法看似只是优化供需，监管可能看到价格协调、排序自我优待或数据壁垒。规模越大，解释义务越重。</div>
+    <div class="cards">
+
+      <div class="card" onclick="toggleCard(this)">
+        <div class="card-header">
+          <div class="card-left">
+            <div class="card-number">灰区 12</div>
+            <div class="card-title">算法定价：动态价格什么时候变成非法协同？</div>
+          </div>
+          <div class="card-tag tag-platform">Competition</div>
+          <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body">
+          <div class="status-pill status-forming"><div class="status-dot"></div>算法工具普遍可用 · 竞争法边界仍在形成</div>
+          <div class="tension-block">
+            <div class="tension-title">为什么中国团队容易误判</div>
+            <div class="tension-text">动态定价本身不是违法，但如果多个卖家使用同一套定价工具，或算法学习到维持高价、跟随竞争者、限制折扣，就可能被视为协调行为。德国和欧盟竞争机构会看数据共享、供应商角色和可预见性。</div>
+          </div>
+          <div class="law-ref"><span class="law-tag">GWB</span><span class="law-tag">Art. 101 TFEU</span><span class="law-tag">DMA</span><span class="law-tag">Bundeskartellamt</span></div>
+          <div class="verdict-row">
+            <div class="verdict-box verdict-safe">
+              <div class="verdict-label label-safe">更适合德国的做法</div>
+              <div class="verdict-text text-safe">避免跨卖家共享敏感价格数据；为算法设定竞争法约束；记录模型目标和人工审核；对平台卖家定价保持隔离。</div>
+            </div>
+            <div class="verdict-box verdict-risky">
+              <div class="verdict-label label-risky">容易踩坑的做法</div>
+              <div class="verdict-text text-risky">向多个竞争者提供同一个“利润最大化”定价引擎；用 competitor scraping 自动跟价却没有法务审查；让平台自营商品利用第三方卖家数据定价。</div>
+            </div>
+          </div>
+          <div class="who-block">
+            <div class="who-title">谁会被卡住</div>
+            <div class="who-tags"><span class="who-tag">Marketplace</span><span class="who-tag">定价 SaaS</span><span class="who-tag">电商平台</span><span class="who-tag">旅游/票务</span></div>
+          </div>
+          <div class="watch-block">
+            <div class="watch-label">落地提醒</div>
+            <div class="watch-text">Bundeskartellamt 对算法协调和平台自我优待的案例，以及 DMA 对 gatekeeper 的数据使用限制。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="summary-bar">
+    <div class="stat-item">
+      <div class="stat-n">12</div>
+      <div class="stat-label">个容易被中文团队低估的德国灰区</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-n">2026</div>
+      <div class="stat-label">AI、追踪、员工数据和消费者 UX 会继续收紧</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-n">现在</div>
+      <div class="stat-label">先把可解释、可关闭、可审计做进产品</div>
+    </div>
+  </div>
+</div>
+          </div>
         </section>
 
-        <section id="green" class="product-section book-page" data-book-page="green" data-book-title="Recommend" data-book-index="4">
-          <div class="section-kicker">Chapter 3</div>
-          <div class="handbook chapter-handbook" data-tabs data-chapter="green">
+        <section id="green" class="product-section book-page" data-book-page="green" data-book-title="Recommend" data-book-title-key="nav.green" data-book-index="4">
+          <div class="section-kicker" data-i18n="chapter.3">Chapter 3</div>
+          <div data-localized-content="en">
+            <div class="handbook chapter-handbook" data-tabs data-chapter="green">
   <div class="hero">
-    <div class="hero-label">Germany · Product & Design · Recommend Handbook 2025</div>
+    <div class="hero-label">Germany · Product & Design · Recommend Handbook 2026</div>
     <div class="hero-title">What actually <em>scores points</em><br>in the German market</div>
     <div class="hero-sub">Not compliance. Not "being safe." These are the affirmative choices — in architecture, UX, sales, and positioning — that make German buyers say yes faster, stay longer, and recommend you first.</div>
   </div>
@@ -1961,20 +3113,489 @@
     </div>
   </div>
 </div>
+          </div>
+          <div data-localized-content="zh" hidden>
+            <div class="handbook chapter-handbook" data-tabs data-chapter="green">
+  <div class="hero">
+    <div class="hero-label">德国 · 产品出海 · 推荐做法 2026</div>
+    <div class="hero-title">让德国客户觉得<br>你<em>可以被采购</em>的产品准备</div>
+    <div class="hero-sub">德国市场的“加分项”通常不是炫酷功能，而是让 DPO、IT-Leiter、采购和 CFO 少担心的证据：数据在哪、谁能访问、怎么退出、合同怎么签、出了问题谁负责。</div>
+  </div>
+
+  <div class="nav-pills">
+    <div class="pill active" role="button" tabindex="0" data-tab-button="arch">架构与部署</div>
+    <div class="pill" role="button" tabindex="0" data-tab-button="ux">信任型 UX</div>
+    <div class="pill" role="button" tabindex="0" data-tab-button="sales">销售与采购</div>
+    <div class="pill" role="button" tabindex="0" data-tab-button="positioning">市场定位</div>
+    <div class="pill" role="button" tabindex="0" data-tab-button="cert">认证</div>
+  </div>
+
+  <div class="section visible" data-tab-panel="arch">
+    <div class="section-intro">中文团队做德国市场时，最容易先改语言、官网和销售材料。但德国客户真正先看的，是架构是否可控：数据在哪里、谁能访问、能不能迁移、供应商能不能被替换。把这些做成产品能力，比多写十页隐私承诺更有效。</div>
+    <div class="cards">
+
+      <div class="card" onclick="toggleCard(this)">
+        <div class="card-header">
+          <div class="card-left">
+            <div class="card-number">加分项 01</div>
+            <div class="card-title">提供自托管或本地部署选项：卖的是控制权，不是运维方式</div>
+          </div>
+          <div class="card-tag tag-arch">Architecture</div>
+          <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body">
+          <div class="why-block">
+            <div class="why-label">为什么中文团队容易低估</div>
+            <div class="why-text">很多中文团队会说“客户其实不会自己部署，所以不用做”。但德国企业常常不是要真的自运维，而是要确认自己有<strong>退出权和控制权</strong>。</div>
+          </div>
+          <div class="how-steps">
+            <div class="how-title">怎么改成德国可接受</div>
+            <div class="step"><div class="step-n">1</div><div class="step-text">发布 <em>docker-compose.yml</em> 和清楚的自托管路径。即使标注“高级用户使用”，这个页面本身就是信任信号。</div></div>
+            <div class="step"><div class="step-n">2</div><div class="step-text">在文档里做一个“部署选项”页面：EU 云、客户自选区域、自托管、本地企业部署。四行就能改变销售对话。</div></div>
+            <div class="step"><div class="step-n">3</div><div class="step-text">企业销售材料里先展示部署图，明确本地部署时数据不会离开客户基础设施。</div></div>
+            <div class="step"><div class="step-n">4</div><div class="step-text">自托管按企业溢价定价，而不是打折。它传达的是严肃的企业能力。</div></div>
+          </div>
+          <div class="case-block"><div class="case-co">Nextcloud</div><div class="case-text">Nextcloud 的增长并不只来自功能，而来自“可自己掌控”的架构承诺。德国公共部门和受监管行业尤其吃这一点。</div></div>
+          <div class="dont-block">
+            <div class="dont-title">不要这样做</div>
+            <div class="dont-text">不要只说“我们使用行业领先云基础设施并符合 GDPR”。德国采购已经对这种模板话术免疫；他们想知道具体供应商、区域、访问权限和退出路径。</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" onclick="toggleCard(this)">
+        <div class="card-header">
+          <div class="card-left">
+            <div class="card-number">加分项 02</div>
+            <div class="card-title">数据中心位置要写到城市/区域，不要只写“欧洲节点”</div>
+          </div>
+          <div class="card-tag tag-arch">Residency</div>
+          <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body">
+          <div class="why-block">
+            <div class="why-label">为什么中文团队容易低估</div>
+            <div class="why-text">“欧洲节点”在中文出海材料里听起来够了，但对德国 DPO 和 IT-Leiter 来说信息量太低。Frankfurt、Falkenstein、Nuremberg 这类具体位置，才是在回答真实问题。</div>
+          </div>
+          <div class="how-steps">
+            <div class="how-title">怎么改成德国可接受</div>
+            <div class="step"><div class="step-n">1</div><div class="step-text">在页脚、定价页和安全页写清楚：<em>数据存储在德国 Hetzner Falkenstein</em>，或 <em>主区域：AWS Frankfurt eu-central-1</em>。</div></div>
+            <div class="step"><div class="step-n">2</div><div class="step-text">做一个 Data Residency 页面：主存储位置、备份位置、美国员工是否可访问、是否存在 CLOUD Act 暴露。</div></div>
+            <div class="step"><div class="step-n">3</div><div class="step-text">如果用 AWS/Azure/GCP，不要躲。解释你的缓解措施：客户持钥、数据最小化、EU-only 支持等。</div></div>
+            <div class="step"><div class="step-n">4</div><div class="step-text">企业交易中提供德国实体 AVV，并以德国法为适用法。不要只写“EU law”。</div></div>
+          </div>
+          <div class="case-block"><div class="case-co">STACKIT / Hetzner</div><div class="case-text">德国本土云厂商的优势，很大一部分来自“位置和控制权说得清楚”。</div></div>
+          <div class="dont-block">
+            <div class="dont-title">不要这样做</div>
+            <div class="dont-text">不要把“欧盟数据驻留”当作完整答案。德国 DPO 和 IT-Leiter 会继续追问具体城市、备份位置和访问链路。</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" onclick="toggleCard(this)">
+        <div class="card-header">
+          <div class="card-left">
+            <div class="card-number">加分项 03</div>
+            <div class="card-title">把数据导出做成产品入口，而不是“联系客服”</div>
+          </div>
+          <div class="card-tag tag-arch">Portability</div>
+          <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body">
+          <div class="why-block">
+            <div class="why-label">为什么中文团队容易低估</div>
+            <div class="why-text">中国 SaaS 常把导出当后台能力或客服流程。德国客户会把可导出性理解为可退出性：你不是靠锁定客户赚钱，而是靠产品价值留住客户。</div>
+          </div>
+          <div class="how-steps">
+            <div class="how-title">怎么改成德国可接受</div>
+            <div class="step"><div class="step-n">1</div><div class="step-text">在设置里放“导出我的全部数据”，不要藏四层。合理数据量下，一键 ZIP，包含 CSV/JSON。</div></div>
+            <div class="step"><div class="step-n">2</div><div class="step-text">文档写清导出包括哪些字段、格式和元数据。“Data portability”页面会显著提升采购信任。</div></div>
+            <div class="step"><div class="step-n">3</div><div class="step-text">B2B 合同里主动写“终止后的数据返还”：格式、期限、取消后保留 30 天等。</div></div>
+            <div class="step"><div class="step-n">4</div><div class="step-text">企业客户可提供定时自动导出到客户 S3/SFTP，减少审计人工步骤。</div></div>
+          </div>
+          <div class="case-block"><div class="case-co">GDPR Art. 20</div><div class="case-text">数据可携带权不只是合规要求。把它产品化，会让 DPO 更容易把你放进可接受供应商列表。</div></div>
+          <div class="dont-block">
+            <div class="dont-title">不要这样做</div>
+            <div class="dont-text">不要把导出流程变成客服工单，也不要只给不可读 PDF。客户会把这理解为退出困难。</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" onclick="toggleCard(this)">
+        <div class="card-header">
+          <div class="card-left">
+            <div class="card-number">加分项 04</div>
+            <div class="card-title">子处理方列表要公开、可订阅、可审计</div>
+          </div>
+          <div class="card-tag tag-arch">Sub-processors</div>
+          <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body">
+          <div class="why-block">
+            <div class="why-label">为什么中文团队容易低估</div>
+            <div class="why-text">德国 DPO 会认真检查谁在处理数据。一个清楚、可订阅、带变更记录的子处理方页面，会让对方少问很多来回邮件。</div>
+          </div>
+          <div class="how-steps">
+            <div class="how-title">怎么改成德国可接受</div>
+            <div class="step"><div class="step-n">1</div><div class="step-text">发布在 <em>yourproduct.com/legal/sub-processors</em>，不要埋在隐私政策里。</div></div>
+            <div class="step"><div class="step-n">2</div><div class="step-text">每个子处理方列出：名称、用途、数据类别、国家、传输机制。</div></div>
+            <div class="step"><div class="step-n">3</div><div class="step-text">加 changelog：什么时候新增 Stripe、用途是什么、适用 SCC/DPF。DPO 会引用它做审计记录。</div></div>
+            <div class="step"><div class="step-n">4</div><div class="step-text">提供子处理方变更邮件通知。GDPR Art. 28(2) 本来就要求事前通知。</div></div>
+          </div>
+          <div class="case-block"><div class="case-co">Personio / 德国 SaaS 信任页面</div><div class="case-text">成熟德国 SaaS 会把法律页面当作销售资产，而不是合规垃圾桶。</div></div>
+          <div class="dont-block">
+            <div class="dont-title">不要这样做</div>
+            <div class="dont-text">不要只写“we use trusted partners”。德国客户需要能审计的清单，而不是形容词。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" data-tab-panel="ux">
+    <div class="section-intro">中文互联网产品常把“提高转化”理解成更强引导、更少解释、更快点击。德国用户不是讨厌好体验，而是非常警惕被操控。清楚、克制、可解释的界面反而会提高转化，因为它降低防御感。</div>
+    <div class="cards">
+
+      <div class="card" onclick="toggleCard(this)">
+        <div class="card-header">
+          <div class="card-left">
+            <div class="card-number">加分项 05</div>
+            <div class="card-title">明确写出“我们不会做什么”，比泛泛说重视隐私更有用</div>
+          </div>
+          <div class="card-tag tag-ux">Privacy UX</div>
+          <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body">
+          <div class="why-block">
+            <div class="why-label">为什么中文团队容易低估</div>
+            <div class="why-text">中文产品文案常写“我们重视隐私”。德国用户和 DPO 更想看到具体边界：不会追踪、不会卖数据、不会训练模型、不会给广告商。</div>
+          </div>
+          <div class="how-steps">
+            <div class="how-title">怎么改成德国可接受</div>
+            <div class="step"><div class="step-n">1</div><div class="step-text">在首屏或定价页放 3-4 条负向保证：<em>未同意不追踪 · 不投放广告 · 不向第三方转交数据</em>。</div></div>
+            <div class="step"><div class="step-n">2</div><div class="step-text">具体写“我们不会用你的数据训练 AI”，比“我们尊重隐私”可信得多。</div></div>
+            <div class="step"><div class="step-n">3</div><div class="step-text">每次权限请求后加一句不会做什么：不会分享给广告商、不会用于画像等。</div></div>
+            <div class="step"><div class="step-n">4</div><div class="step-text">邮件页脚也可写“没有 tracking pixel”。让它成为品牌语气的一部分。</div></div>
+          </div>
+          <div class="case-block"><div class="case-co">Privacy-first positioning</div><div class="case-text">德国市场里，“少做什么”常常比“多做什么”更能赢得信任。</div></div>
+          <div class="dont-block">
+            <div class="dont-title">不要这样做</div>
+            <div class="dont-text">不要只写“我们重视你的隐私”。没有具体承诺的隐私口号，在德国买家眼里几乎等于没有说。</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" onclick="toggleCard(this)">
+        <div class="card-header">
+          <div class="card-left">
+            <div class="card-number">加分项 06</div>
+            <div class="card-title">Onboarding 先解释原因，再请求权限</div>
+          </div>
+          <div class="card-tag tag-ux">Onboarding</div>
+          <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body">
+          <div class="why-block">
+            <div class="why-label">为什么中文团队容易低估</div>
+            <div class="why-text">德国用户不是不愿授权，而是不喜欢被突然索权。先解释再请求，不是多一步摩擦，而是在建立“我知道自己同意了什么”的感觉。</div>
+          </div>
+          <div class="how-steps">
+            <div class="how-title">怎么改成德国可接受</div>
+            <div class="step"><div class="step-n">1</div><div class="step-text">第一次权限请求前加一个“数据会发生什么”页面。3 个 bullet，少于 40 个词。</div></div>
+            <div class="step"><div class="step-n">2</div><div class="step-text">把进度条换成上下文：第 2 步会请求日历访问，因为你将获得某个具体收益。</div></div>
+            <div class="step"><div class="step-n">3</div><div class="step-text">每个权限旁边放真正可点的“Warum brauchen wir das?”，不是模糊 tooltip。</div></div>
+            <div class="step"><div class="step-n">4</div><div class="step-text">不要在新手引导里用倒计时、稀缺提示和“最后机会”话术。</div></div>
+          </div>
+          <div class="case-block"><div class="case-co">German consent UX</div><div class="case-text">清楚解释让用户觉得自己在做决定，而不是被流程推着走。</div></div>
+          <div class="dont-block">
+            <div class="dont-title">不要这样做</div>
+            <div class="dont-text">不要把美式增长漏斗直接搬过来。高压促成、倒计时和社交证明轰炸，在德国很容易被读成操控。</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" onclick="toggleCard(this)">
+        <div class="card-header">
+          <div class="card-left">
+            <div class="card-number">加分项 07</div>
+            <div class="card-title">用克制、具体、可查的界面传达 Seriosität</div>
+          </div>
+          <div class="card-tag tag-ux">Design</div>
+          <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body">
+          <div class="why-block">
+            <div class="why-label">为什么中文团队容易低估</div>
+            <div class="why-text">Seriosität 很难直译，接近“正经、可靠、可托付”。德国 B2B 买家会从信息结构、细节完整度、Impressum 和视觉克制判断你是不是成熟供应商。</div>
+          </div>
+          <div class="how-steps">
+            <div class="how-title">怎么改成德国可接受</div>
+            <div class="step"><div class="step-n">1</div><div class="step-text">B2B 主色优先选深蓝、石墨灰、森林绿这类低饱和颜色，重点是专业，不是无聊。</div></div>
+            <div class="step"><div class="step-n">2</div><div class="step-text">复杂功能多给规格表、对比表、FAQ 和精确数字。德国买家会读。</div></div>
+            <div class="step"><div class="step-n">3</div><div class="step-text">去掉“X people are looking now”、退出弹窗和过度社交证明。</div></div>
+            <div class="step"><div class="step-n">4</div><div class="step-text">把 Impressum 做完整、显眼、有人味：负责人、真实地址、电话。</div></div>
+          </div>
+          <div class="case-block"><div class="case-co">德国中型企业采购习惯</div><div class="case-text">很多德国中型企业会先看你是否像一个能长期合作的供应商，再看具体功能。</div></div>
+          <div class="dont-block">
+            <div class="dont-title">不要这样做</div>
+            <div class="dont-text">不要把美国 B2B 落地页逐字翻译成德语。夸张 CTA 和含糊利益点会显得不真诚。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" data-tab-panel="sales">
+    <div class="section-intro">很多中文团队把合规材料当作“客户要了再给”。德国企业采购正好相反：AVV、安全文档、子处理方、认证和价格说明越早出现，越像一个能被采购的本地供应商。</div>
+    <div class="cards">
+
+      <div class="card" onclick="toggleCard(this)">
+        <div class="card-header">
+          <div class="card-left">
+            <div class="card-number">加分项 08</div>
+            <div class="card-title">AVV 不只是法务文件，而是德国 B2B 销售材料</div>
+          </div>
+          <div class="card-tag tag-sales">Procurement</div>
+          <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body">
+          <div class="why-block">
+            <div class="why-label">为什么中文团队容易低估</div>
+            <div class="why-text">中文团队容易把 AVV 当成合同附件。德国 DPO 要 AVV，其实是在判断你是否熟悉德国企业采购。自助、德文、德国法、可签署，会明显减少来回。</div>
+          </div>
+          <div class="how-steps">
+            <div class="how-title">怎么改成德国可接受</div>
+            <div class="step"><div class="step-n">1</div><div class="step-text">请德国数据保护律所起草德文 AVV 模板。一次投入，节省每个企业交易数周。</div></div>
+            <div class="step"><div class="step-n">2</div><div class="step-text">发布自助页面 <em>yourproduct.com/legal/avv</em>，DPO 可下载、审阅、请求签署。</div></div>
+            <div class="step"><div class="step-n">3</div><div class="step-text">在 AVV 页面提供 DocuSign “sign now” 流程。</div></div>
+            <div class="step"><div class="step-n">4</div><div class="step-text">第一次销售邮件就提到 AVV 已准备好，比泛泛功能卖点更有力量。</div></div>
+          </div>
+          <div class="case-block"><div class="case-co">German DPO workflow</div><div class="case-text">AVV 是采购信任测试。处理得越顺，客户越相信你已经做过德国企业交易。</div></div>
+          <div class="dont-block">
+            <div class="dont-title">不要这样做</div>
+            <div class="dont-text">不要让德国企业签英文 DPA，并适用爱尔兰或 Delaware 法。即使技术上有效，也会增加 4-6 周审阅。</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" onclick="toggleCard(this)">
+        <div class="card-header">
+          <div class="card-left">
+            <div class="card-number">加分项 09</div>
+            <div class="card-title">Trust Center 要能让客户内部直接转发</div>
+          </div>
+          <div class="card-tag tag-sales">Trust Center</div>
+          <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body">
+          <div class="why-block">
+            <div class="why-label">为什么中文团队容易低估</div>
+            <div class="why-text">德国采购链条长，销售对象往往不是最终审批人。一个可转发的 Trust Center，能让 IT、DPO、采购和安全团队在你不在场时继续推进。</div>
+          </div>
+          <div class="how-steps">
+            <div class="how-title">怎么改成德国可接受</div>
+            <div class="step"><div class="step-n">1</div><div class="step-text">最少包含：数据中心位置、静态/传输加密、访问控制、渗透测试节奏、事故响应 SLA、认证、子处理方、AVV、漏洞奖励。</div></div>
+            <div class="step"><div class="step-n">2</div><div class="step-text">提供“申请完整安全文档”按钮，用 NDA 获取网络图、渗透测试报告等细节。</div></div>
+            <div class="step"><div class="step-n">3</div><div class="step-text">加入 changelog：ISO 27001 更新、范围扩展到 Frankfurt 数据中心等。</div></div>
+            <div class="step"><div class="step-n">4</div><div class="step-text">销售外联时主动发 Trust Center 链接，让客户 IT 团队提前看。</div></div>
+          </div>
+          <div class="case-block"><div class="case-co">企业安全审查</div><div class="case-text">提前给 IT 和 DPO 可转发的材料，能减少销售会后长时间沉默。</div></div>
+          <div class="dont-block">
+            <div class="dont-title">不要这样做</div>
+            <div class="dont-text">不要等客户发来 200 问安全表才开始整理材料。那时你已经显得不成熟。</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" onclick="toggleCard(this)">
+        <div class="card-header">
+          <div class="card-left">
+            <div class="card-number">加分项 10</div>
+            <div class="card-title">价格要透明，并按德国语境展示 VAT / MwSt.</div>
+          </div>
+          <div class="card-tag tag-sales">Pricing</div>
+          <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body">
+          <div class="why-block">
+            <div class="why-label">为什么中文团队容易低估</div>
+            <div class="why-text">中文 B2B 常用“联系销售”承接所有价格。德国 SME 和采购会把隐藏价格理解成潜在风险：后续可能有锁定、加价或复杂条款。</div>
+          </div>
+          <div class="how-steps">
+            <div class="how-title">怎么改成德国可接受</div>
+            <div class="step"><div class="step-n">1</div><div class="step-text">德国定价页同时展示含/不含 MwSt.。B2B 写 <em>zzgl. MwSt.</em>，B2C 展示含税价。</div></div>
+            <div class="step"><div class="step-n">2</div><div class="step-text">每档列清功能，并明确哪些不包含。SSO 是否包含，不要让客户猜。</div></div>
+            <div class="step"><div class="step-n">3</div><div class="step-text">FAQ 直接回答：取消后怎样、是否有最低合同期、是否有超额费用、迁移是否包含。</div></div>
+            <div class="step"><div class="step-n">4</div><div class="step-text">提供真实月付选项。德国 SME 很重视灵活性。</div></div>
+          </div>
+          <div class="case-block"><div class="case-co">德国采购心理</div><div class="case-text">透明会让 CFO 更容易评估风险，也让采购更容易向内部解释。</div></div>
+          <div class="dont-block">
+            <div class="dont-title">不要这样做</div>
+            <div class="dont-text">不要用“Contact sales”隐藏所有价格。对很多德国中小企业，这会直接触发不信任。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" data-tab-panel="positioning">
+    <div class="section-intro">德国市场的好定位不是把“合规、安全、可靠”喊得更响，而是把数字主权、本地流程和行业语境做成可验证的产品能力。</div>
+    <div class="cards">
+
+      <div class="card" onclick="toggleCard(this)">
+        <div class="card-header">
+          <div class="card-left">
+            <div class="card-number">加分项 11</div>
+            <div class="card-title">数字主权不要当口号，要拆成可验证能力</div>
+          </div>
+          <div class="card-tag tag-pos">Positioning</div>
+          <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body">
+          <div class="why-block">
+            <div class="why-label">为什么中文团队容易低估</div>
+            <div class="why-text">中文团队常把 sovereignty 当成品牌词。德国公共部门、医疗、关键基础设施和部分 Mittelstand 会把它当采购条件：数据、控制权、密钥、部署边界都要能验证。</div>
+          </div>
+          <div class="how-steps">
+            <div class="how-title">怎么改成德国可接受</div>
+            <div class="step"><div class="step-n">1</div><div class="step-text">把主权翻译成 4-5 个技术声明：无美国母公司、数据在德国、无 CLOUD Act 暴露、客户持钥、可本地部署。</div></div>
+            <div class="step"><div class="step-n">2</div><div class="step-text">做“主权部署”页面，用架构图展示什么留在德国、什么会离开德国、什么可 air-gapped。</div></div>
+            <div class="step"><div class="step-n">3</div><div class="step-text">适用时关注 Gaia-X 或 EUCS。这些标准仍早期，但会出现在德国公共采购评估里。</div></div>
+            <div class="step"><div class="step-n">4</div><div class="step-text">面向公共部门使用德语 <em>Digitale Souveränität</em>，不要只用英文术语。</div></div>
+          </div>
+          <div class="case-block"><div class="case-co">Schleswig-Holstein / Microsoft 365 exit</div><div class="case-text">政府退出美国云依赖不是抽象讨论，它正在变成采购预算和技术路线。</div></div>
+          <div class="dont-block">
+            <div class="dont-title">不要这样做</div>
+            <div class="dont-text">不要把“sovereign cloud”写成漂亮口号，却没有位置、密钥、访问和退出的具体说明。</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" onclick="toggleCard(this)">
+        <div class="card-header">
+          <div class="card-left">
+            <div class="card-number">加分项 12</div>
+            <div class="card-title">面向 Mittelstand，要做深德国本地流程</div>
+          </div>
+          <div class="card-tag tag-pos">Mittelstand</div>
+          <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body">
+          <div class="why-block">
+            <div class="why-label">为什么中文团队容易低估</div>
+            <div class="why-text">中国/美国式横向 SaaS 常强调“全能平台”。德国 Mittelstand 更看重你是否理解它的本地流程。一个德国特有流程做对，胜过十个泛泛功能。</div>
+          </div>
+          <div class="how-steps">
+            <div class="how-title">怎么改成德国可接受</div>
+            <div class="step"><div class="step-n">1</div><div class="step-text">选一个美国产品做不好或根本没有的德国流程：Minijob/Midijob、Handwerkerrechnung、GoBD-konforme Buchführung、Betriebsrat 通知。</div></div>
+            <div class="step"><div class="step-n">2</div><div class="step-text">请 Steuerberater 和 Rechtsanwälte 做产品顾问。他们的背书比很多付费渠道更有效。</div></div>
+            <div class="step"><div class="step-n">3</div><div class="step-text">营销里写清具体合规词：<em>GoBD-konform</em>、<em>ELSTER-kompatibel</em>、<em>Betriebsrat-tauglich</em>。</div></div>
+            <div class="step"><div class="step-n">4</div><div class="step-text">参与 IHK 和 Handwerkskammer 活动。一个信任网络里的演讲机会，比许多广告更值钱。</div></div>
+          </div>
+          <div class="case-block"><div class="case-co">German vertical SaaS</div><div class="case-text">真正赢下 Mittelstand 的产品，往往先解决一个本地流程，再向外扩展。</div></div>
+          <div class="dont-block">
+            <div class="dont-title">不要这样做</div>
+            <div class="dont-text">不要只翻译通用 horizontal SaaS 功能页。德国买家会搜索具体制度词和流程词。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" data-tab-panel="cert">
+    <div class="section-intro">认证在德国不是官网贴 logo，而是采购通行证。ISO 27001 是起点，BSI C5 正在公共部门、医疗和受监管行业变成更强门槛。</div>
+    <div class="cards">
+
+      <div class="card" onclick="toggleCard(this)">
+        <div class="card-header">
+          <div class="card-left">
+            <div class="card-number">加分项 13</div>
+            <div class="card-title">ISO 27001 是桌面筹码，德国审计机构更容易被识别</div>
+          </div>
+          <div class="card-tag tag-cert">ISO 27001</div>
+          <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body">
+          <div class="why-block">
+            <div class="why-label">为什么中文团队容易低估</div>
+            <div class="why-text">没有 ISO 27001，很多德国企业采购会直接卡在安全审查。德国审计机构出具的证书，在本地采购和安全团队眼里更容易被识别。</div>
+          </div>
+          <div class="how-steps">
+            <div class="how-title">怎么改成德国可接受</div>
+            <div class="step"><div class="step-n">1</div><div class="step-text">为初次认证预留 €40,000-100,000 和 8-14 个月。优先考虑 TÜV SÜD、TÜV Rheinland、DQS 等德国总部审计机构。</div></div>
+            <div class="step"><div class="step-n">2</div><div class="step-text">范围不要过窄：包含处理客户数据的生产系统、开发环境和关键支持流程。</div></div>
+            <div class="step"><div class="step-n">3</div><div class="step-text">拿证后在 Trust Center 显示证书编号、认证机构和 PDF 链接。</div></div>
+            <div class="step"><div class="step-n">4</div><div class="step-text">把年度监督审核写进 changelog，说明 ISMS 是持续运行，不是一次性打勾。</div></div>
+          </div>
+          <div class="case-block"><div class="case-co">德国采购基线</div><div class="case-text">ISO 27001 不是万能，但没有它，许多企业安全问卷会很难推进。</div></div>
+          <div class="dont-block">
+            <div class="dont-title">不要这样做</div>
+            <div class="dont-text">不要只认证一个无关小范围然后大面积营销。成熟 DPO 会看 scope。</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" onclick="toggleCard(this)">
+        <div class="card-header">
+          <div class="card-left">
+            <div class="card-number">加分项 14</div>
+            <div class="card-title">BSI C5 Type 2：公共部门和受监管行业的强信号</div>
+          </div>
+          <div class="card-tag tag-cert">BSI C5</div>
+          <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body">
+          <div class="why-block">
+            <div class="why-label">为什么中文团队容易低估</div>
+            <div class="why-text">C5 是德国云信任语境里的硬信号。对公共部门、医疗、金融和关键基础设施，它常常比国际通用证书更接近采购语言。</div>
+          </div>
+          <div class="how-steps">
+            <div class="how-title">怎么改成德国可接受</div>
+            <div class="step"><div class="step-n">1</div><div class="step-text">预留 €80,000-200,000+ 和 12-18 个月；可建立在 ISO 27001 基础上，重叠度约 60-70%。</div></div>
+            <div class="step"><div class="step-n">2</div><div class="step-text">提前准备 BSI 透明度文件，公开云架构、位置和流程等具体披露。</div></div>
+            <div class="step"><div class="step-n">3</div><div class="step-text">重点看医疗 SaaS：自 2025 年 7 月起，§393 SGB V 让医保云供应商需要 C5。</div></div>
+            <div class="step"><div class="step-n">4</div><div class="step-text">国际 SaaS 进入德国时，可对 EU region 做 C5 attestation，并清楚说明范围。</div></div>
+          </div>
+          <div class="case-block"><div class="case-co">BSI C5 market signal</div><div class="case-text">C5 会把对话从“能不能信任你”推进到“什么时候能部署”。</div></div>
+          <div class="dont-block">
+            <div class="dont-title">不要这样做</div>
+            <div class="dont-text">不要拿 SOC 2 当作德国公共部门的唯一安全凭证。SOC 2 有价值，但不是本地采购语言里的最强信号。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="summary-bar">
+    <div class="stat-item">
+      <div class="stat-n">14</div>
+      <div class="stat-label">个能降低德国采购阻力的产品准备</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-n">先信任</div>
+      <div class="stat-label">再销售。德国客户先判断你是否可靠</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-n">具体</div>
+      <div class="stat-label">位置、流程、认证、退出路径都要能查</div>
+    </div>
+  </div>
+</div>
+          </div>
         </section>
 
-        <section id="quiz" class="product-section book-page" data-book-page="quiz" data-book-title="Quiz" data-book-index="5">
-          <div class="section-kicker">Chapter 4</div>
+        <section id="quiz" class="product-section book-page" data-book-page="quiz" data-book-title="Quiz" data-book-title-key="nav.quiz" data-book-index="5">
+          <div class="section-kicker" data-i18n="chapter.4">Chapter 4</div>
           <div class="quiz">
   <div class="header">
     <div class="header-label">Germany · Product Compliance · Knowledge Check</div>
     <div class="header-title">Can you survive the <em>German market</em>?</div>
-    <div class="header-sub">12 real-world scenarios. Pick the right call. See instantly why you're right — or why you'd be in trouble.</div>
+    <div class="header-sub">15 real-world scenarios, including multi-select checkpoints. Pick the right call and see instantly why it matters.</div>
   </div>
 
   <div class="progress-row">
     <div class="progress-bar-track"><div class="progress-bar-fill" id="progress-fill" style="width:0%"></div></div>
-    <div class="progress-text" id="progress-text">0 / 12</div>
+    <div class="progress-text" id="progress-text">0 / 15</div>
   </div>
 
   <div id="q-container"></div>
