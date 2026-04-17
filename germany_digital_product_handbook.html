@@ -13,19 +13,15 @@
         <button class="product-brand" type="button" data-book-jump="cover">Germany Digital Product Handbook</button>
         <nav class="product-links" aria-label="Handbook sections">
           <button class="product-link is-active" type="button" data-book-jump="cover">Cover</button>
-          <button class="product-link" type="button" data-book-jump="red">Red lines</button>
-          <button class="product-link" type="button" data-book-jump="orange">Orange lines</button>
-          <button class="product-link" type="button" data-book-jump="green">Green lines</button>
+          <button class="product-link" type="button" data-book-jump="red">Prohibited</button>
+          <button class="product-link" type="button" data-book-jump="orange">Grey area</button>
+          <button class="product-link" type="button" data-book-jump="green">Recommend</button>
           <button class="product-link" type="button" data-book-jump="quiz">Quiz</button>
         </nav>
       </div>
     </header>
 
     <div class="book-frame">
-      <button class="book-arrow book-arrow-prev" type="button" data-book-prev aria-label="Previous page">
-        <span class="book-arrow-label">Previous</span>
-      </button>
-
       <main class="book-viewport">
         <section id="cover" class="product-section book-page is-active" data-book-page="cover" data-book-title="Cover" data-book-index="1">
           <div class="cover">
@@ -174,12 +170,12 @@
 </div>
         </section>
 
-        <section id="red" class="product-section book-page" data-book-page="red" data-book-title="Red lines" data-book-index="2">
+        <section id="red" class="product-section book-page" data-book-page="red" data-book-title="Prohibited" data-book-index="2">
           <div class="section-kicker">Chapter 1</div>
           <div class="handbook chapter-handbook" data-tabs data-chapter="red">
   <div class="hero">
     <div class="hero-copy">
-      <div class="hero-label">Germany · Product & Design · Red Lines Handbook 2025</div>
+      <div class="hero-label">Germany · Product & Design · Prohibited Handbook 2025</div>
       <div class="hero-title">What will <em>shut you down</em><br>in the German market</div>
       <div class="hero-sub">Absolute prohibitions. Cross these lines and you face criminal liability, fines up to 7% of global revenue, product injunctions, or forced market exit. No exceptions, no grey area.</div>
     </div>
@@ -802,11 +798,11 @@
 </div>
         </section>
 
-        <section id="orange" class="product-section book-page" data-book-page="orange" data-book-title="Orange lines" data-book-index="3">
+        <section id="orange" class="product-section book-page" data-book-page="orange" data-book-title="Grey area" data-book-index="3">
           <div class="section-kicker">Chapter 2</div>
           <div class="handbook chapter-handbook" data-tabs data-chapter="orange">
   <div class="hero">
-    <div class="hero-label">Germany · Product & Design · Orange Lines Handbook 2025</div>
+    <div class="hero-label">Germany · Product & Design · Grey Area Handbook 2025</div>
     <div class="hero-title">Where the law is <em>genuinely unclear</em><br>and the courts are still deciding</div>
     <div class="hero-sub">These are not red lines — the activity isn't banned. But enforcement is inconsistent, case law is forming, and a wrong product decision made today can become a hard violation overnight when the next ruling drops. Know the safer path. Know the riskier one. Choose deliberately.</div>
   </div>
@@ -1440,11 +1436,11 @@
 </div>
         </section>
 
-        <section id="green" class="product-section book-page" data-book-page="green" data-book-title="Green lines" data-book-index="4">
+        <section id="green" class="product-section book-page" data-book-page="green" data-book-title="Recommend" data-book-index="4">
           <div class="section-kicker">Chapter 3</div>
           <div class="handbook chapter-handbook" data-tabs data-chapter="green">
   <div class="hero">
-    <div class="hero-label">Germany · Product & Design · Green Lines Handbook 2025</div>
+    <div class="hero-label">Germany · Product & Design · Recommend Handbook 2025</div>
     <div class="hero-title">What actually <em>scores points</em><br>in the German market</div>
     <div class="hero-sub">Not compliance. Not "being safe." These are the affirmative choices — in architecture, UX, sales, and positioning — that make German buyers say yes faster, stay longer, and recommend you first.</div>
   </div>
@@ -1994,25 +1990,7 @@
 </div>
         </section>
       </main>
-
-      <button class="book-arrow book-arrow-next" type="button" data-book-next aria-label="Next page">
-        <span class="book-arrow-label">Next</span>
-      </button>
     </div>
-
-    <footer class="book-footer" aria-label="Page navigation">
-      <div class="book-footer-meta">
-        <div class="book-page-count"><span data-book-current>1</span> / <span data-book-total>5</span></div>
-        <div class="book-page-title" data-book-current-title>Cover</div>
-      </div>
-      <div class="book-dots">
-        <button class="book-dot is-active" type="button" data-book-jump="cover" aria-label="Go to cover"></button>
-        <button class="book-dot" type="button" data-book-jump="red" aria-label="Go to red lines"></button>
-        <button class="book-dot" type="button" data-book-jump="orange" aria-label="Go to orange lines"></button>
-        <button class="book-dot" type="button" data-book-jump="green" aria-label="Go to green lines"></button>
-        <button class="book-dot" type="button" data-book-jump="quiz" aria-label="Go to quiz"></button>
-      </div>
-    </footer>
   </div>
 
   <script src="germany_handbook_app.js"></script>

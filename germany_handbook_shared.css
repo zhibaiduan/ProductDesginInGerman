@@ -46,7 +46,7 @@ a{color:inherit;text-decoration:none;}
 
 .product-nav{
   position:sticky;
-  top:0;
+  top:16px;
   z-index:20;
   margin-bottom:28px;
 }
@@ -117,10 +117,7 @@ a{color:inherit;text-decoration:none;}
 }
 
 .book-frame{
-  display:grid;
-  grid-template-columns:64px minmax(0,1fr) 64px;
-  gap:16px;
-  align-items:start;
+  display:block;
 }
 
 .book-viewport{
@@ -1145,8 +1142,8 @@ a{color:inherit;text-decoration:none;}
 }
 
 #red .pill.active,
-#red .hero-title em,
 #red .summary-bar{background:#A32D2D;}
+#red .hero-title em{color:#A32D2D;}
 #red .pill.active{border-color:#A32D2D;background:#A32D2D;color:#FCEBEB;}
 
 #orange .pill.active,
@@ -1468,6 +1465,7 @@ a{color:inherit;text-decoration:none;}
 
 @media (max-width: 900px){
   .product-nav{
+    top:12px;
     margin-bottom:20px;
   }
 
@@ -1493,34 +1491,6 @@ a{color:inherit;text-decoration:none;}
     flex-wrap:nowrap;
     overflow-x:auto;
     padding-bottom:2px;
-  }
-
-  .book-frame{
-    grid-template-columns:1fr;
-    gap:0;
-  }
-
-  .book-arrow{
-    position:fixed;
-    top:auto;
-    bottom:92px;
-    z-index:18;
-    width:54px;
-    min-height:54px;
-    border-radius:999px;
-  }
-
-  .book-arrow-prev{left:16px;}
-  .book-arrow-next{right:16px;}
-
-  .book-footer{
-    flex-direction:column;
-    align-items:flex-start;
-  }
-
-  .book-footer-meta{
-    width:100%;
-    justify-content:space-between;
   }
 
   .product-section{
@@ -1568,7 +1538,7 @@ a{color:inherit;text-decoration:none;}
 
 @media (max-width: 640px){
   body{
-    padding:14px 12px 122px;
+    padding:14px 12px 56px;
   }
 
   .page-product{
@@ -1576,7 +1546,7 @@ a{color:inherit;text-decoration:none;}
   }
 
   .product-nav{
-    top:8px;
+    top:10px;
     margin-bottom:16px;
   }
 
@@ -1592,47 +1562,6 @@ a{color:inherit;text-decoration:none;}
   .product-link{
     padding:8px 12px;
     font-size:11px;
-  }
-
-  .book-arrow{
-    width:46px;
-    min-height:46px;
-    bottom:86px;
-  }
-
-  .book-arrow::before{
-    font-size:26px;
-  }
-
-  .book-footer{
-    position:fixed;
-    left:12px;
-    right:12px;
-    bottom:12px;
-    z-index:19;
-    margin-top:0;
-    padding:12px 14px;
-    border-radius:14px;
-    background:rgba(248,246,241,0.96);
-    backdrop-filter:blur(16px);
-  }
-
-  .book-footer-meta{
-    gap:8px;
-    align-items:baseline;
-  }
-
-  .book-page-count{
-    font-size:20px;
-  }
-
-  .book-page-title{
-    font-size:12px;
-  }
-
-  .book-dots{
-    width:100%;
-    justify-content:center;
   }
 
   .hero,
@@ -1820,7 +1749,7 @@ a{color:inherit;text-decoration:none;}
 
 @media (max-width: 420px){
   body{
-    padding:12px 10px 126px;
+    padding:12px 10px 48px;
   }
 
   .hero-headline{
@@ -1830,16 +1759,6 @@ a{color:inherit;text-decoration:none;}
   .hero-title{
     font-size:28px;
   }
-
-  .book-footer{
-    left:10px;
-    right:10px;
-    bottom:10px;
-    padding:11px 12px;
-  }
-
-  .book-arrow-prev{left:10px;}
-  .book-arrow-next{right:10px;}
 
   .card,
   .q-card,

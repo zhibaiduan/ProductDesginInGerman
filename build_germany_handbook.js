@@ -93,35 +93,31 @@ function build() {
         <button class="product-brand" type="button" data-book-jump="cover">Germany Digital Product Handbook</button>
         <nav class="product-links" aria-label="Handbook sections">
           <button class="product-link is-active" type="button" data-book-jump="cover">Cover</button>
-          <button class="product-link" type="button" data-book-jump="red">Red lines</button>
-          <button class="product-link" type="button" data-book-jump="orange">Orange lines</button>
-          <button class="product-link" type="button" data-book-jump="green">Green lines</button>
+          <button class="product-link" type="button" data-book-jump="red">Prohibited</button>
+          <button class="product-link" type="button" data-book-jump="orange">Grey area</button>
+          <button class="product-link" type="button" data-book-jump="green">Recommend</button>
           <button class="product-link" type="button" data-book-jump="quiz">Quiz</button>
         </nav>
       </div>
     </header>
 
     <div class="book-frame">
-      <button class="book-arrow book-arrow-prev" type="button" data-book-prev aria-label="Previous page">
-        <span class="book-arrow-label">Previous</span>
-      </button>
-
       <main class="book-viewport">
         <section id="cover" class="product-section book-page is-active" data-book-page="cover" data-book-title="Cover" data-book-index="1">
           ${cover}
         </section>
 
-        <section id="red" class="product-section book-page" data-book-page="red" data-book-title="Red lines" data-book-index="2">
+        <section id="red" class="product-section book-page" data-book-page="red" data-book-title="Prohibited" data-book-index="2">
           <div class="section-kicker">Chapter 1</div>
           ${red}
         </section>
 
-        <section id="orange" class="product-section book-page" data-book-page="orange" data-book-title="Orange lines" data-book-index="3">
+        <section id="orange" class="product-section book-page" data-book-page="orange" data-book-title="Grey area" data-book-index="3">
           <div class="section-kicker">Chapter 2</div>
           ${orange}
         </section>
 
-        <section id="green" class="product-section book-page" data-book-page="green" data-book-title="Green lines" data-book-index="4">
+        <section id="green" class="product-section book-page" data-book-page="green" data-book-title="Recommend" data-book-index="4">
           <div class="section-kicker">Chapter 3</div>
           ${green}
         </section>
@@ -131,25 +127,7 @@ function build() {
           ${quiz}
         </section>
       </main>
-
-      <button class="book-arrow book-arrow-next" type="button" data-book-next aria-label="Next page">
-        <span class="book-arrow-label">Next</span>
-      </button>
     </div>
-
-    <footer class="book-footer" aria-label="Page navigation">
-      <div class="book-footer-meta">
-        <div class="book-page-count"><span data-book-current>1</span> / <span data-book-total>5</span></div>
-        <div class="book-page-title" data-book-current-title>Cover</div>
-      </div>
-      <div class="book-dots">
-        <button class="book-dot is-active" type="button" data-book-jump="cover" aria-label="Go to cover"></button>
-        <button class="book-dot" type="button" data-book-jump="red" aria-label="Go to red lines"></button>
-        <button class="book-dot" type="button" data-book-jump="orange" aria-label="Go to orange lines"></button>
-        <button class="book-dot" type="button" data-book-jump="green" aria-label="Go to green lines"></button>
-        <button class="book-dot" type="button" data-book-jump="quiz" aria-label="Go to quiz"></button>
-      </div>
-    </footer>
   </div>
 
   <script src="germany_handbook_app.js"></script>
