@@ -1,0 +1,730 @@
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap');
+*{box-sizing:border-box;margin:0;padding:0;}
+.handbook{max-width:860px;margin:0 auto;padding:0 0 40px;font-family:'Plus Jakarta Sans',sans-serif;color:#1A1008;}
+.hero{padding:32px 0 28px;border-bottom:1.5px solid #1A1008;margin-bottom:32px;}
+.hero-label{font-size:11px;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:#888780;margin-bottom:10px;}
+.hero-title{font-family:'Newsreader',Georgia,serif;font-size:40px;font-weight:500;color:#1A1008;line-height:1.08;letter-spacing:-0.35px;}
+.hero-title em{font-style:italic;color:#854F0B;}
+.hero-sub{margin-top:14px;max-width:760px;font-size:16px;font-weight:400;color:#5F5E5A;line-height:1.75;}
+.nav-pills{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:28px;}
+.pill{font-size:12px;font-weight:500;padding:7px 16px;border-radius:20px;cursor:pointer;border:1px solid #B4B2A9;color:#5F5E5A;background:transparent;transition:all 0.15s;letter-spacing:0.2px;}
+.pill:hover{background:#E8E5DE;color:#1A1008;}
+.pill.active{background:#854F0B;color:#FAEEDA;border-color:#854F0B;}
+.section{display:none;}
+.section.visible{display:block;}
+.section-intro{font-size:15px;font-weight:400;color:#5F5E5A;line-height:1.85;margin-bottom:24px;padding-bottom:20px;border-bottom:0.5px solid #D3D1C7;}
+.section-intro strong{font-weight:500;color:#1A1008;}
+.cards{display:flex;flex-direction:column;gap:1px;background:#D3D1C7;border:0.5px solid #D3D1C7;border-radius:12px;overflow:hidden;}
+.card{background:#fff;padding:20px 24px;cursor:pointer;}
+.card:hover{background:#F8F6F1;}
+.card-header{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;}
+.card-left{flex:1;}
+.card-number{font-size:11px;font-weight:500;letter-spacing:2px;color:#888780;margin-bottom:6px;}
+.card-title{font-size:19px;font-weight:500;color:#1A1008;line-height:1.45;letter-spacing:-0.01em;max-width:48ch;}
+.card-tag{font-size:10px;font-weight:500;padding:3px 10px;border-radius:20px;white-space:nowrap;flex-shrink:0;margin-top:2px;}
+.tag-ai{background:#FAEEDA;color:#633806;}
+.tag-data{background:#FCEBEB;color:#791F1F;}
+.tag-fin{background:#EAF3DE;color:#27500A;}
+.tag-labor{background:#EEEDFE;color:#3C3489;}
+.tag-consumer{background:#FAECE7;color:#712B13;}
+.tag-platform{background:#E6F1FB;color:#0C447C;}
+.card-body{display:none;margin-top:16px;padding-top:16px;border-top:0.5px solid #D3D1C7;}
+.card-body.open{display:block;}
+
+.tension-block{background:#FAEEDA;border-radius:8px;padding:14px 16px;margin-bottom:14px;}
+.tension-title{font-size:11px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:#854F0B;margin-bottom:8px;}
+.tension-text{font-size:15px;font-weight:400;color:#412402;line-height:1.78;}
+.tension-text strong{font-weight:500;color:#633806;}
+
+.verdict-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px;}
+.verdict-box{border-radius:8px;padding:12px 14px;}
+.verdict-safe{background:#EAF3DE;}
+.verdict-risky{background:#FCEBEB;}
+.verdict-label{font-size:10px;font-weight:500;letter-spacing:2px;text-transform:uppercase;margin-bottom:6px;}
+.label-safe{color:#27500A;}
+.label-risky{color:#791F1F;}
+.verdict-text{font-size:14px;font-weight:400;line-height:1.68;}
+.text-safe{color:#173404;}
+.text-risky{color:#501313;}
+
+.law-ref{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:14px;}
+.law-tag{font-size:11px;font-weight:400;padding:3px 9px;border-radius:3px;background:#F1EFE8;color:#5F5E5A;border:0.5px solid #D3D1C7;font-family:monospace;}
+
+.watch-block{border-left:2px solid #EF9F27;padding:10px 14px;margin-bottom:10px;}
+.watch-label{font-size:11px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:#854F0B;margin-bottom:4px;}
+.watch-text{font-size:14px;font-weight:400;color:#5F5E5A;line-height:1.72;}
+.watch-text strong{font-weight:500;color:#1A1008;}
+
+.who-block{margin-bottom:14px;}
+.who-title{font-size:11px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:#888780;margin-bottom:8px;}
+.who-tags{display:flex;flex-wrap:wrap;gap:5px;}
+.who-tag{font-size:11px;font-weight:500;padding:4px 10px;border-radius:20px;background:#F1EFE8;color:#5F5E5A;border:0.5px solid #D3D1C7;}
+
+.status-pill{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:500;padding:4px 10px;border-radius:20px;margin-bottom:14px;}
+.status-live{background:#FAEEDA;color:#633806;}
+.status-forming{background:#F1EFE8;color:#5F5E5A;}
+.status-dot{width:6px;height:6px;border-radius:50%;background:currentColor;flex-shrink:0;}
+
+.chevron{width:16px;height:16px;color:#888780;flex-shrink:0;margin-top:4px;transition:transform 0.2s;}
+.card.open .chevron{transform:rotate(180deg);}
+
+.summary-bar{margin-top:32px;padding:20px 24px;background:#854F0B;border-radius:12px;display:grid;grid-template-columns:repeat(3,1fr);gap:1px;}
+.stat-item{padding:0 16px;border-right:1px solid rgba(255,255,255,0.15);}
+.stat-item:first-child{padding-left:0;}
+.stat-item:last-child{border-right:none;}
+.stat-n{font-family:'Newsreader',Georgia,serif;font-size:30px;font-weight:500;color:#fff;line-height:1;margin-bottom:4px;}
+.stat-label{font-size:12px;font-weight:400;color:rgba(255,255,255,0.72);line-height:1.55;}
+</style>
+
+<div class="handbook">
+  <div class="hero">
+    <div class="hero-label">Germany · Product & Design · Orange Lines Handbook 2025</div>
+    <div class="hero-title">Where the law is <em>genuinely unclear</em><br>and the courts are still deciding</div>
+    <div class="hero-sub">These are not red lines — the activity isn't banned. But enforcement is inconsistent, case law is forming, and a wrong product decision made today can become a hard violation overnight when the next ruling drops. Know the safer path. Know the riskier one. Choose deliberately.</div>
+  </div>
+
+  <div class="nav-pills">
+    <div class="pill active" onclick="showSection('ai')">AI & automation</div>
+    <div class="pill" onclick="showSection('data')">Data & tracking</div>
+    <div class="pill" onclick="showSection('fin')">Fintech</div>
+    <div class="pill" onclick="showSection('labor')">HR & workplace</div>
+    <div class="pill" onclick="showSection('consumer')">Consumer UX</div>
+    <div class="pill" onclick="showSection('platform')">Platform & competition</div>
+  </div>
+
+  <!-- AI -->
+  <div id="ai" class="section visible">
+    <div class="section-intro">
+      EU AI Act high-risk obligations land <strong>2 August 2026</strong> — but classification disputes, undefined thresholds, and the Digital Omnibus proposal (which may delay to 2027) mean product teams are navigating genuine legal uncertainty right now. The safe assumption: if your AI touches HR, credit, education, or law enforcement, treat it as high-risk regardless of how you categorise it internally.
+    </div>
+    <div class="cards">
+
+      <div class="card" onclick="toggleCard(this)">
+        <div class="card-header">
+          <div class="card-left">
+            <div class="card-number">ORANGE LINE 01</div>
+            <div class="card-title">High-risk AI classification — "does my system qualify for the exemption?"</div>
+          </div>
+          <div class="card-tag tag-ai">AI Act</div>
+          <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body">
+          <div class="status-pill status-live"><div class="status-dot"></div>Obligations from Aug 2026 · Classification contested now</div>
+          <div class="tension-block">
+            <div class="tension-title">Why it's genuinely ambiguous</div>
+            <div class="tension-text">EU AI Act Art. 6(3) allows providers to self-declare a system <em>not</em> high-risk if it meets four conditions (narrow scope, improving human activity, detecting patterns, preparing tasks). But: <strong>the EC guidance document due February 2026 is still delayed</strong>. No published case list. And the catch — systems involving "profiling of natural persons" under GDPR Art. 4(4) are always high-risk regardless, which captures most HR, credit, and recommendation AI. The self-exemption path is narrower than it looks.</div>
+          </div>
+          <div class="law-ref">
+            <span class="law-tag">EU AI Act Art. 6(3)</span>
+            <span class="law-tag">Annex III</span>
+            <span class="law-tag">Art. 6(4) self-declaration</span>
+          </div>
+          <div class="verdict-row">
+            <div class="verdict-box verdict-safe">
+              <div class="verdict-label label-safe">Safer path</div>
+              <div class="verdict-text text-safe">Default to high-risk classification for any Annex III use case. Begin conformity assessment documentation now. Build human-override mechanisms into the product architecture. Treat Aug 2026 as a real deadline.</div>
+            </div>
+            <div class="verdict-box verdict-risky">
+              <div class="verdict-label label-risky">Riskier path</div>
+              <div class="verdict-text text-risky">Claim Art. 6(3) exemption for HR screening or credit scoring AI without documented legal analysis. Wait for the EC guidance before doing anything. Assume Digital Omnibus delay makes this someone else's problem.</div>
+            </div>
+          </div>
+          <div class="who-block">
+            <div class="who-title">Who must decide now</div>
+            <div class="who-tags">
+              <span class="who-tag">HR tech / recruitment AI</span>
+              <span class="who-tag">Credit scoring systems</span>
+              <span class="who-tag">Educational assessment AI</span>
+              <span class="who-tag">Insurance underwriting</span>
+            </div>
+          </div>
+          <div class="watch-block">
+            <div class="watch-label">Watch for</div>
+            <div class="watch-text">EC classification guidance (overdue, expected H1 2026). Digital Omnibus vote — if it passes, high-risk deadline shifts to Dec 2027. CEN-CENELEC harmonised standards (JTC 21) — without these, conformity assessment has no fixed methodology.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" onclick="toggleCard(this)">
+        <div class="card-header">
+          <div class="card-left">
+            <div class="card-number">ORANGE LINE 02</div>
+            <div class="card-title">AI-generated content labelling — where does "assisted" end and "generated" begin?</div>
+          </div>
+          <div class="card-tag tag-ai">AI Act</div>
+          <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body">
+          <div class="status-pill status-live"><div class="status-dot"></div>Art. 50 applies from Aug 2025 · Code of Practice still in draft</div>
+          <div class="tension-block">
+            <div class="tension-title">Why it's genuinely ambiguous</div>
+            <div class="tension-text">EU AI Act Art. 50(2) requires machine-readable labelling of AI-generated synthetic content. But the <strong>second draft of the Transparency Code of Practice (March 2026) deleted the entire classification framework</strong> from the first draft — there is now no published EU definition of what distinguishes "AI-assisted" from "AI-generated." An AI that rewrites a paragraph: generated? A human who accepts 80% of AI suggestions: assisted? No answer exists yet.</div>
+          </div>
+          <div class="law-ref">
+            <span class="law-tag">EU AI Act Art. 50(1)</span>
+            <span class="law-tag">EU AI Act Art. 50(2)</span>
+            <span class="law-tag">Art. 50(4) deepfakes</span>
+          </div>
+          <div class="verdict-row">
+            <div class="verdict-box verdict-safe">
+              <div class="verdict-label label-safe">Safer path</div>
+              <div class="verdict-text text-safe">Label all AI-generated content proactively. Implement C2PA metadata for images/video. Always disclose chatbot nature. Apply "editorial control" standard: if a human substantively reviewed and could have changed it, it may qualify as assisted. Document the decision.</div>
+            </div>
+            <div class="verdict-box verdict-risky">
+              <div class="verdict-label label-risky">Riskier path</div>
+              <div class="verdict-text text-risky">Claim "editorial assistance" exemption for bulk AI-generated marketing content. Use deepfake or synthetic voice without disclosure because "users should be able to tell." Wait for Code of Practice to finalise before building any labelling infrastructure.</div>
+            </div>
+          </div>
+          <div class="who-block">
+            <div class="who-title">Who must decide now</div>
+            <div class="who-tags">
+              <span class="who-tag">Content generation tools</span>
+              <span class="who-tag">Marketing AI</span>
+              <span class="who-tag">Voice synthesis products</span>
+              <span class="who-tag">Image/video generation</span>
+              <span class="who-tag">Chatbot interfaces</span>
+            </div>
+          </div>
+          <div class="watch-block">
+            <div class="watch-label">Watch for</div>
+            <div class="watch-text">Final Transparency Code of Practice (expected late 2026). German §201b StGB deepfake criminal law — draft passed Bundesrat, awaiting Bundestag. This would add criminal liability for non-consensual intimate deepfakes on top of Art. 50.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" onclick="toggleCard(this)">
+        <div class="card-header">
+          <div class="card-left">
+            <div class="card-number">ORANGE LINE 03</div>
+            <div class="card-title">Automated profiling that doesn't quite trigger GDPR Art. 22 — but is getting closer</div>
+          </div>
+          <div class="card-tag tag-ai">AI & GDPR</div>
+          <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body">
+          <div class="status-pill status-live"><div class="status-dot"></div>SCHUFA ruling (Dec 2023) expanding scope · DSK guidance (2024)</div>
+          <div class="tension-block">
+            <div class="tension-title">Why it's genuinely ambiguous</div>
+            <div class="tension-text">GDPR Art. 22 covers decisions "based solely on automated processing." But CJEU C-634/21 (SCHUFA) ruled that a credit score that is <strong>"determinative in practice"</strong> for the bank's decision counts — even if a human nominally makes the final call. The DSK (German DPA conference) in 2024 extended this logic: if AI output is the primary driver and human review is a "rubber stamp," Art. 22 applies. <strong>The "human in the loop" defence is weakening rapidly.</strong></div>
+          </div>
+          <div class="law-ref">
+            <span class="law-tag">GDPR Art. 22</span>
+            <span class="law-tag">CJEU C-634/21</span>
+            <span class="law-tag">CJEU C-203/22</span>
+            <span class="law-tag">DSK guidance 2024</span>
+          </div>
+          <div class="verdict-row">
+            <div class="verdict-box verdict-safe">
+              <div class="verdict-label label-safe">Safer path</div>
+              <div class="verdict-text text-safe">Build genuine human review with documented override capability. Conduct DPIA for all profiling. Provide Art. 22 rights (explanation, human review, contest) regardless of whether you think it technically applies. Run this past a German data protection lawyer.</div>
+            </div>
+            <div class="verdict-box verdict-risky">
+              <div class="verdict-label label-risky">Riskier path</div>
+              <div class="verdict-text text-risky">Rely on "human in the loop" where the human's actual job is to approve 97% of AI recommendations without investigation. Argue that your system only "assists" decisions when the output is shown in a format that drives immediate action.</div>
+            </div>
+          </div>
+          <div class="who-block">
+            <div class="who-title">Who must decide now</div>
+            <div class="who-tags">
+              <span class="who-tag">Credit / loan decisioning AI</span>
+              <span class="who-tag">Automated recruitment shortlisting</span>
+              <span class="who-tag">Insurance pricing AI</span>
+              <span class="who-tag">Fraud detection with auto-block</span>
+            </div>
+          </div>
+          <div class="watch-block">
+            <div class="watch-label">Watch for</div>
+            <div class="watch-text">CJEU pending referrals on Art. 22 scope. EU AI Act Art. 86 (right to explanation for high-risk AI decisions) applying from Aug 2026 — this is broader than Art. 22 and covers AI-assisted decisions, not just solely automated ones.</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- DATA -->
+  <div id="data" class="section">
+    <div class="section-intro">
+      The data protection gray zone in Germany is where <strong>technically legal choices become commercially catastrophic</strong> when case law moves. Google Analytics 4 was universally used; then Austrian and French DPAs ruled it illegal; German DPAs followed. The pattern repeats. Know which tools are currently contested before you build your stack around them.
+    </div>
+    <div class="cards">
+
+      <div class="card" onclick="toggleCard(this)">
+        <div class="card-header">
+          <div class="card-left">
+            <div class="card-number">ORANGE LINE 04</div>
+            <div class="card-title">Analytics tools in Germany — GA4, Meta Pixel, server-side tagging, fingerprinting</div>
+          </div>
+          <div class="card-tag tag-data">Tracking</div>
+          <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body">
+          <div class="status-pill status-live"><div class="status-dot"></div>VG Hannover (Mar 2025) · OLG Frankfurt (Dec 2025) · Active enforcement</div>
+          <div class="tension-block">
+            <div class="tension-title">Why it's genuinely ambiguous</div>
+            <div class="tension-text">After VG Hannover (2025) ruled GTM itself requires consent, the analytics stack question crystallised: <strong>GA4</strong> requires explicit opt-in (non-essential cookie + US data transfer via DPF, which is contested). <strong>Meta Pixel</strong> requires consent — no German DPA has accepted any alternative. <strong>Server-side tagging</strong> reduces client-side exposure but doesn't eliminate consent requirements — German DPAs haven't published specific guidance yet. <strong>Cookieless analytics</strong> (Matomo self-hosted, Plausible) are the safest but Germany does not recognise the French CNIL audience-measurement exemption.</div>
+          </div>
+          <div class="law-ref">
+            <span class="law-tag">TDDDG §25</span>
+            <span class="law-tag">GDPR Art. 6/44</span>
+            <span class="law-tag">VG Hannover 2025</span>
+            <span class="law-tag">OLG Frankfurt 2025</span>
+          </div>
+          <div class="verdict-row">
+            <div class="verdict-box verdict-safe">
+              <div class="verdict-label label-safe">Safer path</div>
+              <div class="verdict-text text-safe">Self-hosted Matomo with cookies disabled + IP anonymisation. GA4 loaded only post-consent via certified CMP. No Meta Pixel without explicit opt-in. Treat server-side tagging as still requiring consent until DPA guidance emerges.</div>
+            </div>
+            <div class="verdict-box verdict-risky">
+              <div class="verdict-label label-risky">Riskier path</div>
+              <div class="verdict-text text-risky">Loading GTM before consent. Claiming GA4 is fine because DPF is in place. Using cookieless fingerprinting as consent-free tracking. Assuming server-side tagging eliminates consent requirement because data doesn't hit the browser.</div>
+            </div>
+          </div>
+          <div class="who-block">
+            <div class="who-title">Who must decide now</div>
+            <div class="who-tags">
+              <span class="who-tag">All consumer websites in Germany</span>
+              <span class="who-tag">Marketing teams</span>
+              <span class="who-tag">Growth engineers</span>
+              <span class="who-tag">E-commerce</span>
+            </div>
+          </div>
+          <div class="watch-block">
+            <div class="watch-label">Watch for</div>
+            <div class="watch-text">DSK position paper on server-side tagging (no ETA). DPF third Schrems challenge at CJEU — if it invalidates DPF, GA4 loses its US transfer basis entirely. German CMO Ordinance (EinwV) — certified CMPs now standardised, affecting consent signal reliability.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" onclick="toggleCard(this)">
+        <div class="card-header">
+          <div class="card-left">
+            <div class="card-number">ORANGE LINE 05</div>
+            <div class="card-title">EU-US data transfers — DPF is valid today, contested tomorrow</div>
+          </div>
+          <div class="card-tag tag-data">Data transfers</div>
+          <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body">
+          <div class="status-pill status-live"><div class="status-dot"></div>DPF valid · CJEU challenge accepted · German DPAs recommend exit strategies</div>
+          <div class="tension-block">
+            <div class="tension-title">Why it's genuinely ambiguous</div>
+            <div class="tension-text">The EU-US Data Privacy Framework (DPF) is currently valid. But: Trump's January 2025 executive actions dismantled PCLOB oversight (a structural pillar of DPF). European Parliament formally questioned the Commission in February 2025. Schrems/noyb filed a new CJEU challenge. <strong>German BfDI and several Landesbeauftragte have explicitly recommended that organisations build "exit strategies" from US cloud dependency.</strong> This is not a red line yet — but every Schrems ruling has come faster than companies planned for.</div>
+          </div>
+          <div class="law-ref">
+            <span class="law-tag">GDPR Art. 44–49</span>
+            <span class="law-tag">EU-US DPF (2023/1795)</span>
+            <span class="law-tag">SCCs 2021</span>
+          </div>
+          <div class="verdict-row">
+            <div class="verdict-box verdict-safe">
+              <div class="verdict-label label-safe">Safer path</div>
+              <div class="verdict-text text-safe">Maintain DPF reliance but implement SCCs as a parallel fallback. Pseudonymise sensitive data before US transfer. For new contracts: prefer EU-hosted alternatives. Document a "30-day migration plan" for your critical US services.</div>
+            </div>
+            <div class="verdict-box verdict-risky">
+              <div class="verdict-label label-risky">Riskier path</div>
+              <div class="verdict-text text-risky">Relying solely on DPF with no SCCs backup. Transferring special category data (health, HR) to US vendors without additional safeguards. Assuming the third DPF holds when the structural conditions that justified it have weakened.</div>
+            </div>
+          </div>
+          <div class="who-block">
+            <div class="who-title">Who must decide now</div>
+            <div class="who-tags">
+              <span class="who-tag">B2B SaaS on AWS/Azure/GCP</span>
+              <span class="who-tag">HR tech (employee data)</span>
+              <span class="who-tag">Health data processors</span>
+              <span class="who-tag">Any US-parent company with EU operations</span>
+            </div>
+          </div>
+          <div class="watch-block">
+            <div class="watch-label">Watch for</div>
+            <div class="watch-text">CJEU decision on noyb DPF challenge (no fixed timeline, but Schrems II took 4 years from filing to ruling). US DOGE access to government databases — if EU Commission concludes US surveillance has expanded, DPF adequacy decision can be suspended unilaterally.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" onclick="toggleCard(this)">
+        <div class="card-header">
+          <div class="card-left">
+            <div class="card-number">ORANGE LINE 06</div>
+            <div class="card-title">Health-adjacent data — when does "wellness" become "health data" under Art. 9?</div>
+          </div>
+          <div class="card-tag tag-data">Data classification</div>
+          <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body">
+          <div class="status-pill status-forming"><div class="status-dot"></div>Case law forming · No bright-line rule</div>
+          <div class="tension-block">
+            <div class="tension-title">Why it's genuinely ambiguous</div>
+            <div class="tension-text">GDPR defines health data broadly: "data related to the physical or mental health of a natural person, including data that reveals information about their health status." <strong>German DPAs read this very expansively.</strong> Heart rate + sleep data + location: probably Art. 9 health data. Step count without health claims: probably not. Mental health app usage patterns: contested. Stress indicators from voice: almost certainly Art. 9. The DSK's 2023 paper on cloud health apps made clear that analytics and error tracking in health apps need separate legal bases from the core service.</div>
+          </div>
+          <div class="law-ref">
+            <span class="law-tag">GDPR Art. 9</span>
+            <span class="law-tag">GDPR Art. 4(15)</span>
+            <span class="law-tag">DSK paper Nov 2023</span>
+          </div>
+          <div class="verdict-row">
+            <div class="verdict-box verdict-safe">
+              <div class="verdict-label label-safe">Safer path</div>
+              <div class="verdict-text text-safe">Treat all biometric and physiological metrics as Art. 9 data. Obtain explicit consent (Art. 9(2)(a)) for health-adjacent features. Separate analytics consent from core service consent. Run a DPIA before launch.</div>
+            </div>
+            <div class="verdict-box verdict-risky">
+              <div class="verdict-label label-risky">Riskier path</div>
+              <div class="verdict-text text-risky">Classifying heart rate, sleep quality, or stress indicators as "fitness data" to avoid Art. 9's stricter regime. Using legitimate interest as the legal basis for health-adjacent processing. Bundling analytics consent with core service consent in health apps.</div>
+            </div>
+          </div>
+          <div class="who-block">
+            <div class="who-title">Who must decide now</div>
+            <div class="who-tags">
+              <span class="who-tag">Health / wellness apps</span>
+              <span class="who-tag">Wearable software</span>
+              <span class="who-tag">Mental health tech</span>
+              <span class="who-tag">Fitness platforms with health features</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FINTECH -->
+  <div id="fin" class="section">
+    <div class="section-intro">
+      German fintech regulation has three active gray zones in 2025–2026: <strong>embedded finance</strong> (where does "facilitating" end and "providing" begin?), <strong>BNPL</strong> (CCD II transposition overdue, rules unclear), and <strong>DeFi</strong> (MiCA explicitly excludes it, but BaFin is finding ways to reach in anyway). BaFin's Ethena GmbH action in 2025 showed they will move fast with limited warning.
+    </div>
+    <div class="cards">
+
+      <div class="card" onclick="toggleCard(this)">
+        <div class="card-header">
+          <div class="card-left">
+            <div class="card-number">ORANGE LINE 07</div>
+            <div class="card-title">Embedded finance — "facilitating" vs. "providing" payments or credit</div>
+          </div>
+          <div class="card-tag tag-fin">Fintech</div>
+          <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body">
+          <div class="status-pill status-live"><div class="status-dot"></div>BaFin substance-over-form doctrine · Solaris case ongoing</div>
+          <div class="tension-block">
+            <div class="tension-title">Why it's genuinely ambiguous</div>
+            <div class="tension-text">BaFin applies substance over form: <strong>if you control the customer relationship and the economics of a financial product, you may be considered the provider regardless of whether a licensed entity is in the chain.</strong> The Solaris case illustrated this: BaFin fined the BaaS provider — not just the end brands — because Solaris was deemed to operate "its own business" when enabling branded financial products. PSD3/PSR (political agreement Nov 2025, application 2027–28) will further tighten commercial agency exemptions.</div>
+          </div>
+          <div class="law-ref">
+            <span class="law-tag">KWG §32</span>
+            <span class="law-tag">ZAG §10</span>
+            <span class="law-tag">PSD3/PSR (pending)</span>
+          </div>
+          <div class="verdict-row">
+            <div class="verdict-box verdict-safe">
+              <div class="verdict-label label-safe">Safer path</div>
+              <div class="verdict-text text-safe">Pure infrastructure SaaS layer that never touches money flows. Obtain your own ZAG/KWG licence. Clearly document that the licensed partner — not you — controls credit decisions, customer contracts, and fund flows.</div>
+            </div>
+            <div class="verdict-box verdict-risky">
+              <div class="verdict-label label-risky">Riskier path</div>
+              <div class="verdict-text text-risky">White-labelling a licensed partner's banking product under your brand while controlling the customer relationship. Assuming a "technology provider" label exempts you from KWG obligations if you determine underwriting criteria or pricing.</div>
+            </div>
+          </div>
+          <div class="who-block">
+            <div class="who-title">Who must decide now</div>
+            <div class="who-tags">
+              <span class="who-tag">BaaS platforms</span>
+              <span class="who-tag">Marketplace finance features</span>
+              <span class="who-tag">BNPL integrations</span>
+              <span class="who-tag">B2B payment tools</span>
+            </div>
+          </div>
+          <div class="watch-block">
+            <div class="watch-label">Watch for</div>
+            <div class="watch-text">Solaris ongoing BaFin supervision — any additional action will set precedent for BaaS liability. PSD3/PSR transposition (Germany expected 2027) — commercial agent exemption scope will narrow.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" onclick="toggleCard(this)">
+        <div class="card-header">
+          <div class="card-left">
+            <div class="card-number">ORANGE LINE 08</div>
+            <div class="card-title">BNPL — CCD II transposition overdue, rules still unresolved</div>
+          </div>
+          <div class="card-tag tag-fin">Fintech</div>
+          <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body">
+          <div class="status-pill status-live"><div class="status-dot"></div>CCD II transposition deadline Nov 2025 missed · Application Nov 2026</div>
+          <div class="tension-block">
+            <div class="tension-title">Why it's genuinely ambiguous</div>
+            <div class="tension-text">EU Consumer Credit Directive II (CCD II) closes the exemptions that allowed most BNPL to operate unlicensed: the under-200-euro exemption, the 3-month-free exemption, and the interest-free exemption are all being removed. <strong>Germany missed the November 2025 transposition deadline.</strong> The rules must apply from November 2026, but the exact German legislative text is still in parliamentary process. BNPL operators face a law that is definitively changing but whose final German implementation details are unresolved.</div>
+          </div>
+          <div class="law-ref">
+            <span class="law-tag">CCD II (2023/2225)</span>
+            <span class="law-tag">BGB §491ff (current)</span>
+            <span class="law-tag">New BGB §506 (pending)</span>
+          </div>
+          <div class="verdict-row">
+            <div class="verdict-box verdict-safe">
+              <div class="verdict-label label-safe">Safer path</div>
+              <div class="verdict-text text-safe">Build creditworthiness assessment infrastructure now — it will be required regardless of final German text. Treat any deferred payment offering as consumer credit from a product design perspective. Monitor German legislative progress monthly.</div>
+            </div>
+            <div class="verdict-box verdict-risky">
+              <div class="verdict-label label-risky">Riskier path</div>
+              <div class="verdict-text text-risky">Continuing to operate under the old exemptions assuming they'll survive German transposition. Structuring BNPL products to technically stay under former thresholds without building credit assessment capability. Launching new BNPL features in Germany without legal opinion on CCD II impact.</div>
+            </div>
+          </div>
+          <div class="who-block">
+            <div class="who-title">Who must decide now</div>
+            <div class="who-tags">
+              <span class="who-tag">BNPL providers</span>
+              <span class="who-tag">E-commerce with deferred payment</span>
+              <span class="who-tag">B2B trade credit platforms</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- LABOR -->
+  <div id="labor" class="section">
+    <div class="section-intro">
+      The German employee data protection landscape is in its most unstable state in decades. The BAG declared the main BDSG provision on employee data <strong>partially inapplicable</strong> in 2023. A replacement statute (BeschDG) was drafted but never passed due to snap elections. Meanwhile, EU AI Act BetrVG interaction rules, algorithmic management court cases, and the Platform Work Directive transposition are all arriving simultaneously.
+    </div>
+    <div class="cards">
+
+      <div class="card" onclick="toggleCard(this)">
+        <div class="card-header">
+          <div class="card-left">
+            <div class="card-number">ORANGE LINE 09</div>
+            <div class="card-title">Aggregated / "anonymised" productivity monitoring — does anonymisation remove consent?</div>
+          </div>
+          <div class="card-tag tag-labor">HR Tech</div>
+          <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body">
+          <div class="status-pill status-live"><div class="status-dot"></div>BAG 2024 precedent · BetrVG §87 objective test applies regardless</div>
+          <div class="tension-block">
+            <div class="tension-title">Why it's genuinely ambiguous</div>
+            <div class="tension-text">Vendors claim that team-level aggregated productivity metrics don't monitor individuals. German DPAs and the BAG disagree: <strong>BetrVG §87(1) Nr. 6's "objective suitability" test looks at whether the underlying system can monitor individuals</strong> — not whether aggregated outputs do. A team of 5 where "team average" is reported is effectively an individual monitor. BAG May 2025 awarded €200 damages for data processing in Workday beyond Betriebsvereinbarung scope. This signals courts are willing to enforce fine-grained data use limitations.</div>
+          </div>
+          <div class="law-ref">
+            <span class="law-tag">BetrVG §87(1) Nr. 6</span>
+            <span class="law-tag">GDPR Art. 4(5)</span>
+            <span class="law-tag">BAG (May 2025)</span>
+          </div>
+          <div class="verdict-row">
+            <div class="verdict-box verdict-safe">
+              <div class="verdict-label label-safe">Safer path</div>
+              <div class="verdict-text text-safe">Obtain Betriebsvereinbarung before deploying any system with activity logging — even if outputs appear aggregated. Implement technical controls that genuinely prevent individual re-identification in teams under 15 people. Scope data processing precisely to what the Betriebsvereinbarung authorises.</div>
+            </div>
+            <div class="verdict-box verdict-risky">
+              <div class="verdict-label label-risky">Riskier path</div>
+              <div class="verdict-text text-risky">Claiming "team analytics" exempt from BetrVG because outputs are aggregated. Deploying Microsoft Viva Insights or similar tools and telling the Betriebsrat after the fact. Using anonymisation as a substitute for the consent process rather than as an additional safeguard.</div>
+            </div>
+          </div>
+          <div class="who-block">
+            <div class="who-title">Who must decide now</div>
+            <div class="who-tags">
+              <span class="who-tag">HR analytics vendors</span>
+              <span class="who-tag">Project management tools with activity logging</span>
+              <span class="who-tag">Collaboration platform vendors</span>
+              <span class="who-tag">Remote work monitoring tools</span>
+            </div>
+          </div>
+          <div class="watch-block">
+            <div class="watch-label">Watch for</div>
+            <div class="watch-text">BeschDG (Employee Data Protection Act) — new coalition may revive. If passed, it will either clarify or further restrict employee monitoring. EU Platform Work Directive transposition by Dec 2026 — Germany's implementation approach for algorithmic management rules is still undefined.</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- CONSUMER -->
+  <div id="consumer" class="section">
+    <div class="section-intro">
+      German consumer protection has three live gray zones: <strong>dark patterns</strong> (DSA Art. 25 enforcement started but definitions remain vague), <strong>personalised pricing</strong> (disclosure required since Omnibus Directive, but discrimination threshold undefined), and <strong>free trial conversions</strong> (BGH extended §312k scope in 2025 but edge cases remain unsettled).
+    </div>
+    <div class="cards">
+
+      <div class="card" onclick="toggleCard(this)">
+        <div class="card-header">
+          <div class="card-left">
+            <div class="card-number">ORANGE LINE 10</div>
+            <div class="card-title">Dark patterns — DSA Art. 25 enforcement started but the definition is still vague</div>
+          </div>
+          <div class="card-tag tag-consumer">Consumer Protection</div>
+          <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body">
+          <div class="status-pill status-live"><div class="status-dot"></div>X fined €120M · OLG Bamberg Eventim ruling · EC guidelines pending</div>
+          <div class="tension-block">
+            <div class="tension-title">Why it's genuinely ambiguous</div>
+            <div class="tension-text">DSA Art. 25 prohibits "deceptive design" but the EC has not yet published Art. 25(3) guidance on specifically prohibited patterns. OLG Bamberg ruled in February 2025 that Eventim's insurance opt-in push (guilt-inducing button copy, repeated popups, colour differentiation) violated UCPD — <strong>but as a UWG claim, not a DSA claim</strong>. This creates a gap: consumer UX is actionable under UWG/UCPD even when DSA enforcement is unclear. The Digital Fairness Act (DFA), expected as a proposal in Q4 2026, may codify specific banned patterns for non-VLOP platforms.</div>
+          </div>
+          <div class="law-ref">
+            <span class="law-tag">DSA Art. 25</span>
+            <span class="law-tag">UWG §4a</span>
+            <span class="law-tag">UCPD</span>
+            <span class="law-tag">OLG Bamberg (Feb 2025)</span>
+          </div>
+          <div class="verdict-row">
+            <div class="verdict-box verdict-safe">
+              <div class="verdict-label label-safe">Safer path</div>
+              <div class="verdict-text text-safe">Equal visual weight for accept/decline options. No guilt-inducing button copy ("I don't want to save money"). No pre-ticked upsell add-ons. Cancellation path as simple as sign-up. No urgency timers on consent or purchase flows.</div>
+            </div>
+            <div class="verdict-box verdict-risky">
+              <div class="verdict-label label-risky">Riskier path</div>
+              <div class="verdict-text text-risky">Colour-differentiating accept vs. decline buttons. Repeated re-prompting after user declines. "Confirm shaming" copy on the decline option. Making cancellation require a phone call or 7-step process while sign-up is one click.</div>
+            </div>
+          </div>
+          <div class="who-block">
+            <div class="who-title">Who must decide now</div>
+            <div class="who-tags">
+              <span class="who-tag">Consumer SaaS</span>
+              <span class="who-tag">E-commerce checkouts</span>
+              <span class="who-tag">Subscription products</span>
+              <span class="who-tag">Marketplace platforms</span>
+            </div>
+          </div>
+          <div class="watch-block">
+            <div class="watch-label">Watch for</div>
+            <div class="watch-text">EC Art. 25(3) DSA guidance (no ETA). Digital Fairness Act proposal (EC work programme Q4 2026) — likely to enumerate specific prohibited UX patterns for all platforms. BNetzA active enforcement of DSA in Germany — Bundesnetzagentur has taken on the DSA coordination role.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" onclick="toggleCard(this)">
+        <div class="card-header">
+          <div class="card-left">
+            <div class="card-number">ORANGE LINE 11</div>
+            <div class="card-title">Personalised pricing — disclosure required, discrimination threshold undefined</div>
+          </div>
+          <div class="card-tag tag-consumer">Consumer Protection</div>
+          <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body">
+          <div class="status-pill status-forming"><div class="status-dot"></div>Omnibus Directive implemented · Discrimination case law forming</div>
+          <div class="tension-block">
+            <div class="tension-title">Why it's genuinely ambiguous</div>
+            <div class="tension-text">Since the Omnibus Directive implementation (EGBGB §246a), German law requires disclosure when prices are personalised via automated decision-making. Dynamic pricing (same algorithm, all users, different times) is fine — no disclosure needed. Individual personalisation (this user sees €99, that user sees €129 for the same product) requires disclosure. But: <strong>the AGG anti-discrimination threshold — when does personalised pricing become illegal discrimination — has never been tested in German courts for algorithmic pricing.</strong> If your model uses proxy variables that correlate with protected characteristics (gender, ethnicity via location), the exposure is real but untested.</div>
+          </div>
+          <div class="law-ref">
+            <span class="law-tag">EGBGB §246a</span>
+            <span class="law-tag">UWG §5/5a</span>
+            <span class="law-tag">AGG (anti-discrimination)</span>
+          </div>
+          <div class="verdict-row">
+            <div class="verdict-box verdict-safe">
+              <div class="verdict-label label-safe">Safer path</div>
+              <div class="verdict-text text-safe">Disclose when individual personalisation is active ("This price is personalised for you"). Audit your pricing model for proxy discrimination against protected characteristics. Keep individual and time-based pricing architecturally separate and clearly documented.</div>
+            </div>
+            <div class="verdict-box verdict-risky">
+              <div class="verdict-label label-risky">Riskier path</div>
+              <div class="verdict-text text-risky">No disclosure on individually personalised prices. Using location-based signals that correlate strongly with ethnicity or socioeconomic status without bias testing. Treating algorithmic personalisation as equivalent to simple A/B testing for disclosure purposes.</div>
+            </div>
+          </div>
+          <div class="who-block">
+            <div class="who-title">Who must decide now</div>
+            <div class="who-tags">
+              <span class="who-tag">E-commerce with dynamic pricing</span>
+              <span class="who-tag">SaaS with personalised plans</span>
+              <span class="who-tag">Marketplace pricing engines</span>
+              <span class="who-tag">Insurance / lending pricing AI</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- PLATFORM -->
+  <div id="platform" class="section">
+    <div class="section-intro">
+      German competition and platform law is in active evolution on two fronts: <strong>GWB §19a</strong> is being tested beyond GAFAM for the first time, and <strong>algorithmic pricing collusion</strong> has moved from theoretical to empirically documented. Mid-size platform operators should be watching both.
+    </div>
+    <div class="cards">
+
+      <div class="card" onclick="toggleCard(this)">
+        <div class="card-header">
+          <div class="card-left">
+            <div class="card-number">ORANGE LINE 12</div>
+            <div class="card-title">Algorithmic pricing — when does dynamic pricing become illegal coordination?</div>
+          </div>
+          <div class="card-tag tag-platform">Competition Law</div>
+          <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body">
+          <div class="status-pill status-live"><div class="status-dot"></div>Empirical evidence published 2024 · Bundeskartellamt active on Amazon (Feb 2026)</div>
+          <div class="tension-block">
+            <div class="tension-title">Why it's genuinely ambiguous</div>
+            <div class="tension-text">A 2024 Journal of Political Economy study found <strong>28% higher margins in German petrol duopolies after both firms adopted algorithmic pricing software</strong> — the first empirical evidence of algorithmic tacit collusion in a real market. The Bundeskartellamt cited this pattern in its February 2026 Amazon action. Current law under GWB §1 / Art. 101 TFEU requires an "agreement or concerted practice" — but if two firms independently adopt the same pricing algorithm that responds to the same signals, has coordination occurred? No German or EU court has ruled on this yet.</div>
+          </div>
+          <div class="law-ref">
+            <span class="law-tag">GWB §1</span>
+            <span class="law-tag">Art. 101 TFEU</span>
+            <span class="law-tag">GWB §32 (BKartA powers)</span>
+          </div>
+          <div class="verdict-row">
+            <div class="verdict-box verdict-safe">
+              <div class="verdict-label label-safe">Safer path</div>
+              <div class="verdict-text text-safe">Design pricing algorithms independently — do not use shared third-party pricing software used by direct competitors. Maintain human oversight of pricing outputs. Document that your algorithm optimises on your own cost and demand data, not competitor price signals.</div>
+            </div>
+            <div class="verdict-box verdict-risky">
+              <div class="verdict-label label-risky">Riskier path</div>
+              <div class="verdict-text text-risky">Using the same third-party dynamic pricing vendor as your main competitor in a concentrated market. Building a pricing algorithm that explicitly monitors and responds to competitor prices in real-time without a firewall between competitive intelligence and pricing output.</div>
+            </div>
+          </div>
+          <div class="who-block">
+            <div class="who-title">Who must decide now</div>
+            <div class="who-tags">
+              <span class="who-tag">Marketplace platforms</span>
+              <span class="who-tag">E-commerce with algorithmic pricing</span>
+              <span class="who-tag">Travel / hospitality pricing tools</span>
+              <span class="who-tag">Fuel / energy pricing software</span>
+            </div>
+          </div>
+          <div class="watch-block">
+            <div class="watch-label">Watch for</div>
+            <div class="watch-text">Bundeskartellamt guidance on algorithmic pricing (announced as a priority for 2026). EC Digital Markets Act review — DMA interoperability obligations may indirectly affect pricing algorithm transparency requirements. First GWB §1 prosecution of algorithmic coordination (none yet, but BKartA has the investigative powers).</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="summary-bar">
+    <div class="stat-item">
+      <div class="stat-n">12</div>
+      <div class="stat-label">Gray zones across 6 domains — all actively contested</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-n">Aug '26</div>
+      <div class="stat-label">EU AI Act high-risk deadline — the next major reclassification event</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-n">DPF</div>
+      <div class="stat-label">EU-US Data Privacy Framework — valid today, CJEU challenge pending</div>
+    </div>
+  </div>
+</div>
+
+<script>
+function showSection(id){
+  document.querySelectorAll('.section').forEach(s=>s.classList.remove('visible'));
+  document.querySelectorAll('.pill').forEach(p=>p.classList.remove('active'));
+  document.getElementById(id).classList.add('visible');
+  event.target.classList.add('active');
+}
+function toggleCard(card){
+  const body=card.querySelector('.card-body');
+  const isOpen=body.classList.contains('open');
+  document.querySelectorAll('.card-body').forEach(b=>b.classList.remove('open'));
+  document.querySelectorAll('.card').forEach(c=>c.classList.remove('open'));
+  if(!isOpen){body.classList.add('open');card.classList.add('open');}
+}
+</script>

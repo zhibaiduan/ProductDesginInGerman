@@ -1,0 +1,437 @@
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap');
+*{box-sizing:border-box;margin:0;padding:0;}
+
+.quiz{font-family:'DM Sans',sans-serif;max-width:680px;margin:0 auto;padding:24px 0 40px;}
+
+.header{margin-bottom:28px;}
+.header-label{font-size:10px;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:var(--color-text-tertiary);margin-bottom:8px;}
+.header-title{font-family:'Instrument Serif',Georgia,serif;font-size:28px;font-weight:400;color:var(--color-text-primary);line-height:1.2;}
+.header-title em{font-style:italic;color:#854F0B;}
+.header-sub{font-size:13px;font-weight:300;color:var(--color-text-secondary);margin-top:8px;line-height:1.6;}
+
+.progress-row{display:flex;align-items:center;gap:12px;margin-bottom:24px;}
+.progress-bar-track{flex:1;height:3px;background:var(--color-border-tertiary);border-radius:2px;overflow:hidden;}
+.progress-bar-fill{height:100%;background:#854F0B;border-radius:2px;transition:width 0.4s ease;}
+.progress-text{font-size:11px;font-weight:500;color:var(--color-text-tertiary);white-space:nowrap;}
+
+.q-card{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:24px;margin-bottom:16px;}
+
+.q-meta{display:flex;align-items:center;gap:8px;margin-bottom:14px;}
+.q-num{font-size:10px;font-weight:500;letter-spacing:2px;color:var(--color-text-tertiary);}
+.q-domain{font-size:10px;font-weight:500;padding:2px 9px;border-radius:20px;}
+.domain-red{background:#FCEBEB;color:#791F1F;}
+.domain-orange{background:#FAEEDA;color:#633806;}
+.domain-green{background:#EAF3DE;color:#27500A;}
+
+.q-scenario{font-size:13px;font-weight:300;color:var(--color-text-secondary);line-height:1.65;margin-bottom:6px;font-style:italic;padding:12px 14px;background:var(--color-background-secondary);border-radius:var(--border-radius-md);border-left:2px solid var(--color-border-secondary);}
+
+.q-text{font-size:15px;font-weight:500;color:var(--color-text-primary);line-height:1.4;margin:14px 0 16px;}
+
+.options{display:flex;flex-direction:column;gap:8px;}
+
+.opt-btn{width:100%;text-align:left;padding:12px 16px;border-radius:var(--border-radius-md);border:0.5px solid var(--color-border-secondary);background:var(--color-background-primary);cursor:pointer;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:400;color:var(--color-text-primary);line-height:1.4;transition:all 0.15s;display:flex;align-items:flex-start;gap:10px;}
+.opt-btn:hover{background:var(--color-background-secondary);border-color:var(--color-border-primary);}
+.opt-btn:disabled{cursor:default;}
+.opt-btn.correct{background:#EAF3DE;border-color:#3B6D11;color:#173404;}
+.opt-btn.wrong{background:#FCEBEB;border-color:#A32D2D;color:#501313;}
+.opt-btn.missed{background:#EAF3DE;border-color:#3B6D11;color:#173404;opacity:0.7;}
+
+.opt-letter{font-size:11px;font-weight:500;width:18px;height:18px;border-radius:50%;background:var(--color-background-secondary);border:0.5px solid var(--color-border-secondary);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;transition:all 0.15s;}
+.opt-btn.correct .opt-letter{background:#3B6D11;color:#EAF3DE;border-color:#3B6D11;}
+.opt-btn.wrong .opt-letter{background:#A32D2D;color:#FCEBEB;border-color:#A32D2D;}
+.opt-btn.missed .opt-letter{background:#3B6D11;color:#EAF3DE;border-color:#3B6D11;}
+
+.feedback{margin-top:14px;padding:12px 14px;border-radius:var(--border-radius-md);font-size:12.5px;font-weight:300;line-height:1.6;display:none;}
+.feedback.show{display:block;}
+.feedback.correct-fb{background:#EAF3DE;color:#173404;border-left:2px solid #3B6D11;}
+.feedback.wrong-fb{background:#FCEBEB;color:#501313;border-left:2px solid #A32D2D;}
+.feedback strong{font-weight:500;}
+
+.next-btn{margin-top:16px;width:100%;padding:12px;border-radius:var(--border-radius-md);border:0.5px solid var(--color-border-secondary);background:var(--color-background-primary);cursor:pointer;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;color:var(--color-text-primary);display:none;transition:all 0.15s;}
+.next-btn:hover{background:var(--color-background-secondary);}
+.next-btn.show{display:block;}
+
+.result-card{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:32px;text-align:center;display:none;}
+.result-card.show{display:block;}
+
+.result-score{font-family:'Instrument Serif',serif;font-size:56px;font-weight:400;line-height:1;margin-bottom:4px;}
+.result-label{font-size:13px;font-weight:300;color:var(--color-text-secondary);margin-bottom:24px;}
+.result-title{font-family:'Instrument Serif',serif;font-size:22px;font-weight:400;color:var(--color-text-primary);margin-bottom:8px;}
+.result-sub{font-size:13px;font-weight:300;color:var(--color-text-secondary);line-height:1.6;max-width:440px;margin:0 auto 24px;}
+
+.result-breakdown{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:24px;}
+.bd-item{padding:14px 10px;border-radius:var(--border-radius-md);text-align:center;}
+.bd-n{font-family:'Instrument Serif',serif;font-size:26px;font-weight:400;line-height:1;margin-bottom:4px;}
+.bd-label{font-size:11px;font-weight:400;color:var(--color-text-secondary);}
+
+.restart-btn{padding:10px 24px;border-radius:var(--border-radius-md);border:0.5px solid var(--color-border-secondary);background:var(--color-background-primary);cursor:pointer;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;color:var(--color-text-primary);transition:all 0.15s;}
+.restart-btn:hover{background:var(--color-background-secondary);}
+</style>
+
+<div class="quiz">
+  <div class="header">
+    <div class="header-label">Germany · Product Compliance · Knowledge Check</div>
+    <div class="header-title">Can you survive the <em>German market</em>?</div>
+    <div class="header-sub">12 real-world scenarios. Pick the right call. See instantly why you're right — or why you'd be in trouble.</div>
+  </div>
+
+  <div class="progress-row">
+    <div class="progress-bar-track"><div class="progress-bar-fill" id="progress-fill" style="width:0%"></div></div>
+    <div class="progress-text" id="progress-text">0 / 12</div>
+  </div>
+
+  <div id="q-container"></div>
+
+  <div class="result-card" id="result-card">
+    <div class="result-score" id="result-score"></div>
+    <div class="result-label" id="result-label"></div>
+    <div class="result-title" id="result-title"></div>
+    <div class="result-sub" id="result-sub"></div>
+    <div class="result-breakdown" id="result-breakdown"></div>
+    <button class="restart-btn" onclick="restart()">Retake the quiz</button>
+  </div>
+</div>
+
+<script>
+const questions = [
+  {
+    domain: "red", domainLabel: "Red line",
+    scenario: "Your new HR SaaS just landed its first German enterprise client. During onboarding, they ask you to integrate an AI module that reads employee webcam feeds during video calls to measure 'engagement levels' and flag low-attention moments.",
+    question: "What do you do?",
+    options: [
+      "Build it — German companies can consent to anything internally",
+      "Decline immediately — this is an absolute prohibition under EU AI Act Art. 5(1)(f)",
+      "Build it but only with Betriebsrat approval",
+      "Build it if the employee gives individual consent"
+    ],
+    correct: 1,
+    feedback: {
+      correct: "Correct. EU AI Act Art. 5(1)(f) prohibits AI emotion recognition in workplaces, full stop. It's an absolute prohibition — not subject to consent, not subject to Betriebsrat approval, not subject to any internal agreement. The fine is up to €35M or 7% of global revenue. No exceptions.",
+      wrong: "EU AI Act Art. 5(1)(f) makes this an absolute prohibition in workplaces. No consent, no Betriebsrat approval, no internal agreement can make it legal. This is a red line, not a grey zone. Fine: up to €35M or 7% of global revenue."
+    }
+  },
+  {
+    domain: "orange", domainLabel: "Orange line",
+    scenario: "You're launching a B2B analytics SaaS in Germany. Your tech stack uses Google Tag Manager on your marketing website, which loads GA4 and a heatmap tool.",
+    question: "What is your current legal situation?",
+    options: [
+      "Fully compliant — GTM is a tag manager, not a tracker",
+      "Compliant as long as you have a cookie banner",
+      "At legal risk — VG Hannover (2025) ruled GTM itself requires consent before loading",
+      "Fine — GA4 is covered by the EU-US Data Privacy Framework"
+    ],
+    correct: 2,
+    feedback: {
+      correct: "Correct. VG Hannover ruled in March 2025 that Google Tag Manager requires explicit user consent before loading — because loading GTM contacts Google's servers and transmits IP address and device data, even before any tag fires. GTM must load post-consent via a compliant CMP.",
+      wrong: "VG Hannover (March 2025) ruled that GTM itself — not just the tags it fires — requires explicit prior consent because it contacts Google servers on load. A cookie banner that loads GTM before consent is clicked is not sufficient. You need a CMP that fires GTM only after the user opts in."
+    }
+  },
+  {
+    domain: "green", domainLabel: "Green line",
+    scenario: "You're pitching your B2B SaaS to a German Mittelstand company. The procurement team includes the IT-Leiter, the Datenschutzbeauftragter (DPO), and the CFO. The DPO asks for your AVV (data processing agreement).",
+    question: "What's the ideal response?",
+    options: [
+      "Send your standard English-language DPA governed by Irish law",
+      "Say you'll have legal prepare a custom agreement — allow 4–6 weeks",
+      "Send a link to your self-service AVV page — German law, downloadable, DocuSign-ready",
+      "Explain that the GDPR is the same across the EU so no separate document is needed"
+    ],
+    correct: 2,
+    feedback: {
+      correct: "Exactly right. A self-service, German-law AVV available immediately is the green line move. It removes the single biggest procurement delay in German enterprise sales. Companies like Personio report it reduces procurement review from months to weeks. The DPO can review and sign without involving your sales team.",
+      wrong: "A self-service, German-law AVV on a dedicated page is the green line move. German DPOs need the AVV to approve vendor procurement — it's a legal gate, not optional. An English-language DPA under Irish law adds 4–6 weeks of legal review. A custom agreement takes even longer. The correct answer saves months of sales cycle."
+    }
+  },
+  {
+    domain: "red", domainLabel: "Red line",
+    scenario: "You're building a consumer wellness app in Germany. You add a feature that asks users to describe their mental state daily and uses AI to classify their mood as 'stable', 'anxious', or 'depressed'. You also use Google Analytics to track user behaviour.",
+    question: "Which of the following statements is true?",
+    options: [
+      "Both features are fine with standard GDPR consent",
+      "The mood classification is fine; GA tracking needs consent",
+      "The mood data is likely Art. 9 special category health data — requiring explicit separate consent; GA also needs prior opt-in",
+      "Neither requires special treatment if your privacy policy discloses it"
+    ],
+    correct: 2,
+    feedback: {
+      correct: "Correct on both counts. Mood classification data ('anxious', 'depressed') is almost certainly Art. 9 health data under German DPA interpretation — requiring explicit, granular consent separate from your general ToS. And GA requires prior opt-in consent under TDDDG §25. A privacy policy disclosure alone is insufficient for either.",
+      wrong: "Two issues here. First, mood/mental state classification is almost certainly Art. 9 special category health data under German DPA interpretation — it needs explicit, separate consent, not just a privacy policy disclosure. Second, GA still requires prior opt-in under TDDDG §25. A privacy policy disclosure doesn't substitute for consent for either of these."
+    }
+  },
+  {
+    domain: "orange", domainLabel: "Orange line",
+    scenario: "Your AI recruitment tool scores job applicants 1–100 based on CV analysis and automatically ranks them. A human recruiter then reviews the ranked list and almost always hires from the top 10. You argue this is not 'automated decision-making' because a human makes the final call.",
+    question: "How solid is this argument under current German/EU law?",
+    options: [
+      "Solid — GDPR Art. 22 requires fully automated decisions, and humans are involved",
+      "Weak — CJEU SCHUFA ruling (2023) established that 'determinative in practice' triggers Art. 22 even with nominal human review",
+      "Irrelevant — the EU AI Act high-risk rules don't apply to recruitment yet",
+      "Fine if you add an 'AI was used' disclosure to rejected candidates"
+    ],
+    correct: 1,
+    feedback: {
+      correct: "Correct. The CJEU's SCHUFA ruling (December 2023) established that if an AI output is 'determinative in practice' for the final decision — even if a human nominally decides — Art. 22 applies. A human who approves 95% of AI recommendations without investigation is a rubber stamp, not meaningful oversight. This argument is legally fragile and getting weaker.",
+      wrong: "The CJEU's SCHUFA ruling (December 2023) directly undermines this argument. The court found that a credit score was 'determinative in practice' even though the bank made the final decision — making Art. 22 applicable. German DSK guidance from 2024 reinforced this: nominal human review doesn't satisfy the human oversight requirement. This is a contested orange zone, not a safe harbour."
+    }
+  },
+  {
+    domain: "red", domainLabel: "Red line",
+    scenario: "Your fintech startup wants to offer a 'pay later' feature inside your B2B invoicing SaaS. The plan is to let buyers defer payment by 60 days, interest-free. You'll partner with a licensed lender and brand the feature as your own.",
+    question: "What licence does your company need?",
+    options: [
+      "None — you're just a technology layer, the lender takes the risk",
+      "Likely a ZAG or KWG licence — BaFin applies substance-over-form and considers who controls the customer relationship",
+      "Only the lender needs a licence — agency arrangements are clearly exempt",
+      "No licence needed if the credit is interest-free and under €200"
+    ],
+    correct: 1,
+    feedback: {
+      correct: "Correct. BaFin's substance-over-form doctrine means that if your company brands and controls the customer relationship for a financial product, you may be the regulated entity — regardless of what's under the hood. The Solaris case illustrated exactly this: the BaaS provider was held responsible, not just the brands using it. Get a legal opinion before launch.",
+      wrong: "BaFin applies substance-over-form: if you brand and control the customer relationship for a financial product, you may need a licence regardless of the underlying structure. The CCD II (EU Consumer Credit Directive II) is also closing the interest-free and under-200-euro exemptions by November 2026. 'We're just tech' is not a safe position in Germany without a legal opinion backing it."
+    }
+  },
+  {
+    domain: "green", domainLabel: "Green line",
+    scenario: "You're a PM at a European SaaS company. Your US competitor offers the same features but stores data in AWS us-east-1. You store all data in Hetzner Falkenstein (Germany) and are 100% EU-owned.",
+    question: "How should you use this in your German enterprise sales motion?",
+    options: [
+      "Don't mention it — buyers only care about features and price",
+      "Mention 'EU hosting' generically in your security page",
+      "Lead with it — name the specific datacenter, explain CLOUD Act exemption, make it a page in your pitch deck, and build a 'Data Residency' page with technical proof points",
+      "Claim 'GDPR compliant' and leave the hosting details ambiguous"
+    ],
+    correct: 2,
+    feedback: {
+      correct: "Correct. In German enterprise procurement, 'EU hosting' is increasingly meaningless because AWS Frankfurt and Azure Germany North both have US parent companies with CLOUD Act exposure. Naming Hetzner Falkenstein specifically — with an explanation of why German ownership matters for CLOUD Act exemption — is a genuine competitive differentiator. This is a green line move that wins deals.",
+      wrong: "German enterprise procurement teams have learned to ask: 'Which cloud? Who owns it? CLOUD Act exposure?' AWS Frankfurt and Azure Germany North are both reachable by US court order via their parent companies. 'EU hosting' or 'GDPR compliant' without specifics is a claim buyers are now trained to probe. Naming Hetzner Falkenstein with a CLOUD Act explanation is a genuine competitive differentiator — use it."
+    }
+  },
+  {
+    domain: "red", domainLabel: "Red line",
+    scenario: "You're launching a consumer health app in Germany. Your marketing website says the app 'helps detect early signs of anxiety and depression through daily mood tracking, powered by clinically validated AI.'",
+    question: "What's the problem with this?",
+    options: [
+      "Nothing — 'clinically validated' is just marketing language",
+      "The word 'detect' combined with specific conditions may reclassify this as a medical device under MDR, requiring CE certification",
+      "You just need a strong disclaimer saying 'not a medical device'",
+      "Only a problem if you charge money for the feature"
+    ],
+    correct: 1,
+    feedback: {
+      correct: "Correct. Under MDR Rule 11, software that claims to diagnose, detect, or predict medical conditions is a medical device — minimum Class IIa. The intended purpose is determined by what you communicate, not what you call the app internally. 'Detect early signs of anxiety and depression' is a diagnostic claim. Without CE certification, this is MPDG §92 territory — up to 10 years imprisonment for commercial violations. A disclaimer doesn't fix an intended purpose claim.",
+      wrong: "Under MDR Rule 11, the intended purpose of software is determined by what you communicate to users — not what you call it internally or what disclaimers you add. 'Detect early signs of anxiety and depression' is a diagnostic claim that triggers medical device classification (minimum Class IIa). A disclaimer saying 'not a medical device' while your marketing claims detection capability is legally contradictory and won't protect you. MPDG §92 carries up to 10 years imprisonment."
+    }
+  },
+  {
+    domain: "orange", domainLabel: "Orange line",
+    scenario: "You're designing the cancellation flow for your German B2C subscription. Your lawyer suggests hiding the cancellation button behind a 'why are you leaving?' survey that must be completed first.",
+    question: "Is this legal?",
+    options: [
+      "Yes — collecting churn feedback is legitimate business practice",
+      "Yes — as long as the survey is optional and clearly marked",
+      "Likely not — courts have ruled that adding friction before the cancellation button can violate BGB §312k",
+      "Only illegal if the survey has more than 3 questions"
+    ],
+    correct: 2,
+    feedback: {
+      correct: "Correct. BGB §312k requires a 'directly accessible' cancellation mechanism. OLG Köln ruled in 2025 that even requiring a login before seeing the cancellation button is illegal. A mandatory survey before cancellation adds friction to a process that must be as easy as sign-up — this is highly likely to be challenged under §312k and potentially as a dark pattern under UWG §4a. Optional exit surveys shown after cancellation confirmation are fine.",
+      wrong: "BGB §312k requires cancellation to be 'directly accessible' — the standard from 67+ court rulings is that it must be at least as easy as signing up. OLG Köln (January 2025) ruled that even requiring a login before the cancellation button is illegal. A mandatory survey gating the cancellation process adds illegal friction. An optional survey shown after the cancellation is confirmed is fine — the sequence matters."
+    }
+  },
+  {
+    domain: "green", domainLabel: "Green line",
+    scenario: "You're the PM for a new enterprise SaaS product targeting German manufacturing companies. You've just achieved ISO 27001 certification from a US-based auditor.",
+    question: "How should you approach the German market?",
+    options: [
+      "ISO 27001 is ISO 27001 — the auditor's origin doesn't matter",
+      "Consider getting re-certified by TÜV SÜD or TÜV Rheinland — German-institution certificates carry additional credibility in German enterprise procurement",
+      "ISO 27001 is overkill for manufacturing — TISAX is what matters",
+      "Skip the certification question — German Mittelstand only cares about price"
+    ],
+    correct: 1,
+    feedback: {
+      correct: "Correct on two levels. First, getting certified by a German institution (TÜV SÜD, TÜV Rheinland, DQS) does carry additional trust weight with German procurement teams — they recognise and actively prefer these bodies. Second, if you're targeting automotive manufacturing, TISAX (not just ISO 27001) is the entry requirement for OEM supplier relationships. Both certifications serve different but complementary purposes.",
+      wrong: "The auditor does matter in Germany. TÜV SÜD, TÜV Rheinland, and DQS are the most recognised certification bodies in German enterprise procurement — specifically because they're German institutions with established reputations. Additionally, if your target is automotive manufacturing (BMW, VW, Mercedes), TISAX certification — not just ISO 27001 — is the entry requirement for OEM supplier data sharing. The question of which cert matters depends on which industry you're targeting."
+    }
+  },
+  {
+    domain: "red", domainLabel: "Red line",
+    scenario: "Your software company (50 employees, €3M revenue) provides project management tools to a German DAX-30 company. An employee at that company files a GDPR complaint saying you processed their data without a valid legal basis. The DPA investigates and finds you guilty.",
+    question: "What's the worst-case fine scenario after the Deutsche Wohnen ECJ ruling?",
+    options: [
+      "Capped at €20M — that's the GDPR maximum",
+      "Capped at 4% of your own company's revenue — about €120K",
+      "Could be based on the DAX-30 client's group-wide global revenue if you're considered part of their processing operation — potentially hundreds of millions",
+      "GDPR fines only apply to the data controller, not processors like you"
+    ],
+    correct: 2,
+    feedback: {
+      correct: "Correct — and this is one of the most misunderstood aspects of post-Deutsche Wohnen GDPR enforcement. The ECJ's C-807/21 ruling confirmed that fines can be calculated based on the undertaking's group-wide global revenue. If your processing is tightly integrated with a large enterprise's operations, regulators may consider the combined turnover. This is why data processor contracts and clear liability allocation matter so much in German enterprise SaaS.",
+      wrong: "The ECJ's Deutsche Wohnen ruling (C-807/21) changed the calculus significantly. Fines can be based on group-wide global revenue, and the 'undertaking' concept from EU competition law applies. As a data processor deeply integrated with a large enterprise's operations, the revenue base for fine calculation may not be limited to your own €3M. This is exactly why German enterprise contracts include specific DPA liability caps — because the uncapped exposure is potentially massive."
+    }
+  },
+  {
+    domain: "orange", domainLabel: "Orange line",
+    scenario: "You're building a 'People Analytics' dashboard for enterprise HR teams. It aggregates individual employee activity data (Slack messages sent, meetings attended, documents edited, login times) into team-level averages that managers can view.",
+    question: "Do you need Betriebsrat approval before deploying this to German companies?",
+    options: [
+      "No — it shows team averages, not individual data, so no monitoring occurs",
+      "No — employees aren't identified, so GDPR and BetrVG don't apply",
+      "Yes — BetrVG §87(1) Nr. 6's 'objective suitability' test applies to the underlying system, not just the aggregated output. If individual data is collected at any point, the system can monitor — consent required",
+      "Only if the team has fewer than 20 people"
+    ],
+    correct: 2,
+    feedback: {
+      correct: "Correct. The BAG's 'objective suitability' standard from 1975 applies to whether the underlying system can monitor individuals — not whether the dashboard output is aggregated. If individual-level data is collected at any stage, the system is 'objectively suitable' for monitoring. A team of 5 where 'team average' is shown is effectively individual monitoring. Betriebsrat approval is required before the system is deployed to any German company with a works council.",
+      wrong: "BetrVG §87(1) Nr. 6 uses an 'objective suitability' standard: if the underlying system can monitor individual employees — even if outputs are aggregated — co-determination rights apply. A team of 5 people where you display 'team average login times' is effectively individual monitoring. The BAG (May 2025) confirmed this by awarding damages in a case where Workday processing exceeded what the Betriebsvereinbarung authorised. Betriebsrat approval is needed before German deployment."
+    }
+  }
+];
+
+let current = 0;
+let score = 0;
+let answered = false;
+let redCorrect = 0, orangeCorrect = 0, greenCorrect = 0;
+let redTotal = 0, orangeTotal = 0, greenTotal = 0;
+
+function render() {
+  const q = questions[current];
+  const pct = Math.round((current / questions.length) * 100);
+  document.getElementById('progress-fill').style.width = pct + '%';
+  document.getElementById('progress-text').textContent = current + ' / ' + questions.length;
+
+  const domainClass = q.domain === 'red' ? 'domain-red' : q.domain === 'orange' ? 'domain-orange' : 'domain-green';
+  let opts = '';
+  const letters = ['A','B','C','D'];
+  q.options.forEach((o,i) => {
+    opts += `<button class="opt-btn" onclick="answer(${i})" id="opt-${i}">
+      <span class="opt-letter">${letters[i]}</span>
+      <span>${o}</span>
+    </button>`;
+  });
+
+  document.getElementById('q-container').innerHTML = `
+    <div class="q-card">
+      <div class="q-meta">
+        <span class="q-num">QUESTION ${current + 1} OF ${questions.length}</span>
+        <span class="q-domain ${domainClass}">${q.domainLabel}</span>
+      </div>
+      <div class="q-scenario">${q.scenario}</div>
+      <div class="q-text">${q.question}</div>
+      <div class="options">${opts}</div>
+      <div class="feedback" id="feedback"></div>
+    </div>
+    <button class="next-btn" id="next-btn" onclick="next()">${current === questions.length - 1 ? 'See my results' : 'Next question'} &rarr;</button>
+  `;
+  answered = false;
+}
+
+function answer(idx) {
+  if (answered) return;
+  answered = true;
+  const q = questions[current];
+  const isCorrect = idx === q.correct;
+  const fb = document.getElementById('feedback');
+  const letters = ['A','B','C','D'];
+
+  if (q.domain === 'red') redTotal++;
+  else if (q.domain === 'orange') orangeTotal++;
+  else greenTotal++;
+
+  q.options.forEach((_, i) => {
+    const btn = document.getElementById('opt-' + i);
+    btn.disabled = true;
+    if (i === q.correct) {
+      btn.classList.add(idx === q.correct ? 'correct' : 'missed');
+    }
+    if (i === idx && !isCorrect) {
+      btn.classList.add('wrong');
+    }
+  });
+
+  if (isCorrect) {
+    score++;
+    if (q.domain === 'red') redCorrect++;
+    else if (q.domain === 'orange') orangeCorrect++;
+    else greenCorrect++;
+    fb.className = 'feedback correct-fb show';
+    fb.innerHTML = '<strong>Correct.</strong> ' + q.feedback.correct;
+  } else {
+    fb.className = 'feedback wrong-fb show';
+    fb.innerHTML = '<strong>Not quite.</strong> ' + q.feedback.wrong;
+  }
+
+  document.getElementById('next-btn').classList.add('show');
+}
+
+function next() {
+  current++;
+  if (current >= questions.length) {
+    showResult();
+  } else {
+    render();
+  }
+}
+
+function showResult() {
+  document.getElementById('q-container').innerHTML = '';
+  document.getElementById('progress-fill').style.width = '100%';
+  document.getElementById('progress-text').textContent = questions.length + ' / ' + questions.length;
+
+  const pct = Math.round((score / questions.length) * 100);
+  let title, sub, scoreColor;
+
+  if (pct >= 90) {
+    title = 'Compliance-ready';
+    sub = 'You have a solid command of Germany\'s digital product rules. You\'d be a reliable voice in early-stage market entry discussions — and you\'d likely catch issues before they become enforcement actions.';
+    scoreColor = '#1D9E75';
+  } else if (pct >= 70) {
+    title = 'Mostly there — a few blind spots';
+    sub = 'You understand the major red lines but some of the grey zones and positive strategies slipped through. Those are exactly the areas where small decisions have disproportionate commercial consequences.';
+    scoreColor = '#854F0B';
+  } else if (pct >= 50) {
+    title = 'Aware, but not yet ready';
+    sub = 'You know Germany is different, but the specifics are still fuzzy. The rules you missed are live enforcement risks — not theoretical. Revisit the handbooks before making product decisions for this market.';
+    scoreColor = '#BA7517';
+  } else {
+    title = 'High-risk zone';
+    sub = 'Several of the practices you might have approved are active red lines in Germany. A product launch based on these assumptions would face serious legal exposure within months. Start with the red lines handbook.';
+    scoreColor = '#A32D2D';
+  }
+
+  const rc = document.getElementById('result-card');
+  rc.className = 'result-card show';
+  document.getElementById('result-score').innerHTML = `<span style="color:${scoreColor}">${score}</span><span style="font-size:28px;color:var(--color-text-tertiary)">/${questions.length}</span>`;
+  document.getElementById('result-label').textContent = pct + '% correct';
+  document.getElementById('result-title').textContent = title;
+  document.getElementById('result-sub').textContent = sub;
+
+  const breakdown = document.getElementById('result-breakdown');
+  breakdown.innerHTML = `
+    <div class="bd-item" style="background:#FCEBEB;">
+      <div class="bd-n" style="color:#A32D2D;">${redCorrect}/${redTotal}</div>
+      <div class="bd-label">Red lines</div>
+    </div>
+    <div class="bd-item" style="background:#FAEEDA;">
+      <div class="bd-n" style="color:#854F0B;">${orangeCorrect}/${orangeTotal}</div>
+      <div class="bd-label">Orange lines</div>
+    </div>
+    <div class="bd-item" style="background:#EAF3DE;">
+      <div class="bd-n" style="color:#3B6D11;">${greenCorrect}/${greenTotal}</div>
+      <div class="bd-label">Green lines</div>
+    </div>
+  `;
+}
+
+function restart() {
+  current = 0; score = 0; answered = false;
+  redCorrect = 0; orangeCorrect = 0; greenCorrect = 0;
+  redTotal = 0; orangeTotal = 0; greenTotal = 0;
+  document.getElementById('result-card').className = 'result-card';
+  render();
+}
+
+render();
+</script>

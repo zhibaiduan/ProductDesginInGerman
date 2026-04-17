@@ -1,0 +1,673 @@
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap');
+*{box-sizing:border-box;margin:0;padding:0;}
+
+.cover{
+  max-width:860px;
+  margin:0 auto;
+  padding:0 0 48px;
+  font-family:'Plus Jakarta Sans',sans-serif;
+  color:#1A1008;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  text-rendering:optimizeLegibility;
+}
+
+.masthead{
+  border-bottom:1.5px solid #1A1008;
+  padding:20px 0 14px;
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:24px;
+}
+
+.masthead-title{
+  font-family:'Newsreader',Georgia,serif;
+  font-size:19px;
+  font-weight:500;
+  color:#1A1008;
+  line-height:1.2;
+}
+
+.masthead-meta{
+  font-size:11px;
+  font-weight:500;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:#888780;
+}
+
+.hero-block{
+  padding:40px 0 36px;
+  border-bottom:0.5px solid #D3D1C7;
+  display:grid;
+  grid-template-columns:minmax(0,1.15fr) minmax(0,0.85fr);
+  gap:48px;
+  align-items:start;
+}
+
+.eyebrow{
+  font-size:11px;
+  font-weight:500;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  color:#888780;
+  margin-bottom:16px;
+}
+
+.hero-headline{
+  font-family:'Newsreader',Georgia,serif;
+  font-size:52px;
+  font-weight:500;
+  color:#1A1008;
+  line-height:0.98;
+  letter-spacing:-0.6px;
+  margin-bottom:20px;
+}
+
+.hero-headline em{
+  font-style:italic;
+  color:#A32D2D;
+}
+
+.hero-headline .green-em{
+  font-style:italic;
+  color:#1A5C4A;
+}
+
+.hero-deck{
+  max-width:420px;
+  font-size:16px;
+  font-weight:400;
+  color:#5F5E5A;
+  line-height:1.75;
+}
+
+.hero-right{
+  padding-top:4px;
+}
+
+.flag-strip{
+  display:flex;
+  gap:0;
+  margin-bottom:24px;
+  border-radius:4px;
+  overflow:hidden;
+  height:6px;
+}
+
+.flag-black{background:#1A1008;flex:1;}
+.flag-red{background:#A32D2D;flex:1;}
+.flag-gold{background:#EF9F27;flex:1;}
+
+.stat-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+  margin-bottom:24px;
+}
+
+.stat-box{
+  padding:14px 16px;
+  border:0.5px solid #D3D1C7;
+  border-radius:8px;
+  background:#fff;
+}
+
+.stat-n{
+  font-family:'Newsreader',Georgia,serif;
+  font-size:30px;
+  font-weight:500;
+  line-height:1;
+  margin-bottom:4px;
+}
+
+.stat-n.red{color:#A32D2D;}
+.stat-n.amber{color:#854F0B;}
+.stat-n.green{color:#1A5C4A;}
+.stat-n.dark{color:#1A1008;}
+
+.stat-desc{
+  font-size:12px;
+  font-weight:400;
+  color:#5F5E5A;
+  line-height:1.55;
+}
+
+.quote-block{
+  border-left:2px solid #B4B2A9;
+  padding:10px 14px;
+}
+
+.quote-text{
+  font-family:'Newsreader',Georgia,serif;
+  font-size:17px;
+  font-style:italic;
+  font-weight:400;
+  color:#5F5E5A;
+  line-height:1.6;
+  margin-bottom:6px;
+}
+
+.quote-attr{
+  font-size:11px;
+  font-weight:500;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+  color:#888780;
+}
+
+.for-you-section,
+.contents-section,
+.why-section{
+  padding:32px 0 28px;
+  border-bottom:0.5px solid #D3D1C7;
+}
+
+.section-label{
+  font-size:11px;
+  font-weight:500;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  color:#888780;
+  margin-bottom:20px;
+}
+
+.persona-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+}
+
+.persona-card{
+  padding:18px 16px;
+  border:0.5px solid #D3D1C7;
+  border-radius:12px;
+  background:#fff;
+}
+
+.persona-role{
+  font-size:14px;
+  font-weight:500;
+  color:#1A1008;
+  margin-bottom:8px;
+  line-height:1.4;
+}
+
+.persona-pain{
+  font-size:13px;
+  font-weight:400;
+  color:#5F5E5A;
+  line-height:1.65;
+  margin-bottom:12px;
+}
+
+.persona-get{
+  font-size:12px;
+  font-weight:400;
+  color:#5F5E5A;
+  line-height:1.55;
+  border-top:0.5px solid #D3D1C7;
+  padding-top:10px;
+}
+
+.persona-get strong{
+  font-weight:500;
+  color:#1A1008;
+  display:block;
+  margin-bottom:3px;
+}
+
+.contents-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1px;
+  background:#D3D1C7;
+  border:0.5px solid #D3D1C7;
+  border-radius:12px;
+  overflow:hidden;
+}
+
+.contents-item{
+  background:#fff;
+  padding:16px 18px;
+}
+
+.contents-item.is-quiz{
+  background:#F1EFE8;
+}
+
+.contents-line-top{
+  height:3px;
+  border-radius:1px;
+  margin-bottom:12px;
+  width:28px;
+}
+
+.line-red{background:#A32D2D;}
+.line-amber{background:#EF9F27;}
+.line-green{background:#1A5C4A;}
+.line-neutral{background:#888780;}
+.line-quiz{background:#378ADD;}
+
+.contents-chapter{
+  font-size:10px;
+  font-weight:500;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:#888780;
+  margin-bottom:5px;
+}
+
+.contents-name{
+  font-family:'Newsreader',Georgia,serif;
+  font-size:20px;
+  font-weight:500;
+  color:#1A1008;
+  margin-bottom:6px;
+  line-height:1.2;
+}
+
+.contents-desc{
+  font-size:12px;
+  font-weight:400;
+  color:#5F5E5A;
+  line-height:1.55;
+}
+
+.why-section{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:48px;
+}
+
+.why-list{
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+  margin-top:20px;
+}
+
+.why-item{
+  display:flex;
+  gap:12px;
+  align-items:flex-start;
+}
+
+.why-icon{
+  width:28px;
+  height:28px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-shrink:0;
+  margin-top:1px;
+}
+
+.icon-warn{background:#FCEBEB;}
+.icon-think{background:#FAEEDA;}
+.icon-go{background:#EAF3DE;}
+.icon-quiz{background:#E6F1FB;}
+
+.why-item-title{
+  font-size:15px;
+  font-weight:500;
+  color:#1A1008;
+  margin-bottom:4px;
+  line-height:1.45;
+}
+
+.why-item-desc{
+  font-size:13px;
+  font-weight:400;
+  color:#5F5E5A;
+  line-height:1.65;
+}
+
+.why-right{
+  padding-top:4px;
+}
+
+.not-for-box{
+  background:#F1EFE8;
+  border-radius:12px;
+  padding:20px;
+  margin-top:20px;
+}
+
+.not-for-title{
+  font-size:11px;
+  font-weight:500;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:#888780;
+  margin-bottom:12px;
+}
+
+.not-for-item{
+  display:flex;
+  gap:8px;
+  align-items:flex-start;
+  margin-bottom:9px;
+}
+
+.not-for-item:last-child{margin-bottom:0;}
+
+.nf-dot{
+  width:4px;
+  height:4px;
+  border-radius:50%;
+  background:#888780;
+  flex-shrink:0;
+  margin-top:7px;
+}
+
+.not-for-text{
+  font-size:13px;
+  font-weight:400;
+  color:#5F5E5A;
+  line-height:1.65;
+}
+
+.note-block{
+  margin-top:16px;
+  padding-top:14px;
+  border-top:0.5px solid #D3D1C7;
+}
+
+.note-title{
+  font-size:13px;
+  font-weight:500;
+  color:#1A1008;
+  margin-bottom:6px;
+}
+
+.note-text{
+  font-size:12px;
+  font-weight:400;
+  color:#5F5E5A;
+  line-height:1.6;
+}
+
+.footer-bar{
+  padding:20px 0 0;
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:24px;
+}
+
+.footer-left{
+  font-size:12px;
+  font-weight:400;
+  color:#888780;
+  line-height:1.7;
+}
+
+.footer-disclaimer{
+  font-size:11px;
+  font-weight:400;
+  color:#888780;
+  max-width:300px;
+  text-align:right;
+  line-height:1.6;
+}
+
+@media (max-width: 860px){
+  .hero-block,
+  .why-section,
+  .persona-grid,
+  .contents-grid{
+    grid-template-columns:1fr;
+  }
+
+  .hero-headline{
+    font-size:44px;
+  }
+
+  .stat-grid{
+    grid-template-columns:1fr;
+  }
+
+  .footer-bar,
+  .masthead{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .footer-disclaimer{
+    text-align:left;
+  }
+}
+
+</style>
+
+<div class="cover">
+
+  <div class="masthead">
+    <div class="masthead-title">The Germany Digital Product Handbook</div>
+    <div class="masthead-meta">2025 Edition · For Product Builders</div>
+  </div>
+
+  <div class="hero-block">
+    <div class="hero-left">
+      <div class="eyebrow">A field guide to building software in Germany</div>
+      <div class="hero-headline">
+        What can get<br>
+        you <em>shut down</em>,<br>
+        what's <em>contested</em>,<br>
+        and what makes<br>you <span class="green-em">win.</span>
+      </div>
+      <div class="hero-deck">
+        Germany is the EU's largest software market — and its most legally complex. This handbook cuts through the noise: not legal theory, but actionable product decisions, real enforcement cases, and the design choices that actually close enterprise deals.
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="flag-strip">
+        <div class="flag-black"></div>
+        <div class="flag-red"></div>
+        <div class="flag-gold"></div>
+      </div>
+
+      <div class="stat-grid">
+        <div class="stat-box">
+          <div class="stat-n red">€45M</div>
+          <div class="stat-desc">Germany's largest GDPR fine in 2025 — Vodafone, for a product architecture decision</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-n amber">Feb '25</div>
+          <div class="stat-desc">EU AI Act prohibitions took effect — including features already in production at many companies</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-n green">3×</div>
+          <div class="stat-desc">Pipeline growth for Nextcloud in H1 2025 — from digital sovereignty positioning alone</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-n dark">67</div>
+          <div class="stat-desc">Court rulings on cancellation buttons since 2022 — the most litigated consumer UX law in Germany</div>
+        </div>
+      </div>
+
+      <div class="quote-block">
+        <div class="quote-text">"Privacy in Germany is not a preference competing with convenience — it is, in the constitutional sense, a precondition for participation."</div>
+        <div class="quote-attr">Bundesverfassungsgericht · 1983 census ruling · still enforced today</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="for-you-section">
+    <div class="section-label">Who this is for</div>
+    <div class="persona-grid">
+
+      <div class="persona-card">
+        <div class="persona-role">The PM entering the German market</div>
+        <div class="persona-pain">You have a working product. You've heard Germany is "complicated." You need to know which decisions require a lawyer and which just require knowing the rules.</div>
+        <div class="persona-get">
+          <strong>You'll get:</strong>
+          11 red lines with exact fines · 12 grey zones with safer/riskier paths · the 3 things German enterprise buyers ask before signing
+        </div>
+      </div>
+
+      <div class="persona-card">
+        <div class="persona-role">The engineer building EU-facing features</div>
+        <div class="persona-pain">You need to know which architectural choices are legally load-bearing — not in general, but specifically: data residency, cookie consent timing, sub-processor lists, data export flows.</div>
+        <div class="persona-get">
+          <strong>You'll get:</strong>
+          Exact legal thresholds · what GTM/GA4/Meta Pixel actually require · self-host as trust signal · data portability patterns
+        </div>
+      </div>
+
+      <div class="persona-card">
+        <div class="persona-role">The founder launching in Germany</div>
+        <div class="persona-pain">You're moving fast. You need to know the five things that will get you a Cease & Desist in the first month — and the five that will close enterprise deals faster than your competitors.</div>
+        <div class="persona-get">
+          <strong>You'll get:</strong>
+          Medical device traps · fintech licence triggers · Impressum checklist · certification ROI · AVV as sales tool
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="contents-section">
+    <div class="section-label">What's inside</div>
+    <div class="contents-grid">
+
+      <div class="contents-item">
+        <div class="contents-line-top line-red"></div>
+        <div class="contents-chapter">Chapter 1</div>
+        <div class="contents-name">Red lines</div>
+        <div class="contents-desc">11 absolute prohibitions across 6 domains. Cross these and face criminal liability, fines up to 7% global revenue, or forced market exit. Includes Vodafone, H&M, Clearview cases.</div>
+      </div>
+
+      <div class="contents-item">
+        <div class="contents-line-top line-amber"></div>
+        <div class="contents-chapter">Chapter 2</div>
+        <div class="contents-name">Orange lines</div>
+        <div class="contents-desc">12 grey zones where the law is genuinely contested. GTM consent, AI high-risk classification, DPF stability, algorithmic pricing collusion. Safer vs. riskier paths for each.</div>
+      </div>
+
+      <div class="contents-item">
+        <div class="contents-line-top line-green"></div>
+        <div class="contents-chapter">Chapter 3</div>
+        <div class="contents-name">Green lines</div>
+        <div class="contents-desc">14 affirmative design, architecture, and sales choices that make German buyers say yes. Self-hosting, AVV as sales tool, BSI C5, negative assurance copy, sovereignty positioning.</div>
+      </div>
+
+      <div class="contents-item">
+        <div class="contents-line-top line-neutral"></div>
+        <div class="contents-chapter">Chapter 4</div>
+        <div class="contents-name">Trust & certifications</div>
+        <div class="contents-desc">Which certifications are procurement gates vs. marketing badges. ISO 27001, BSI C5, TISAX, EuroPriSe — ordered by ROI and industry relevance.</div>
+      </div>
+
+      <div class="contents-item">
+        <div class="contents-line-top line-neutral"></div>
+        <div class="contents-chapter">Chapter 5</div>
+        <div class="contents-name">Competitive positioning</div>
+        <div class="contents-desc">How Nextcloud, Personio, Aleph Alpha, and Hetzner built market moats from German regulatory constraints. Messaging frameworks that win against US incumbents.</div>
+      </div>
+
+      <div class="contents-item is-quiz">
+        <div class="contents-line-top line-quiz"></div>
+        <div class="contents-chapter">Knowledge check</div>
+        <div class="contents-name">12-question quiz</div>
+        <div class="contents-desc">Real-world scenarios. Not multiple choice trivia — actual product decisions. Instant feedback with legal explanation. Find out which lines you'd cross without knowing.</div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="why-section">
+    <div class="why-left">
+      <div class="section-label">Why this exists</div>
+      <div class="why-list">
+
+        <div class="why-item">
+          <div class="why-icon icon-warn">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 2L12.5 12H1.5L7 2Z" stroke="#A32D2D" stroke-width="1.2" stroke-linejoin="round" fill="none"/><line x1="7" y1="6" x2="7" y2="9" stroke="#A32D2D" stroke-width="1.2" stroke-linecap="round"/><circle cx="7" cy="10.5" r="0.6" fill="#A32D2D"/></svg>
+          </div>
+          <div class="why-item-text">
+            <div class="why-item-title">Legal teams explain what's prohibited. Not what to build.</div>
+            <div class="why-item-desc">Most compliance resources tell you what you can't do. This handbook tells you what to do instead — and shows you the cases where it worked commercially.</div>
+          </div>
+        </div>
+
+        <div class="why-item">
+          <div class="why-icon icon-think">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5" stroke="#854F0B" stroke-width="1.2" fill="none"/><line x1="7" y1="4" x2="7" y2="7.5" stroke="#854F0B" stroke-width="1.2" stroke-linecap="round"/><circle cx="7" cy="9.5" r="0.6" fill="#854F0B"/></svg>
+          </div>
+          <div class="why-item-text">
+            <div class="why-item-title">The grey zones move faster than any guide can keep up.</div>
+            <div class="why-item-desc">GTM consent rulings, SCHUFA AI decisions, DPF instability — the orange lines from 2024 are different from the orange lines of 2025. We track what's actually changing.</div>
+          </div>
+        </div>
+
+        <div class="why-item">
+          <div class="why-icon icon-go">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5" stroke="#1A5C4A" stroke-width="1.2" fill="none"/><path d="M5 7L6.5 8.5L9 5.5" stroke="#1A5C4A" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="why-item-text">
+            <div class="why-item-title">The green lines are a genuine competitive advantage — if you know them.</div>
+            <div class="why-item-desc">Nextcloud tripled its pipeline in six months. Personio cut procurement cycles from 3 months to 3 weeks. These were product and positioning decisions, not just legal ones.</div>
+          </div>
+        </div>
+
+        <div class="why-item">
+          <div class="why-icon icon-quiz">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="2" y="2" width="10" height="10" rx="2" stroke="#185FA5" stroke-width="1.2" fill="none"/><line x1="5" y1="5" x2="9" y2="5" stroke="#185FA5" stroke-width="1.2" stroke-linecap="round"/><line x1="5" y1="7.5" x2="8" y2="7.5" stroke="#185FA5" stroke-width="1.2" stroke-linecap="round"/></svg>
+          </div>
+          <div class="why-item-text">
+            <div class="why-item-title">Reading is one thing. Knowing how you'd actually decide is another.</div>
+            <div class="why-item-desc">The quiz at the end tests judgment, not memory. Most people discover at least one thing they thought was safe that isn't — before they find out the hard way.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="why-right">
+      <div class="section-label">Who this is not for</div>
+      <div class="not-for-box">
+        <div class="not-for-title">You might not need this if...</div>
+
+        <div class="not-for-item">
+          <div class="nf-dot"></div>
+          <div class="not-for-text">You already have a German data protection lawyer on retainer reviewing every product decision. (Lucky you.)</div>
+        </div>
+        <div class="not-for-item">
+          <div class="nf-dot"></div>
+          <div class="not-for-text">Your product has zero EU users and no plans to enter the European market in the next 3 years.</div>
+        </div>
+        <div class="not-for-item">
+          <div class="nf-dot"></div>
+          <div class="not-for-text">You're looking for a legal opinion you can cite in court. This is a product builder's map, not a legal brief.</div>
+        </div>
+        <div class="not-for-item">
+          <div class="nf-dot"></div>
+          <div class="not-for-text">You only work in B2C consumer apps with no enterprise or regulated-industry ambitions.</div>
+        </div>
+
+        <div class="note-block">
+          <div class="note-title">A note on legal advice</div>
+          <div class="note-text">This handbook is research-based orientation material for product teams. Every situation is different. Before making high-stakes compliance decisions, talk to a qualified German data protection lawyer. Think of this as the briefing before that conversation — not the substitute for it.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bar">
+    <div class="footer-left">
+      Based on enforcement data through April 2026<br>
+      GDPR · EU AI Act · KWG · MPDG · BetrVG · BFSG · GWB · TDDDG
+    </div>
+    <div class="footer-disclaimer">
+      For reference only. Not legal advice.<br>Consult qualified counsel for specific decisions.
+    </div>
+  </div>
+
+</div>
