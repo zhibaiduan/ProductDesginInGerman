@@ -1,0 +1,527 @@
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,700&family=Noto+Serif+SC:wght@500;700&family=Noto+Sans+SC:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap');
+
+:root{
+  --color-text-primary:#1A1008;
+  --color-text-secondary:#5F5E5A;
+  --color-text-tertiary:#888780;
+  --color-border-primary:#1A1008;
+  --color-border-secondary:#B4B2A9;
+  --color-border-tertiary:#D3D1C7;
+  --color-background-page:#F8F6F1;
+  --color-background-primary:#FFFFFF;
+  --color-background-secondary:#F1EFE8;
+  --color-background-tertiary:#E8E5DE;
+  --border-radius-md:8px;
+  --border-radius-lg:12px;
+  --shadow-soft:0 12px 30px rgba(26,16,8,0.06);
+}
+
+*{box-sizing:border-box;margin:0;padding:0;}
+
+body{
+  background:var(--color-background-page);
+  color:var(--color-text-primary);
+  font-family:'Plus Jakarta Sans',sans-serif;
+  padding:24px 24px 64px;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  text-rendering:optimizeLegibility;
+}
+
+body[data-language="zh"]{font-family:'Noto Sans SC','Plus Jakarta Sans',sans-serif;}
+
+.wrap{max-width:680px;margin:0 auto;padding:24px 0 40px;}
+.hdr{margin-bottom:28px;padding-bottom:22px;border-bottom:1.5px solid var(--color-border-primary);}
+.hdr-tag{font-size:11px;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:var(--color-text-tertiary);margin-bottom:10px;}
+.hdr-h{font-family:'Newsreader',Georgia,serif;font-size:40px;font-weight:700;color:var(--color-text-primary);line-height:1.18;letter-spacing:0;}
+body[data-language="zh"] .hdr-h{font-family:'Noto Serif SC','Newsreader',serif;}
+.hdr-h em{font-style:italic;color:#A32D2D;}
+.hdr-p{max-width:620px;font-size:16px;font-weight:400;color:var(--color-text-secondary);margin-top:14px;line-height:1.75;}
+
+.prog-row{display:flex;align-items:center;gap:12px;margin-bottom:24px;}
+.prog-track{flex:1;height:3px;background:var(--color-border-tertiary);border-radius:2px;overflow:hidden;}
+.prog-bar{height:100%;background:var(--color-text-primary);border-radius:2px;transition:width .3s ease;}
+.prog-txt{font-size:11px;font-weight:500;color:var(--color-text-tertiary);letter-spacing:1px;white-space:nowrap;}
+
+.card,.result{
+  background:var(--color-background-primary);
+  border:0.5px solid var(--color-border-tertiary);
+  border-radius:var(--border-radius-lg);
+  box-shadow:var(--shadow-soft);
+}
+
+.card{padding:24px;margin-bottom:16px;}
+.q-num{font-size:10px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--color-text-tertiary);margin-bottom:12px;}
+.q-txt{font-size:15px;font-weight:500;color:var(--color-text-primary);line-height:1.55;margin-bottom:18px;}
+.opts{display:flex;flex-direction:column;gap:8px;}
+.opt{appearance:none;width:100%;text-align:left;padding:12px 16px;border-radius:var(--border-radius-md);border:0.5px solid var(--color-border-secondary);background:var(--color-background-primary);cursor:pointer;font:inherit;font-size:13px;font-weight:400;color:var(--color-text-primary);line-height:1.6;transition:all .15s ease;display:flex;align-items:flex-start;gap:10px;}
+.opt:hover:not(:disabled){background:var(--color-background-secondary);border-color:var(--color-border-primary);}
+.opt:disabled{cursor:default;}
+.opt.ok{background:#EAF3DE;border-color:#3B6D11;color:#173404;}
+.opt.no{background:#FCEBEB;border-color:#A32D2D;color:#501313;}
+.opt.reveal{background:#EAF3DE;border-color:#3B6D11;color:#173404;opacity:.7;}
+.ltr{font-size:11px;font-weight:500;min-width:18px;height:18px;border-radius:50%;background:var(--color-background-secondary);border:0.5px solid var(--color-border-secondary);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;transition:all .15s ease;}
+.opt.ok .ltr{background:#3B6D11;color:#EAF3DE;border-color:#3B6D11;}
+.opt.no .ltr{background:#A32D2D;color:#FCEBEB;border-color:#A32D2D;}
+.opt.reveal .ltr{background:#3B6D11;color:#EAF3DE;border-color:#3B6D11;}
+
+.fb{margin-top:14px;padding:12px 14px;border-radius:var(--border-radius-md);font-size:12.5px;font-weight:400;line-height:1.65;display:none;}
+.fb.vis{display:block;}
+.fb-ok{background:#EAF3DE;color:#173404;border-left:2px solid #1A5C4A;}
+.fb-no{background:#FCEBEB;color:#501313;border-left:2px solid #A32D2D;}
+.fb strong{font-weight:500;}
+
+.next{margin-top:16px;width:100%;padding:12px;border-radius:var(--border-radius-md);border:0.5px solid var(--color-border-secondary);background:var(--color-background-primary);cursor:pointer;font:inherit;font-size:13px;font-weight:500;color:var(--color-text-primary);display:none;transition:all .15s ease;}
+.next:hover{background:var(--color-background-secondary);border-color:var(--color-border-primary);}
+.next.vis{display:block;}
+
+.result{padding:32px;text-align:center;display:none;}
+.result.vis{display:block;}
+.r-icon{width:56px;height:56px;border-radius:50%;margin:0 auto 16px;display:flex;align-items:center;justify-content:center;}
+.r-score{font-family:'Newsreader',Georgia,serif;font-size:56px;font-weight:700;line-height:1;margin-bottom:4px;}
+.r-pct{font-size:13px;font-weight:400;color:var(--color-text-secondary);margin-bottom:24px;}
+.r-title{font-family:'Newsreader',Georgia,serif;font-size:22px;font-weight:700;color:var(--color-text-primary);margin-bottom:8px;}
+.r-sub{font-size:13px;font-weight:400;color:var(--color-text-secondary);line-height:1.65;max-width:440px;margin:0 auto 24px;}
+.r-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:24px;}
+.r-box{padding:14px 12px;border-radius:var(--border-radius-md);text-align:left;}
+.r-n{font-family:'Newsreader',Georgia,serif;font-size:26px;font-weight:700;line-height:1;margin-bottom:4px;}
+.r-l{font-size:11px;font-weight:400;color:var(--color-text-secondary);}
+.r-btn{padding:10px 24px;border-radius:var(--border-radius-md);border:0.5px solid var(--color-border-secondary);background:var(--color-background-primary);cursor:pointer;font:inherit;font-size:13px;font-weight:500;color:var(--color-text-primary);transition:all .15s ease;}
+body[data-language="zh"] .r-score,
+body[data-language="zh"] .r-title,
+body[data-language="zh"] .r-n{font-family:'Noto Serif SC','Newsreader',serif;}
+.r-btn:hover{background:var(--color-background-secondary);border-color:var(--color-border-primary);}
+
+@media (max-width:640px){
+  body{padding:14px 12px 56px;}
+  .wrap{padding:16px 0 32px;}
+  .hdr{margin-bottom:22px;padding-bottom:18px;}
+  .hdr-h{font-size:32px;}
+  .hdr-p{font-size:14px;line-height:1.72;}
+  .card,.result{padding:20px;}
+  .r-grid{grid-template-columns:1fr;}
+}
+</style>
+
+<div class="wrap">
+<div class="hdr">
+  <div class="hdr-tag">德国 &middot; 数字产品 &middot; 预读检测</div>
+  <div class="hdr-h">你的<em>默认判断</em><br>错得有多离谱？</div>
+  <div class="hdr-p">10 道基于德国真实执法和判例的快速检测题。选择最稳妥的产品决策。</div>
+</div>
+<div class="prog-row">
+  <div class="prog-track"><div class="prog-bar" id="pb" style="width:0%"></div></div>
+  <div class="prog-txt" id="pt">0 / 10</div>
+</div>
+<div id="qc"></div>
+<div class="result" id="res"></div>
+</div>
+
+<script>
+const ZH_QUESTIONS = [
+  {
+    q: "德国法院审查了一个 Cookie 横幅。同时有“接受”和“拒绝”两个按钮，但法院仍认定违法。原因是什么？",
+    opts: [
+      "“拒绝”需要多点一步确认，而“接受”一键完成",
+      "“接受”颜色醒目，“拒绝”被弱化为灰色——视觉权重不对等",
+      "横幅停留超过 5 秒，本身构成对用户的施压",
+      "横幅没有提供所有语言版本"
+    ],
+    correct: 1,
+    ok: "有按钮不够，两个按钮的视觉权重必须对等。颜色、大小、位置都算。把“拒绝”做灰、“接受”做亮，就已经违法。",
+    no: "有按钮不够，两个按钮的视觉权重必须对等。选项 A 也是真实违规，但本案的核心是颜色视觉不对称，而非点击步骤。"
+  },
+  {
+    q: "一家柏林数字银行被 BaFin 罚款，并限制每月新增客户不超过 50,000 人（此前约 170,000 人）。注意：BaFin 动用了“限制业务增长”这个最重手段。触发这个后果的核心原因是什么？",
+    opts: [
+      "KYC 身份核验流程存在系统性漏洞",
+      "向第三方广告平台共享客户数据违反 GDPR",
+      "多年系统性迟交反洗钱可疑交易报告",
+      "客服响应时长不达标，违反消费者保护规定"
+    ],
+    correct: 2,
+    ok: "这是 N26。AML 报告迟交是 BaFin 少数会直接限制业务增长的违规类型。KYC 问题通常触发罚款和审计，GDPR 归数据保护局管，客服时长不会让 BaFin 封增长上限。",
+    no: "这是 N26。只有 AML 系统性违规才会让 BaFin 直接限制你的客户增长。KYC 问题（选项 A）最多触发罚款和审计；GDPR（选项 B）归数据保护局，不是 BaFin；客服时长（选项 D）根本不在 BaFin 管辖范围内。"
+  },
+  {
+    q: "产品团队在官网使用了 Google Tag Manager，CMP 在用户操作前展示 Cookie 横幅。2025 年德国法院仍认定不合规。原因是什么？",
+    opts: [
+      "CMP 必须部署在德国境内服务器，否则横幅加载本身就是跨境传输",
+      "GTM 加载时就已经向 Google 服务器传输了用户 IP，早于用户做任何选择",
+      "GTM 容器里的追踪标签数量超出合规建议上限",
+      "横幅必须等 GTM 完全加载后才能显示，否则同意记录无法触发"
+    ],
+    correct: 1,
+    ok: "GTM 初始化这个动作本身就是一次数据传输——IP 地址已经发给 Google，不管用户有没有点同意。所以 GTM 必须在用户同意后才能加载，而不是同时。",
+    no: "GTM 初始化本身就传输数据，早于用户同意。选项 D 的逻辑正好相反——不是等 GTM 加载完再展示横幅，而是横幅展示时 GTM 必须完全静默。"
+  },
+  {
+    q: "一个 app 的应用商店描述写着：“追踪血糖，识别早期糖尿病风险模式”。说明里附有免责声明：“本 app 不提供医疗诊断。”在德国，这个 app 属于什么？",
+    opts: [
+      "普通健康 app——免责声明已排除诊断意图",
+      "医疗器械——描述了诊断功能，免责声明救不了营销文案",
+      "数字健康应用（DiGA）——可走快速审批通道，不需要完整认证",
+      "研究工具——适用学术豁免，暂不受医疗器械法规管辖"
+    ],
+    correct: 1,
+    ok: "监管看的是你向用户传达了什么，不是你写了什么免责声明。描述了“识别糖尿病风险”，就是医疗器械，需要 CE 认证才能在德国上市。",
+    no: "免责声明救不了已经描述了诊断功能的营销文案。DiGA（选项 C）是已获批医疗器械的报销通道，不是绕开认证的捷径。"
+  },
+  {
+    q: "公司在德国上线生产力看板：追踪每位员工的登录时间、文件编辑数、消息数，但经理看到的只有团队平均值，看不到个人数据。需要提前获得员工委员会（Betriebsrat）批准吗？",
+    opts: [
+      "不需要——经理看不到个人数据，就不构成个人监控",
+      "不需要——生产力追踪是标准管理职能，法律有豁免",
+      "需要——系统收集了个人级数据，客观上能监控个人，不看输出怎么展示",
+      "只有供应商是非欧盟公司时才需要"
+    ],
+    correct: 2,
+    ok: "德国法律看的是系统“能不能”监控个人，不是经理“看不看得到”。只要底层收集了个人数据，就需要员工委员会批准，否则部署可能从一开始就无效。",
+    no: "法律看的是数据收集能力，不是输出界面。选项 B 的“标准管理职能豁免”不存在。没有提前签书面协议就上线，员工委员会可以申请立即禁令。"
+  },
+  {
+    q: "一家年收入 400 万欧元的 SaaS 公司，为某跨国集团的德国子公司处理数据，后来发现 GDPR 违规。根据 2023 年欧盟法院判决，罚款最高可能按什么基数计算？",
+    opts: [
+      "只按 SaaS 公司自己的 400 万欧元——处理方主责在控制方",
+      "按受影响用户人数，每人有固定罚款上限",
+      "可能按整个集团的全球合并营收——GDPR 借用了欧盟竞争法的集团概念",
+      "各国 DPA 自行裁量，德国有独立封顶，低于欧盟标准"
+    ],
+    correct: 2,
+    ok: "欧盟法院确认：GDPR 罚款按整个受控集团计算，不只看违规实体自己的收入。小子公司的罚款天花板，可能是母集团全球营收的 4%。",
+    no: "罚款基数是整个集团，不是违规实体自己的收入。选项 A 中“主责在控制方”不影响罚款基数的计算方式。德国没有独立降低上限的权力（选项 D）。"
+  },
+  {
+    q: "德国消费者订阅产品：注册一键完成，取消需要进 Account Settings → Manage subscription → 联系客服。德国法院最可能怎么判？",
+    opts: [
+      "合规——服务条款写明了取消方式，用户注册时已同意",
+      "合规——德国法只要求取消渠道存在，不限步骤数",
+      "不合规——取消必须两步内可达，不能比注册更难",
+      "只针对年付不合规，月付适用宽松标准"
+    ],
+    correct: 2,
+    ok: "德国法要求订阅产品提供持续可见的取消按钮，两步内完成，取消不能比注册更难。这条法律已有 67+ 判例，后果是用户可以立即取消，无需通知期。",
+    no: "服务条款说明（选项 A）不能替代界面可达性要求。“不限步骤”（选项 B）是错的，67+ 判例已确立两步标准。月付和年付没有差异化标准（选项 D）。"
+  },
+  {
+    q: "AI 系统分析用户租房历史、社交媒体和金融记录，生成“可靠性指数”，房东用这个分数决定是否出租。欧盟 AI 法案 2025 年 2 月已禁止此类 social scoring。这个系统违法吗？",
+    opts: [
+      "不违法——禁令只针对政府机构，私营公司不受限",
+      "不违法——用户在条款里同意了评分，构成合法授权",
+      "违法——按行为给人分类并造成不利后果，禁令不区分运营者，同意也无效",
+      "取决于模型是否经过独立第三方审计"
+    ],
+    correct: 2,
+    ok: "禁令同时适用于政府和私营公司。这是绝对禁止，用户同意无效，第三方审计也解锁不了。罚款最高 3500 万欧元或全球营收 7%。",
+    no: "选项 A（只针对政府）是最常见误解，EU AI Act 明确覆盖私营主体。这是绝对禁令，同意（选项 B）和审计（选项 D）都救不了。"
+  },
+  {
+    q: "招聘软件用 AI 给候选人排序，HR 经理查看列表后做最终录用决定。根据 2023 年欧盟法院判决，GDPR 自动化决策条款（Art. 22）适用吗？",
+    opts: [
+      "不适用——最终决定是人做的，人在环路中就够了",
+      "不适用——招聘属于雇主特权，GDPR 明确豁免",
+      "可能适用——人在环路不够，HR 必须真正独立判断，而不只是批准 AI 排名",
+      "只有 AI 全自动发出 offer、完全无人介入时才适用"
+    ],
+    correct: 2,
+    ok: "欧盟法院明确：名义上有人签字不够，关键是这个人有没有真正独立判断。如果 HR 只是在批准 AI 的排名，Art. 22 仍然适用。",
+    no: "选项 A（人在环路就合规）正是法院否定的逻辑。选项 B 的雇主特权豁免不存在于 GDPR 条文中。选项 D 的门槛太窄，有人签字也可能触发 Art. 22。"
+  },
+  {
+    q: "公司 app 调用第三方大语言模型 API，没有修改底层模型。2026 年 8 月欧盟 AI 法案高风险义务全面生效后，公司的法律位置是？",
+    opts: [
+      "无独立义务——与 API 供应商签了合规条款，责任已转移给上游",
+      "只需在隐私政策和 App Store 说明里披露使用了 AI",
+      "作为 deployer 有独立义务：合规使用、人工监督、透明告知用户，特定场景需做影响评估",
+      "只有对模型微调或修改后才有义务，原生调用不在范围内"
+    ],
+    correct: 2,
+    ok: "AI 法案区分 provider（开发 AI）和 deployer（用 AI）。两者各有独立义务，不能靠合同转移。调用 API 就是 deployer，不需要修改模型。",
+    no: "合同条款转移不了法定义务（选项 A）。“必须微调才有义务”（选项 D）是错的，使用 API 就已经是 deployer。Deployer 义务包括合规使用、人工监督和透明度。"
+  }
+];
+
+const EN_QUESTIONS = [
+  {
+    q: "A German court reviewed a cookie banner. It had both Accept and Reject buttons, but the court still found it unlawful. Why?",
+    opts: [
+      "Reject required one extra confirmation step while Accept worked in one click",
+      "Accept was visually prominent while Reject was muted grey, so the choices did not have equal visual weight",
+      "The banner stayed on screen for more than 5 seconds, which itself pressured users",
+      "The banner was not available in every language"
+    ],
+    correct: 1,
+    ok: "Having both buttons is not enough. Their visual weight must be equal: color, size, and placement all matter. A bright Accept button and muted Reject button can already be unlawful.",
+    no: "Having both buttons is not enough. Equal visual weight matters. Option A is also a real pattern of non-compliance, but this case turned on visual asymmetry, not click count."
+  },
+  {
+    q: "A Berlin digital bank was fined by BaFin and limited to no more than 50,000 new customers per month, down from about 170,000. BaFin used the heavy weapon of restricting growth. What triggered it?",
+    opts: [
+      "Systemic flaws in KYC identity verification",
+      "Sharing customer data with advertising platforms in breach of GDPR",
+      "Years of systematically late anti-money-laundering suspicious activity reports",
+      "Customer support response times below consumer-protection expectations"
+    ],
+    correct: 2,
+    ok: "This was N26. Late AML reporting is one of the few violation types where BaFin may directly restrict customer growth. KYC problems usually trigger fines and audits; GDPR belongs to data protection authorities; support timing does not trigger a BaFin growth cap.",
+    no: "This was N26. Only systemic AML failures explain BaFin directly limiting customer growth. KYC can trigger audits and fines, GDPR is handled by data protection authorities, and support timing is not BaFin's jurisdiction."
+  },
+  {
+    q: "A product team used Google Tag Manager on its website. The CMP showed a cookie banner before the user acted, but a German court still found the setup non-compliant in 2025. Why?",
+    opts: [
+      "The CMP must run on German servers or the banner load itself is a cross-border transfer",
+      "GTM sent the user's IP address to Google as soon as it loaded, before the user made any choice",
+      "The GTM container had more tracking tags than compliance guidance allows",
+      "The banner must wait until GTM is fully loaded, otherwise consent records cannot fire"
+    ],
+    correct: 1,
+    ok: "Initializing GTM is itself a data transfer: the IP address already reaches Google before the user consents. GTM must wait until opt-in, not load alongside the banner.",
+    no: "GTM initialization itself transfers data before consent. Option D is backwards: the banner should appear while GTM remains silent."
+  },
+  {
+    q: "An app store description says: 'Track blood glucose and identify early diabetes-risk patterns.' The description adds a disclaimer: 'This app does not provide medical diagnosis.' In Germany, what is it?",
+    opts: [
+      "A normal wellness app because the disclaimer excludes diagnostic intent",
+      "A medical device because the marketing describes diagnostic functionality, and the disclaimer does not save it",
+      "A digital health application, so it can use the fast-track path without full certification",
+      "A research tool covered by an academic exemption and temporarily outside medical-device rules"
+    ],
+    correct: 1,
+    ok: "Regulators look at what you communicate to users, not just the disclaimer. If you describe identifying diabetes risk, you are making a medical-device claim and need CE certification before entering Germany.",
+    no: "A disclaimer cannot rescue marketing copy that already describes diagnostic functionality. DiGA is a reimbursement pathway for approved medical devices, not a shortcut around certification."
+  },
+  {
+    q: "A company launches a productivity dashboard in Germany. It tracks each employee's login time, file edits, and message counts, but managers only see team averages. Does it need prior works council approval?",
+    opts: [
+      "No, because managers cannot see individual data, so it is not individual monitoring",
+      "No, because productivity tracking is a standard management function with a legal exemption",
+      "Yes, because the system collects individual-level data and is objectively capable of monitoring individuals, regardless of the output view",
+      "Only if the vendor is outside the EU"
+    ],
+    correct: 2,
+    ok: "German law asks whether the system can monitor individuals, not whether managers currently see them. If individual data is collected underneath, works council approval is needed or deployment can be invalid from the start.",
+    no: "The law focuses on collection capability, not dashboard presentation. There is no standard-management exemption, and without a written agreement the works council can seek an immediate injunction."
+  },
+  {
+    q: "A SaaS company with EUR 4M annual revenue processes data for the German subsidiary of a multinational group. A GDPR violation is found. Under a 2023 CJEU ruling, what can the fine ceiling be based on?",
+    opts: [
+      "Only the SaaS company's own EUR 4M revenue, because processors are secondary to controllers",
+      "The number of affected users, with a fixed fine cap per person",
+      "Potentially the global consolidated revenue of the whole group, because GDPR borrows the EU competition-law group concept",
+      "Each DPA decides independently, and Germany has its own lower cap"
+    ],
+    correct: 2,
+    ok: "The CJEU confirmed that GDPR fines can be calculated against the whole controlled group, not only the violating entity's own revenue. A small subsidiary's ceiling may be 4% of the parent group's global revenue.",
+    no: "The fine base can be the whole group, not just the violating entity. Processor/controller allocation does not change that calculation, and Germany cannot create its own lower cap."
+  },
+  {
+    q: "A German consumer subscription product allows one-click sign-up, but cancellation requires Account Settings -> Manage subscription -> contact support. How would a German court most likely treat it?",
+    opts: [
+      "Compliant because the cancellation method is in the terms accepted at sign-up",
+      "Compliant because German law only requires a cancellation channel to exist, not a step limit",
+      "Non-compliant because cancellation must be reachable within two steps and cannot be harder than sign-up",
+      "Non-compliant only for annual plans; monthly plans have a looser standard"
+    ],
+    correct: 2,
+    ok: "German law requires a continuously visible cancellation button and completion within two steps. Cancellation cannot be harder than sign-up. There are already 67+ rulings, and the consequence can be immediate cancellation without notice period.",
+    no: "Terms text cannot replace interface accessibility. The two-step standard is real, and monthly vs. annual plans do not get separate rules."
+  },
+  {
+    q: "An AI system analyzes rental history, social media, and financial records to generate a 'reliability score' that landlords use to decide whether to rent. The EU AI Act's social-scoring ban has applied since February 2025. Is it unlawful?",
+    opts: [
+      "No, because the ban only applies to government agencies",
+      "No, because the user consented in the terms",
+      "Yes, because it classifies people by behavior and creates adverse effects; the ban does not distinguish public from private operators, and consent does not cure it",
+      "It depends on whether the model was independently audited"
+    ],
+    correct: 2,
+    ok: "The ban applies to both public and private operators. It is an absolute prohibition: consent does not work, and an audit cannot unlock it. Fines can reach EUR 35M or 7% of global revenue.",
+    no: "The idea that this only applies to government is the common mistake. The EU AI Act covers private operators too, and neither consent nor audits can fix an absolute prohibition."
+  },
+  {
+    q: "Recruiting software uses AI to rank candidates. The HR manager reviews the list and makes the final hiring decision. Under a 2023 CJEU ruling, can GDPR automated-decision rules still apply?",
+    opts: [
+      "No, because a human makes the final decision, and human-in-the-loop is enough",
+      "No, because hiring is an employer privilege expressly exempt from GDPR",
+      "Possibly yes, because human-in-the-loop is not enough if HR merely rubber-stamps the AI ranking instead of making an independent judgment",
+      "Only if the AI sends an offer fully automatically with no human involvement at all"
+    ],
+    correct: 2,
+    ok: "The CJEU made clear that a nominal human signature is not enough. The key question is whether the person made a genuinely independent judgment. If HR just approves the AI ranking, Article 22 can still apply.",
+    no: "The 'human in the loop is enough' logic is exactly what the court rejected. There is no employer-privilege exemption in GDPR, and Article 22 is not limited to fully automatic offers."
+  },
+  {
+    q: "A company app calls a third-party large language model API without modifying the underlying model. After the EU AI Act's high-risk obligations fully apply in August 2026, what is the company's legal position?",
+    opts: [
+      "No independent duties because the API vendor's compliance clause transfers responsibility upstream",
+      "It only needs to disclose AI use in the privacy policy and app-store description",
+      "As a deployer it has independent duties: compliant use, human oversight, transparent user notice, and impact assessment in specific contexts",
+      "Duties apply only after fine-tuning or modifying the model; plain API calls are outside scope"
+    ],
+    correct: 2,
+    ok: "The AI Act distinguishes providers from deployers. Both have their own duties, and contract terms cannot transfer statutory obligations. Calling an API can make you a deployer even if you never modify the model.",
+    no: "Contract terms cannot transfer statutory duties, and fine-tuning is not required. Calling an AI API can already make you a deployer with duties around compliant use, oversight, and transparency."
+  }
+];
+
+const COPY = {
+  en: {
+    documentLang: 'en',
+    tag: 'Germany · Digital Products · Pretest',
+    title: 'How wrong are your <em>default assumptions</em>?',
+    intro: '10 quick questions based on real German enforcement and court rulings. Choose the safest product decision.',
+    questionMeta: (current, total) => `Question ${current} of ${total}`,
+    next: 'Next question →',
+    results: 'See results →',
+    correct: 'Correct.',
+    wrong: 'This is the kind of detail teams miss.',
+    scoreLabel: (pct) => `${pct}% correct`,
+    highTitle: 'Your judgment is sharper than most',
+    highMsg: 'You already understand the core of German digital product rules. The handbook will help sharpen the details; the questions that made you hesitate are the ones worth remembering.',
+    midTitle: 'You have a few judgment gaps worth closing',
+    midMsg: 'You got many familiar rules right. The misses are often exactly where product teams misread the market: something looks safe until a court or regulator says it is not.',
+    lowTitle: 'The expensive rules are the ones that surprise you',
+    lowMsg: 'Every missed question maps to real fines, real rulings, or real product takedown risk. Now you know where to pay attention while reading the handbook.',
+    correctCount: 'Correct calls',
+    reviewCount: 'Worth reviewing',
+    restart: 'Retake the test',
+    questions: EN_QUESTIONS
+  },
+  zh: {
+    documentLang: 'zh-CN',
+    tag: '德国 · 数字产品 · 预读检测',
+    title: '你的<em>默认判断</em><br>错得有多离谱？',
+    intro: '10 道基于德国真实执法和判例的快速检测题。选择最稳妥的产品决策。',
+    questionMeta: (current, total) => `第 ${current} 题 / 共 ${total} 题`,
+    next: '下一题 →',
+    results: '查看结果 →',
+    correct: '正确。',
+    wrong: '这一步容易踩坑。',
+    scoreLabel: (pct) => `正确率 ${pct}%`,
+    highTitle: '你的判断已经比大多数人更敏锐',
+    highMsg: '你已经能抓住德国数字产品规则的核心。后面的手册会帮你把细节磨得更准；刚才让你犹豫的题，正是最值得记住的地方。',
+    midTitle: '你有几个值得补上的判断缺口',
+    midMsg: '你答对了不少熟悉规则。错掉的那些，往往正是产品团队最容易误判的地方：看起来安全，直到法院或监管说不安全。每道错题的解释才是最有价值的部分。',
+    lowTitle: '真正昂贵的，正是那些让你意外的规则',
+    lowMsg: '每一道错题背后，都对应真实罚款、真实判例或真实产品下架风险。现在你已经知道读手册时该重点盯哪里。',
+    correctCount: '判断正确',
+    reviewCount: '值得重看',
+    restart: '再测一次',
+    questions: ZH_QUESTIONS
+  }
+};
+
+const SUPPORTED_LANGUAGES = ['en', 'zh'];
+const DEFAULT_LANGUAGE = 'en';
+const params = new URLSearchParams(window.location.search);
+const requestedLanguage = params.get('lang');
+let currentLanguage = SUPPORTED_LANGUAGES.includes(requestedLanguage) ? requestedLanguage : DEFAULT_LANGUAGE;
+let QS = COPY[currentLanguage].questions;
+let cur=0,score=0,picked=false;
+
+function compactText(text, limit=250){
+  if(text.length<=limit)return text;
+  return text.slice(0,limit).replace(/\s+\S*$/,'')+'…';
+}
+
+function getCopy(){
+  return COPY[currentLanguage] || COPY[DEFAULT_LANGUAGE];
+}
+
+function applyLanguage(){
+  const copy=getCopy();
+  QS=copy.questions;
+  document.documentElement.lang=copy.documentLang;
+  document.body.dataset.language=currentLanguage;
+  document.querySelector('.hdr-tag').innerHTML=copy.tag;
+  document.querySelector('.hdr-h').innerHTML=copy.title;
+  document.querySelector('.hdr-p').textContent=copy.intro;
+}
+
+function render(){
+  const copy=getCopy();
+  const q=QS[cur];
+  document.getElementById('pb').style.width=(cur/QS.length*100)+'%';
+  document.getElementById('pt').textContent=cur+' / '+QS.length;
+  const L=['A','B','C','D'];
+  let opts='';
+  q.opts.forEach((o,i)=>{
+    opts+=`<button class="opt" id="o${i}" onclick="pick(${i})"><span class="ltr">${L[i]}</span><span>${o}</span></button>`;
+  });
+  document.getElementById('qc').innerHTML=`
+    <div class="card">
+      <div class="q-num">${copy.questionMeta(cur+1, QS.length)}</div>
+      <div class="q-txt">${q.q}</div>
+      <div class="opts">${opts}</div>
+      <div class="fb" id="fb"></div>
+    </div>
+    <button class="next" id="nb" onclick="advance()">${cur===QS.length-1?copy.results:copy.next}</button>
+  `;
+  picked=false;
+}
+
+function pick(i){
+  if(picked)return;
+  picked=true;
+  const q=QS[cur];
+  const win=i===q.correct;
+  if(win)score++;
+  q.opts.forEach((_,j)=>{
+    const b=document.getElementById('o'+j);
+    b.disabled=true;
+    if(j===q.correct) b.classList.add(win?'ok':'reveal');
+    if(j===i&&!win) b.classList.add('no');
+  });
+  const fb=document.getElementById('fb');
+  fb.className='fb vis '+(win?'fb-ok':'fb-no');
+  fb.innerHTML=`<strong>${win?getCopy().correct:getCopy().wrong}</strong> `+compactText(win?q.ok:q.no);
+  document.getElementById('nb').classList.add('vis');
+}
+
+function advance(){
+  cur++;
+  if(cur>=QS.length) showResult();
+  else render();
+}
+
+function showResult(){
+  const copy=getCopy();
+  document.getElementById('qc').innerHTML='';
+  document.getElementById('pb').style.width='100%';
+  document.getElementById('pt').textContent=QS.length+' / '+QS.length;
+  const pct=Math.round(score/QS.length*100);
+  let title,msg,iconBg,iconSvg,scoreCol;
+  if(pct>=80){
+    title=copy.highTitle;
+    msg=copy.highMsg;
+    iconBg='#EAF3DE';iconSvg='<circle cx="14" cy="14" r="12" stroke="#1A5C4A" stroke-width="1.5"/><path d="M9 14.5L12 17.5L19 10.5" stroke="#1A5C4A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>';scoreCol='#1A5C4A';
+  } else if(pct>=40){
+    title=copy.midTitle;
+    msg=copy.midMsg;
+    iconBg='#FAEEDA';iconSvg='<circle cx="14" cy="14" r="12" stroke="#854F0B" stroke-width="1.5"/><line x1="14" y1="8" x2="14" y2="16" stroke="#854F0B" stroke-width="1.5" stroke-linecap="round"/><circle cx="14" cy="19.5" r="1" fill="#854F0B"/>';scoreCol='#854F0B';
+  } else {
+    title=copy.lowTitle;
+    msg=copy.lowMsg;
+    iconBg='#FCEBEB';iconSvg='<circle cx="14" cy="14" r="12" stroke="#A32D2D" stroke-width="1.5"/><path d="M9 9L19 19M19 9L9 19" stroke="#A32D2D" stroke-width="1.5" stroke-linecap="round"/>'; scoreCol='#A32D2D';
+  }
+  document.getElementById('res').className='result vis';
+  document.getElementById('res').innerHTML=`
+    <div class="r-icon" style="background:${iconBg};"><svg width="28" height="28" viewBox="0 0 28 28" fill="none">${iconSvg}</svg></div>
+    <div class="r-score" style="color:${scoreCol}">${score}<span style="font-size:24px;color:var(--color-text-tertiary)">/${QS.length}</span></div>
+    <div class="r-pct">${copy.scoreLabel(pct)}</div>
+    <div class="r-title">${title}</div>
+    <div class="r-sub">${msg}</div>
+    <div class="r-grid">
+      <div class="r-box" style="background:#EAF3DE;"><div class="r-n" style="color:#1A5C4A;">${score}</div><div class="r-l">${copy.correctCount}</div></div>
+      <div class="r-box" style="background:#FCEBEB;"><div class="r-n" style="color:#A32D2D;">${QS.length-score}</div><div class="r-l">${copy.reviewCount}</div></div>
+    </div>
+    <button class="r-btn" onclick="restart()">${copy.restart}</button>
+  `;
+}
+
+function restart(){cur=0;score=0;picked=false;document.getElementById('res').className='result';render();}
+applyLanguage();
+render();
+</script>

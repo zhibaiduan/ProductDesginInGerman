@@ -82,6 +82,9 @@ const TRANSLATED_CONTENT = [
   { selector: '.stat-box:nth-child(4) .stat-desc', key: 'cover.stats.4' },
   { selector: '.quote-text', key: 'cover.quote' },
   { selector: '.quote-attr', key: 'cover.quoteAttr' },
+  { selector: '.pretest-title', key: 'cover.pretest.title' },
+  { selector: '.pretest-sub', key: 'cover.pretest.sub' },
+  { selector: '.pretest-button', key: 'cover.pretest.button' },
   { selector: '.for-you-section .section-label', key: 'cover.forYouLabel' },
   { selector: '.persona-role', key: 'cover.personaRole' },
   { selector: '.persona-pain', key: 'cover.personaPain' },
@@ -130,6 +133,11 @@ const LOCALIZED_PAGE_COPY = {
       },
       quote: '"Privacy in Germany is not a preference competing with convenience — it is, in the constitutional sense, a precondition for participation."',
       quoteAttr: 'Bundesverfassungsgericht · 1983 census ruling · still enforced today',
+      pretest: {
+        title: 'Think you know German digital law?',
+        sub: '10 questions. Most builders fail at least one.',
+        button: 'Take the challenge →'
+      },
       forYouLabel: 'Who this is for',
       personaRole: 'Product builders entering the German market.',
       personaPain: 'You already have a working product. Now you need to know:',
@@ -197,6 +205,11 @@ const LOCALIZED_PAGE_COPY = {
       },
       quote: '“在德国，隐私不是和便利相互竞争的偏好，而是在宪法意义上参与社会的前提。”',
       quoteAttr: '德国联邦宪法法院 · 1983 年人口普查判决 · 至今仍被援引',
+      pretest: {
+        title: '你真的懂德国数字法律吗？',
+        sub: '10 道题。多数建设者至少会错一题。',
+        button: '开始挑战 →'
+      },
       forYouLabel: '适合谁读',
       personaRole: '正在进入德国市场的产品建设者。',
       personaPain: '如果你的产品已经能跑，下一步需要判断：',
@@ -359,6 +372,8 @@ function setLanguage(language, options = {}) {
     resetQuizState();
     renderQuiz();
   }
+
+  syncPretestFrameLanguage();
 }
 
 function initLanguageSwitch() {
@@ -490,6 +505,7 @@ function initBook() {
 
   document.addEventListener('keydown', (event) => {
     if (event.metaKey || event.ctrlKey || event.altKey) return;
+    if (document.body.classList.contains('pretest-modal-open')) return;
     if (event.key === 'ArrowLeft') stepPage(-1);
     if (event.key === 'ArrowRight') stepPage(1);
   });
@@ -525,6 +541,65 @@ function initBook() {
   });
 }
 
+function initPretestModal() {
+  const modal = document.querySelector('[data-pretest-modal]');
+  if (!modal) return;
+
+  const frame = modal.querySelector('[data-pretest-frame]');
+  const openButtons = document.querySelectorAll('[data-pretest-open]');
+  const closeButtons = modal.querySelectorAll('[data-pretest-close]');
+  let activeTrigger = null;
+
+  function openModal(trigger) {
+    activeTrigger = trigger;
+    syncPretestFrameLanguage({ forceLoad: true });
+    modal.hidden = false;
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('pretest-modal-open');
+    modal.querySelector('.pretest-close')?.focus();
+  }
+
+  function closeModal() {
+    modal.hidden = true;
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('pretest-modal-open');
+    activeTrigger?.focus();
+  }
+
+  openButtons.forEach((button) => {
+    button.addEventListener('click', () => openModal(button));
+  });
+
+  closeButtons.forEach((button) => {
+    button.addEventListener('click', closeModal);
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && !modal.hidden) closeModal();
+  });
+}
+
+function getPretestFrameUrl(frame) {
+  const source = frame?.dataset.src || 'germany_pretest_v4.html';
+  const url = new URL(source, window.location.href);
+  url.searchParams.set('lang', currentLanguage);
+  return url.href;
+}
+
+function syncPretestFrameLanguage(options = {}) {
+  const frame = document.querySelector('[data-pretest-frame]');
+  if (!frame) return;
+
+  const nextSrc = getPretestFrameUrl(frame);
+  const currentSrc = frame.getAttribute('src');
+  if (!options.forceLoad && !currentSrc) return;
+
+  const resolvedCurrentSrc = currentSrc ? new URL(currentSrc, window.location.href).href : '';
+  if (resolvedCurrentSrc !== nextSrc) {
+    frame.setAttribute('src', nextSrc);
+  }
+}
+
 window.toggleCard = function toggleCard(card) {
   const cardsRoot = card.closest('.cards');
   if (!cardsRoot) return;
@@ -533,12 +608,25 @@ window.toggleCard = function toggleCard(card) {
   if (!body) return;
 
   const isOpen = body.classList.contains('open');
+  const cardTopBefore = card.getBoundingClientRect().top;
   cardsRoot.querySelectorAll('.card-body').forEach((item) => item.classList.remove('open'));
   cardsRoot.querySelectorAll('.card').forEach((item) => item.classList.remove('open'));
 
   if (!isOpen) {
     body.classList.add('open');
     card.classList.add('open');
+  }
+
+  const cardTopAfter = card.getBoundingClientRect().top;
+  const topDelta = cardTopAfter - cardTopBefore;
+  if (topDelta !== 0) {
+    const root = document.documentElement;
+    const previousScrollBehavior = root.style.scrollBehavior;
+    root.style.scrollBehavior = 'auto';
+    window.scrollBy(0, topDelta);
+    requestAnimationFrame(() => {
+      root.style.scrollBehavior = previousScrollBehavior;
+    });
   }
 };
 
@@ -1320,6 +1408,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initLanguageSwitch();
   initBook();
   initTabs();
+  initPretestModal();
   if (document.getElementById('q-container')) {
     renderQuiz();
   }
