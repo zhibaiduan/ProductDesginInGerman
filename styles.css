@@ -2224,6 +2224,7 @@ body[data-language="zh"] .project-note-title{
   }
 
   .product-nav-inner{
+    position:relative;
     padding:10px 12px;
     border-radius:12px;
   }
@@ -2236,8 +2237,21 @@ body[data-language="zh"] .project-note-title{
   }
 
   .product-nav-actions{
-    flex-wrap:wrap;
-    overflow:visible;
+    flex-wrap:nowrap;
+    overflow-x:auto;
+    overflow-y:hidden;
+    padding-right:42px;
+  }
+
+  .product-nav-inner::after{
+    content:'';
+    position:absolute;
+    right:12px;
+    bottom:18px;
+    width:34px;
+    height:42px;
+    background:linear-gradient(90deg, rgba(248,246,241,0), rgba(248,246,241,0.98) 55%);
+    pointer-events:none;
   }
 
   .chapter-meta-row{
@@ -2252,15 +2266,16 @@ body[data-language="zh"] .project-note-title{
   }
 
   .product-links{
-    width:100%;
-    min-width:0;
-    flex-wrap:wrap;
+    width:auto;
+    min-width:max-content;
+    flex-wrap:nowrap;
     overflow:visible;
   }
 
   .product-link{
     padding:8px 12px;
     font-size:11px;
+    white-space:nowrap;
   }
 
   .pretest-modal{
@@ -2282,7 +2297,7 @@ body[data-language="zh"] .project-note-title{
   }
 
   .language-picker{
-    align-self:flex-start;
+    align-self:center;
   }
 
   .hero,
