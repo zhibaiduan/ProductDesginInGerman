@@ -111,11 +111,8 @@ const TRANSLATED_CONTENT = [
   { selector: '.why-item:nth-child(1) .why-item-desc', key: 'cover.why.1.desc' },
   { selector: '.why-item:nth-child(2) .why-item-title', key: 'cover.why.2.title' },
   { selector: '.why-item:nth-child(2) .why-item-desc', key: 'cover.why.2.desc' },
-  { selector: '.footer-left', key: 'cover.footerLeft', html: true },
-  { selector: '.footer-disclaimer', key: 'cover.footerDisclaimer', html: true },
-  { selector: '.quiz .header-label', key: 'quizIntro.label' },
-  { selector: '.quiz .header-title', key: 'quizIntro.title', html: true },
-  { selector: '.quiz .header-sub', key: 'quizIntro.sub' },
+  { selector: '.quiz .hero-title', key: 'quizIntro.title', html: true },
+  { selector: '.quiz .hero-sub', key: 'quizIntro.sub' },
   { selector: '.restart-btn', key: 'quizIntro.restart' }
 ];
 
@@ -187,11 +184,10 @@ const LOCALIZED_PAGE_COPY = {
         title: 'Want a quick sense of where mistakes usually happen first?',
         support: 'Start with the clearest situations before moving into grey areas.',
         button: 'Go to Hard Stops'
-      },
-      footerLeft: 'Based on enforcement data through April 2026<br>GDPR · EU AI Act · KWG · MPDG · BetrVG · BFSG · GWB · TDDDG',
-      footerDisclaimer: 'For workplace compliance learning and judgment training. Not legal advice.<br>Consult qualified counsel for specific decisions.'
+      }
     },
     red: {
+      meta: 'Germany · Workplace Compliance · Hard Stops 2026',
       next: {
         label: 'Next step',
         title: 'Now that the clear red lines are visible, the harder part is judgment.',
@@ -200,6 +196,7 @@ const LOCALIZED_PAGE_COPY = {
       }
     },
     orange: {
+      meta: 'Germany · Workplace Compliance · Grey Areas 2026',
       next: {
         label: 'Next step',
         title: 'You have seen where caution is needed. Next, learn what a stronger professional answer looks like.',
@@ -208,6 +205,7 @@ const LOCALIZED_PAGE_COPY = {
       }
     },
     green: {
+      meta: 'Germany · Workplace Compliance · Better Practice 2026',
       next: {
         label: 'Next step',
         title: 'Ready to check what you can recognize after the lesson?',
@@ -230,6 +228,17 @@ const LOCALIZED_PAGE_COPY = {
         notReally: 'Not really'
       },
       thanks: 'Thank you. Your feedback helps improve this learning path.'
+    },
+    projectNote: {
+      label: 'Project note',
+      title: 'About this handbook',
+      summary: 'A personal, non-commercial learning project based on public sources through April 2026.',
+      body: {
+        1: 'Created to organize German and European workplace compliance signals across data, AI, privacy, employee information, and product flows. The content is based on public sources, prepared with AI assistance, and manually reviewed where possible.',
+        2: 'For learning and judgment training only. This is not legal, tax, business, product compliance, or other professional advice, and it may be incomplete, outdated, or inaccurate.',
+        3: 'This project is not affiliated with any authority, EU institution, company, or brand mentioned here. Third-party names, trademarks, and materials belong to their owners.'
+      },
+      feedback: 'If you find an error, outdated information, or have feedback, please contact'
     },
     quizIntro: {
       label: 'Germany · Workplace Compliance · Knowledge Check',
@@ -305,11 +314,10 @@ const LOCALIZED_PAGE_COPY = {
         title: '想先快速看看德国职场里最容易出错的地方吗？',
         support: '从最清楚的红线开始，再进入更难判断的灰区。',
         button: '先看必须停下的情况'
-      },
-      footerLeft: '基于截至 2026 年 4 月的执法数据<br>GDPR · EU AI Act · KWG · MPDG · BetrVG · BFSG · GWB · TDDDG',
-      footerDisclaimer: '用于德国职场合规学习和判断训练，不构成法律意见。<br>具体上线、合同和合规决策请咨询德国/欧盟律师。'
+      }
     },
     red: {
+      meta: '德国 · 职场合规 · 必须停下 2026',
       next: {
         label: '下一步',
         title: '看清红线之后，更难的是灰区判断。',
@@ -318,6 +326,7 @@ const LOCALIZED_PAGE_COPY = {
       }
     },
     orange: {
+      meta: '德国 · 职场合规 · 灰区判断 2026',
       next: {
         label: '下一步',
         title: '你已经看到哪些情况需要谨慎。接下来看看更稳妥、更专业的做法。',
@@ -326,6 +335,7 @@ const LOCALIZED_PAGE_COPY = {
       }
     },
     green: {
+      meta: '德国 · 职场合规 · 更专业做法 2026',
       next: {
         label: '下一步',
         title: '想检验一下学完之后，你能识别哪些判断了吗？',
@@ -348,6 +358,17 @@ const LOCALIZED_PAGE_COPY = {
         notReally: '帮助不大'
       },
       thanks: '谢谢反馈。这会帮助我们把内容做得更适合准备进入德国职场的人。'
+    },
+    projectNote: {
+      label: '项目说明',
+      title: '关于这本手册',
+      summary: '一个基于截至 2026 年 4 月公开资料整理的个人非商业学习项目。',
+      body: {
+        1: '用于整理德国及欧洲职场中与数据、AI、隐私、员工信息和产品流程相关的合规信号。内容基于公开资料，使用 AI 辅助整理，并尽量进行人工复核。',
+        2: '仅用于学习和判断训练，不构成法律、税务、商业、产品合规或其他专业建议，也可能不完整、过期或不准确。',
+        3: '本项目与文中提及的任何政府机构、欧盟机构、公司或品牌不存在隶属或背书关系。第三方名称、商标和资料归其权利人所有。'
+      },
+      feedback: '如发现错误、过期信息或有任何反馈，欢迎联系'
     },
     quizIntro: {
       label: '德国 · 职场合规 · 判断题',
@@ -692,6 +713,7 @@ function initBook() {
 
     activeIndex = index;
     book.dataset.bookDirection = direction || 'none';
+    book.dataset.activePage = page.dataset.bookPage || '';
 
     pages.forEach((item, itemIndex) => {
       item.classList.toggle('is-active', itemIndex === index);
