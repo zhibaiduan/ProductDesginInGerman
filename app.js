@@ -826,7 +826,7 @@ function initPretestModal() {
 }
 
 function getPretestFrameUrl(frame) {
-  const source = frame?.dataset.src || 'germany_pretest_v4.html';
+  const source = frame?.dataset.src || 'pretest.html';
   const url = new URL(source, window.location.href);
   url.searchParams.set('lang', currentLanguage);
   return url.href;
