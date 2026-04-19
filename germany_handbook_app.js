@@ -182,8 +182,54 @@ const LOCALIZED_PAGE_COPY = {
           desc: 'The goal is noticing the compliance boundary earlier.'
         }
       },
+      next: {
+        label: 'Next step',
+        title: 'Want a quick sense of where mistakes usually happen first?',
+        support: 'Start with the clearest situations before moving into grey areas.',
+        button: 'Go to Hard Stops'
+      },
       footerLeft: 'Based on enforcement data through April 2026<br>GDPR · EU AI Act · KWG · MPDG · BetrVG · BFSG · GWB · TDDDG',
       footerDisclaimer: 'For workplace compliance learning and judgment training. Not legal advice.<br>Consult qualified counsel for specific decisions.'
+    },
+    red: {
+      next: {
+        label: 'Next step',
+        title: 'Now that the clear red lines are visible, the harder part is judgment.',
+        support: 'Some cases are not obviously illegal, but still should not be decided alone.',
+        button: 'Continue to Grey Areas'
+      }
+    },
+    orange: {
+      next: {
+        label: 'Next step',
+        title: 'You have seen where caution is needed. Next, learn what a stronger professional answer looks like.',
+        support: 'This is where compliance becomes part of credibility at work.',
+        button: 'Continue to Better Practice'
+      }
+    },
+    green: {
+      next: {
+        label: 'Next step',
+        title: 'Ready to check what you can recognize after the lesson?',
+        support: 'Use it to see which judgments already feel clear, and which ones are still worth reviewing.',
+        button: 'Take the Score Check'
+      }
+    },
+    feedback: {
+      lesson: {
+        label: 'Quick feedback',
+        title: 'Was this lesson helpful for understanding compliance expectations in a German workplace?'
+      },
+      quiz: {
+        label: 'Quick feedback',
+        title: 'Was this score check helpful for reviewing what you learned?'
+      },
+      options: {
+        yes: 'Yes, it helped',
+        somewhat: 'Somewhat',
+        notReally: 'Not really'
+      },
+      thanks: 'Thank you. Your feedback helps improve this learning path.'
     },
     quizIntro: {
       label: 'Germany · Workplace Compliance · Knowledge Check',
@@ -254,8 +300,54 @@ const LOCALIZED_PAGE_COPY = {
           desc: '目标是更早看出一个普通任务背后的合规边界。'
         }
       },
+      next: {
+        label: '下一步',
+        title: '想先快速看看德国职场里最容易出错的地方吗？',
+        support: '从最清楚的红线开始，再进入更难判断的灰区。',
+        button: '先看必须停下的情况'
+      },
       footerLeft: '基于截至 2026 年 4 月的执法数据<br>GDPR · EU AI Act · KWG · MPDG · BetrVG · BFSG · GWB · TDDDG',
       footerDisclaimer: '用于德国职场合规学习和判断训练，不构成法律意见。<br>具体上线、合同和合规决策请咨询德国/欧盟律师。'
+    },
+    red: {
+      next: {
+        label: '下一步',
+        title: '看清红线之后，更难的是灰区判断。',
+        support: '有些情况不一定明显违法，但也不应该自己直接拍板。',
+        button: '继续看灰区情况'
+      }
+    },
+    orange: {
+      next: {
+        label: '下一步',
+        title: '你已经看到哪些情况需要谨慎。接下来看看更稳妥、更专业的做法。',
+        support: '这部分会帮助你把合规判断变成职场可信度的一部分。',
+        button: '继续看更专业做法'
+      }
+    },
+    green: {
+      next: {
+        label: '下一步',
+        title: '想检验一下学完之后，你能识别哪些判断了吗？',
+        support: '看看哪些判断已经清楚，哪些地方还值得再回看。',
+        button: '进入学习检测'
+      }
+    },
+    feedback: {
+      lesson: {
+        label: '快速反馈',
+        title: '这些内容对你理解德国职场的合规要求有帮助吗？'
+      },
+      quiz: {
+        label: '快速反馈',
+        title: '这个检测对你回顾刚才学到的内容有帮助吗？'
+      },
+      options: {
+        yes: '有帮助',
+        somewhat: '有一点帮助',
+        notReally: '帮助不大'
+      },
+      thanks: '谢谢反馈。这会帮助我们把内容做得更适合准备进入德国职场的人。'
     },
     quizIntro: {
       label: '德国 · 职场合规 · 判断题',
@@ -327,6 +419,13 @@ function applyTranslations() {
     else element.textContent = value;
   });
 
+  document.querySelectorAll('[data-localized-copy]').forEach((element) => {
+    const value = getLocalizedValue(element.dataset.localizedCopy);
+    if (value === undefined) return;
+    if (element.dataset.localizedHtml === 'true') element.innerHTML = value;
+    else element.textContent = value;
+  });
+
   document.querySelectorAll('[data-localized-content]').forEach((element) => {
     element.hidden = element.dataset.localizedContent !== currentLanguage;
   });
@@ -361,6 +460,8 @@ function resetQuizState() {
   greenTotal = 0;
   document.getElementById('result-card')?.classList.remove('show');
   document.querySelectorAll('.quiz-next-steps').forEach((element) => element.remove());
+  const quizFeedback = document.querySelector('[data-feedback-module="quiz"]');
+  if (quizFeedback) resetFeedbackModule(quizFeedback);
 }
 
 function setLanguage(language, options = {}) {
@@ -478,6 +579,93 @@ function initWorkplaceTakeaways() {
     takeaway.className = `workplace-takeaway takeaway-${chapter}`;
     takeaway.innerHTML = `<div class="workplace-takeaway-title">${copy.title}</div><div class="workplace-takeaway-text">${copy.text}</div>`;
     body.appendChild(takeaway);
+  });
+}
+
+function storeFeedback(payload) {
+  const key = 'germanyWorkplaceComplianceFeedback';
+  try {
+    const currentItems = JSON.parse(localStorage.getItem(key) || '[]');
+    currentItems.push(payload);
+    localStorage.setItem(key, JSON.stringify(currentItems.slice(-50)));
+  } catch (error) {
+    try {
+      localStorage.setItem(key, JSON.stringify([payload]));
+    } catch (storageError) {
+      // Feedback still gets acknowledged in the UI even when local storage is unavailable.
+    }
+  }
+}
+
+function getActiveBookPageName() {
+  return document.querySelector('[data-book-page].is-active')?.dataset.bookPage || '';
+}
+
+function getFeedbackSource(source) {
+  return source === 'quiz' ? 'quiz_end' : 'lesson_end';
+}
+
+function getFeedbackScore(source) {
+  if (source !== 'quiz') return '';
+
+  const total = getQuizQuestions().length;
+  if (!total) return '';
+
+  const pct = Math.round((score / total) * 100);
+  return `${score}/${total} (${pct}%)`;
+}
+
+function submitFeedbackToGoogleForm(payload) {
+  const body = new FormData();
+  body.append(FEEDBACK_FORM.fields.source, payload.source);
+  body.append(FEEDBACK_FORM.fields.answer, payload.answer);
+  body.append(FEEDBACK_FORM.fields.language, payload.language);
+  body.append(FEEDBACK_FORM.fields.page, payload.page);
+  body.append(FEEDBACK_FORM.fields.score, payload.score || '');
+  body.append(FEEDBACK_FORM.fields.createdAt, payload.createdAt);
+
+  return fetch(FEEDBACK_FORM.endpoint, {
+    method: 'POST',
+    mode: 'no-cors',
+    body
+  });
+}
+
+function resetFeedbackModule(module) {
+  module.classList.remove('is-submitted');
+  module.querySelectorAll('[data-feedback-answer]').forEach((button) => {
+    button.classList.remove('is-selected');
+    button.setAttribute('aria-pressed', 'false');
+  });
+}
+
+function initFeedbackModules() {
+  document.querySelectorAll('[data-feedback-module]').forEach((module) => {
+    module.querySelectorAll('[data-feedback-answer]').forEach((button) => {
+      button.setAttribute('aria-pressed', 'false');
+      button.addEventListener('click', () => {
+        module.querySelectorAll('[data-feedback-answer]').forEach((item) => {
+          const isSelected = item === button;
+          item.classList.toggle('is-selected', isSelected);
+          item.setAttribute('aria-pressed', isSelected ? 'true' : 'false');
+        });
+
+        const source = module.dataset.feedbackModule;
+        const payload = {
+          source: getFeedbackSource(source),
+          answer: button.dataset.feedbackAnswer,
+          language: currentLanguage,
+          page: getActiveBookPageName(),
+          score: getFeedbackScore(source),
+          createdAt: new Date().toISOString()
+        };
+
+        storeFeedback(payload);
+        submitFeedbackToGoogleForm(payload).catch(() => {});
+
+        module.classList.add('is-submitted');
+      });
+    });
   });
 }
 
@@ -1261,6 +1449,18 @@ let redTotal = 0;
 let orangeTotal = 0;
 let greenTotal = 0;
 
+const FEEDBACK_FORM = {
+  endpoint: 'https://docs.google.com/forms/d/e/1FAIpQLSdbCch91KH5c0TXQt07pw4bU19m2UjOeqE0IbsoHI_VWTIYxg/formResponse',
+  fields: {
+    source: 'entry.626914651',
+    answer: 'entry.1943976917',
+    language: 'entry.1548424263',
+    page: 'entry.405741631',
+    score: 'entry.1875785695',
+    createdAt: 'entry.110663308'
+  }
+};
+
 function getQuizQuestions() {
   return LOCALIZED_QUESTIONS[currentLanguage] || LOCALIZED_QUESTIONS.en;
 }
@@ -1489,6 +1689,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initTabs();
   initWorkplaceTakeaways();
   initPretestModal();
+  initFeedbackModules();
   if (document.getElementById('q-container')) {
     renderQuiz();
   }
