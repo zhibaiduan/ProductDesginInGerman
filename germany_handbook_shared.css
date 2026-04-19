@@ -894,6 +894,34 @@ body.pretest-modal-open{
   background:var(--color-background-secondary);
 }
 
+.workplace-takeaway{
+  margin-top:16px;
+  padding:14px 16px;
+  border:0.5px solid var(--color-border-tertiary);
+  border-left-width:2px;
+  border-radius:var(--border-radius-md);
+  background:var(--color-background-secondary);
+}
+
+.workplace-takeaway-title{
+  margin-bottom:6px;
+  font-size:10px;
+  font-weight:600;
+  letter-spacing:1.6px;
+  text-transform:uppercase;
+  color:var(--color-text-tertiary);
+}
+
+.workplace-takeaway-text{
+  font-size:13px;
+  line-height:1.65;
+  color:var(--color-text-secondary);
+}
+
+.takeaway-red{border-left-color:#A32D2D;}
+.takeaway-orange{border-left-color:#854F0B;}
+.takeaway-green{border-left-color:#1A5C4A;}
+
 .handbook{
   max-width:860px;
   margin:0 auto;
@@ -1646,6 +1674,44 @@ body.pretest-modal-open{
   margin-bottom:24px;
 }
 
+.quiz-next-steps{
+  margin-top:-8px;
+  margin-bottom:24px;
+  padding:16px;
+  border:0.5px solid var(--color-border-tertiary);
+  border-radius:var(--border-radius-md);
+  background:var(--color-background-secondary);
+  text-align:left;
+}
+
+.quiz-next-steps-title{
+  margin-bottom:10px;
+  font-size:10px;
+  font-weight:600;
+  letter-spacing:1.6px;
+  text-transform:uppercase;
+  color:var(--color-text-tertiary);
+}
+
+.quiz-next-step{
+  position:relative;
+  padding-left:16px;
+  font-size:13px;
+  line-height:1.6;
+  color:var(--color-text-secondary);
+}
+
+.quiz-next-step::before{
+  content:'';
+  position:absolute;
+  left:0;
+  top:0.72em;
+  width:5px;
+  height:5px;
+  border-radius:50%;
+  background:var(--color-text-primary);
+}
+
 .bd-item{
   padding:14px 10px;
   border-radius:var(--border-radius-md);
@@ -1901,12 +1967,45 @@ body[data-language="zh"] .header-title{
   }
 
   .product-brand{
+    max-width:100%;
     font-size:17px;
+    line-height:1.2;
+    text-align:left;
+  }
+
+  .product-nav-actions{
+    flex-wrap:wrap;
+    overflow:visible;
+  }
+
+  .product-links{
+    width:100%;
+    min-width:0;
+    flex-wrap:wrap;
+    overflow:visible;
   }
 
   .product-link{
     padding:8px 12px;
     font-size:11px;
+  }
+
+  .pretest-modal{
+    align-items:stretch;
+    justify-content:stretch;
+    padding:0;
+  }
+
+  .pretest-dialog{
+    width:100vw;
+    height:100dvh;
+    border:0;
+    border-radius:0;
+  }
+
+  .pretest-close{
+    top:calc(env(safe-area-inset-top, 0px) + 10px);
+    right:12px;
   }
 
   .language-picker{

@@ -5,16 +5,16 @@ let currentLanguage = DEFAULT_LANGUAGE;
 
 const UI_COPY = {
   en: {
-    brand: 'Germany Digital Product Handbook',
+    brand: 'Germany Workplace Compliance',
     navAria: 'Handbook sections',
     languageAria: 'Language',
     languageLabel: 'Language',
     nav: {
       cover: 'Cover',
-      red: 'Prohibited',
-      orange: 'Grey area',
-      green: 'Recommend',
-      quiz: 'Quiz'
+      red: 'Hard Stops',
+      orange: 'Grey Areas',
+      green: 'Better Practice',
+      quiz: 'Score Check'
     },
     chapter: {
       1: 'Chapter 1',
@@ -33,20 +33,21 @@ const UI_COPY = {
       resultLabel: (pct) => `${pct}% correct`,
       redLines: 'Red lines',
       orangeLines: 'Orange lines',
-      greenLines: 'Green lines'
+      greenLines: 'Green lines',
+      nextSteps: 'Suggested next steps'
     }
   },
   zh: {
-    brand: '德国数字产品手册',
+    brand: '德国职场合规',
     navAria: '手册章节',
     languageAria: '语言',
     languageLabel: '语言',
     nav: {
       cover: '封面',
-      red: '红线禁区',
-      orange: '待判断灰区',
-      green: '推荐做法',
-      quiz: '测验'
+      red: '必须停下',
+      orange: '灰区判断',
+      green: '更专业做法',
+      quiz: '测一测'
     },
     chapter: {
       1: '第 1 章',
@@ -65,7 +66,8 @@ const UI_COPY = {
       resultLabel: (pct) => `正确率 ${pct}%`,
       redLines: '硬红线',
       orangeLines: '待判断灰区',
-      greenLines: '加分项'
+      greenLines: '加分项',
+      nextSteps: '建议下一步'
     }
   }
 };
@@ -120,145 +122,145 @@ const TRANSLATED_CONTENT = [
 const LOCALIZED_PAGE_COPY = {
   en: {
     cover: {
-      mastheadTitle: 'The Germany Digital Product Handbook',
-      mastheadMeta: '2026 Edition · For Product Builders',
-      title: 'A field guide to building software in Germany',
-      headline: 'What can get<br>you <em>shut down</em>,<br>what\'s <em class="orange-em">contested</em>,<br>and what makes<br>you <span class="green-em">win.</span>',
-      deck: 'Germany is the EU\'s largest software market — and its most legally complex. This handbook cuts through the noise: not legal theory, but actionable product decisions, real enforcement cases, and the design choices that actually close enterprise deals.',
+      mastheadTitle: 'The Germany Workplace Compliance Handbook',
+      mastheadMeta: '2026 Edition · For People Entering German Workplaces',
+      title: 'In German workplaces, compliance is not background knowledge',
+      headline: 'Know when<br>to <em>stop</em>,<br>where to be<br><em class="orange-em">careful</em>,<br>and what counts as<br><span class="green-em">sound judgment.</span>',
+      deck: 'In many markets, compliance is a final check. In Germany and Europe, it often shapes work from the start: data, AI, privacy, employee information, and product flows. Use the questions first to feel what is different.',
       stats: {
-        1: 'Germany\'s largest GDPR fine in 2025 — Vodafone, for a product architecture decision',
-        2: 'EU AI Act prohibitions took effect — including features already in production at many companies',
-        3: 'Pipeline growth for Nextcloud in H1 2025 — from digital sovereignty positioning alone',
-        4: 'Court rulings on cancellation buttons since 2022 — the most litigated consumer UX law in Germany'
+        1: 'Germany\'s largest GDPR fine in 2025 shows how data, process, and responsibility chains become compliance issues',
+        2: 'EU AI Act prohibitions took effect, making some AI uses more than ordinary efficiency choices',
+        3: 'Independent German data protection authorities make enforcement local, active, and hard to ignore',
+        4: 'Court rulings on cancellation buttons show how ordinary UX details can become compliance questions'
       },
-      quote: '"Privacy in Germany is not a preference competing with convenience — it is, in the constitutional sense, a precondition for participation."',
-      quoteAttr: 'Bundesverfassungsgericht · 1983 census ruling · still enforced today',
+      quote: '"You do not need to become a lawyer. You do need to notice when an ordinary work decision has a compliance edge."',
+      quoteAttr: 'Data · AI · privacy · employee information · product flows',
       pretest: {
-        title: 'Think you know German digital law?',
-        sub: '10 questions. Most builders fail at least one.',
-        button: 'Take the challenge →'
+        title: 'How much would you get right as a beginner?',
+        sub: '10 quick questions to feel where German and European compliance differ from other markets.',
+        button: 'Check my score →'
       },
       forYouLabel: 'Who this is for',
-      personaRole: 'Product builders entering the German market.',
-      personaPain: 'You already have a working product. Now you need to know:',
+      personaRole: 'People preparing to work in German or European teams.',
+      personaPain: 'If your work touches data, AI, privacy, or product flows, build a first sense for:',
       personaList: {
-        1: 'Which decisions require a lawyer',
-        2: 'Which are just rules you should already know',
-        3: 'Which can win you enterprise deals'
+        1: 'Which actions are clearly unsafe or prohibited',
+        2: 'Which choices depend on context and boundaries',
+        3: 'Which habits make your work feel more reliable'
       },
-      contentsLabel: 'What you get',
+      contentsLabel: 'What you will learn',
       contents: {
         1: {
-          chapter: 'Core map',
-          name: 'What will matter most',
+          chapter: 'Judgment map',
+          name: 'Three levels for work decisions',
           items: {
-            1: '11 red lines with exact fines',
-            2: '12 grey zones with safer vs. riskier paths',
-            3: '14 green patterns that close German enterprise deals',
-            4: 'The 3 questions German buyers always ask before signing'
+            1: 'Stop: clearly high-risk or prohibited',
+            2: 'Be careful: context and boundaries matter',
+            3: 'Better practice: more trusted ways to work',
+            4: 'Start with questions to build an overall feel'
           }
         },
         2: {
-          chapter: 'Concrete',
-          name: 'Where this gets practical',
+          chapter: 'Compliance areas',
+          name: 'Where the questions come from',
           items: {
-            1: 'Data residency, cookie consent, sub-processors, export flows',
-            2: 'GTM / GA4 / Meta Pixel compliance',
-            3: 'Self-hosting and sovereignty as trust signals',
-            4: 'AVV, certifications, and procurement shortcuts'
+            1: 'Data privacy, cookies, and tracking',
+            2: 'AI tools, automation, and content labelling',
+            3: 'Employee information and workplace data',
+            4: 'Product flows, accounts, cancellation, and export'
           }
         }
       },
       whyLabel: 'Why this matters',
       why: {
         1: {
-          title: 'Most compliance resources tell you what not to do.',
-          desc: 'This shows what to build instead — and how it wins commercially.'
+          title: 'Many markets treat compliance as a late check.',
+          desc: 'In Germany and Europe, it often shapes how work should begin.'
         },
         2: {
-          title: 'In Germany, compliance is not a feature.',
-          desc: 'It is a buying decision.'
+          title: 'The goal is not perfect legal expertise.',
+          desc: 'The goal is noticing the compliance boundary earlier.'
         }
       },
       footerLeft: 'Based on enforcement data through April 2026<br>GDPR · EU AI Act · KWG · MPDG · BetrVG · BFSG · GWB · TDDDG',
-      footerDisclaimer: 'For reference only. Not legal advice.<br>Consult qualified counsel for specific decisions.'
+      footerDisclaimer: 'For workplace compliance learning and judgment training. Not legal advice.<br>Consult qualified counsel for specific decisions.'
     },
     quizIntro: {
-      label: 'Germany · Product Compliance · Knowledge Check',
-      title: 'Can you survive the <em>German market</em>?',
-      sub: '15 real-world scenarios, including multi-select checkpoints. Pick the right call and see instantly why it matters.',
+      label: 'Germany · Workplace Compliance · Knowledge Check',
+      title: 'How many German compliance calls can you get right?',
+      sub: '15 practical questions using product, SaaS, AI, data, and workplace examples because this is where German compliance becomes visible in daily work.',
       restart: 'Retake the quiz'
     }
   },
   zh: {
     cover: {
-      mastheadTitle: '德国数字产品手册',
-      mastheadMeta: '2026 版 · 给产品建设者',
-      title: '在德国做软件产品的实战指南',
-      headline: '哪些会让你<em>被叫停</em>，<br>哪些问题仍有<em class="orange-em">争议</em>，<br>哪些选择能帮你<br><span class="green-em">赢下德国客户。</span>',
-      deck: '德国是欧盟最大的软件市场，也是法律关系最复杂的市场之一。这本手册帮你去掉噪音：不讲抽象法理，只讲能落到产品里的判断、真实执法案例，以及真正推动企业签约的设计选择。',
+      mastheadTitle: '德国职场合规手册',
+      mastheadMeta: '2026 版 · 给进入德国职场的人',
+      title: '在德国职场，合规不是背景知识',
+      headline: '知道什么时候<br><em>必须停下</em>，<br>哪里需要<br><em class="orange-em">更谨慎</em>，<br>以及什么才算<br><span class="green-em">专业判断。</span>',
+      deck: '在很多市场，合规可能是最后检查的一步；但在德国和欧洲，它常常从一开始就影响数据、AI、隐私、员工信息和产品流程。这本手册用题目和案例帮你先建立总体感觉。',
       stats: {
-        1: '2025 年德国最大 GDPR 罚单：Vodafone，因为一次产品架构决策被罚',
-        2: '欧盟 AI 法案的禁止条款已经生效，其中包括不少公司已经上线的功能',
-        3: 'Nextcloud 2025 上半年商机增长，主要来自“数字主权”定位',
-        4: '自 2022 年以来，德国已有 67 起“取消按钮”判决，是最常被诉讼检验的消费者 UX 法之一'
+        1: '2025 年德国最大 GDPR 罚单提醒你：数据、流程和责任链都可能成为合规问题',
+        2: '欧盟 AI 法案禁止条款已生效，一些 AI 用法不只是效率选择',
+        3: '德国有 17 个独立数据保护监管机构，执法更本地、更活跃',
+        4: '取消按钮这类 UX 细节也会被法院反复审查'
       },
-      quote: '“在德国，隐私不是和便利相互竞争的偏好，而是在宪法意义上参与社会的前提。”',
-      quoteAttr: '德国联邦宪法法院 · 1983 年人口普查判决 · 至今仍被援引',
+      quote: '“你不需要成为律师，但需要知道什么时候一个普通工作决定已经触碰合规边界。”',
+      quoteAttr: '数据 · AI · 隐私 · 员工信息 · 产品流程',
       pretest: {
-        title: '你真的懂德国数字法律吗？',
-        sub: '10 道题。多数建设者至少会错一题。',
-        button: '开始挑战 →'
+        title: '作为新手，你能答对多少？',
+        sub: '10 道快速题，先感受德国/欧洲合规和其他市场哪里不一样。',
+        button: '测一测我能答对多少 →'
       },
       forYouLabel: '适合谁读',
-      personaRole: '正在进入德国市场的产品建设者。',
-      personaPain: '如果你的产品已经能跑，下一步需要判断：',
+      personaRole: '准备进入德国或欧洲团队工作的人。',
+      personaPain: '如果你未来工作会接触数据、AI、隐私或产品流程，先建立这些判断：',
       personaList: {
-        1: '哪些决策必须先找律师确认',
-        2: '哪些只是本来就应该懂的市场规则',
-        3: '哪些设计能帮你赢下企业客户'
+        1: '哪些事情明显高风险或不能做',
+        2: '哪些事情需要看上下文和边界',
+        3: '哪些做法会显得更稳、更专业'
       },
-      contentsLabel: '你会得到什么',
+      contentsLabel: '你会学到什么',
       contents: {
         1: {
-          chapter: '核心地图',
-          name: '什么最值得先看',
+          chapter: '判断地图',
+          name: '三类工作判断',
           items: {
-            1: '11 条红线：附对应罚款后果',
-            2: '12 个灰区：对比更稳妥和更冒险的路径',
-            3: '14 个能推动德国企业签约的绿色做法',
-            4: '德国买家签约前一定会问的 3 个问题'
+            1: '必须停下：明确高风险或被禁止',
+            2: '谨慎判断：不是所有情况都一样',
+            3: '更专业做法：更可信的处理方式',
+            4: '先用题目测一测，建立总体感觉'
           }
         },
         2: {
-          chapter: '具体执行',
-          name: '真正落地时会卡在哪里',
+          chapter: '合规主题',
+          name: '题目覆盖哪里',
           items: {
-            1: '数据驻留、Cookie 同意、子处理方和导出流程',
-            2: 'GTM、GA4、Meta Pixel 的德国合规判断',
-            3: '自托管和数字主权为什么会变成信任信号',
-            4: 'AVV、认证和采购材料如何缩短销售周期'
+            1: '数据隐私、Cookie 与 tracking',
+            2: 'AI 工具、自动化和内容标注',
+            3: '员工信息、HR 和工作场所数据',
+            4: '产品流程、账户、取消和导出体验'
           }
         }
       },
       whyLabel: '为什么重要',
       why: {
         1: {
-          title: '多数合规资料只告诉你不要做什么。',
-          desc: '这本手册告诉你该改成什么，以及它为什么也能带来商业价值。'
+          title: '很多市场把合规放在最后检查。',
+          desc: '在德国和欧洲，它经常从一开始就影响工作方式和产品判断。'
         },
         2: {
-          title: '在德国，合规不是一个功能。',
-          desc: '它本身就是采购决策的一部分。'
+          title: '目标不是变成法律专家。',
+          desc: '目标是更早看出一个普通任务背后的合规边界。'
         }
       },
       footerLeft: '基于截至 2026 年 4 月的执法数据<br>GDPR · EU AI Act · KWG · MPDG · BetrVG · BFSG · GWB · TDDDG',
-      footerDisclaimer: '用于产品和市场进入判断，不构成法律意见。<br>具体上线、合同和合规决策请咨询德国/欧盟律师。'
+      footerDisclaimer: '用于德国职场合规学习和判断训练，不构成法律意见。<br>具体上线、合同和合规决策请咨询德国/欧盟律师。'
     },
     quizIntro: {
-      label: '德国 · 产品出海 · 判断题',
-      title: '这些德国市场判断，<em>你会怎么拍板？</em>',
-      sub: '15 个产品、增长、AI、数据和采购场景，包含多选判断题。重点不是背法条，而是判断能不能上、该不该改、销售会不会被卡。',
+      label: '德国 · 职场合规 · 判断题',
+      title: '这些德国合规判断，<em>你能答对多少？</em>',
+      sub: '15 道实用判断题，用产品、SaaS、AI、数据和职场流程做例子，因为德国合规最常在这些具体工作决策里出现。',
       restart: '再测一次'
     }
   }
@@ -358,6 +360,7 @@ function resetQuizState() {
   orangeTotal = 0;
   greenTotal = 0;
   document.getElementById('result-card')?.classList.remove('show');
+  document.querySelectorAll('.quiz-next-steps').forEach((element) => element.remove());
 }
 
 function setLanguage(language, options = {}) {
@@ -429,6 +432,52 @@ function initTabs() {
 
     const active = container.querySelector('[data-tab-button].active') || buttons[0];
     activateTab(container, active.dataset.tabButton);
+  });
+}
+
+const WORKPLACE_TAKEAWAYS = {
+  en: {
+    red: {
+      title: 'Workplace takeaway',
+      text: 'If this appears in your work, treat it as a hard stop. The risk is not just a preference, shortcut, or workflow detail.'
+    },
+    orange: {
+      title: 'Workplace takeaway',
+      text: 'Pause before treating this as routine. The answer depends on context, boundaries, evidence, and how the system is actually used.'
+    },
+    green: {
+      title: 'Workplace takeaway',
+      text: 'Notice this as a trust signal. You may not own procurement, but recognizing the evidence helps you understand why German teams ask for it.'
+    }
+  },
+  zh: {
+    red: {
+      title: '职场判断',
+      text: '如果工作中遇到这种模式，先把它当成必须停下的边界。它不是偏好、效率或流程细节。'
+    },
+    orange: {
+      title: '职场判断',
+      text: '不要把它当作普通操作直接推进。答案取决于上下文、边界、证据，以及系统实际怎么被使用。'
+    },
+    green: {
+      title: '职场判断',
+      text: '把它看成信任信号。你不一定负责采购，但理解这些证据，会帮你知道德国团队为什么反复要求它。'
+    }
+  }
+};
+
+function initWorkplaceTakeaways() {
+  document.querySelectorAll('.chapter-handbook .card-body').forEach((body) => {
+    if (body.querySelector('.workplace-takeaway')) return;
+    const chapter = body.closest('[data-chapter]')?.dataset.chapter;
+    const language = body.closest('[data-localized-content]')?.dataset.localizedContent || 'en';
+    const copy = WORKPLACE_TAKEAWAYS[language]?.[chapter] || WORKPLACE_TAKEAWAYS.en[chapter];
+    if (!copy) return;
+
+    const takeaway = document.createElement('div');
+    takeaway.className = `workplace-takeaway takeaway-${chapter}`;
+    takeaway.innerHTML = `<div class="workplace-takeaway-title">${copy.title}</div><div class="workplace-takeaway-text">${copy.text}</div>`;
+    body.appendChild(takeaway);
   });
 }
 
@@ -576,6 +625,15 @@ function initPretestModal() {
 
   document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape' && !modal.hidden) closeModal();
+  });
+
+  window.addEventListener('message', (event) => {
+    if (event.origin !== window.location.origin) return;
+    if (event.data?.type !== 'pretest-jump') return;
+    const target = event.data.target;
+    if (!['red', 'orange', 'green', 'quiz'].includes(target)) return;
+    closeModal();
+    document.querySelector(`.product-link[data-book-jump="${target}"]`)?.click();
   });
 }
 
@@ -1141,52 +1199,52 @@ const QUIZ_RESULTS = {
   en: [
     {
       min: 90,
-      title: 'Compliance-ready',
-      sub: "You have a solid command of Germany's digital product rules. You'd be a reliable voice in early-stage market entry discussions — and you'd likely catch issues before they become enforcement actions.",
+      title: 'Workplace-ready judgment',
+      sub: "You already notice many German and European compliance boundaries early. You can use the handbook to sharpen the details, especially where commercial trust and product responsibility overlap.",
       color: '#1D9E75'
     },
     {
       min: 70,
-      title: 'Mostly there — a few blind spots',
-      sub: 'You understand the major red lines but some of the grey zones and positive strategies slipped through. Those are exactly the areas where small decisions have disproportionate commercial consequences.',
+      title: 'Solid first judgment',
+      sub: 'You recognize the major hard stops. The remaining gaps are mostly grey areas and better-practice moves, where small choices can affect trust, review speed, or business opportunity.',
       color: '#854F0B'
     },
     {
       min: 50,
-      title: 'Aware, but not yet ready',
-      sub: 'You know Germany is different, but the specifics are still fuzzy. The rules you missed are live enforcement risks — not theoretical. Revisit the handbooks before making product decisions for this market.',
+      title: 'Awareness started',
+      sub: 'You can feel that Germany and Europe work differently, but the details are still fuzzy. Revisit the hard stops first, then use the grey areas to train your boundary sense.',
       color: '#BA7517'
     },
     {
       min: 0,
-      title: 'High-risk zone',
-      sub: 'Several of the practices you might have approved are active red lines in Germany. A product launch based on these assumptions would face serious legal exposure within months. Start with the red lines handbook.',
+      title: 'Start with the boundaries',
+      sub: 'Several choices that may look normal elsewhere are serious compliance issues in Germany. Start with the hard stops, then retake the score check to see what changed.',
       color: '#A32D2D'
     }
   ],
   zh: [
     {
       min: 90,
-      title: '能独立判断德国市场风险',
-      sub: '你已经能把德国规则翻译成产品决策：哪些功能不能上、哪些要补证据、哪些材料要提前给 DPO 和采购。',
+      title: '已经有较强职场判断力',
+      sub: '你已经能较早看出德国/欧洲合规边界。接下来可以用手册补细节，尤其是合规证据、商业信任和产品责任交叉的地方。',
       color: '#1D9E75'
     },
     {
       min: 70,
-      title: '方向对，但还有几个会卡上线的盲点',
-      sub: '你能避开大多数硬红线，但灰区和采购加分项还需要补。德国市场里，小的默认设置和销售材料，常常决定交易能不能推进。',
+      title: '已有基本判断力',
+      sub: '你能识别大多数硬边界。剩下的盲点多在灰区和更专业做法里：这些小选择会影响信任、审查速度和合作机会。',
       color: '#854F0B'
     },
     {
       min: 50,
-      title: '有风险意识，但还不能直接拍板',
-      sub: '你已经意识到德国不是普通欧洲市场，但具体到 AI、追踪、员工数据、采购文件时，还需要更系统的判断框架。',
+      title: '合规敏感度已经开始建立',
+      sub: '你已经感觉到德国和欧洲不太一样，但细节还不稳定。建议先看必须停下的部分，再用灰区训练边界感。',
       color: '#BA7517'
     },
     {
       min: 0,
-      title: '先别急着上线',
-      sub: '你可能会批准的若干做法，在德国会直接触发监管、诉讼或采购拦截。先把红线和灰区重新过一遍，再谈本地化上线。',
+      title: '先从边界开始',
+      sub: '一些在其他市场看起来普通的做法，在德国可能是严重合规问题。先看必须停下的部分，再回来测一次。',
       color: '#A32D2D'
     }
   ]
@@ -1378,6 +1436,7 @@ function showQuizResult() {
   const result = (QUIZ_RESULTS[currentLanguage] || QUIZ_RESULTS.en).find((item) => pct >= item.min);
 
   const card = document.getElementById('result-card');
+  card.querySelectorAll('.quiz-next-steps').forEach((element) => element.remove());
   card.className = 'result-card show';
   document.getElementById('result-score').innerHTML = `<span style="color:${result.color}">${score}</span><span style="font-size:28px;color:#888780">/${activeQuestions.length}</span>`;
   document.getElementById('result-label').textContent = runtimeCopy.resultLabel(pct);
@@ -1397,6 +1456,26 @@ function showQuizResult() {
       <div class="bd-label">${runtimeCopy.greenLines}</div>
     </div>
   `;
+
+  const nextSteps = {
+    en: score / activeQuestions.length >= 0.8
+      ? ['Review Better Practice to connect compliance evidence with trust.', 'Retake any questions that felt uncertain.']
+      : score / activeQuestions.length >= 0.5
+        ? ['Revisit Hard Stops first.', 'Then read Grey Areas to train context-sensitive judgment.']
+        : ['Start with Hard Stops before continuing.', 'Use the score check again after reviewing the boundary patterns.'],
+    zh: score / activeQuestions.length >= 0.8
+      ? ['继续看更专业做法，把合规证据和信任建立连起来。', '把刚才犹豫的题再过一遍。']
+      : score / activeQuestions.length >= 0.5
+        ? ['先回到必须停下，补稳底线。', '再看灰区判断，训练上下文里的边界感。']
+        : ['先从必须停下开始，不急着继续挑战。', '看完边界模式后，再回来测一次。']
+  };
+  const steps = nextSteps[currentLanguage] || nextSteps.en;
+  document.getElementById('result-breakdown').insertAdjacentHTML('afterend', `
+    <div class="quiz-next-steps">
+      <div class="quiz-next-steps-title">${runtimeCopy.nextSteps}</div>
+      ${steps.map((step) => `<div class="quiz-next-step">${step}</div>`).join('')}
+    </div>
+  `);
 };
 
 window.restart = function restart() {
@@ -1408,6 +1487,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initLanguageSwitch();
   initBook();
   initTabs();
+  initWorkplaceTakeaways();
   initPretestModal();
   if (document.getElementById('q-container')) {
     renderQuiz();

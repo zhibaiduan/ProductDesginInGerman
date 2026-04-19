@@ -88,6 +88,14 @@ body[data-language="zh"] .hdr-h{font-family:'Noto Serif SC','Newsreader',serif;}
 .r-box{padding:14px 12px;border-radius:var(--border-radius-md);text-align:left;}
 .r-n{font-family:'Newsreader',Georgia,serif;font-size:26px;font-weight:700;line-height:1;margin-bottom:4px;}
 .r-l{font-size:11px;font-weight:400;color:var(--color-text-secondary);}
+.r-path{margin:0 auto 24px;text-align:left;max-width:520px;border-top:0.5px solid var(--color-border-tertiary);padding-top:18px;}
+.r-path-title{font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--color-text-tertiary);margin-bottom:10px;}
+.r-path-list{display:grid;gap:8px;}
+.r-path-item{appearance:none;width:100%;display:flex;align-items:flex-start;gap:10px;text-align:left;padding:12px 14px;border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-md);background:var(--color-background-secondary);cursor:pointer;font:inherit;color:var(--color-text-primary);}
+.r-path-item:hover{border-color:var(--color-border-primary);background:var(--color-background-primary);}
+.r-path-step{width:22px;height:22px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto;background:var(--color-text-primary);color:var(--color-background-page);font-size:11px;font-weight:600;}
+.r-path-name{display:block;font-size:13px;font-weight:600;margin-bottom:3px;}
+.r-path-desc{display:block;font-size:12px;line-height:1.5;color:var(--color-text-secondary);}
 .r-btn{padding:10px 24px;border-radius:var(--border-radius-md);border:0.5px solid var(--color-border-secondary);background:var(--color-background-primary);cursor:pointer;font:inherit;font-size:13px;font-weight:500;color:var(--color-text-primary);transition:all .15s ease;}
 body[data-language="zh"] .r-score,
 body[data-language="zh"] .r-title,
@@ -102,14 +110,15 @@ body[data-language="zh"] .r-n{font-family:'Noto Serif SC','Newsreader',serif;}
   .hdr-p{font-size:14px;line-height:1.72;}
   .card,.result{padding:20px;}
   .r-grid{grid-template-columns:1fr;}
+  .r-path-item{padding:12px;}
 }
 </style>
 
 <div class="wrap">
 <div class="hdr">
-  <div class="hdr-tag">德国 &middot; 数字产品 &middot; 预读检测</div>
-  <div class="hdr-h">你的<em>默认判断</em><br>错得有多离谱？</div>
-  <div class="hdr-p">10 道基于德国真实执法和判例的快速检测题。选择最稳妥的产品决策。</div>
+  <div class="hdr-tag">德国 &middot; 职场合规 &middot; 入门检测</div>
+  <div class="hdr-h">学习之前，先测测你的<em>合规直觉</em>。</div>
+  <div class="hdr-p">10 道基于德国真实执法和判例的快速题。先答题，再用手册理解自己错过了哪些模式。</div>
 </div>
 <div class="prog-row">
   <div class="prog-track"><div class="prog-bar" id="pb" style="width:0%"></div></div>
@@ -369,45 +378,83 @@ const EN_QUESTIONS = [
 const COPY = {
   en: {
     documentLang: 'en',
-    tag: 'Germany · Digital Products · Pretest',
-    title: 'How wrong are your <em>default assumptions</em>?',
-    intro: '10 quick questions based on real German enforcement and court rulings. Choose the safest product decision.',
+    tag: 'Germany · Workplace Compliance · Score Check',
+    title: 'Before you study,<br>check your <em>compliance instinct</em>.',
+    intro: '10 quick questions based on real German enforcement and court rulings. Answer first, then use the handbook to understand the patterns you missed.',
     questionMeta: (current, total) => `Question ${current} of ${total}`,
     next: 'Next question →',
     results: 'See results →',
     correct: 'Correct.',
     wrong: 'This is the kind of detail teams miss.',
     scoreLabel: (pct) => `${pct}% correct`,
-    highTitle: 'Your judgment is sharper than most',
-    highMsg: 'You already understand the core of German digital product rules. The handbook will help sharpen the details; the questions that made you hesitate are the ones worth remembering.',
-    midTitle: 'You have a few judgment gaps worth closing',
-    midMsg: 'You got many familiar rules right. The misses are often exactly where product teams misread the market: something looks safe until a court or regulator says it is not.',
-    lowTitle: 'The expensive rules are the ones that surprise you',
-    lowMsg: 'Every missed question maps to real fines, real rulings, or real product takedown risk. Now you know where to pay attention while reading the handbook.',
+    highTitle: 'Your compliance instinct is already strong',
+    highMsg: 'You already catch many German and European compliance boundaries. Use the handbook to sharpen the details, especially where trust, business value, and legal responsibility overlap.',
+    midTitle: 'You have useful instincts and a few gaps',
+    midMsg: 'You got several calls right. The misses are good study signals: they show where a normal work decision can become a compliance issue in Germany or Europe.',
+    lowTitle: 'This is exactly why the score check comes first',
+    lowMsg: 'Every missed question maps to real fines, rulings, or product restrictions. Start with the hard stops, then come back and see how your instinct changes.',
     correctCount: 'Correct calls',
     reviewCount: 'Worth reviewing',
+    pathTitle: 'Recommended next steps',
+    paths: {
+      hardStops: {
+        name: 'Start with Hard Stops',
+        desc: 'Build the baseline: what clearly should not proceed as designed.'
+      },
+      greyAreas: {
+        name: 'Then read Grey Areas',
+        desc: 'Train the boundary sense: when context changes the answer.'
+      },
+      betterPractice: {
+        name: 'Study Better Practice',
+        desc: 'See how compliance evidence also builds trust and opportunity.'
+      },
+      scoreCheck: {
+        name: 'Try the full Score Check',
+        desc: 'Use 15 questions to test whether the patterns are sticking.'
+      }
+    },
     restart: 'Retake the test',
     questions: EN_QUESTIONS
   },
   zh: {
     documentLang: 'zh-CN',
-    tag: '德国 · 数字产品 · 预读检测',
-    title: '你的<em>默认判断</em><br>错得有多离谱？',
-    intro: '10 道基于德国真实执法和判例的快速检测题。选择最稳妥的产品决策。',
+    tag: '德国 · 职场合规 · 入门检测',
+    title: '学习之前，先测测你的<em>合规直觉</em>。',
+    intro: '10 道基于德国真实执法和判例的快速题。先答题，再用手册理解自己错过了哪些模式。',
     questionMeta: (current, total) => `第 ${current} 题 / 共 ${total} 题`,
     next: '下一题 →',
     results: '查看结果 →',
     correct: '正确。',
     wrong: '这一步容易踩坑。',
     scoreLabel: (pct) => `正确率 ${pct}%`,
-    highTitle: '你的判断已经比大多数人更敏锐',
-    highMsg: '你已经能抓住德国数字产品规则的核心。后面的手册会帮你把细节磨得更准；刚才让你犹豫的题，正是最值得记住的地方。',
-    midTitle: '你有几个值得补上的判断缺口',
-    midMsg: '你答对了不少熟悉规则。错掉的那些，往往正是产品团队最容易误判的地方：看起来安全，直到法院或监管说不安全。每道错题的解释才是最有价值的部分。',
-    lowTitle: '真正昂贵的，正是那些让你意外的规则',
-    lowMsg: '每一道错题背后，都对应真实罚款、真实判例或真实产品下架风险。现在你已经知道读手册时该重点盯哪里。',
+    highTitle: '你的合规直觉已经很强',
+    highMsg: '你已经能抓住不少德国/欧洲合规边界。后面的手册会帮你把细节磨得更准，尤其是合规、信任、商业价值和责任交叉的地方。',
+    midTitle: '你已经有直觉，但还有几个缺口',
+    midMsg: '你答对了不少判断。错掉的题很有价值：它们说明哪些普通工作决定，在德国或欧洲会变成合规问题。',
+    lowTitle: '这正是为什么要先测一次',
+    lowMsg: '每一道错题背后，都对应真实罚款、真实判例或真实产品限制。先从必须停下的部分开始，再回来看看直觉有什么变化。',
     correctCount: '判断正确',
     reviewCount: '值得重看',
+    pathTitle: '建议下一步',
+    paths: {
+      hardStops: {
+        name: '先看必须停下',
+        desc: '建立底线感：哪些事情不能照常推进。'
+      },
+      greyAreas: {
+        name: '再看灰区判断',
+        desc: '训练边界感：同一件事什么时候会变得更危险。'
+      },
+      betterPractice: {
+        name: '补更专业做法',
+        desc: '理解合规证据如何带来信任和机会。'
+      },
+      scoreCheck: {
+        name: '挑战完整测一测',
+        desc: '用 15 道题检查这些模式是否真的记住。'
+      }
+    },
     restart: '再测一次',
     questions: ZH_QUESTIONS
   }
@@ -486,6 +533,16 @@ function advance(){
   else render();
 }
 
+function openParentSection(target){
+  window.parent?.postMessage({type:'pretest-jump', target}, window.location.origin);
+}
+
+function getResultPath(pct){
+  if(pct>=80)return ['betterPractice','scoreCheck'];
+  if(pct>=40)return ['hardStops','greyAreas','scoreCheck'];
+  return ['hardStops','greyAreas'];
+}
+
 function showResult(){
   const copy=getCopy();
   document.getElementById('qc').innerHTML='';
@@ -516,6 +573,19 @@ function showResult(){
     <div class="r-grid">
       <div class="r-box" style="background:#EAF3DE;"><div class="r-n" style="color:#1A5C4A;">${score}</div><div class="r-l">${copy.correctCount}</div></div>
       <div class="r-box" style="background:#FCEBEB;"><div class="r-n" style="color:#A32D2D;">${QS.length-score}</div><div class="r-l">${copy.reviewCount}</div></div>
+    </div>
+    <div class="r-path">
+      <div class="r-path-title">${copy.pathTitle}</div>
+      <div class="r-path-list">
+        ${getResultPath(pct).map((key, index) => {
+          const path = copy.paths[key];
+          const target = key === 'hardStops' ? 'red' : key === 'greyAreas' ? 'orange' : key === 'betterPractice' ? 'green' : 'quiz';
+          return `<button class="r-path-item" type="button" onclick="openParentSection('${target}')">
+            <span class="r-path-step">${index + 1}</span>
+            <span><span class="r-path-name">${path.name}</span><span class="r-path-desc">${path.desc}</span></span>
+          </button>`;
+        }).join('')}
+      </div>
     </div>
     <button class="r-btn" onclick="restart()">${copy.restart}</button>
   `;
