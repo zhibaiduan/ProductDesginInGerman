@@ -703,7 +703,6 @@ function initBook() {
   const totalEl = book.querySelector('[data-book-total]');
   const titleEl = book.querySelector('[data-book-current-title]');
   let activeIndex = 0;
-  let touchStartX = null;
 
   if (totalEl) totalEl.textContent = String(pages.length);
 
@@ -769,23 +768,6 @@ function initBook() {
     if (event.key === 'ArrowRight') stepPage(1);
   });
 
-  const viewport = book.querySelector('.book-viewport');
-  if (viewport) {
-    viewport.addEventListener('touchstart', (event) => {
-      touchStartX = event.changedTouches[0]?.clientX ?? null;
-    }, { passive: true });
-
-    viewport.addEventListener('touchend', (event) => {
-      const endX = event.changedTouches[0]?.clientX ?? null;
-      if (touchStartX === null || endX === null) return;
-      const delta = endX - touchStartX;
-      if (Math.abs(delta) > 60) {
-        stepPage(delta < 0 ? 1 : -1);
-      }
-      touchStartX = null;
-    }, { passive: true });
-  }
-
   window.addEventListener('hashchange', () => {
     const name = window.location.hash.replace('#', '');
     if (name) jumpToPage(name, { updateHash: false, preserveScroll: true, instant: true });
@@ -807,10 +789,13 @@ function initPretestModal() {
   const frame = modal.querySelector('[data-pretest-frame]');
   const openButtons = document.querySelectorAll('[data-pretest-open]');
   const closeButtons = modal.querySelectorAll('[data-pretest-close]');
+  const originalParent = modal.parentNode;
+  const originalNextSibling = modal.nextSibling;
   let activeTrigger = null;
 
   function openModal(trigger) {
     activeTrigger = trigger;
+    document.body.appendChild(modal);
     syncPretestFrameLanguage({ forceLoad: true });
     modal.hidden = false;
     modal.setAttribute('aria-hidden', 'false');
@@ -822,6 +807,7 @@ function initPretestModal() {
     modal.hidden = true;
     modal.setAttribute('aria-hidden', 'true');
     document.body.classList.remove('pretest-modal-open');
+    originalParent?.insertBefore(modal, originalNextSibling);
     activeTrigger?.focus();
   }
 

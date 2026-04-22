@@ -61,7 +61,7 @@ body[data-language="zh"] .hdr-h{font-family:'Noto Serif SC','Newsreader',serif;}
 .q-num{font-size:10px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--color-text-tertiary);margin-bottom:12px;}
 .q-txt{font-size:15px;font-weight:500;color:var(--color-text-primary);line-height:1.55;margin-bottom:18px;}
 .opts{display:flex;flex-direction:column;gap:8px;}
-.opt{appearance:none;width:100%;text-align:left;padding:12px 16px;border-radius:var(--border-radius-md);border:0.5px solid var(--color-border-secondary);background:var(--color-background-primary);cursor:pointer;font:inherit;font-size:13px;font-weight:400;color:var(--color-text-primary);line-height:1.6;transition:all .15s ease;display:flex;align-items:flex-start;gap:10px;}
+.opt{appearance:none;width:100%;text-align:left;padding:12px 16px;border-radius:var(--border-radius-md);border:0.5px solid var(--color-border-secondary);background:var(--color-background-primary);cursor:pointer;font:inherit;font-size:13px;font-weight:400;color:var(--color-text-primary);line-height:1.6;transition:all .15s ease;display:flex;align-items:flex-start;gap:10px;touch-action:manipulation;}
 .opt:hover:not(:disabled){background:var(--color-background-secondary);border-color:var(--color-border-primary);}
 .opt:disabled{cursor:default;}
 .opt.ok{background:#EAF3DE;border-color:#3B6D11;color:#173404;}
@@ -78,8 +78,9 @@ body[data-language="zh"] .hdr-h{font-family:'Noto Serif SC','Newsreader',serif;}
 .fb-no{background:#FCEBEB;color:#501313;border-left:2px solid #A32D2D;}
 .fb strong{font-weight:500;}
 
-.next{margin-top:16px;width:100%;padding:12px;border-radius:var(--border-radius-md);border:0.5px solid var(--color-border-secondary);background:var(--color-background-primary);cursor:pointer;font:inherit;font-size:13px;font-weight:500;color:var(--color-text-primary);display:none;transition:all .15s ease;}
+.next{margin-top:16px;width:100%;padding:12px;border-radius:var(--border-radius-md);border:0.5px solid var(--color-border-secondary);background:var(--color-background-primary);cursor:pointer;font:inherit;font-size:13px;font-weight:500;color:var(--color-text-primary);display:none;transition:all .15s ease;touch-action:manipulation;}
 .next:hover{background:var(--color-background-secondary);border-color:var(--color-border-primary);}
+.next:disabled{opacity:.55;cursor:default;}
 .next.vis{display:block;}
 
 .result{padding:32px;text-align:center;display:none;}
@@ -473,7 +474,7 @@ const params = new URLSearchParams(window.location.search);
 const requestedLanguage = params.get('lang');
 let currentLanguage = SUPPORTED_LANGUAGES.includes(requestedLanguage) ? requestedLanguage : DEFAULT_LANGUAGE;
 let QS = COPY[currentLanguage].questions;
-let cur=0,score=0,picked=false;
+let cur=0,score=0,picked=false,isAdvancing=false;
 
 function compactText(text, limit=250){
   if(text.length<=limit)return text;
@@ -482,6 +483,13 @@ function compactText(text, limit=250){
 
 function getCopy(){
   return COPY[currentLanguage] || COPY[DEFAULT_LANGUAGE];
+}
+
+function resetQuizScroll(){
+  requestAnimationFrame(()=>{
+    const root=document.scrollingElement || document.documentElement;
+    root.scrollTo({top:0,behavior:'auto'});
+  });
 }
 
 function applyLanguage(){
@@ -514,6 +522,8 @@ function render(){
     <button class="next" id="nb" onclick="advance()">${cur===QS.length-1?copy.results:copy.next}</button>
   `;
   picked=false;
+  isAdvancing=false;
+  resetQuizScroll();
 }
 
 function pick(i){
@@ -535,6 +545,10 @@ function pick(i){
 }
 
 function advance(){
+  if(isAdvancing)return;
+  isAdvancing=true;
+  const nextButton=document.getElementById('nb');
+  if(nextButton)nextButton.disabled=true;
   cur++;
   if(cur>=QS.length) showResult();
   else render();
@@ -596,6 +610,8 @@ function showResult(){
     </div>
     <button class="r-btn" onclick="restart()">${copy.restart}</button>
   `;
+  isAdvancing=false;
+  resetQuizScroll();
 }
 
 function restart(){cur=0;score=0;picked=false;document.getElementById('res').className='result';render();}
