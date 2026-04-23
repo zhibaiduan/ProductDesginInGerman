@@ -151,16 +151,16 @@ const ZH_QUESTIONS = [
     no: "有按钮不够，两个按钮的视觉权重必须对等。选项 A 也是真实违规，但本案的核心是颜色视觉不对称，而非点击步骤。"
   },
   {
-    q: "一家柏林数字银行被 BaFin 罚款，并限制每月新增客户不超过 50,000 人（此前约 170,000 人）。注意：BaFin 动用了“限制业务增长”这个最重手段。触发这个后果的核心原因是什么？",
+    q: "一家柏林数字银行被 BaFin 罚款，并被临时限制每月新增客户数量。注意：BaFin 动用了“限制业务增长”这个重手段。触发这个后果的核心原因是什么？",
     opts: [
       "KYC 身份核验流程存在系统性漏洞",
       "向第三方广告平台共享客户数据违反 GDPR",
-      "多年系统性迟交反洗钱可疑交易报告",
+      "反洗钱控制缺陷，包括可疑交易报告迟交",
       "客服响应时长不达标，违反消费者保护规定"
     ],
     correct: 2,
-    ok: "这是 N26。AML 报告迟交是 BaFin 少数会直接限制业务增长的违规类型。KYC 问题通常触发罚款和审计，GDPR 归数据保护局管，客服时长不会让 BaFin 封增长上限。",
-    no: "这是 N26。只有 AML 系统性违规才会让 BaFin 直接限制你的客户增长。KYC 问题（选项 A）最多触发罚款和审计；GDPR（选项 B）归数据保护局，不是 BaFin；客服时长（选项 D）根本不在 BaFin 管辖范围内。"
+    ok: "这是 N26。BaFin 的公开措施指向 AML 风险控制、客户识别、交易监控和可疑交易报告等问题。GDPR 归数据保护机构管，客服时长不会让 BaFin 封增长上限。",
+    no: "这是 N26。BaFin 的公开措施指向 AML 风险控制、客户识别、交易监控和可疑交易报告等问题；不是广告数据 GDPR，也不是客服响应时长。"
   },
   {
     q: "产品团队在官网使用了 Google Tag Manager，CMP 在用户操作前展示 Cookie 横幅。2025 年德国法院仍认定不合规。原因是什么？",
@@ -274,16 +274,16 @@ const EN_QUESTIONS = [
     no: "Having both buttons is not enough. Equal visual weight matters. Option A is also a real pattern of non-compliance, but this case turned on visual asymmetry, not click count."
   },
   {
-    q: "A Berlin digital bank was fined by BaFin and limited to no more than 50,000 new customers per month, down from about 170,000. BaFin used the heavy weapon of restricting growth. What triggered it?",
+    q: "A Berlin digital bank was fined by BaFin and temporarily limited in monthly new-customer growth. BaFin used the heavy weapon of restricting growth. What triggered it?",
     opts: [
       "Systemic flaws in KYC identity verification",
       "Sharing customer data with advertising platforms in breach of GDPR",
-      "Years of systematically late anti-money-laundering suspicious activity reports",
+      "AML control shortcomings, including late suspicious transaction reports",
       "Customer support response times below consumer-protection expectations"
     ],
     correct: 2,
-    ok: "This was N26. Late AML reporting is one of the few violation types where BaFin may directly restrict customer growth. KYC problems usually trigger fines and audits; GDPR belongs to data protection authorities; support timing does not trigger a BaFin growth cap.",
-    no: "This was N26. Only systemic AML failures explain BaFin directly limiting customer growth. KYC can trigger audits and fines, GDPR is handled by data protection authorities, and support timing is not BaFin's jurisdiction."
+    ok: "This was N26. BaFin's public measures pointed to AML risk controls, customer identification, transaction monitoring, and suspicious transaction reporting. GDPR belongs to data protection authorities; support timing does not trigger a BaFin growth cap.",
+    no: "This was N26. BaFin's public measures pointed to AML risk controls, customer identification, transaction monitoring, and suspicious transaction reporting, not advertising-data GDPR or support response times."
   },
   {
     q: "A product team used Google Tag Manager on its website. The CMP showed a cookie banner before the user acted, but a German court still found the setup non-compliant in 2025. Why?",
