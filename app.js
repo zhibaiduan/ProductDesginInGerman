@@ -1028,7 +1028,7 @@ const questions = [
     ],
     correct: 2,
     feedback: {
-      correct: "Correct. The DPF is valid today, but it is contested and German DPAs have encouraged exit strategies from US cloud dependency. The defensible posture is layered: DPF plus SCC fallback, data minimisation or pseudonymisation, clear access controls, and a practical migration plan.",
+      correct: "Correct. The DPF is valid today, and the General Court dismissed an annulment action in September 2025, but it is still prudent to plan for legal or political changes. The defensible posture is layered: DPF plus SCC fallback, data minimisation or pseudonymisation, clear access controls, and a practical migration plan.",
       wrong: "DPF helps, but it is not a permanent all-clear. German buyers will ask what happens if the framework is challenged again. The stronger answer is DPF plus SCC fallback, minimised logs, tight access controls, and a documented exit strategy for critical US services."
     }
   },
@@ -1282,7 +1282,7 @@ const LOCALIZED_QUESTIONS = {
       ],
       correct: 2,
       feedback: {
-        correct: "DPF 目前仍有效，但它正被挑战，德国监管机构也建议企业准备摆脱美国云依赖的 exit strategy。更稳妥的姿态是多层防御：DPF、SCC 备用、数据最小化/假名化、访问控制和迁移预案。",
+      correct: "DPF 目前仍有效，且欧盟普通法院已在 2025 年 9 月驳回一项撤销诉讼；但为法律或政治变化准备预案仍然更稳妥。更强的姿态是多层防御：DPF、SCC 备用、数据最小化/假名化、访问控制和迁移预案。",
         wrong: "DPF 有帮助，但不是永久绿灯。德国客户会追问：如果框架再次被挑战怎么办？更强的回答是 DPF 加 SCC 备用、最小化日志、严格访问控制，并准备关键美国服务的退出策略。"
       }
     },
